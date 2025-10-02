@@ -243,6 +243,7 @@ public class RecipeDatagen extends RecipeProvider {
             .save(this.output, "steel_stairs_from_steel_block_stonecutter");
 
 
+
         ShapedRecipeBuilder.shaped(this.registries.lookupOrThrow(Registries.ITEM), RecipeCategory.BUILDING_BLOCKS, MetalRegistry.GLOWING_STEEL_BLOCK.get())
             .pattern("###")
             .pattern("#$#")
@@ -262,6 +263,106 @@ public class RecipeDatagen extends RecipeProvider {
             .unlockedBy("has_steel_ingot", has(MetalRegistry.STEEL_INGOT.get()))
             .unlockedBy("has_red_stardust_powder", has(CraftingMaterialRegistry.RED_STARDUST_POWDER.get()))
             .save(this.output, "red_glowing_steel_block_from_steel_block_and_red_glowstone");
+
+        ShapedRecipeBuilder.shaped(this.registries.lookupOrThrow(Registries.ITEM), RecipeCategory.BUILDING_BLOCKS, MetalRegistry.ORANGE_GLOWING_STEEL_BLOCK.get())
+            .pattern("###")
+            .pattern("#$#")
+            .pattern("###")
+            .define('#', MetalRegistry.STEEL_INGOT.get())
+            .define('$', CraftingMaterialRegistry.ORANGE_STARDUST_POWDER.get())
+            .unlockedBy("has_steel_ingot", has(MetalRegistry.STEEL_INGOT.get()))
+            .unlockedBy("has_orange_stardust_powder", has(CraftingMaterialRegistry.ORANGE_STARDUST_POWDER.get()))
+            .save(this.output, "orange_glowing_steel_block_from_steel_block_and_orange_glowstone");
+
+        ShapedRecipeBuilder.shaped(this.registries.lookupOrThrow(Registries.ITEM), RecipeCategory.BUILDING_BLOCKS, MetalRegistry.YELLOW_GLOWING_STEEL_BLOCK.get())
+            .pattern("###")
+            .pattern("#$#")
+            .pattern("###")
+            .define('#', MetalRegistry.STEEL_INGOT.get())
+            .define('$', CraftingMaterialRegistry.YELLOW_STARDUST_POWDER.get())
+            .unlockedBy("has_steel_ingot", has(MetalRegistry.STEEL_INGOT.get()))
+            .unlockedBy("has_yellow_stardust_powder", has(CraftingMaterialRegistry.YELLOW_STARDUST_POWDER.get()))
+            .save(this.output, "yellow_glowing_steel_block_from_steel_block_and_yellow_glowstone");
+
+        ShapedRecipeBuilder.shaped(this.registries.lookupOrThrow(Registries.ITEM), RecipeCategory.BUILDING_BLOCKS, MetalRegistry.LIME_GLOWING_STEEL_BLOCK.get())
+            .pattern("###")
+            .pattern("#$#")
+            .pattern("###")
+            .define('#', MetalRegistry.STEEL_INGOT.get())
+            .define('$', CraftingMaterialRegistry.LIME_STARDUST_POWDER.get())
+            .unlockedBy("has_steel_ingot", has(MetalRegistry.STEEL_INGOT.get()))
+            .unlockedBy("has_lime_stardust_powder", has(CraftingMaterialRegistry.LIME_STARDUST_POWDER.get()))
+            .save(this.output, "lime_glowing_steel_block_from_steel_block_and_lime_glowstone");
+
+        ShapedRecipeBuilder.shaped(this.registries.lookupOrThrow(Registries.ITEM), RecipeCategory.BUILDING_BLOCKS, MetalRegistry.GREEN_GLOWING_STEEL_BLOCK.get())
+            .pattern("###")
+            .pattern("#$#")
+            .pattern("###")
+            .define('#', MetalRegistry.STEEL_INGOT.get())
+            .define('$', CraftingMaterialRegistry.GREEN_STARDUST_POWDER.get())
+            .unlockedBy("has_steel_ingot", has(MetalRegistry.STEEL_INGOT.get()))
+            .unlockedBy("has_green_stardust_powder", has(CraftingMaterialRegistry.GREEN_STARDUST_POWDER.get()))
+            .save(this.output, "green_glowing_steel_block_from_steel_block_and_green_glowstone");
+
+        ShapedRecipeBuilder.shaped(this.registries.lookupOrThrow(Registries.ITEM), RecipeCategory.BUILDING_BLOCKS, MetalRegistry.CYAN_GLOWING_STEEL_BLOCK.get())
+            .pattern("###")
+            .pattern("#$#")
+            .pattern("###")
+            .define('#', MetalRegistry.STEEL_INGOT.get())
+            .define('$', CraftingMaterialRegistry.CYAN_STARDUST_POWDER.get())
+            .unlockedBy("has_steel_ingot", has(MetalRegistry.STEEL_INGOT.get()))
+            .unlockedBy("has_cyan_stardust_powder", has(CraftingMaterialRegistry.CYAN_STARDUST_POWDER.get()))
+            .save(this.output, "cyan_glowing_steel_block_from_steel_block_and_cyan_glowstone");
+
+        ShapedRecipeBuilder.shaped(this.registries.lookupOrThrow(Registries.ITEM), RecipeCategory.BUILDING_BLOCKS, MetalRegistry.LIGHT_BLUE_GLOWING_STEEL_BLOCK.get())
+            .pattern("###")
+            .pattern("#$#")
+            .pattern("###")
+            .define('#', MetalRegistry.STEEL_INGOT.get())
+            .define('$', CraftingMaterialRegistry.LIGHT_BLUE_STARDUST_POWDER.get())
+            .unlockedBy("has_steel_ingot", has(MetalRegistry.STEEL_INGOT.get()))
+            .unlockedBy("has_light_blue_stardust_powder", has(CraftingMaterialRegistry.LIGHT_BLUE_STARDUST_POWDER.get()))
+            .save(this.output, "light_blue_glowing_steel_block_from_steel_block_and_light_blue_glowstone");
+
+        ShapedRecipeBuilder.shaped(this.registries.lookupOrThrow(Registries.ITEM), RecipeCategory.BUILDING_BLOCKS, MetalRegistry.BLUE_GLOWING_STEEL_BLOCK.get())
+            .pattern("###")
+            .pattern("#$#")
+            .pattern("###")
+            .define('#', MetalRegistry.STEEL_INGOT.get())
+            .define('$', CraftingMaterialRegistry.BLUE_STARDUST_POWDER.get())
+            .unlockedBy("has_steel_ingot", has(MetalRegistry.STEEL_INGOT.get()))
+            .unlockedBy("has_blue_stardust_powder", has(CraftingMaterialRegistry.BLUE_STARDUST_POWDER.get()))
+            .save(this.output, "blue_glowing_steel_block_from_steel_block_and_blue_glowstone");
+
+        ShapedRecipeBuilder.shaped(this.registries.lookupOrThrow(Registries.ITEM), RecipeCategory.BUILDING_BLOCKS, MetalRegistry.PURPLE_GLOWING_STEEL_BLOCK.get())
+            .pattern("###")
+            .pattern("#$#")
+            .pattern("###")
+            .define('#', MetalRegistry.STEEL_INGOT.get())
+            .define('$', CraftingMaterialRegistry.PURPLE_STARDUST_POWDER.get())
+            .unlockedBy("has_steel_ingot", has(MetalRegistry.STEEL_INGOT.get()))
+            .unlockedBy("has_purple_stardust_powder", has(CraftingMaterialRegistry.PURPLE_STARDUST_POWDER.get()))
+            .save(this.output, "purple_glowing_steel_block_from_steel_block_and_purple_glowstone");
+
+        ShapedRecipeBuilder.shaped(this.registries.lookupOrThrow(Registries.ITEM), RecipeCategory.BUILDING_BLOCKS, MetalRegistry.MAGENTA_GLOWING_STEEL_BLOCK.get())
+            .pattern("###")
+            .pattern("#$#")
+            .pattern("###")
+            .define('#', MetalRegistry.STEEL_INGOT.get())
+            .define('$', CraftingMaterialRegistry.MAGENTA_STARDUST_POWDER.get())
+            .unlockedBy("has_steel_ingot", has(MetalRegistry.STEEL_INGOT.get()))
+            .unlockedBy("has_magenta_stardust_powder", has(CraftingMaterialRegistry.MAGENTA_STARDUST_POWDER.get()))
+            .save(this.output, "magenta_glowing_steel_block_from_steel_block_and_magenta_glowstone");
+
+        ShapedRecipeBuilder.shaped(this.registries.lookupOrThrow(Registries.ITEM), RecipeCategory.BUILDING_BLOCKS, MetalRegistry.PINK_GLOWING_STEEL_BLOCK.get())
+            .pattern("###")
+            .pattern("#$#")
+            .pattern("###")
+            .define('#', MetalRegistry.STEEL_INGOT.get())
+            .define('$', CraftingMaterialRegistry.PINK_STARDUST_POWDER.get())
+            .unlockedBy("has_steel_ingot", has(MetalRegistry.STEEL_INGOT.get()))
+            .unlockedBy("has_pink_stardust_powder", has(CraftingMaterialRegistry.PINK_STARDUST_POWDER.get()))
+            .save(this.output, "pink_glowing_steel_block_from_steel_block_and_pink_glowstone");
     
     }
     public static class Runner extends RecipeProvider.Runner {

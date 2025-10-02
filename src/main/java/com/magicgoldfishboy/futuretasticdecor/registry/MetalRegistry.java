@@ -38,6 +38,36 @@ public class MetalRegistry {
     public static DeferredBlock<Block> RED_GLOWING_STEEL_BLOCK;
     public static DeferredItem<BlockItem> RED_GLOWING_STEEL_BLOCK_ITEM;
 
+    public static DeferredBlock<Block> ORANGE_GLOWING_STEEL_BLOCK;
+    public static DeferredItem<BlockItem> ORANGE_GLOWING_STEEL_BLOCK_ITEM;
+
+    public static DeferredBlock<Block> YELLOW_GLOWING_STEEL_BLOCK;
+    public static DeferredItem<BlockItem> YELLOW_GLOWING_STEEL_BLOCK_ITEM;
+
+    public static DeferredBlock<Block> LIME_GLOWING_STEEL_BLOCK;
+    public static DeferredItem<BlockItem> LIME_GLOWING_STEEL_BLOCK_ITEM;
+
+    public static DeferredBlock<Block> GREEN_GLOWING_STEEL_BLOCK;
+    public static DeferredItem<BlockItem> GREEN_GLOWING_STEEL_BLOCK_ITEM;
+
+    public static DeferredBlock<Block> CYAN_GLOWING_STEEL_BLOCK;
+    public static DeferredItem<BlockItem> CYAN_GLOWING_STEEL_BLOCK_ITEM;
+
+    public static DeferredBlock<Block> LIGHT_BLUE_GLOWING_STEEL_BLOCK;
+    public static DeferredItem<BlockItem> LIGHT_BLUE_GLOWING_STEEL_BLOCK_ITEM;
+
+    public static DeferredBlock<Block> BLUE_GLOWING_STEEL_BLOCK;
+    public static DeferredItem<BlockItem> BLUE_GLOWING_STEEL_BLOCK_ITEM;
+
+    public static DeferredBlock<Block> PURPLE_GLOWING_STEEL_BLOCK;
+    public static DeferredItem<BlockItem> PURPLE_GLOWING_STEEL_BLOCK_ITEM;
+
+    public static DeferredBlock<Block> MAGENTA_GLOWING_STEEL_BLOCK;
+    public static DeferredItem<BlockItem> MAGENTA_GLOWING_STEEL_BLOCK_ITEM;
+
+    public static DeferredBlock<Block> PINK_GLOWING_STEEL_BLOCK;
+    public static DeferredItem<BlockItem> PINK_GLOWING_STEEL_BLOCK_ITEM;
+
 
     public static void registerMetals() {
         registerSteel();
@@ -136,6 +166,166 @@ public class MetalRegistry {
         RED_GLOWING_STEEL_BLOCK_ITEM = FuturetasticDecor.ITEMS.registerSimpleBlockItem(
             "red_glowing_steel_block", 
             RED_GLOWING_STEEL_BLOCK
+        );
+
+        ORANGE_GLOWING_STEEL_BLOCK = FuturetasticDecor.BLOCKS.register(
+            "orange_glowing_steel_block", 
+            registryName -> new Block(BlockBehaviour.Properties.of()
+                .setId(ResourceKey.create(Registries.BLOCK, registryName))
+                .strength(STEEL_DESTROY_TIME, STEEL_EXPLOSION_RESISTANCE)
+                .requiresCorrectToolForDrops()
+                .lightLevel(state -> 10)
+                .sound(SoundType.METAL)
+                .friction(0.5f)
+            )
+        );
+        ORANGE_GLOWING_STEEL_BLOCK_ITEM = FuturetasticDecor.ITEMS.registerSimpleBlockItem(
+            "orange_glowing_steel_block", 
+            ORANGE_GLOWING_STEEL_BLOCK
+        );
+
+        YELLOW_GLOWING_STEEL_BLOCK = FuturetasticDecor.BLOCKS.register(
+            "yellow_glowing_steel_block", 
+            registryName -> new Block(BlockBehaviour.Properties.of()
+                .setId(ResourceKey.create(Registries.BLOCK, registryName))
+                .strength(STEEL_DESTROY_TIME, STEEL_EXPLOSION_RESISTANCE)
+                .requiresCorrectToolForDrops()
+                .lightLevel(state -> 11)
+                .sound(SoundType.METAL)
+                .friction(0.5f)
+            )
+        );
+        YELLOW_GLOWING_STEEL_BLOCK_ITEM = FuturetasticDecor.ITEMS.registerSimpleBlockItem(
+            "yellow_glowing_steel_block", 
+            YELLOW_GLOWING_STEEL_BLOCK
+        );
+
+        LIME_GLOWING_STEEL_BLOCK = FuturetasticDecor.BLOCKS.register(
+            "lime_glowing_steel_block", 
+            registryName -> new Block(BlockBehaviour.Properties.of()
+                .setId(ResourceKey.create(Registries.BLOCK, registryName))
+                .strength(STEEL_DESTROY_TIME, STEEL_EXPLOSION_RESISTANCE)
+                .requiresCorrectToolForDrops()
+                .lightLevel(state -> 12)
+                .sound(SoundType.METAL)
+                .friction(0.5f)
+            )
+        );
+        LIME_GLOWING_STEEL_BLOCK_ITEM = FuturetasticDecor.ITEMS.registerSimpleBlockItem(
+            "lime_glowing_steel_block", 
+            LIME_GLOWING_STEEL_BLOCK
+        );
+
+        GREEN_GLOWING_STEEL_BLOCK = FuturetasticDecor.BLOCKS.register(
+            "green_glowing_steel_block", 
+            registryName -> new Block(BlockBehaviour.Properties.of()
+                .setId(ResourceKey.create(Registries.BLOCK, registryName))
+                .strength(STEEL_DESTROY_TIME, STEEL_EXPLOSION_RESISTANCE)
+                .requiresCorrectToolForDrops()
+                .lightLevel(state -> 13)
+                .sound(SoundType.METAL)
+                .friction(0.5f)
+            )
+        );
+        GREEN_GLOWING_STEEL_BLOCK_ITEM = FuturetasticDecor.ITEMS.registerSimpleBlockItem(
+            "green_glowing_steel_block", 
+            GREEN_GLOWING_STEEL_BLOCK
+        );
+
+        CYAN_GLOWING_STEEL_BLOCK = FuturetasticDecor.BLOCKS.register(
+            "cyan_glowing_steel_block", 
+            registryName -> new Block(BlockBehaviour.Properties.of()
+                .setId(ResourceKey.create(Registries.BLOCK, registryName))
+                .strength(STEEL_DESTROY_TIME, STEEL_EXPLOSION_RESISTANCE)
+                .requiresCorrectToolForDrops()
+                .lightLevel(state -> 10)
+                .sound(SoundType.METAL)
+                .friction(0.5f)
+            )
+        );
+        CYAN_GLOWING_STEEL_BLOCK_ITEM = FuturetasticDecor.ITEMS.registerSimpleBlockItem(
+            "cyan_glowing_steel_block", 
+            CYAN_GLOWING_STEEL_BLOCK
+        );
+
+        LIGHT_BLUE_GLOWING_STEEL_BLOCK = FuturetasticDecor.BLOCKS.register(
+            "light_blue_glowing_steel_block", 
+            registryName -> new Block(BlockBehaviour.Properties.of()
+                .setId(ResourceKey.create(Registries.BLOCK, registryName))
+                .strength(STEEL_DESTROY_TIME, STEEL_EXPLOSION_RESISTANCE)
+                .requiresCorrectToolForDrops()
+                .lightLevel(state -> 11)
+                .sound(SoundType.METAL)
+                .friction(0.5f)
+            )
+        );
+        LIGHT_BLUE_GLOWING_STEEL_BLOCK_ITEM = FuturetasticDecor.ITEMS.registerSimpleBlockItem(
+            "light_blue_glowing_steel_block", 
+            LIGHT_BLUE_GLOWING_STEEL_BLOCK
+        );
+
+        BLUE_GLOWING_STEEL_BLOCK = FuturetasticDecor.BLOCKS.register(
+            "blue_glowing_steel_block", 
+            registryName -> new Block(BlockBehaviour.Properties.of()
+                .setId(ResourceKey.create(Registries.BLOCK, registryName))
+                .strength(STEEL_DESTROY_TIME, STEEL_EXPLOSION_RESISTANCE)
+                .requiresCorrectToolForDrops()
+                .lightLevel(state -> 12)
+                .sound(SoundType.METAL)
+                .friction(0.5f)
+            )
+        );
+        BLUE_GLOWING_STEEL_BLOCK_ITEM = FuturetasticDecor.ITEMS.registerSimpleBlockItem(
+            "blue_glowing_steel_block", 
+            BLUE_GLOWING_STEEL_BLOCK
+        );
+
+        PURPLE_GLOWING_STEEL_BLOCK = FuturetasticDecor.BLOCKS.register(
+            "purple_glowing_steel_block", 
+            registryName -> new Block(BlockBehaviour.Properties.of()
+                .setId(ResourceKey.create(Registries.BLOCK, registryName))
+                .strength(STEEL_DESTROY_TIME, STEEL_EXPLOSION_RESISTANCE)
+                .requiresCorrectToolForDrops()
+                .lightLevel(state -> 13)
+                .sound(SoundType.METAL)
+                .friction(0.5f)
+            )
+        );
+        PURPLE_GLOWING_STEEL_BLOCK_ITEM = FuturetasticDecor.ITEMS.registerSimpleBlockItem(
+            "purple_glowing_steel_block", 
+            PURPLE_GLOWING_STEEL_BLOCK
+        );
+
+        MAGENTA_GLOWING_STEEL_BLOCK = FuturetasticDecor.BLOCKS.register(
+            "magenta_glowing_steel_block", 
+            registryName -> new Block(BlockBehaviour.Properties.of()
+                .setId(ResourceKey.create(Registries.BLOCK, registryName))
+                .strength(STEEL_DESTROY_TIME, STEEL_EXPLOSION_RESISTANCE)
+                .requiresCorrectToolForDrops()
+                .lightLevel(state -> 14)
+                .sound(SoundType.METAL)
+                .friction(0.5f)
+            )
+        );
+        MAGENTA_GLOWING_STEEL_BLOCK_ITEM = FuturetasticDecor.ITEMS.registerSimpleBlockItem(
+            "magenta_glowing_steel_block", 
+            MAGENTA_GLOWING_STEEL_BLOCK
+        );
+
+        PINK_GLOWING_STEEL_BLOCK = FuturetasticDecor.BLOCKS.register(
+            "pink_glowing_steel_block", 
+            registryName -> new Block(BlockBehaviour.Properties.of()
+                .setId(ResourceKey.create(Registries.BLOCK, registryName))
+                .strength(STEEL_DESTROY_TIME, STEEL_EXPLOSION_RESISTANCE)
+                .requiresCorrectToolForDrops()
+                .lightLevel(state -> 15)
+                .sound(SoundType.METAL)
+                .friction(0.5f)
+            )
+        );
+        PINK_GLOWING_STEEL_BLOCK_ITEM = FuturetasticDecor.ITEMS.registerSimpleBlockItem(
+            "pink_glowing_steel_block", 
+            PINK_GLOWING_STEEL_BLOCK
         );
     }
     

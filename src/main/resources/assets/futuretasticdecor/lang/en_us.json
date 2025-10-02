@@ -29,6 +29,16 @@
 
   "block.futuretasticdecor.glowing_steel_block": "Glowing Steel Block",
   "block.futuretasticdecor.red_glowing_steel_block": "Red Glowing Steel Block",
+  "block.futuretasticdecor.orange_glowing_steel_block": "Orange Glowing Steel Block",
+  "block.futuretasticdecor.yellow_glowing_steel_block": "Yellow Glowing Steel Block",
+  "block.futuretasticdecor.lime_glowing_steel_block": "Lime Glowing Steel Block",
+  "block.futuretasticdecor.green_glowing_steel_block": "Green Glowing Steel Block",
+  "block.futuretasticdecor.cyan_glowing_steel_block": "Cyan Glowing Steel Block",
+  "block.futuretasticdecor.light_blue_glowing_steel_block": "Light Blue Glowing Steel Block",
+  "block.futuretasticdecor.blue_glowing_steel_block": "Blue Glowing Steel Block",
+  "block.futuretasticdecor.purple_glowing_steel_block": "Purple Glowing Steel Block",
+  "block.futuretasticdecor.magenta_glowing_steel_block": "Magenta Glowing Steel Block",
+  "block.futuretasticdecor.pink_glowing_steel_block": "Pink Glowing Steel Block",
 
   "futuretasticdecor.configuration.title": "FuturetasticDecor Configs",
   "futuretasticdecor.configuration.section.futuretasticdecor.common.toml": "FuturetasticDecor Configs",
