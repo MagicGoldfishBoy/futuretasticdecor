@@ -26,6 +26,9 @@ public class ModelDatagen extends ModelProvider {
     }
 
     protected void registerMetalModels(BlockModelGenerators blockModels, ItemModelGenerators itemModels) {
+        itemModels.generateFlatItem(MetalRegistry.STEEL_ALLOY.get(), ModelTemplates.FLAT_ITEM);
+        itemModels.generateFlatItem(MetalRegistry.STEEL_INGOT.get(), ModelTemplates.FLAT_ITEM);
+        itemModels.generateFlatItem(MetalRegistry.STEEL_NUGGET.get(), ModelTemplates.FLAT_ITEM);
         blockModels.createTrivialCube(MetalRegistry.STEEL_BLOCK.get());
     }
 }

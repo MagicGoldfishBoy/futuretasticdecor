@@ -2,6 +2,10 @@
   "itemGroup.futuretasticdecor": "FuturetasticDecor",
 
   "item.futuretasticdecor.coke": "Coke",
+
+  "item.futuretasticdecor.steel_alloy": "Steel Alloy",
+  "item.futuretasticdecor.steel_ingot": "Steel Ingot",
+  "item.futuretasticdecor.steel_nugget": "Steel Nugget",
   "block.futuretasticdecor.steel_block": "Steel Block",
 
   "futuretasticdecor.configuration.title": "FuturetasticDecor Configs",

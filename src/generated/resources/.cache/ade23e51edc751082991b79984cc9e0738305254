@@ -1,6 +1,12 @@
-// 1.21.9	2025-10-02T11:21:29.621532426	Model Definitions - futuretasticdecor
+// 1.21.9	2025-10-02T11:28:22.621412048	Model Definitions - futuretasticdecor
 925609b41965f0157105a3206f84f5b7b62182c3 assets/futuretasticdecor/blockstates/steel_block.json
 d57a25c9ec2df6cd63c354d430b8a18cbd93e704 assets/futuretasticdecor/items/coke.json
+699c1f26da600f6d643224720aed9e0167b31e68 assets/futuretasticdecor/items/steel_alloy.json
 b935818749949deb058d2d57af3ad8e0e457931e assets/futuretasticdecor/items/steel_block.json
+af275b383c523756cb3e144e2f70d74a7991aca1 assets/futuretasticdecor/items/steel_ingot.json
+d0de6ab5599326f3d9a534ae2e5cdfb4a75322b9 assets/futuretasticdecor/items/steel_nugget.json
 85fb112919a0266d0ab43ee1b16e9dbc29bdf998 assets/futuretasticdecor/models/block/steel_block.json
 c4c4d5e88c091a7b5adf760a312a737f57b72c47 assets/futuretasticdecor/models/item/coke.json
+6fba406361e02a195609ebd594ec3e1b2fdcc8a9 assets/futuretasticdecor/models/item/steel_alloy.json
+c0ce237914aaec233ee2876006ad91b33552a036 assets/futuretasticdecor/models/item/steel_ingot.json
+7353e899a14969f603f80b3843e57295e77bd89a assets/futuretasticdecor/models/item/steel_nugget.json
