@@ -5,6 +5,7 @@ import java.util.concurrent.CompletableFuture;
 
 import com.fasterxml.jackson.annotation.JsonFormat.Shape;
 import com.magicgoldfishboy.futuretasticdecor.registry.CraftingMaterialRegistry;
+import com.magicgoldfishboy.futuretasticdecor.registry.GlowBlockRegistry;
 import com.magicgoldfishboy.futuretasticdecor.registry.MetalRegistry;
 
 import net.minecraft.WorldVersion.Simple;
@@ -43,6 +44,7 @@ public class RecipeDatagen extends RecipeProvider {
     protected void buildRecipes() {
         registerMaterialRecipes();
         registerMetalRecipes();
+        registerGlowBlockRecipes();
     }
 
     protected void registerMaterialRecipes() {
@@ -159,7 +161,6 @@ public class RecipeDatagen extends RecipeProvider {
             .unlockedBy("has_pink_dye", has(Items.PINK_DYE))
             .save(this.output, "pink_stardust_powder_from_stardust_and_pink_dye");
     }
-
     protected void registerMetalRecipes() {
 
         ShapelessRecipeBuilder.shapeless(this.registries.lookupOrThrow(Registries.ITEM), RecipeCategory.MISC, MetalRegistry.STEEL_ALLOY.get(), 2)
@@ -364,6 +365,17 @@ public class RecipeDatagen extends RecipeProvider {
             .unlockedBy("has_pink_stardust_powder", has(CraftingMaterialRegistry.PINK_STARDUST_POWDER.get()))
             .save(this.output, "pink_glowing_steel_block_from_steel_block_and_pink_glowstone");
     
+    }
+    protected void registerGlowBlockRecipes() {
+
+        ShapelessRecipeBuilder.shapeless(this.registries.lookupOrThrow(Registries.ITEM), RecipeCategory.BUILDING_BLOCKS, GlowBlockRegistry.GLOW_BLOCK_ITEM.get(), 4)
+            .requires(Items.REDSTONE_LAMP)
+            .requires(Items.REDSTONE)
+            .requires(CraftingMaterialRegistry.STARDUST_POWDER.get())
+            .unlockedBy("has_redstone_lamp", has(Items.REDSTONE_LAMP))
+            .unlockedBy("has_redstone", has(Items.REDSTONE))
+            .unlockedBy("has_stardust_powder", has(CraftingMaterialRegistry.STARDUST_POWDER.get()))
+            .save(this.output);
     }
     public static class Runner extends RecipeProvider.Runner {
 

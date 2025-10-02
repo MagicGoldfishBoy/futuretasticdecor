@@ -2,6 +2,7 @@ package com.magicgoldfishboy.futuretasticdecor.datagen;
 
 import com.magicgoldfishboy.futuretasticdecor.FuturetasticDecor;
 import com.magicgoldfishboy.futuretasticdecor.registry.CraftingMaterialRegistry;
+import com.magicgoldfishboy.futuretasticdecor.registry.GlowBlockRegistry;
 import com.magicgoldfishboy.futuretasticdecor.registry.MetalRegistry;
 import net.minecraft.client.data.models.BlockModelGenerators;
 import net.minecraft.client.data.models.ItemModelGenerators;
@@ -19,6 +20,7 @@ public class ModelDatagen extends ModelProvider {
     protected void registerModels(@Nonnull BlockModelGenerators blockModels, @Nonnull ItemModelGenerators itemModels) {
         registerMaterialModels(blockModels, itemModels);
         registerMetalModels(blockModels, itemModels);
+        registerGlowBlockModels(blockModels, itemModels);
     }
 
     protected void registerMaterialModels(BlockModelGenerators blockModels, ItemModelGenerators itemModels) {
@@ -40,6 +42,7 @@ public class ModelDatagen extends ModelProvider {
     }
 
     protected void registerMetalModels(BlockModelGenerators blockModels, ItemModelGenerators itemModels) {
+
         itemModels.generateFlatItem(MetalRegistry.STEEL_ALLOY.get(), ModelTemplates.FLAT_ITEM);
         itemModels.generateFlatItem(MetalRegistry.STEEL_INGOT.get(), ModelTemplates.FLAT_ITEM);
         itemModels.generateFlatItem(MetalRegistry.STEEL_NUGGET.get(), ModelTemplates.FLAT_ITEM);
@@ -74,5 +77,10 @@ public class ModelDatagen extends ModelProvider {
         blockModels.createTrivialCube(MetalRegistry.MAGENTA_GLOWING_STEEL_BLOCK.get());
 
         blockModels.createTrivialCube(MetalRegistry.PINK_GLOWING_STEEL_BLOCK.get());
+    }
+    protected void registerGlowBlockModels(BlockModelGenerators blockModels, ItemModelGenerators itemModels) {
+
+        blockModels.createTrivialCube(GlowBlockRegistry.GLOW_BLOCK.get());
+
     }
 }

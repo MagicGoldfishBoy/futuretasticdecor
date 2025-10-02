@@ -1,6 +1,7 @@
-// 1.21.9	2025-10-02T14:44:33.19647426	Loot Tables
+// 1.21.9	2025-10-02T15:13:23.204049	Loot Tables
 517edc3cf3a00e286be6e2bcade0cb63529eb49d data/futuretasticdecor/loot_table/blocks/blue_glowing_steel_block.json
 446ad414886dd0f6fbacc943a0d22a09f3962a2e data/futuretasticdecor/loot_table/blocks/cyan_glowing_steel_block.json
+8632d482daf6d67f2679ad67e2c0db8e9edec04e data/futuretasticdecor/loot_table/blocks/glow_block.json
 d1b25c31a18c2e702a5003c2d239511324e8f266 data/futuretasticdecor/loot_table/blocks/glowing_steel_block.json
 d1ce7ececea11267eadd0af7a6f3a2c4932482e9 data/futuretasticdecor/loot_table/blocks/green_glowing_steel_block.json
 71fda365a8b508828900999c705b77abbbe9b4ae data/futuretasticdecor/loot_table/blocks/light_blue_glowing_steel_block.json

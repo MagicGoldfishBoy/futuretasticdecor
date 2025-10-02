@@ -1,5 +1,7 @@
-// 1.21.9	2025-10-02T14:44:33.193976476	SpooktasticDecor Recipes
+// 1.21.9	2025-10-02T15:13:23.201259148	SpooktasticDecor Recipes
+dbd17c3e7d648a5475e0bf511373dab3c52754c7 data/futuretasticdecor/advancement/recipes/building_blocks/glow_block.json
 3f59ebd6fd48be08a304a6a49a1b02148f10a18e data/futuretasticdecor/advancement/recipes/misc/stardust_powder.json
+614a0e861671c2d912d0d4d3409a5f8c556dc4ec data/futuretasticdecor/recipe/glow_block.json
 16a105dbfb97e73c1aa7ce5e4d524561dcef9df0 data/futuretasticdecor/recipe/stardust_powder.json
 62d281e2212238d86fee26331fa73bf065669b1a data/minecraft/advancement/recipes/building_blocks/blue_glowing_steel_block_from_steel_block_and_blue_glowstone.json
 ef460cf409fb184c92f2adcded4789587efaaaf8 data/minecraft/advancement/recipes/building_blocks/cyan_glowing_steel_block_from_steel_block_and_cyan_glowstone.json

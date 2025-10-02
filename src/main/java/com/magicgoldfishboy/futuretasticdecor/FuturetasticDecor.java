@@ -4,6 +4,7 @@ import org.slf4j.Logger;
 
 import com.magicgoldfishboy.futuretasticdecor.datagen.Datagen;
 import com.magicgoldfishboy.futuretasticdecor.registry.CraftingMaterialRegistry;
+import com.magicgoldfishboy.futuretasticdecor.registry.GlowBlockRegistry;
 import com.magicgoldfishboy.futuretasticdecor.registry.MetalRegistry;
 import com.mojang.logging.LogUtils;
 
@@ -78,6 +79,8 @@ public class FuturetasticDecor {
         CraftingMaterialRegistry.registerCraftingMaterials();
 
         MetalRegistry.registerMetals();
+
+        GlowBlockRegistry.registerGlowBlocks();
 
 
         NeoForge.EVENT_BUS.register(this);

@@ -1,0 +1,13 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "category": "building",
+  "ingredients": [
+    "minecraft:redstone_lamp",
+    "minecraft:redstone",
+    "futuretasticdecor:stardust_powder"
+  ],
+  "result": {
+    "count": 4,
+    "id": "futuretasticdecor:glow_block"
+  }
+}
