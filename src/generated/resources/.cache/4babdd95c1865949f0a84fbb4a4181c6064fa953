@@ -1,4 +1,6 @@
-// 1.21.9	2025-10-02T12:43:49.852029385	SpooktasticDecor Recipes
+// 1.21.9	2025-10-02T13:08:11.244060889	SpooktasticDecor Recipes
+3f59ebd6fd48be08a304a6a49a1b02148f10a18e data/futuretasticdecor/advancement/recipes/misc/stardust_powder.json
+16a105dbfb97e73c1aa7ce5e4d524561dcef9df0 data/futuretasticdecor/recipe/stardust_powder.json
 af11998b9a040e0fe802f0a98d81956d1b890171 data/minecraft/advancement/recipes/building_blocks/steel_slab_from_steel_block.json
 1ab71f8b0418576454b1da36d57e67edb977fd67 data/minecraft/advancement/recipes/building_blocks/steel_slab_from_steel_block_stonecutter.json
 ce3b498028955cb35a04b1abaca5b2622febace4 data/minecraft/advancement/recipes/building_blocks/steel_stairs_from_steel_block.json

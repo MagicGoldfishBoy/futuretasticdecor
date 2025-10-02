@@ -1,8 +1,9 @@
-// 1.21.9	2025-10-02T12:43:49.854065854	Model Definitions - futuretasticdecor
+// 1.21.9	2025-10-02T13:08:11.245349355	Model Definitions - futuretasticdecor
 925609b41965f0157105a3206f84f5b7b62182c3 assets/futuretasticdecor/blockstates/steel_block.json
 28c609615f15e88fc38519b24dd080da0b25c659 assets/futuretasticdecor/blockstates/steel_slab.json
 a3669f1e9c4ccff5d72bb21212a8824403ef1a66 assets/futuretasticdecor/blockstates/steel_stairs.json
 d57a25c9ec2df6cd63c354d430b8a18cbd93e704 assets/futuretasticdecor/items/coke.json
+37f16d682ff12bcdcf8bc35110adc73a77a20dcc assets/futuretasticdecor/items/stardust_powder.json
 699c1f26da600f6d643224720aed9e0167b31e68 assets/futuretasticdecor/items/steel_alloy.json
 b935818749949deb058d2d57af3ad8e0e457931e assets/futuretasticdecor/items/steel_block.json
 af275b383c523756cb3e144e2f70d74a7991aca1 assets/futuretasticdecor/items/steel_ingot.json
@@ -16,6 +17,7 @@ d0de6ab5599326f3d9a534ae2e5cdfb4a75322b9 assets/futuretasticdecor/items/steel_nu
 b3805a5324b5f25724b06dc6aabfa9a3fb1f178f assets/futuretasticdecor/models/block/steel_stairs_inner.json
 6ac2db9c92c2ce569476e0f3475623bc8dd314d9 assets/futuretasticdecor/models/block/steel_stairs_outer.json
 c4c4d5e88c091a7b5adf760a312a737f57b72c47 assets/futuretasticdecor/models/item/coke.json
+27f841812e8474de2380f052bd0a22e28dc392f0 assets/futuretasticdecor/models/item/stardust_powder.json
 6fba406361e02a195609ebd594ec3e1b2fdcc8a9 assets/futuretasticdecor/models/item/steel_alloy.json
 c0ce237914aaec233ee2876006ad91b33552a036 assets/futuretasticdecor/models/item/steel_ingot.json
 7353e899a14969f603f80b3843e57295e77bd89a assets/futuretasticdecor/models/item/steel_nugget.json

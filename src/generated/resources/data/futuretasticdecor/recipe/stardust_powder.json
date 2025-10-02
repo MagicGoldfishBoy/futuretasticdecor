@@ -1,0 +1,18 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "misc",
+  "key": {
+    "#": "minecraft:glowstone_dust",
+    "$": "minecraft:soul_sand",
+    "%": "minecraft:magma_block"
+  },
+  "pattern": [
+    "%#%",
+    "#$#",
+    "%#%"
+  ],
+  "result": {
+    "count": 4,
+    "id": "futuretasticdecor:stardust_powder"
+  }
+}

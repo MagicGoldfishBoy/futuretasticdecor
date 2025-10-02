@@ -8,6 +8,7 @@ import com.magicgoldfishboy.futuretasticdecor.registry.CraftingMaterialRegistry;
 import com.magicgoldfishboy.futuretasticdecor.registry.MetalRegistry;
 
 import net.minecraft.WorldVersion.Simple;
+import net.minecraft.client.resources.model.Material;
 import net.minecraft.core.HolderLookup;
 import net.minecraft.core.HolderLookup.Provider;
 import net.minecraft.core.registries.Registries;
@@ -67,6 +68,19 @@ public class RecipeDatagen extends RecipeProvider {
         .unlockedBy("has_coal", has(Items.COAL))
         .unlockedBy("has_charcoal", has(Items.CHARCOAL))
         .save(this.output, "coke_from_blasting");
+
+
+        ShapedRecipeBuilder.shaped(this.registries.lookupOrThrow(Registries.ITEM), RecipeCategory.MISC, CraftingMaterialRegistry.STARDUST_POWDER.get(), 4)
+            .pattern("%#%")
+            .pattern("#$#")
+            .pattern("%#%")
+            .define('#', Items.GLOWSTONE_DUST)
+            .define('$', Items.SOUL_SAND)
+            .define('%', Items.MAGMA_BLOCK)
+            .unlockedBy("has_glowstone_dust", has(Items.GLOWSTONE_DUST))
+            .unlockedBy("has_soul_sand", has(Items.SOUL_SAND))
+            .unlockedBy("has_magma_block", has(Items.MAGMA_BLOCK))
+            .save(this.output);
     }
 
     protected void registerMetalRecipes() {
