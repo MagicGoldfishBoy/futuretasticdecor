@@ -3,9 +3,11 @@ package com.magicgoldfishboy.futuretasticdecor.datagen;
 import java.rmi.registry.Registry;
 import java.util.concurrent.CompletableFuture;
 
+import com.fasterxml.jackson.annotation.JsonFormat.Shape;
 import com.magicgoldfishboy.futuretasticdecor.registry.CraftingMaterialRegistry;
 import com.magicgoldfishboy.futuretasticdecor.registry.MetalRegistry;
 
+import net.minecraft.WorldVersion.Simple;
 import net.minecraft.core.HolderLookup;
 import net.minecraft.core.HolderLookup.Provider;
 import net.minecraft.core.registries.Registries;
@@ -41,6 +43,7 @@ public class RecipeDatagen extends RecipeProvider {
     }
 
     protected void registerMaterialRecipes() {
+
         SimpleCookingRecipeBuilder.smelting(
             this.tag(COALS_TAG),
             RecipeCategory.MISC, 
@@ -51,15 +54,76 @@ public class RecipeDatagen extends RecipeProvider {
         .unlockedBy("has_coal", has(Items.COAL))
         .unlockedBy("has_charcoal", has(Items.CHARCOAL))
         .save(this.output, "coke_from_smelting");
+
+        SimpleCookingRecipeBuilder.blasting(
+            this.tag(COALS_TAG),
+            RecipeCategory.MISC, 
+            CraftingMaterialRegistry.COKE.get(),
+            0.1f,
+            100
+        )
+        .unlockedBy("has_coal", has(Items.COAL))
+        .unlockedBy("has_charcoal", has(Items.CHARCOAL))
+        .save(this.output, "coke_from_blasting");
     }
 
     protected void registerMetalRecipes() {
+
         ShapelessRecipeBuilder.shapeless(this.registries.lookupOrThrow(Registries.ITEM), RecipeCategory.MISC, MetalRegistry.STEEL_ALLOY.get(), 2)
             .requires(CraftingMaterialRegistry.COKE.get())
             .requires(Items.RAW_IRON)
             .unlockedBy("has_coke", has(CraftingMaterialRegistry.COKE.get()))
             .unlockedBy("has_raw_iron", has(Items.RAW_IRON))
             .save(this.output, "steel_alloy_from_coke_and_iron_ingot");
+
+
+        SimpleCookingRecipeBuilder.smelting(
+            Ingredient.of(MetalRegistry.STEEL_ALLOY.get()),
+            RecipeCategory.MISC, 
+            MetalRegistry.STEEL_INGOT.get(),
+            0.1f,
+            200
+        )
+        .unlockedBy("has_steel_alloy", has(MetalRegistry.STEEL_ALLOY.get()))
+        .save(this.output, "steel_ingot_from_smelting");
+
+        SimpleCookingRecipeBuilder.blasting(
+            Ingredient.of(MetalRegistry.STEEL_ALLOY.get()),
+            RecipeCategory.MISC, 
+            MetalRegistry.STEEL_INGOT.get(),
+            0.1f,
+            100
+        )
+        .unlockedBy("has_steel_alloy", has(MetalRegistry.STEEL_ALLOY.get()))
+        .save(this.output, "steel_ingot_from_blasting");
+
+        ShapelessRecipeBuilder.shapeless(this.registries.lookupOrThrow(Registries.ITEM), RecipeCategory.MISC, MetalRegistry.STEEL_INGOT.get(), 9)
+            .requires(MetalRegistry.STEEL_BLOCK.get())
+            .unlockedBy("has_steel_block", has(MetalRegistry.STEEL_BLOCK.get()))
+            .save(this.output, "steel_ingot_from_steel_block");
+
+        ShapedRecipeBuilder.shaped(this.registries.lookupOrThrow(Registries.ITEM), RecipeCategory.MISC, MetalRegistry.STEEL_INGOT.get())
+            .pattern("###")
+            .pattern("###")
+            .pattern("###")
+            .define('#', MetalRegistry.STEEL_NUGGET.get())
+            .unlockedBy("has_steel_nugget", has(MetalRegistry.STEEL_NUGGET.get()))
+            .save(this.output, "steel_ingot_from_steel_nugget");
+
+            
+        ShapedRecipeBuilder.shaped(this.registries.lookupOrThrow(Registries.ITEM), RecipeCategory.MISC, MetalRegistry.STEEL_BLOCK.get())
+            .pattern("###")
+            .pattern("###")
+            .pattern("###")
+            .define('#', MetalRegistry.STEEL_INGOT.get())
+            .unlockedBy("has_steel_ingot", has(MetalRegistry.STEEL_INGOT.get()))
+            .save(this.output, "steel_block_from_steel_ingot");
+
+
+        ShapelessRecipeBuilder.shapeless(this.registries.lookupOrThrow(Registries.ITEM), RecipeCategory.MISC, MetalRegistry.STEEL_NUGGET.get(), 9)
+            .requires(MetalRegistry.STEEL_INGOT.get())
+            .unlockedBy("has_steel_ingot", has(MetalRegistry.STEEL_INGOT.get()))
+            .save(this.output, "steel_nugget_from_steel_ingot");
     
     }
     public static class Runner extends RecipeProvider.Runner {
