@@ -2,6 +2,7 @@ package com.magicgoldfishboy.futuretasticdecor;
 
 import org.slf4j.Logger;
 
+import com.magicgoldfishboy.futuretasticdecor.datagen.Datagen;
 import com.magicgoldfishboy.futuretasticdecor.registry.CraftingMaterialRegistry;
 import com.magicgoldfishboy.futuretasticdecor.registry.MetalRegistry;
 import com.mojang.logging.LogUtils;
@@ -26,6 +27,7 @@ import net.neoforged.fml.config.ModConfig;
 import net.neoforged.fml.ModContainer;
 import net.neoforged.fml.event.lifecycle.FMLCommonSetupEvent;
 import net.neoforged.neoforge.common.NeoForge;
+import net.neoforged.neoforge.data.event.GatherDataEvent;
 import net.neoforged.neoforge.event.BuildCreativeModeTabContentsEvent;
 import net.neoforged.neoforge.event.server.ServerStartingEvent;
 import net.neoforged.neoforge.registries.DeferredBlock;
@@ -80,6 +82,8 @@ public class FuturetasticDecor {
 
         NeoForge.EVENT_BUS.register(this);
 
+        modEventBus.addListener(this::gatherData);
+
         modContainer.registerConfig(ModConfig.Type.COMMON, Config.SPEC);
     }
 
@@ -100,5 +104,10 @@ public class FuturetasticDecor {
     public void onServerStarting(ServerStartingEvent event) {
         // Do something when the server starts
         LOGGER.info("HELLO from server starting");
+    }
+
+    public void gatherData(GatherDataEvent.Client event) {
+        Datagen datagen = new Datagen();
+        datagen.gatherData(event);
     }
 }
