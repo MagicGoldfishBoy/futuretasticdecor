@@ -1,0 +1,5 @@
+// 1.21.9	2025-10-02T11:50:47.753268608	SpooktasticDecor Recipes
+58617f58d676dbd70fe2fa4deca6521841f24bdc data/minecraft/advancement/recipes/misc/coke_from_smelting.json
+ea59f70ab60a070c93f05d53600cab11f2580779 data/minecraft/advancement/recipes/misc/steel_alloy_from_coke_and_iron_ingot.json
+208b656ef169c264c52798154b5b5a06eb71f3fb data/minecraft/recipe/coke_from_smelting.json
+8bd23162eeb9a2dd397046c36fe4ffb8022f61fc data/minecraft/recipe/steel_alloy_from_coke_and_iron_ingot.json

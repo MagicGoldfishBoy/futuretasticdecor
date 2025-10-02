@@ -1,0 +1,11 @@
+{
+  "type": "minecraft:smelting",
+  "category": "misc",
+  "cookingtime": 150,
+  "experience": 0.1,
+  "ingredient": "#minecraft:coals",
+  "result": {
+    "count": 1,
+    "id": "futuretasticdecor:coke"
+  }
+}

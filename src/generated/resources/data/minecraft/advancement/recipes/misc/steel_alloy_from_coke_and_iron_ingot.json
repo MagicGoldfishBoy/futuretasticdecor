@@ -1,0 +1,43 @@
+{
+  "parent": "minecraft:recipes/root",
+  "criteria": {
+    "has_coke": {
+      "conditions": {
+        "items": [
+          {
+            "items": "futuretasticdecor:coke"
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    },
+    "has_raw_iron": {
+      "conditions": {
+        "items": [
+          {
+            "items": "minecraft:raw_iron"
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    },
+    "has_the_recipe": {
+      "conditions": {
+        "recipe": "minecraft:steel_alloy_from_coke_and_iron_ingot"
+      },
+      "trigger": "minecraft:recipe_unlocked"
+    }
+  },
+  "requirements": [
+    [
+      "has_the_recipe",
+      "has_coke",
+      "has_raw_iron"
+    ]
+  ],
+  "rewards": {
+    "recipes": [
+      "minecraft:steel_alloy_from_coke_and_iron_ingot"
+    ]
+  }
+}

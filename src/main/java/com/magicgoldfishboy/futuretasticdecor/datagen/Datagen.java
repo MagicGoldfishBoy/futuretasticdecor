@@ -9,7 +9,7 @@ import net.neoforged.neoforge.data.event.GatherDataEvent;
 public class Datagen {
         public void gatherData(GatherDataEvent event) {
         System.out.println("Datagen event fired!");
-        // event.createProvider(RecipeGenerator.Runner::new);
+        event.createProvider(RecipeDatagen.Runner::new);
         event.createProvider(ModelDatagen::new);
         // event.createProvider((output, lookupProvider) -> new LootTableProvider(
         //     output,
