@@ -1,0 +1,13 @@
+{
+  "itemGroup.futuretasticdecor": "Example Mod Tab",
+  "block.futuretasticdecor.example_block": "Example Block",
+  "item.futuretasticdecor.example_item": "Example Item",
+
+  "futuretasticdecor.configuration.title": "FuturetasticDecor Configs",
+  "futuretasticdecor.configuration.section.futuretasticdecor.common.toml": "FuturetasticDecor Configs",
+  "futuretasticdecor.configuration.section.futuretasticdecor.common.toml.title": "FuturetasticDecor Configs",
+  "futuretasticdecor.configuration.items": "Item List",
+  "futuretasticdecor.configuration.logDirtBlock": "Log Dirt Block",
+  "futuretasticdecor.configuration.magicNumberIntroduction": "Magic Number Text",
+  "futuretasticdecor.configuration.magicNumber": "Magic Number"
+}

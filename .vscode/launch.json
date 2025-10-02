@@ -1,0 +1,93 @@
+{
+  "version": "0.2.0",
+  "configurations": [
+    {
+      "type": "java",
+      "request": "launch",
+      "name": "Client",
+      "presentation": {
+        "group": "Mod Development - futuretasticdecor",
+        "order": 0
+      },
+      "projectName": "futuretasticdecor",
+      "mainClass": "net.neoforged.devlaunch.Main",
+      "args": [
+        "@/home/goldfishboy/Documents/minecraft mod stuff/futuretasticdecor/build/moddev/clientRunProgramArgs.txt"
+      ],
+      "vmArgs": [
+        "@/home/goldfishboy/Documents/minecraft mod stuff/futuretasticdecor/build/moddev/clientRunVmArgs.txt",
+        "-Dfml.modFolders\u003dfuturetasticdecor%%/home/goldfishboy/Documents/minecraft mod stuff/futuretasticdecor/bin/main"
+      ],
+      "cwd": "${workspaceFolder}/run",
+      "env": {},
+      "console": "internalConsole",
+      "shortenCommandLine": "none"
+    },
+    {
+      "type": "java",
+      "request": "launch",
+      "name": "Data",
+      "presentation": {
+        "group": "Mod Development - futuretasticdecor",
+        "order": 1
+      },
+      "projectName": "futuretasticdecor",
+      "mainClass": "net.neoforged.devlaunch.Main",
+      "args": [
+        "@/home/goldfishboy/Documents/minecraft mod stuff/futuretasticdecor/build/moddev/dataRunProgramArgs.txt"
+      ],
+      "vmArgs": [
+        "@/home/goldfishboy/Documents/minecraft mod stuff/futuretasticdecor/build/moddev/dataRunVmArgs.txt",
+        "-Dfml.modFolders\u003dfuturetasticdecor%%/home/goldfishboy/Documents/minecraft mod stuff/futuretasticdecor/bin/main"
+      ],
+      "cwd": "${workspaceFolder}/run",
+      "env": {},
+      "console": "internalConsole",
+      "shortenCommandLine": "none"
+    },
+    {
+      "type": "java",
+      "request": "launch",
+      "name": "GameTestServer",
+      "presentation": {
+        "group": "Mod Development - futuretasticdecor",
+        "order": 2
+      },
+      "projectName": "futuretasticdecor",
+      "mainClass": "net.neoforged.devlaunch.Main",
+      "args": [
+        "@/home/goldfishboy/Documents/minecraft mod stuff/futuretasticdecor/build/moddev/gameTestServerRunProgramArgs.txt"
+      ],
+      "vmArgs": [
+        "@/home/goldfishboy/Documents/minecraft mod stuff/futuretasticdecor/build/moddev/gameTestServerRunVmArgs.txt",
+        "-Dfml.modFolders\u003dfuturetasticdecor%%/home/goldfishboy/Documents/minecraft mod stuff/futuretasticdecor/bin/main"
+      ],
+      "cwd": "${workspaceFolder}/run",
+      "env": {},
+      "console": "internalConsole",
+      "shortenCommandLine": "none"
+    },
+    {
+      "type": "java",
+      "request": "launch",
+      "name": "Server",
+      "presentation": {
+        "group": "Mod Development - futuretasticdecor",
+        "order": 3
+      },
+      "projectName": "futuretasticdecor",
+      "mainClass": "net.neoforged.devlaunch.Main",
+      "args": [
+        "@/home/goldfishboy/Documents/minecraft mod stuff/futuretasticdecor/build/moddev/serverRunProgramArgs.txt"
+      ],
+      "vmArgs": [
+        "@/home/goldfishboy/Documents/minecraft mod stuff/futuretasticdecor/build/moddev/serverRunVmArgs.txt",
+        "-Dfml.modFolders\u003dfuturetasticdecor%%/home/goldfishboy/Documents/minecraft mod stuff/futuretasticdecor/bin/main"
+      ],
+      "cwd": "${workspaceFolder}/run",
+      "env": {},
+      "console": "internalConsole",
+      "shortenCommandLine": "none"
+    }
+  ]
+}
