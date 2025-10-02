@@ -2,6 +2,7 @@ package com.magicgoldfishboy.futuretasticdecor;
 
 import org.slf4j.Logger;
 
+import com.magicgoldfishboy.futuretasticdecor.registry.CraftingMaterialRegistry;
 import com.magicgoldfishboy.futuretasticdecor.registry.MetalRegistry;
 import com.mojang.logging.LogUtils;
 
@@ -47,23 +48,18 @@ public class FuturetasticDecor {
     public static final DeferredRegister<CreativeModeTab> CREATIVE_MODE_TABS = DeferredRegister.create(Registries.CREATIVE_MODE_TAB, MODID);
 
 
-    public static final DeferredBlock<Block> EXAMPLE_BLOCK = BLOCKS.registerSimpleBlock("example_block", BlockBehaviour.Properties.of().mapColor(MapColor.STONE));
-
-    public static final DeferredItem<BlockItem> EXAMPLE_BLOCK_ITEM = ITEMS.registerSimpleBlockItem("example_block", EXAMPLE_BLOCK);
-
-
-    public static final DeferredItem<Item> EXAMPLE_ITEM = ITEMS.registerSimpleItem("example_item", new Item.Properties().food(new FoodProperties.Builder()
-            .alwaysEdible().nutrition(1).saturationModifier(2f).build()));
-
-
-    public static final DeferredHolder<CreativeModeTab, CreativeModeTab> EXAMPLE_TAB = CREATIVE_MODE_TABS.register("example_tab", () -> CreativeModeTab.builder()
+    public static final DeferredHolder<CreativeModeTab, CreativeModeTab> EXAMPLE_TAB = CREATIVE_MODE_TABS.register("futuretastic_decor", () -> CreativeModeTab.builder()
             .title(Component.translatable("itemGroup.futuretasticdecor"))
             .withTabsBefore(CreativeModeTabs.COMBAT)
-            .icon(() -> EXAMPLE_ITEM.get().getDefaultInstance())
+            .icon(() -> MetalRegistry.STEEL_BLOCK_ITEM.get().getDefaultInstance())
             .displayItems((parameters, output) -> {
-                output.accept(EXAMPLE_ITEM.get());
+                output.acceptAll(
+                ITEMS.getEntries().stream()
+                    .map(sup -> sup.get().getDefaultInstance())
+                    .filter(itemStack -> itemStack != null && !itemStack.isEmpty())
+                    .toList()
+            );
             }).build());
-
 
     public FuturetasticDecor(IEventBus modEventBus, ModContainer modContainer) {
 
@@ -76,12 +72,13 @@ public class FuturetasticDecor {
 
         CREATIVE_MODE_TABS.register(modEventBus);
 
+
+        CraftingMaterialRegistry.registerCraftingMaterials();
+
         MetalRegistry.registerMetals();
 
 
         NeoForge.EVENT_BUS.register(this);
-
-        modEventBus.addListener(this::addCreative);
 
         modContainer.registerConfig(ModConfig.Type.COMMON, Config.SPEC);
     }
@@ -97,12 +94,6 @@ public class FuturetasticDecor {
         LOGGER.info("{}{}", Config.MAGIC_NUMBER_INTRODUCTION.get(), Config.MAGIC_NUMBER.getAsInt());
 
         Config.ITEM_STRINGS.get().forEach((item) -> LOGGER.info("ITEM >> {}", item));
-    }
-
-    private void addCreative(BuildCreativeModeTabContentsEvent event) {
-        if (event.getTabKey() == CreativeModeTabs.BUILDING_BLOCKS) {
-            event.accept(EXAMPLE_BLOCK_ITEM);
-        }
     }
 
     @SubscribeEvent
