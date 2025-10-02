@@ -52,5 +52,7 @@ public class ModelDatagen extends ModelProvider {
         ;
 
         blockModels.createTrivialCube(MetalRegistry.GLOWING_STEEL_BLOCK.get());
+
+        blockModels.createTrivialCube(MetalRegistry.RED_GLOWING_STEEL_BLOCK.get());
     }
 }

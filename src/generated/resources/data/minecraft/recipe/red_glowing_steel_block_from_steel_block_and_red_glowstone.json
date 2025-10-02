@@ -3,7 +3,7 @@
   "category": "building",
   "key": {
     "#": "futuretasticdecor:steel_ingot",
-    "$": "futuretasticdecor:stardust_powder"
+    "$": "futuretasticdecor:red_stardust_powder"
   },
   "pattern": [
     "###",
@@ -12,6 +12,6 @@
   ],
   "result": {
     "count": 1,
-    "id": "futuretasticdecor:glowing_steel_block"
+    "id": "futuretasticdecor:red_glowing_steel_block"
   }
 }

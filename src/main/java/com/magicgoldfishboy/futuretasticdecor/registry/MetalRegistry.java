@@ -35,6 +35,9 @@ public class MetalRegistry {
     public static DeferredBlock<Block> GLOWING_STEEL_BLOCK;
     public static DeferredItem<BlockItem> GLOWING_STEEL_BLOCK_ITEM;
 
+    public static DeferredBlock<Block> RED_GLOWING_STEEL_BLOCK;
+    public static DeferredItem<BlockItem> RED_GLOWING_STEEL_BLOCK_ITEM;
+
 
     public static void registerMetals() {
         registerSteel();
@@ -117,6 +120,22 @@ public class MetalRegistry {
         GLOWING_STEEL_BLOCK_ITEM = FuturetasticDecor.ITEMS.registerSimpleBlockItem(
             "glowing_steel_block", 
             GLOWING_STEEL_BLOCK
+        );
+
+        RED_GLOWING_STEEL_BLOCK = FuturetasticDecor.BLOCKS.register(
+            "red_glowing_steel_block", 
+            registryName -> new Block(BlockBehaviour.Properties.of()
+                .setId(ResourceKey.create(Registries.BLOCK, registryName))
+                .strength(STEEL_DESTROY_TIME, STEEL_EXPLOSION_RESISTANCE)
+                .requiresCorrectToolForDrops()
+                .lightLevel(state -> 9)
+                .sound(SoundType.METAL)
+                .friction(0.5f)
+            )
+        );
+        RED_GLOWING_STEEL_BLOCK_ITEM = FuturetasticDecor.ITEMS.registerSimpleBlockItem(
+            "red_glowing_steel_block", 
+            RED_GLOWING_STEEL_BLOCK
         );
     }
     
