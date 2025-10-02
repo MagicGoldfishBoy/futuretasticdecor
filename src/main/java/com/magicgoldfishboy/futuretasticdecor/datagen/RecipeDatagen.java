@@ -81,6 +81,83 @@ public class RecipeDatagen extends RecipeProvider {
             .unlockedBy("has_soul_sand", has(Items.SOUL_SAND))
             .unlockedBy("has_magma_block", has(Items.MAGMA_BLOCK))
             .save(this.output);
+
+        ShapelessRecipeBuilder.shapeless(this.registries.lookupOrThrow(Registries.ITEM), RecipeCategory.MISC, CraftingMaterialRegistry.RED_STARDUST_POWDER.get())
+            .requires(CraftingMaterialRegistry.STARDUST_POWDER.get())
+            .requires(Items.RED_DYE)
+            .unlockedBy("has_stardust_powder", has(CraftingMaterialRegistry.STARDUST_POWDER.get()))
+            .unlockedBy("has_red_dye", has(Items.RED_DYE))
+            .save(this.output, "red_stardust_powder_from_stardust_and_red_dye");
+
+        ShapelessRecipeBuilder.shapeless(this.registries.lookupOrThrow(Registries.ITEM), RecipeCategory.MISC, CraftingMaterialRegistry.ORANGE_STARDUST_POWDER.get())
+            .requires(CraftingMaterialRegistry.STARDUST_POWDER.get())
+            .requires(Items.ORANGE_DYE)
+            .unlockedBy("has_stardust_powder", has(CraftingMaterialRegistry.STARDUST_POWDER.get()))
+            .unlockedBy("has_orange_dye", has(Items.ORANGE_DYE))
+            .save(this.output, "orange_stardust_powder_from_stardust_and_orange_dye");
+
+        ShapelessRecipeBuilder.shapeless(this.registries.lookupOrThrow(Registries.ITEM), RecipeCategory.MISC, CraftingMaterialRegistry.YELLOW_STARDUST_POWDER.get())
+            .requires(CraftingMaterialRegistry.STARDUST_POWDER.get())
+            .requires(Items.YELLOW_DYE)
+            .unlockedBy("has_stardust_powder", has(CraftingMaterialRegistry.STARDUST_POWDER.get()))
+            .unlockedBy("has_yellow_dye", has(Items.YELLOW_DYE))
+            .save(this.output, "yellow_stardust_powder_from_stardust_and_yellow_dye");
+
+        ShapelessRecipeBuilder.shapeless(this.registries.lookupOrThrow(Registries.ITEM), RecipeCategory.MISC, CraftingMaterialRegistry.LIME_STARDUST_POWDER.get())
+            .requires(CraftingMaterialRegistry.STARDUST_POWDER.get())
+            .requires(Items.LIME_DYE)
+            .unlockedBy("has_stardust_powder", has(CraftingMaterialRegistry.STARDUST_POWDER.get()))
+            .unlockedBy("has_lime_dye", has(Items.LIME_DYE))
+            .save(this.output, "lime_stardust_powder_from_stardust_and_lime_dye");
+
+        ShapelessRecipeBuilder.shapeless(this.registries.lookupOrThrow(Registries.ITEM), RecipeCategory.MISC, CraftingMaterialRegistry.GREEN_STARDUST_POWDER.get())
+            .requires(CraftingMaterialRegistry.STARDUST_POWDER.get())
+            .requires(Items.GREEN_DYE)
+            .unlockedBy("has_stardust_powder", has(CraftingMaterialRegistry.STARDUST_POWDER.get()))
+            .unlockedBy("has_green_dye", has(Items.GREEN_DYE))
+            .save(this.output, "green_stardust_powder_from_stardust_and_green_dye");
+
+        ShapelessRecipeBuilder.shapeless(this.registries.lookupOrThrow(Registries.ITEM), RecipeCategory.MISC, CraftingMaterialRegistry.CYAN_STARDUST_POWDER.get())
+            .requires(CraftingMaterialRegistry.STARDUST_POWDER.get())
+            .requires(Items.CYAN_DYE)
+            .unlockedBy("has_stardust_powder", has(CraftingMaterialRegistry.STARDUST_POWDER.get()))
+            .unlockedBy("has_cyan_dye", has(Items.CYAN_DYE))
+            .save(this.output, "cyan_stardust_powder_from_stardust_and_cyan_dye");
+
+        ShapelessRecipeBuilder.shapeless(this.registries.lookupOrThrow(Registries.ITEM), RecipeCategory.MISC, CraftingMaterialRegistry.LIGHT_BLUE_STARDUST_POWDER.get())
+            .requires(CraftingMaterialRegistry.STARDUST_POWDER.get())
+            .requires(Items.LIGHT_BLUE_DYE)
+            .unlockedBy("has_stardust_powder", has(CraftingMaterialRegistry.STARDUST_POWDER.get()))
+            .unlockedBy("has_light_blue_dye", has(Items.LIGHT_BLUE_DYE))
+            .save(this.output, "light_blue_stardust_powder_from_stardust_and_light_blue_dye");
+
+        ShapelessRecipeBuilder.shapeless(this.registries.lookupOrThrow(Registries.ITEM), RecipeCategory.MISC, CraftingMaterialRegistry.BLUE_STARDUST_POWDER.get())
+            .requires(CraftingMaterialRegistry.STARDUST_POWDER.get())
+            .requires(Items.BLUE_DYE)
+            .unlockedBy("has_stardust_powder", has(CraftingMaterialRegistry.STARDUST_POWDER.get()))
+            .unlockedBy("has_blue_dye", has(Items.BLUE_DYE))
+            .save(this.output, "blue_stardust_powder_from_stardust_and_blue_dye");
+
+        ShapelessRecipeBuilder.shapeless(this.registries.lookupOrThrow(Registries.ITEM), RecipeCategory.MISC, CraftingMaterialRegistry.PURPLE_STARDUST_POWDER.get())
+            .requires(CraftingMaterialRegistry.STARDUST_POWDER.get())
+            .requires(Items.PURPLE_DYE)
+            .unlockedBy("has_stardust_powder", has(CraftingMaterialRegistry.STARDUST_POWDER.get()))
+            .unlockedBy("has_purple_dye", has(Items.PURPLE_DYE))
+            .save(this.output, "purple_stardust_powder_from_stardust_and_purple_dye");
+
+        ShapelessRecipeBuilder.shapeless(this.registries.lookupOrThrow(Registries.ITEM), RecipeCategory.MISC, CraftingMaterialRegistry.MAGENTA_STARDUST_POWDER.get())
+            .requires(CraftingMaterialRegistry.STARDUST_POWDER.get())
+            .requires(Items.MAGENTA_DYE)
+            .unlockedBy("has_stardust_powder", has(CraftingMaterialRegistry.STARDUST_POWDER.get()))
+            .unlockedBy("has_magenta_dye", has(Items.MAGENTA_DYE))
+            .save(this.output, "magenta_stardust_powder_from_stardust_and_magenta_dye");
+
+            ShapelessRecipeBuilder.shapeless(this.registries.lookupOrThrow(Registries.ITEM), RecipeCategory.MISC, CraftingMaterialRegistry.PINK_STARDUST_POWDER.get())
+            .requires(CraftingMaterialRegistry.STARDUST_POWDER.get())
+            .requires(Items.PINK_DYE)
+            .unlockedBy("has_stardust_powder", has(CraftingMaterialRegistry.STARDUST_POWDER.get()))
+            .unlockedBy("has_pink_dye", has(Items.PINK_DYE))
+            .save(this.output, "pink_stardust_powder_from_stardust_and_pink_dye");
     }
 
     protected void registerMetalRecipes() {

@@ -1,0 +1,43 @@
+{
+  "parent": "minecraft:recipes/root",
+  "criteria": {
+    "has_cyan_dye": {
+      "conditions": {
+        "items": [
+          {
+            "items": "minecraft:cyan_dye"
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    },
+    "has_stardust_powder": {
+      "conditions": {
+        "items": [
+          {
+            "items": "futuretasticdecor:stardust_powder"
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    },
+    "has_the_recipe": {
+      "conditions": {
+        "recipe": "minecraft:cyan_stardust_powder_from_stardust_and_cyan_dye"
+      },
+      "trigger": "minecraft:recipe_unlocked"
+    }
+  },
+  "requirements": [
+    [
+      "has_the_recipe",
+      "has_stardust_powder",
+      "has_cyan_dye"
+    ]
+  ],
+  "rewards": {
+    "recipes": [
+      "minecraft:cyan_stardust_powder_from_stardust_and_cyan_dye"
+    ]
+  }
+}

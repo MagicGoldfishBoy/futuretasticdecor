@@ -1,0 +1,12 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "category": "misc",
+  "ingredients": [
+    "futuretasticdecor:stardust_powder",
+    "minecraft:cyan_dye"
+  ],
+  "result": {
+    "count": 1,
+    "id": "futuretasticdecor:cyan_stardust_powder"
+  }
+}

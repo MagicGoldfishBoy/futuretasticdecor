@@ -2,7 +2,20 @@
   "itemGroup.futuretasticdecor": "FuturetasticDecor",
 
   "item.futuretasticdecor.coke": "Coke",
+
   "item.futuretasticdecor.stardust_powder": "Stardust Powder",
+  "item.futuretasticdecor.red_stardust_powder": "Red Stardust Powder",
+  "item.futuretasticdecor.orange_stardust_powder": "Orange Stardust Powder",
+  "item.futuretasticdecor.yellow_stardust_powder": "Yellow Stardust Powder",
+  "item.futuretasticdecor.lime_stardust_powder": "Lime Stardust Powder",
+  "item.futuretasticdecor.green_stardust_powder": "Green Stardust Powder",
+  "item.futuretasticdecor.cyan_stardust_powder": "Cyan Stardust Powder",
+  "item.futuretasticdecor.light_blue_stardust_powder": "Light Blue Stardust Powder",
+  "item.futuretasticdecor.blue_stardust_powder": "Blue Stardust Powder",
+  "item.futuretasticdecor.purple_stardust_powder": "Purple Stardust Powder",
+  "item.futuretasticdecor.magenta_stardust_powder": "Magenta Stardust Powder",
+  "item.futuretasticdecor.pink_stardust_powder": "Pink Stardust Powder",
+
 
   "item.futuretasticdecor.steel_alloy": "Steel Alloy",
   "item.futuretasticdecor.steel_ingot": "Steel Ingot",

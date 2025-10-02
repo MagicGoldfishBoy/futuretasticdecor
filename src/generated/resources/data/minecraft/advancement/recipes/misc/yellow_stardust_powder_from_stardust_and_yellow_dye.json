@@ -1,0 +1,43 @@
+{
+  "parent": "minecraft:recipes/root",
+  "criteria": {
+    "has_stardust_powder": {
+      "conditions": {
+        "items": [
+          {
+            "items": "futuretasticdecor:stardust_powder"
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    },
+    "has_the_recipe": {
+      "conditions": {
+        "recipe": "minecraft:yellow_stardust_powder_from_stardust_and_yellow_dye"
+      },
+      "trigger": "minecraft:recipe_unlocked"
+    },
+    "has_yellow_dye": {
+      "conditions": {
+        "items": [
+          {
+            "items": "minecraft:yellow_dye"
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    }
+  },
+  "requirements": [
+    [
+      "has_the_recipe",
+      "has_stardust_powder",
+      "has_yellow_dye"
+    ]
+  ],
+  "rewards": {
+    "recipes": [
+      "minecraft:yellow_stardust_powder_from_stardust_and_yellow_dye"
+    ]
+  }
+}
