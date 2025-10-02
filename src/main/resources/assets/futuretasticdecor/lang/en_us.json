@@ -27,6 +27,8 @@
   "block.futuretasticdecor.steel_stairs": "Steel Stairs",
   "block.futuretasticdecor.steel_stairs.tooltip": "Stairs made of solid steel. Very sharp, very shiny",
 
+  "block.futuretasticdecor.glowing_steel_block": "Glowing Steel Block",
+
   "futuretasticdecor.configuration.title": "FuturetasticDecor Configs",
   "futuretasticdecor.configuration.section.futuretasticdecor.common.toml": "FuturetasticDecor Configs",
   "futuretasticdecor.configuration.section.futuretasticdecor.common.toml.title": "FuturetasticDecor Configs",

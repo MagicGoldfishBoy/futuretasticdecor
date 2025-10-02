@@ -43,12 +43,14 @@ public class ModelDatagen extends ModelProvider {
         itemModels.generateFlatItem(MetalRegistry.STEEL_ALLOY.get(), ModelTemplates.FLAT_ITEM);
         itemModels.generateFlatItem(MetalRegistry.STEEL_INGOT.get(), ModelTemplates.FLAT_ITEM);
         itemModels.generateFlatItem(MetalRegistry.STEEL_NUGGET.get(), ModelTemplates.FLAT_ITEM);
+
         blockModels.createTrivialCube(MetalRegistry.STEEL_BLOCK.get());
 
         blockModels.familyWithExistingFullBlock(MetalRegistry.STEEL_BLOCK.get())
             .slab(MetalRegistry.STEEL_SLAB.get())
             .stairs(MetalRegistry.STEEL_STAIRS.get())
         ;
-            
+
+        blockModels.createTrivialCube(MetalRegistry.GLOWING_STEEL_BLOCK.get());
     }
 }

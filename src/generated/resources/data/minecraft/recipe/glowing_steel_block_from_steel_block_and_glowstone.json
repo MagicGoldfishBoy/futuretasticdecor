@@ -1,0 +1,17 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "building",
+  "key": {
+    "#": "futuretasticdecor:steel_ingot",
+    "X": "futuretasticdecor:stardust_powder"
+  },
+  "pattern": [
+    "###",
+    "#X#",
+    "###"
+  ],
+  "result": {
+    "count": 1,
+    "id": "futuretasticdecor:glowing_steel_block"
+  }
+}

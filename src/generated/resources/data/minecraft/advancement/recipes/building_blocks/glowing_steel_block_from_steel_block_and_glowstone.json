@@ -1,0 +1,43 @@
+{
+  "parent": "minecraft:recipes/root",
+  "criteria": {
+    "has_stardust_powder": {
+      "conditions": {
+        "items": [
+          {
+            "items": "futuretasticdecor:stardust_powder"
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    },
+    "has_steel_ingot": {
+      "conditions": {
+        "items": [
+          {
+            "items": "futuretasticdecor:steel_ingot"
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    },
+    "has_the_recipe": {
+      "conditions": {
+        "recipe": "minecraft:glowing_steel_block_from_steel_block_and_glowstone"
+      },
+      "trigger": "minecraft:recipe_unlocked"
+    }
+  },
+  "requirements": [
+    [
+      "has_the_recipe",
+      "has_steel_ingot",
+      "has_stardust_powder"
+    ]
+  ],
+  "rewards": {
+    "recipes": [
+      "minecraft:glowing_steel_block_from_steel_block_and_glowstone"
+    ]
+  }
+}

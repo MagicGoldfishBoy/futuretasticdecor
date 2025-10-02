@@ -241,6 +241,17 @@ public class RecipeDatagen extends RecipeProvider {
         SingleItemRecipeBuilder.stonecutting(Ingredient.of(MetalRegistry.STEEL_BLOCK_ITEM.get()), RecipeCategory.BUILDING_BLOCKS, MetalRegistry.STEEL_STAIRS.get(), 1)
             .unlockedBy("has_steel_block", has(MetalRegistry.STEEL_BLOCK.get()))
             .save(this.output, "steel_stairs_from_steel_block_stonecutter");
+
+
+            ShapedRecipeBuilder.shaped(this.registries.lookupOrThrow(Registries.ITEM), RecipeCategory.BUILDING_BLOCKS, MetalRegistry.GLOWING_STEEL_BLOCK.get())
+            .pattern("###")
+            .pattern("#X#")
+            .pattern("###")
+            .define('#', MetalRegistry.STEEL_INGOT.get())
+            .define('X', CraftingMaterialRegistry.STARDUST_POWDER.get())
+            .unlockedBy("has_steel_ingot", has(MetalRegistry.STEEL_INGOT.get()))
+            .unlockedBy("has_stardust_powder", has(CraftingMaterialRegistry.STARDUST_POWDER.get()))
+            .save(this.output, "glowing_steel_block_from_steel_block_and_glowstone");
     
     }
     public static class Runner extends RecipeProvider.Runner {
