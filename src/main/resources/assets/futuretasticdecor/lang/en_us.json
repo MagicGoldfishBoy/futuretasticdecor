@@ -7,6 +7,11 @@
   "item.futuretasticdecor.steel_ingot": "Steel Ingot",
   "item.futuretasticdecor.steel_nugget": "Steel Nugget",
   "block.futuretasticdecor.steel_block": "Steel Block",
+  "block.futuretasticdecor.steel_block.tooltip": "A block made of solid steel. Very heavy, very shiny",
+  "block.futuretasticdecor.steel_slab": "Steel Slab",
+  "block.futuretasticdecor.steel_slab.tooltip": "A slab made of solid steel. Half as heavy, just as shiny",
+  "block.futuretasticdecor.steel_stairs": "Steel Stairs",
+  "block.futuretasticdecor.steel_stairs.tooltip": "Stairs made of solid steel. Very sharp, very shiny",
 
   "futuretasticdecor.configuration.title": "FuturetasticDecor Configs",
   "futuretasticdecor.configuration.section.futuretasticdecor.common.toml": "FuturetasticDecor Configs",

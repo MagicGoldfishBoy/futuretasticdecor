@@ -1,0 +1,13 @@
+{
+  "variants": {
+    "type=bottom": {
+      "model": "futuretasticdecor:block/steel_slab"
+    },
+    "type=double": {
+      "model": "futuretasticdecor:block/steel_block"
+    },
+    "type=top": {
+      "model": "futuretasticdecor:block/steel_slab_top"
+    }
+  }
+}

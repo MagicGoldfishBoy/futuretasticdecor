@@ -1,5 +1,7 @@
 {
     "values": [
-        "futuretasticdecor:steel_block"
+        "futuretasticdecor:steel_block",
+        "futuretasticdecor:steel_slab",
+        "futuretasticdecor:steel_stairs"
     ]
 }

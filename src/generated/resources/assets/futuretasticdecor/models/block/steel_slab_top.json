@@ -1,0 +1,8 @@
+{
+  "parent": "minecraft:block/slab_top",
+  "textures": {
+    "bottom": "futuretasticdecor:block/steel_block",
+    "side": "futuretasticdecor:block/steel_block",
+    "top": "futuretasticdecor:block/steel_block"
+  }
+}

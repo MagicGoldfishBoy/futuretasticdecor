@@ -18,12 +18,14 @@ import net.minecraft.data.recipes.RecipeProvider;
 import net.minecraft.data.recipes.ShapedRecipeBuilder;
 import net.minecraft.data.recipes.ShapelessRecipeBuilder;
 import net.minecraft.data.recipes.SimpleCookingRecipeBuilder;
+import net.minecraft.data.recipes.SingleItemRecipeBuilder;
 import net.minecraft.resources.ResourceLocation;
 import net.minecraft.tags.ItemTags;
 import net.minecraft.tags.TagKey;
 import net.minecraft.world.item.Item;
 import net.minecraft.world.item.Items;
 import net.minecraft.world.item.crafting.Ingredient;
+import net.minecraft.world.item.crafting.SingleRecipeInput;
 import net.neoforged.neoforge.common.Tags;
 
 public class RecipeDatagen extends RecipeProvider {
@@ -110,7 +112,7 @@ public class RecipeDatagen extends RecipeProvider {
             .unlockedBy("has_steel_nugget", has(MetalRegistry.STEEL_NUGGET.get()))
             .save(this.output, "steel_ingot_from_steel_nugget");
 
-            
+
         ShapedRecipeBuilder.shaped(this.registries.lookupOrThrow(Registries.ITEM), RecipeCategory.MISC, MetalRegistry.STEEL_BLOCK.get())
             .pattern("###")
             .pattern("###")
@@ -124,6 +126,30 @@ public class RecipeDatagen extends RecipeProvider {
             .requires(MetalRegistry.STEEL_INGOT.get())
             .unlockedBy("has_steel_ingot", has(MetalRegistry.STEEL_INGOT.get()))
             .save(this.output, "steel_nugget_from_steel_ingot");
+
+
+        ShapedRecipeBuilder.shaped(this.registries.lookupOrThrow(Registries.ITEM), RecipeCategory.BUILDING_BLOCKS, MetalRegistry.STEEL_SLAB.get(), 6)
+            .pattern("###")
+            .define('#', MetalRegistry.STEEL_BLOCK.get())
+            .unlockedBy("has_steel_block", has(MetalRegistry.STEEL_BLOCK.get()))
+            .save(this.output, "steel_slab_from_steel_block");
+        
+        SingleItemRecipeBuilder.stonecutting(Ingredient.of(MetalRegistry.STEEL_BLOCK_ITEM.get()), RecipeCategory.BUILDING_BLOCKS, MetalRegistry.STEEL_SLAB.get(), 2)
+            .unlockedBy("has_steel_block", has(MetalRegistry.STEEL_BLOCK.get()))
+            .save(this.output, "steel_slab_from_steel_block_stonecutter");
+
+
+        ShapedRecipeBuilder.shaped(this.registries.lookupOrThrow(Registries.ITEM), RecipeCategory.BUILDING_BLOCKS, MetalRegistry.STEEL_STAIRS.get(), 4)
+            .pattern("#  ")
+            .pattern("## ")
+            .pattern("###")
+            .define('#', MetalRegistry.STEEL_BLOCK.get())
+            .unlockedBy("has_steel_block", has(MetalRegistry.STEEL_BLOCK.get()))
+            .save(this.output, "steel_stairs_from_steel_block");
+
+        SingleItemRecipeBuilder.stonecutting(Ingredient.of(MetalRegistry.STEEL_BLOCK_ITEM.get()), RecipeCategory.BUILDING_BLOCKS, MetalRegistry.STEEL_STAIRS.get(), 1)
+            .unlockedBy("has_steel_block", has(MetalRegistry.STEEL_BLOCK.get()))
+            .save(this.output, "steel_stairs_from_steel_block_stonecutter");
     
     }
     public static class Runner extends RecipeProvider.Runner {

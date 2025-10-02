@@ -9,7 +9,9 @@ import net.minecraft.resources.ResourceKey;
 import net.minecraft.world.item.BlockItem;
 import net.minecraft.world.item.Item;
 import net.minecraft.world.level.block.Block;
+import net.minecraft.world.level.block.SlabBlock;
 import net.minecraft.world.level.block.SoundType;
+import net.minecraft.world.level.block.StairBlock;
 import net.minecraft.world.level.block.state.BlockBehaviour;
 import net.neoforged.neoforge.registries.DeferredBlock;
 import net.neoforged.neoforge.registries.DeferredItem;
@@ -23,6 +25,11 @@ public class MetalRegistry {
     public static DeferredBlock<Block> STEEL_BLOCK;
     public static DeferredItem<BlockItem> STEEL_BLOCK_ITEM;
 
+    public static DeferredBlock<SlabBlock> STEEL_SLAB;
+    public static DeferredItem<BlockItem> STEEL_SLAB_ITEM;
+
+    public static DeferredBlock<StairBlock> STEEL_STAIRS;
+    public static DeferredItem<BlockItem> STEEL_STAIRS_ITEM;
 
 
     public static void registerMetals() {
@@ -62,6 +69,35 @@ public class MetalRegistry {
             STEEL_BLOCK
         ); 
 
+        STEEL_SLAB = FuturetasticDecor.BLOCKS.register(
+            "steel_slab", 
+            registryName -> new SlabBlock(BlockBehaviour.Properties.of()
+                .setId(ResourceKey.create(Registries.BLOCK, registryName))
+                .strength(STEEL_DESTROY_TIME / 2, STEEL_EXPLOSION_RESISTANCE / 2)
+                .requiresCorrectToolForDrops()
+                .sound(SoundType.METAL)
+                .friction(0.5f)
+            )
+        ); 
+        STEEL_SLAB_ITEM = FuturetasticDecor.ITEMS.registerSimpleBlockItem(
+            "steel_slab", 
+            STEEL_SLAB
+        );
+
+        STEEL_STAIRS = FuturetasticDecor.BLOCKS.register(
+            "steel_stairs", 
+            registryName -> new StairBlock(MetalRegistry.STEEL_BLOCK.get().defaultBlockState(), BlockBehaviour.Properties.of()
+                .setId(ResourceKey.create(Registries.BLOCK, registryName))
+                .strength(STEEL_DESTROY_TIME / 1.5f, STEEL_EXPLOSION_RESISTANCE / 1.5f)
+                .requiresCorrectToolForDrops()
+                .sound(SoundType.METAL)
+                .friction(0.5f)
+            )
+        );
+        STEEL_STAIRS_ITEM = FuturetasticDecor.ITEMS.registerSimpleBlockItem(
+            "steel_stairs", 
+            STEEL_STAIRS
+        );
     }
     
 }
