@@ -475,6 +475,11 @@ public class RecipeDatagen extends RecipeProvider {
             .unlockedBy("has_redstone", has(Items.REDSTONE))
             .unlockedBy("has_pink_stardust_powder", has(CraftingMaterialRegistry.PINK_STARDUST_POWDER.get()))
             .save(this.output);
+
+
+        SingleItemRecipeBuilder.stonecutting(Ingredient.of(GlowBlockRegistry.GLOW_BLOCK_ITEM.get()), RecipeCategory.BUILDING_BLOCKS, GlowBlockRegistry.GLOW_PANEL.get(), 4)
+            .unlockedBy("has_glow_block", has(GlowBlockRegistry.GLOW_BLOCK_ITEM.get()))
+            .save(this.output);
     }
     public static class Runner extends RecipeProvider.Runner {
 

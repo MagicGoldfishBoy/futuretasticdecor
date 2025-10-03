@@ -1,6 +1,7 @@
 package com.magicgoldfishboy.futuretasticdecor.registry;
 
 import com.magicgoldfishboy.futuretasticdecor.FuturetasticDecor;
+import com.magicgoldfishboy.futuretasticdecor.block.Panel;
 
 import net.minecraft.core.registries.Registries;
 import net.minecraft.resources.ResourceKey;
@@ -48,6 +49,10 @@ public class GlowBlockRegistry {
 
     public static DeferredBlock<Block> PINK_GLOW_BLOCK;
     public static DeferredItem<BlockItem> PINK_GLOW_BLOCK_ITEM;
+
+
+    public static DeferredBlock<Panel> GLOW_PANEL;
+    public static DeferredItem<BlockItem> GLOW_PANEL_ITEM;
 
 
     private static Float GLOW_DESTROY_TIME = 2.25f;
@@ -233,6 +238,23 @@ public class GlowBlockRegistry {
         PINK_GLOW_BLOCK_ITEM = FuturetasticDecor.ITEMS.registerSimpleBlockItem(
             "pink_glow_block", 
             PINK_GLOW_BLOCK
+        );
+
+
+        GLOW_PANEL = FuturetasticDecor.BLOCKS.register(
+            "glow_panel", 
+            registryName -> new Panel(BlockBehaviour.Properties.of()
+                .setId(ResourceKey.create(Registries.BLOCK, registryName))
+                .strength(1.0f, 1.0f)
+                .requiresCorrectToolForDrops()
+                .sound(SoundType.METAL)
+                .lightLevel(state -> 13)
+                .noOcclusion()
+            )
+        );
+        GLOW_PANEL_ITEM = FuturetasticDecor.ITEMS.registerSimpleBlockItem(
+            "glow_panel", 
+            GLOW_PANEL
         );
 
     }
