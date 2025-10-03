@@ -54,6 +54,39 @@ public class GlowBlockRegistry {
     public static DeferredBlock<Panel> GLOW_PANEL;
     public static DeferredItem<BlockItem> GLOW_PANEL_ITEM;
 
+    public static DeferredBlock<Panel> RED_GLOW_PANEL;
+    public static DeferredItem<BlockItem> RED_GLOW_PANEL_ITEM;
+
+    public static DeferredBlock<Panel> ORANGE_GLOW_PANEL;
+    public static DeferredItem<BlockItem> ORANGE_GLOW_PANEL_ITEM;
+
+    public static DeferredBlock<Panel> YELLOW_GLOW_PANEL;
+    public static DeferredItem<BlockItem> YELLOW_GLOW_PANEL_ITEM;
+
+    public static DeferredBlock<Panel> LIME_GLOW_PANEL;
+    public static DeferredItem<BlockItem> LIME_GLOW_PANEL_ITEM;
+
+    public static DeferredBlock<Panel> GREEN_GLOW_PANEL;
+    public static DeferredItem<BlockItem> GREEN_GLOW_PANEL_ITEM;
+
+    public static DeferredBlock<Panel> CYAN_GLOW_PANEL;
+    public static DeferredItem<BlockItem> CYAN_GLOW_PANEL_ITEM;
+
+    public static DeferredBlock<Panel> LIGHT_BLUE_GLOW_PANEL;
+    public static DeferredItem<BlockItem> LIGHT_BLUE_GLOW_PANEL_ITEM;
+
+    public static DeferredBlock<Panel> BLUE_GLOW_PANEL;
+    public static DeferredItem<BlockItem> BLUE_GLOW_PANEL_ITEM;
+
+    public static DeferredBlock<Panel> PURPLE_GLOW_PANEL;
+    public static DeferredItem<BlockItem> PURPLE_GLOW_PANEL_ITEM;
+
+    public static DeferredBlock<Panel> MAGENTA_GLOW_PANEL;
+    public static DeferredItem<BlockItem> MAGENTA_GLOW_PANEL_ITEM;
+
+    public static DeferredBlock<Panel> PINK_GLOW_PANEL;
+    public static DeferredItem<BlockItem> PINK_GLOW_PANEL_ITEM;
+
 
     private static Float GLOW_DESTROY_TIME = 2.25f;
     private static Float GLOW_EXPLOSION_RESISTANCE = 3.25f;   
@@ -255,6 +288,182 @@ public class GlowBlockRegistry {
         GLOW_PANEL_ITEM = FuturetasticDecor.ITEMS.registerSimpleBlockItem(
             "glow_panel", 
             GLOW_PANEL
+        );
+
+        RED_GLOW_PANEL = FuturetasticDecor.BLOCKS.register(
+            "red_glow_panel", 
+            registryName -> new Panel(BlockBehaviour.Properties.of()
+                .setId(ResourceKey.create(Registries.BLOCK, registryName))
+                .strength(1.0f, 1.0f)
+                .requiresCorrectToolForDrops()
+                .sound(SoundType.METAL)
+                .lightLevel(state -> 13)
+                .noOcclusion()
+            )
+        );
+        RED_GLOW_PANEL_ITEM = FuturetasticDecor.ITEMS.registerSimpleBlockItem(
+            "red_glow_panel", 
+            RED_GLOW_PANEL
+        );
+
+        ORANGE_GLOW_PANEL = FuturetasticDecor.BLOCKS.register(
+            "orange_glow_panel", 
+            registryName -> new Panel(BlockBehaviour.Properties.of()
+                .setId(ResourceKey.create(Registries.BLOCK, registryName))
+                .strength(1.0f, 1.0f)
+                .requiresCorrectToolForDrops()
+                .sound(SoundType.METAL)
+                .lightLevel(state -> 13)
+                .noOcclusion()
+            )
+        );
+        ORANGE_GLOW_PANEL_ITEM = FuturetasticDecor.ITEMS.registerSimpleBlockItem(
+            "orange_glow_panel", 
+            ORANGE_GLOW_PANEL
+        );
+
+        YELLOW_GLOW_PANEL = FuturetasticDecor.BLOCKS.register(
+            "yellow_glow_panel", 
+            registryName -> new Panel(BlockBehaviour.Properties.of()
+                .setId(ResourceKey.create(Registries.BLOCK, registryName))
+                .strength(1.0f, 1.0f)
+                .requiresCorrectToolForDrops()
+                .sound(SoundType.METAL)
+                .lightLevel(state -> 13)
+                .noOcclusion()
+            )
+        );
+        YELLOW_GLOW_PANEL_ITEM = FuturetasticDecor.ITEMS.registerSimpleBlockItem(
+            "yellow_glow_panel", 
+            YELLOW_GLOW_PANEL
+        );
+
+        LIME_GLOW_PANEL = FuturetasticDecor.BLOCKS.register(
+            "lime_glow_panel", 
+            registryName -> new Panel(BlockBehaviour.Properties.of()
+                .setId(ResourceKey.create(Registries.BLOCK, registryName))
+                .strength(1.0f, 1.0f)
+                .requiresCorrectToolForDrops()
+                .sound(SoundType.METAL)
+                .lightLevel(state -> 13)
+                .noOcclusion()
+            )
+        );
+        LIME_GLOW_PANEL_ITEM = FuturetasticDecor.ITEMS.registerSimpleBlockItem(
+            "lime_glow_panel", 
+            LIME_GLOW_PANEL
+        );
+
+        GREEN_GLOW_PANEL = FuturetasticDecor.BLOCKS.register(
+            "green_glow_panel", 
+            registryName -> new Panel(BlockBehaviour.Properties.of()
+                .setId(ResourceKey.create(Registries.BLOCK, registryName))
+                .strength(1.0f, 1.0f)
+                .requiresCorrectToolForDrops()
+                .sound(SoundType.METAL)
+                .lightLevel(state -> 13)
+                .noOcclusion()
+            )
+        );
+        GREEN_GLOW_PANEL_ITEM = FuturetasticDecor.ITEMS.registerSimpleBlockItem(
+            "green_glow_panel", 
+            GREEN_GLOW_PANEL
+        );
+
+        CYAN_GLOW_PANEL = FuturetasticDecor.BLOCKS.register(
+            "cyan_glow_panel", 
+            registryName -> new Panel(BlockBehaviour.Properties.of()
+                .setId(ResourceKey.create(Registries.BLOCK, registryName))
+                .strength(1.0f, 1.0f)
+                .requiresCorrectToolForDrops()
+                .sound(SoundType.METAL)
+                .lightLevel(state -> 13)
+                .noOcclusion()
+            )
+        );
+        CYAN_GLOW_PANEL_ITEM = FuturetasticDecor.ITEMS.registerSimpleBlockItem(
+            "cyan_glow_panel", 
+            CYAN_GLOW_PANEL
+        );
+
+        LIGHT_BLUE_GLOW_PANEL = FuturetasticDecor.BLOCKS.register(
+            "light_blue_glow_panel", 
+            registryName -> new Panel(BlockBehaviour.Properties.of()
+                .setId(ResourceKey.create(Registries.BLOCK, registryName))
+                .strength(1.0f, 1.0f)
+                .requiresCorrectToolForDrops()
+                .sound(SoundType.METAL)
+                .lightLevel(state -> 13)
+                .noOcclusion()
+            )
+        );
+        LIGHT_BLUE_GLOW_PANEL_ITEM = FuturetasticDecor.ITEMS.registerSimpleBlockItem(
+            "light_blue_glow_panel", 
+            LIGHT_BLUE_GLOW_PANEL
+        );
+
+        BLUE_GLOW_PANEL = FuturetasticDecor.BLOCKS.register(
+            "blue_glow_panel", 
+            registryName -> new Panel(BlockBehaviour.Properties.of()
+                .setId(ResourceKey.create(Registries.BLOCK, registryName))
+                .strength(1.0f, 1.0f)
+                .requiresCorrectToolForDrops()
+                .sound(SoundType.METAL)
+                .lightLevel(state -> 13)
+                .noOcclusion()
+            )
+        );
+        BLUE_GLOW_PANEL_ITEM = FuturetasticDecor.ITEMS.registerSimpleBlockItem(
+            "blue_glow_panel", 
+            BLUE_GLOW_PANEL
+        );
+
+        PURPLE_GLOW_PANEL = FuturetasticDecor.BLOCKS.register(
+            "purple_glow_panel", 
+            registryName -> new Panel(BlockBehaviour.Properties.of()
+                .setId(ResourceKey.create(Registries.BLOCK, registryName))
+                .strength(1.0f, 1.0f)
+                .requiresCorrectToolForDrops()
+                .sound(SoundType.METAL)
+                .lightLevel(state -> 13)
+                .noOcclusion()
+            )
+        );
+        PURPLE_GLOW_PANEL_ITEM = FuturetasticDecor.ITEMS.registerSimpleBlockItem(
+            "purple_glow_panel", 
+            PURPLE_GLOW_PANEL
+        );
+
+        MAGENTA_GLOW_PANEL = FuturetasticDecor.BLOCKS.register(
+            "magenta_glow_panel", 
+            registryName -> new Panel(BlockBehaviour.Properties.of()
+                .setId(ResourceKey.create(Registries.BLOCK, registryName))
+                .strength(1.0f, 1.0f)
+                .requiresCorrectToolForDrops()
+                .sound(SoundType.METAL)
+                .lightLevel(state -> 13)
+                .noOcclusion()
+            )
+        );
+        MAGENTA_GLOW_PANEL_ITEM = FuturetasticDecor.ITEMS.registerSimpleBlockItem(
+            "magenta_glow_panel", 
+            MAGENTA_GLOW_PANEL
+        );
+
+        PINK_GLOW_PANEL = FuturetasticDecor.BLOCKS.register(
+            "pink_glow_panel", 
+            registryName -> new Panel(BlockBehaviour.Properties.of()
+                .setId(ResourceKey.create(Registries.BLOCK, registryName))
+                .strength(1.0f, 1.0f)
+                .requiresCorrectToolForDrops()
+                .sound(SoundType.METAL)
+                .lightLevel(state -> 13)
+                .noOcclusion()
+            )
+        );
+        PINK_GLOW_PANEL_ITEM = FuturetasticDecor.ITEMS.registerSimpleBlockItem(
+            "pink_glow_panel", 
+            PINK_GLOW_PANEL
         );
 
     }

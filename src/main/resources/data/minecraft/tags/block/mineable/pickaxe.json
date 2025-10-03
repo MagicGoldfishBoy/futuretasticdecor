@@ -27,6 +27,17 @@
         "futuretasticdecor:purple_glow_block",
         "futuretasticdecor:magenta_glow_block",
         "futuretasticdecor:pink_glow_block",
-        "futuretasticdecor:glow_panel"
+        "futuretasticdecor:glow_panel",
+        "futuretasticdecor:red_glow_panel",
+        "futuretasticdecor:orange_glow_panel",
+        "futuretasticdecor:yellow_glow_panel",
+        "futuretasticdecor:lime_glow_panel",
+        "futuretasticdecor:green_glow_panel",
+        "futuretasticdecor:cyan_glow_panel",
+        "futuretasticdecor:light_blue_glow_panel",
+        "futuretasticdecor:blue_glow_panel",
+        "futuretasticdecor:purple_glow_panel",
+        "futuretasticdecor:magenta_glow_panel",
+        "futuretasticdecor:pink_glow_panel"
     ]
 }

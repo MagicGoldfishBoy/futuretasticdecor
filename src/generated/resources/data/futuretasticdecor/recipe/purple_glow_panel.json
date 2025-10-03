@@ -1,0 +1,8 @@
+{
+  "type": "minecraft:stonecutting",
+  "ingredient": "futuretasticdecor:purple_glow_block",
+  "result": {
+    "count": 4,
+    "id": "futuretasticdecor:purple_glow_panel"
+  }
+}

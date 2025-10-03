@@ -121,20 +121,77 @@ public class ModelDatagen extends ModelProvider {
         Panel glow_panel = GlowBlockRegistry.GLOW_PANEL.get();
         Variant glow_panel_variant = new Variant(ModelLocationUtils.getModelLocation(glow_panel));
 
-        blockModels.blockStateOutput.accept(
-            MultiVariantGenerator.dispatch(
-                glow_panel,
-                BlockModelGenerators.variant(glow_panel_variant)
-            ).with(
-                PropertyDispatch.modify(DirectionalBlock.FACING)
-                    .select(Direction.SOUTH, BlockModelGenerators.NOP)
-                    .select(Direction.NORTH, BlockModelGenerators.Y_ROT_180)
-                    .select(Direction.WEST, BlockModelGenerators.Y_ROT_90)
-                    .select(Direction.EAST, BlockModelGenerators.Y_ROT_270)
-                    .select(Direction.UP, BlockModelGenerators.X_ROT_90)
-                    .select(Direction.DOWN, BlockModelGenerators.X_ROT_270)
-            )
-        );
+        ModelDatagenHelpers.createPanelModel(blockModels, itemModels, glow_panel, glow_panel_variant);
+
+        // blockModels.blockStateOutput.accept(
+        //     MultiVariantGenerator.dispatch(
+        //         glow_panel,
+        //         BlockModelGenerators.variant(glow_panel_variant)
+        //     ).with(
+        //         PropertyDispatch.modify(DirectionalBlock.FACING)
+        //             .select(Direction.SOUTH, BlockModelGenerators.NOP)
+        //             .select(Direction.NORTH, BlockModelGenerators.Y_ROT_180)
+        //             .select(Direction.WEST, BlockModelGenerators.Y_ROT_90)
+        //             .select(Direction.EAST, BlockModelGenerators.Y_ROT_270)
+        //             .select(Direction.UP, BlockModelGenerators.X_ROT_90)
+        //             .select(Direction.DOWN, BlockModelGenerators.X_ROT_270)
+        //     )
+        // );
+
+        Panel red_glow_panel = GlowBlockRegistry.RED_GLOW_PANEL.get();
+        Variant red_glow_panel_variant = new Variant(ModelLocationUtils.getModelLocation(red_glow_panel));
+
+        ModelDatagenHelpers.createPanelModel(blockModels, itemModels, red_glow_panel, red_glow_panel_variant);
+
+        Panel orange_glow_panel = GlowBlockRegistry.ORANGE_GLOW_PANEL.get();
+        Variant orange_glow_panel_variant = new Variant(ModelLocationUtils.getModelLocation(orange_glow_panel));
+
+        ModelDatagenHelpers.createPanelModel(blockModels, itemModels, orange_glow_panel, orange_glow_panel_variant);
+
+        Panel yellow_glow_panel = GlowBlockRegistry.YELLOW_GLOW_PANEL.get();
+        Variant yellow_glow_panel_variant = new Variant(ModelLocationUtils.getModelLocation(yellow_glow_panel));
+
+        ModelDatagenHelpers.createPanelModel(blockModels, itemModels, yellow_glow_panel, yellow_glow_panel_variant);
+
+        Panel lime_glow_panel = GlowBlockRegistry.LIME_GLOW_PANEL.get();
+        Variant lime_glow_panel_variant = new Variant(ModelLocationUtils.getModelLocation(lime_glow_panel));
+
+        ModelDatagenHelpers.createPanelModel(blockModels, itemModels, lime_glow_panel, lime_glow_panel_variant);
+
+        Panel green_glow_panel = GlowBlockRegistry.GREEN_GLOW_PANEL.get();
+        Variant green_glow_panel_variant = new Variant(ModelLocationUtils.getModelLocation(green_glow_panel));
+
+        ModelDatagenHelpers.createPanelModel(blockModels, itemModels, green_glow_panel, green_glow_panel_variant);
+
+        Panel cyan_glow_panel = GlowBlockRegistry.CYAN_GLOW_PANEL.get();
+        Variant cyan_glow_panel_variant = new Variant(ModelLocationUtils.getModelLocation(cyan_glow_panel));
+
+        ModelDatagenHelpers.createPanelModel(blockModels, itemModels, cyan_glow_panel, cyan_glow_panel_variant);
+
+        Panel light_blue_glow_panel = GlowBlockRegistry.LIGHT_BLUE_GLOW_PANEL.get();
+        Variant light_blue_glow_panel_variant = new Variant(ModelLocationUtils.getModelLocation(light_blue_glow_panel));
+
+        ModelDatagenHelpers.createPanelModel(blockModels, itemModels, light_blue_glow_panel, light_blue_glow_panel_variant);
+
+        Panel blue_glow_panel = GlowBlockRegistry.BLUE_GLOW_PANEL.get();
+        Variant blue_glow_panel_variant = new Variant(ModelLocationUtils.getModelLocation(blue_glow_panel));
+
+        ModelDatagenHelpers.createPanelModel(blockModels, itemModels, blue_glow_panel, blue_glow_panel_variant);
+
+        Panel purple_glow_panel = GlowBlockRegistry.PURPLE_GLOW_PANEL.get();
+        Variant purple_glow_panel_variant = new Variant(ModelLocationUtils.getModelLocation(purple_glow_panel));
+
+        ModelDatagenHelpers.createPanelModel(blockModels, itemModels, purple_glow_panel, purple_glow_panel_variant);
+
+        Panel magenta_glow_panel = GlowBlockRegistry.MAGENTA_GLOW_PANEL.get();
+        Variant magenta_glow_panel_variant = new Variant(ModelLocationUtils.getModelLocation(magenta_glow_panel));
+
+        ModelDatagenHelpers.createPanelModel(blockModels, itemModels, magenta_glow_panel, magenta_glow_panel_variant);
+
+        Panel pink_glow_panel = GlowBlockRegistry.PINK_GLOW_PANEL.get();
+        Variant pink_glow_panel_variant = new Variant(ModelLocationUtils.getModelLocation(pink_glow_panel));
+
+        ModelDatagenHelpers.createPanelModel(blockModels, itemModels, pink_glow_panel, pink_glow_panel_variant);
 
     }
 }

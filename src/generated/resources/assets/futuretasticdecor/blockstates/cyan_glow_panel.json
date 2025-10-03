@@ -1,0 +1,27 @@
+{
+  "variants": {
+    "facing=down": {
+      "model": "futuretasticdecor:block/cyan_glow_panel",
+      "x": 270
+    },
+    "facing=east": {
+      "model": "futuretasticdecor:block/cyan_glow_panel",
+      "y": 270
+    },
+    "facing=north": {
+      "model": "futuretasticdecor:block/cyan_glow_panel",
+      "y": 180
+    },
+    "facing=south": {
+      "model": "futuretasticdecor:block/cyan_glow_panel"
+    },
+    "facing=up": {
+      "model": "futuretasticdecor:block/cyan_glow_panel",
+      "x": 90
+    },
+    "facing=west": {
+      "model": "futuretasticdecor:block/cyan_glow_panel",
+      "y": 90
+    }
+  }
+}

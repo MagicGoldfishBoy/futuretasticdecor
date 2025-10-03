@@ -480,6 +480,50 @@ public class RecipeDatagen extends RecipeProvider {
         SingleItemRecipeBuilder.stonecutting(Ingredient.of(GlowBlockRegistry.GLOW_BLOCK_ITEM.get()), RecipeCategory.BUILDING_BLOCKS, GlowBlockRegistry.GLOW_PANEL.get(), 4)
             .unlockedBy("has_glow_block", has(GlowBlockRegistry.GLOW_BLOCK_ITEM.get()))
             .save(this.output);
+
+        SingleItemRecipeBuilder.stonecutting(Ingredient.of(GlowBlockRegistry.RED_GLOW_BLOCK_ITEM.get()), RecipeCategory.BUILDING_BLOCKS, GlowBlockRegistry.RED_GLOW_PANEL.get(), 4)
+            .unlockedBy("has_red_glow_block", has(GlowBlockRegistry.RED_GLOW_BLOCK_ITEM.get()))
+            .save(this.output);
+
+        SingleItemRecipeBuilder.stonecutting(Ingredient.of(GlowBlockRegistry.ORANGE_GLOW_BLOCK_ITEM.get()), RecipeCategory.BUILDING_BLOCKS, GlowBlockRegistry.ORANGE_GLOW_PANEL.get(), 4)
+            .unlockedBy("has_orange_glow_block", has(GlowBlockRegistry.ORANGE_GLOW_BLOCK_ITEM.get()))
+            .save(this.output);
+
+        SingleItemRecipeBuilder.stonecutting(Ingredient.of(GlowBlockRegistry.YELLOW_GLOW_BLOCK_ITEM.get()), RecipeCategory.BUILDING_BLOCKS, GlowBlockRegistry.YELLOW_GLOW_PANEL.get(), 4)
+            .unlockedBy("has_yellow_glow_block", has(GlowBlockRegistry.YELLOW_GLOW_BLOCK_ITEM.get()))
+            .save(this.output);
+
+        SingleItemRecipeBuilder.stonecutting(Ingredient.of(GlowBlockRegistry.LIME_GLOW_BLOCK_ITEM.get()), RecipeCategory.BUILDING_BLOCKS, GlowBlockRegistry.LIME_GLOW_PANEL.get(), 4)
+            .unlockedBy("has_lime_glow_block", has(GlowBlockRegistry.LIME_GLOW_BLOCK_ITEM.get()))
+            .save(this.output);
+
+        SingleItemRecipeBuilder.stonecutting(Ingredient.of(GlowBlockRegistry.GREEN_GLOW_BLOCK_ITEM.get()), RecipeCategory.BUILDING_BLOCKS, GlowBlockRegistry.GREEN_GLOW_PANEL.get(), 4)
+            .unlockedBy("has_green_glow_block", has(GlowBlockRegistry.GREEN_GLOW_BLOCK_ITEM.get()))
+            .save(this.output);
+
+        SingleItemRecipeBuilder.stonecutting(Ingredient.of(GlowBlockRegistry.CYAN_GLOW_BLOCK_ITEM.get()), RecipeCategory.BUILDING_BLOCKS, GlowBlockRegistry.CYAN_GLOW_PANEL.get(), 4)
+            .unlockedBy("has_cyan_glow_block", has(GlowBlockRegistry.CYAN_GLOW_BLOCK_ITEM.get()))
+            .save(this.output);
+
+        SingleItemRecipeBuilder.stonecutting(Ingredient.of(GlowBlockRegistry.LIGHT_BLUE_GLOW_BLOCK_ITEM.get()), RecipeCategory.BUILDING_BLOCKS, GlowBlockRegistry.LIGHT_BLUE_GLOW_PANEL.get(), 4)
+            .unlockedBy("has_light_blue_glow_block", has(GlowBlockRegistry.LIGHT_BLUE_GLOW_BLOCK_ITEM.get()))
+            .save(this.output);
+
+        SingleItemRecipeBuilder.stonecutting(Ingredient.of(GlowBlockRegistry.BLUE_GLOW_BLOCK_ITEM.get()), RecipeCategory.BUILDING_BLOCKS, GlowBlockRegistry.BLUE_GLOW_PANEL.get(), 4)
+            .unlockedBy("has_blue_glow_block", has(GlowBlockRegistry.BLUE_GLOW_BLOCK_ITEM.get()))
+            .save(this.output);
+
+        SingleItemRecipeBuilder.stonecutting(Ingredient.of(GlowBlockRegistry.PURPLE_GLOW_BLOCK_ITEM.get()), RecipeCategory.BUILDING_BLOCKS, GlowBlockRegistry.PURPLE_GLOW_PANEL.get(), 4)
+            .unlockedBy("has_purple_glow_block", has(GlowBlockRegistry.PURPLE_GLOW_BLOCK_ITEM.get()))
+            .save(this.output);
+
+        SingleItemRecipeBuilder.stonecutting(Ingredient.of(GlowBlockRegistry.MAGENTA_GLOW_BLOCK_ITEM.get()), RecipeCategory.BUILDING_BLOCKS, GlowBlockRegistry.MAGENTA_GLOW_PANEL.get(), 4)
+            .unlockedBy("has_magenta_glow_block", has(GlowBlockRegistry.MAGENTA_GLOW_BLOCK_ITEM.get()))
+            .save(this.output);
+
+        SingleItemRecipeBuilder.stonecutting(Ingredient.of(GlowBlockRegistry.PINK_GLOW_BLOCK_ITEM.get()), RecipeCategory.BUILDING_BLOCKS, GlowBlockRegistry.PINK_GLOW_PANEL.get(), 4)
+            .unlockedBy("has_pink_glow_block", has(GlowBlockRegistry.PINK_GLOW_BLOCK_ITEM.get()))
+            .save(this.output);
     }
     public static class Runner extends RecipeProvider.Runner {
 
