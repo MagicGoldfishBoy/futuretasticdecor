@@ -82,5 +82,27 @@ public class ModelDatagen extends ModelProvider {
 
         blockModels.createTrivialCube(GlowBlockRegistry.GLOW_BLOCK.get());
 
+        blockModels.createTrivialCube(GlowBlockRegistry.RED_GLOW_BLOCK.get());
+
+        blockModels.createTrivialCube(GlowBlockRegistry.ORANGE_GLOW_BLOCK.get());
+
+        blockModels.createTrivialCube(GlowBlockRegistry.YELLOW_GLOW_BLOCK.get());
+
+        blockModels.createTrivialCube(GlowBlockRegistry.LIME_GLOW_BLOCK.get());
+
+        blockModels.createTrivialCube(GlowBlockRegistry.GREEN_GLOW_BLOCK.get());
+
+        blockModels.createTrivialCube(GlowBlockRegistry.CYAN_GLOW_BLOCK.get());
+
+        blockModels.createTrivialCube(GlowBlockRegistry.LIGHT_BLUE_GLOW_BLOCK.get());
+
+        blockModels.createTrivialCube(GlowBlockRegistry.BLUE_GLOW_BLOCK.get());
+
+        blockModels.createTrivialCube(GlowBlockRegistry.PURPLE_GLOW_BLOCK.get());
+
+        blockModels.createTrivialCube(GlowBlockRegistry.MAGENTA_GLOW_BLOCK.get());
+
+        blockModels.createTrivialCube(GlowBlockRegistry.PINK_GLOW_BLOCK.get());
+
     }
 }

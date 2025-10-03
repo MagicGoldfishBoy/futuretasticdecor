@@ -1,0 +1,54 @@
+{
+  "parent": "minecraft:recipes/root",
+  "criteria": {
+    "has_light_blue_stardust_powder": {
+      "conditions": {
+        "items": [
+          {
+            "items": "futuretasticdecor:light_blue_stardust_powder"
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    },
+    "has_redstone": {
+      "conditions": {
+        "items": [
+          {
+            "items": "minecraft:redstone"
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    },
+    "has_redstone_lamp": {
+      "conditions": {
+        "items": [
+          {
+            "items": "minecraft:redstone_lamp"
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    },
+    "has_the_recipe": {
+      "conditions": {
+        "recipe": "futuretasticdecor:light_blue_glow_block"
+      },
+      "trigger": "minecraft:recipe_unlocked"
+    }
+  },
+  "requirements": [
+    [
+      "has_the_recipe",
+      "has_redstone_lamp",
+      "has_redstone",
+      "has_light_blue_stardust_powder"
+    ]
+  ],
+  "rewards": {
+    "recipes": [
+      "futuretasticdecor:light_blue_glow_block"
+    ]
+  }
+}

@@ -376,6 +376,105 @@ public class RecipeDatagen extends RecipeProvider {
             .unlockedBy("has_redstone", has(Items.REDSTONE))
             .unlockedBy("has_stardust_powder", has(CraftingMaterialRegistry.STARDUST_POWDER.get()))
             .save(this.output);
+
+        ShapelessRecipeBuilder.shapeless(this.registries.lookupOrThrow(Registries.ITEM), RecipeCategory.BUILDING_BLOCKS, GlowBlockRegistry.RED_GLOW_BLOCK_ITEM.get(), 4)
+            .requires(Items.REDSTONE_LAMP)
+            .requires(Items.REDSTONE)
+            .requires(CraftingMaterialRegistry.RED_STARDUST_POWDER.get())
+            .unlockedBy("has_redstone_lamp", has(Items.REDSTONE_LAMP))
+            .unlockedBy("has_redstone", has(Items.REDSTONE))
+            .unlockedBy("has_red_stardust_powder", has(CraftingMaterialRegistry.RED_STARDUST_POWDER.get()))
+            .save(this.output);
+
+        ShapelessRecipeBuilder.shapeless(this.registries.lookupOrThrow(Registries.ITEM), RecipeCategory.BUILDING_BLOCKS, GlowBlockRegistry.ORANGE_GLOW_BLOCK_ITEM.get(), 4)
+            .requires(Items.REDSTONE_LAMP)
+            .requires(Items.REDSTONE)
+            .requires(CraftingMaterialRegistry.ORANGE_STARDUST_POWDER.get())
+            .unlockedBy("has_redstone_lamp", has(Items.REDSTONE_LAMP))
+            .unlockedBy("has_redstone", has(Items.REDSTONE))
+            .unlockedBy("has_orange_stardust_powder", has(CraftingMaterialRegistry.ORANGE_STARDUST_POWDER.get()))
+            .save(this.output);
+
+        ShapelessRecipeBuilder.shapeless(this.registries.lookupOrThrow(Registries.ITEM), RecipeCategory.BUILDING_BLOCKS, GlowBlockRegistry.YELLOW_GLOW_BLOCK_ITEM.get(), 4)
+            .requires(Items.REDSTONE_LAMP)
+            .requires(Items.REDSTONE)
+            .requires(CraftingMaterialRegistry.YELLOW_STARDUST_POWDER.get())
+            .unlockedBy("has_redstone_lamp", has(Items.REDSTONE_LAMP))
+            .unlockedBy("has_redstone", has(Items.REDSTONE))
+            .unlockedBy("has_yellow_stardust_powder", has(CraftingMaterialRegistry.YELLOW_STARDUST_POWDER.get()))
+            .save(this.output);
+
+        ShapelessRecipeBuilder.shapeless(this.registries.lookupOrThrow(Registries.ITEM), RecipeCategory.BUILDING_BLOCKS, GlowBlockRegistry.LIME_GLOW_BLOCK_ITEM.get(), 4)
+            .requires(Items.REDSTONE_LAMP)
+            .requires(Items.REDSTONE)
+            .requires(CraftingMaterialRegistry.LIME_STARDUST_POWDER.get())
+            .unlockedBy("has_redstone_lamp", has(Items.REDSTONE_LAMP))
+            .unlockedBy("has_redstone", has(Items.REDSTONE))
+            .unlockedBy("has_lime_stardust_powder", has(CraftingMaterialRegistry.LIME_STARDUST_POWDER.get()))
+            .save(this.output);
+
+        ShapelessRecipeBuilder.shapeless(this.registries.lookupOrThrow(Registries.ITEM), RecipeCategory.BUILDING_BLOCKS, GlowBlockRegistry.GREEN_GLOW_BLOCK_ITEM.get(), 4)
+            .requires(Items.REDSTONE_LAMP)
+            .requires(Items.REDSTONE)
+            .requires(CraftingMaterialRegistry.GREEN_STARDUST_POWDER.get())
+            .unlockedBy("has_redstone_lamp", has(Items.REDSTONE_LAMP))
+            .unlockedBy("has_redstone", has(Items.REDSTONE))
+            .unlockedBy("has_green_stardust_powder", has(CraftingMaterialRegistry.GREEN_STARDUST_POWDER.get()))
+            .save(this.output);
+
+        ShapelessRecipeBuilder.shapeless(this.registries.lookupOrThrow(Registries.ITEM), RecipeCategory.BUILDING_BLOCKS, GlowBlockRegistry.CYAN_GLOW_BLOCK_ITEM.get(), 4)
+            .requires(Items.REDSTONE_LAMP)
+            .requires(Items.REDSTONE)
+            .requires(CraftingMaterialRegistry.CYAN_STARDUST_POWDER.get())
+            .unlockedBy("has_redstone_lamp", has(Items.REDSTONE_LAMP))
+            .unlockedBy("has_redstone", has(Items.REDSTONE))
+            .unlockedBy("has_cyan_stardust_powder", has(CraftingMaterialRegistry.CYAN_STARDUST_POWDER.get()))
+            .save(this.output);
+
+        ShapelessRecipeBuilder.shapeless(this.registries.lookupOrThrow(Registries.ITEM), RecipeCategory.BUILDING_BLOCKS, GlowBlockRegistry.LIGHT_BLUE_GLOW_BLOCK_ITEM.get(), 4)
+            .requires(Items.REDSTONE_LAMP)
+            .requires(Items.REDSTONE)
+            .requires(CraftingMaterialRegistry.LIGHT_BLUE_STARDUST_POWDER.get())
+            .unlockedBy("has_redstone_lamp", has(Items.REDSTONE_LAMP))
+            .unlockedBy("has_redstone", has(Items.REDSTONE))
+            .unlockedBy("has_light_blue_stardust_powder", has(CraftingMaterialRegistry.LIGHT_BLUE_STARDUST_POWDER.get()))
+            .save(this.output);
+
+        ShapelessRecipeBuilder.shapeless(this.registries.lookupOrThrow(Registries.ITEM), RecipeCategory.BUILDING_BLOCKS, GlowBlockRegistry.BLUE_GLOW_BLOCK_ITEM.get(), 4)
+            .requires(Items.REDSTONE_LAMP)
+            .requires(Items.REDSTONE)
+            .requires(CraftingMaterialRegistry.BLUE_STARDUST_POWDER.get())
+            .unlockedBy("has_redstone_lamp", has(Items.REDSTONE_LAMP))
+            .unlockedBy("has_redstone", has(Items.REDSTONE))
+            .unlockedBy("has_blue_stardust_powder", has(CraftingMaterialRegistry.BLUE_STARDUST_POWDER.get()))
+            .save(this.output);
+
+        ShapelessRecipeBuilder.shapeless(this.registries.lookupOrThrow(Registries.ITEM), RecipeCategory.BUILDING_BLOCKS, GlowBlockRegistry.PURPLE_GLOW_BLOCK_ITEM.get(), 4)
+            .requires(Items.REDSTONE_LAMP)
+            .requires(Items.REDSTONE)
+            .requires(CraftingMaterialRegistry.PURPLE_STARDUST_POWDER.get())
+            .unlockedBy("has_redstone_lamp", has(Items.REDSTONE_LAMP))
+            .unlockedBy("has_redstone", has(Items.REDSTONE))
+            .unlockedBy("has_purple_stardust_powder", has(CraftingMaterialRegistry.PURPLE_STARDUST_POWDER.get()))
+            .save(this.output);
+
+        ShapelessRecipeBuilder.shapeless(this.registries.lookupOrThrow(Registries.ITEM), RecipeCategory.BUILDING_BLOCKS, GlowBlockRegistry.MAGENTA_GLOW_BLOCK_ITEM.get(), 4)
+            .requires(Items.REDSTONE_LAMP)
+            .requires(Items.REDSTONE)
+            .requires(CraftingMaterialRegistry.MAGENTA_STARDUST_POWDER.get())
+            .unlockedBy("has_redstone_lamp", has(Items.REDSTONE_LAMP))
+            .unlockedBy("has_redstone", has(Items.REDSTONE))
+            .unlockedBy("has_magenta_stardust_powder", has(CraftingMaterialRegistry.MAGENTA_STARDUST_POWDER.get()))
+            .save(this.output);
+
+        ShapelessRecipeBuilder.shapeless(this.registries.lookupOrThrow(Registries.ITEM), RecipeCategory.BUILDING_BLOCKS, GlowBlockRegistry.PINK_GLOW_BLOCK_ITEM.get(), 4)
+            .requires(Items.REDSTONE_LAMP)
+            .requires(Items.REDSTONE)
+            .requires(CraftingMaterialRegistry.PINK_STARDUST_POWDER.get())
+            .unlockedBy("has_redstone_lamp", has(Items.REDSTONE_LAMP))
+            .unlockedBy("has_redstone", has(Items.REDSTONE))
+            .unlockedBy("has_pink_stardust_powder", has(CraftingMaterialRegistry.PINK_STARDUST_POWDER.get()))
+            .save(this.output);
     }
     public static class Runner extends RecipeProvider.Runner {
 
