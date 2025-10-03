@@ -16,6 +16,9 @@
   "item.futuretasticdecor.magenta_stardust_powder": "Magenta Stardust Powder",
   "item.futuretasticdecor.pink_stardust_powder": "Pink Stardust Powder",
 
+  "item.futuretasticdecor.anti_grav_alloy": "Anti-Grav Alloy",
+  "item.futuretasticdecor.anti_grav_ingot": "Anti-Grav Ingot",
+
   "block.futuretasticdecor.glow_block": "Glow Block",
   "block.futuretasticdecor.red_glow_block": "Red Glow Block",
   "block.futuretasticdecor.orange_glow_block": "Orange Glow Block",
@@ -30,7 +33,7 @@
   "block.futuretasticdecor.pink_glow_block": "Pink Glow Block",
 
   "block.futuretasticdecor.glow_panel": "Glow Panel",
-  "block.futuretasticcdecor.red_glow_panel": "Red Glow Panel",
+  "block.futuretasticdecor.red_glow_panel": "Red Glow Panel",
   "block.futuretasticdecor.orange_glow_panel": "Orange Glow Panel",
   "block.futuretasticdecor.yellow_glow_panel": "Yellow Glow Panel",
   "block.futuretasticdecor.lime_glow_panel": "Lime Glow Panel",

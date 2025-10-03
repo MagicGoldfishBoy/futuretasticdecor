@@ -154,12 +154,45 @@ public class RecipeDatagen extends RecipeProvider {
             .unlockedBy("has_magenta_dye", has(Items.MAGENTA_DYE))
             .save(this.output, "magenta_stardust_powder_from_stardust_and_magenta_dye");
 
-            ShapelessRecipeBuilder.shapeless(this.registries.lookupOrThrow(Registries.ITEM), RecipeCategory.MISC, CraftingMaterialRegistry.PINK_STARDUST_POWDER.get())
+        ShapelessRecipeBuilder.shapeless(this.registries.lookupOrThrow(Registries.ITEM), RecipeCategory.MISC, CraftingMaterialRegistry.PINK_STARDUST_POWDER.get())
             .requires(CraftingMaterialRegistry.STARDUST_POWDER.get())
             .requires(Items.PINK_DYE)
             .unlockedBy("has_stardust_powder", has(CraftingMaterialRegistry.STARDUST_POWDER.get()))
             .unlockedBy("has_pink_dye", has(Items.PINK_DYE))
             .save(this.output, "pink_stardust_powder_from_stardust_and_pink_dye");
+
+
+        ShapedRecipeBuilder.shaped(this.registries.lookupOrThrow(Registries.ITEM), RecipeCategory.MISC, CraftingMaterialRegistry.ANTI_GRAV_ALLOY.get(), 2)
+            .pattern("%#%")
+            .pattern("#$#")
+            .pattern("%#%")
+            .define('#', Items.RAW_GOLD)
+            .define('$', Items.ENDER_EYE)
+            .define('%', Items.CRYING_OBSIDIAN)
+            .unlockedBy("has_raw_gold", has(Items.RAW_GOLD))
+            .unlockedBy("has_ender_eye", has(Items.ENDER_EYE))
+            .unlockedBy("has_crying_obsidian", has(Items.CRYING_OBSIDIAN))
+            .save(this.output);
+
+        SimpleCookingRecipeBuilder.smelting(
+            Ingredient.of(CraftingMaterialRegistry.ANTI_GRAV_ALLOY.get()),
+            RecipeCategory.MISC, 
+            CraftingMaterialRegistry.ANTI_GRAV_INGOT.get(),
+            1.0f,
+            500
+        )
+        .unlockedBy("has_anti_grav_alloy", has(CraftingMaterialRegistry.ANTI_GRAV_ALLOY.get()))
+        .save(this.output, "anti_grav_ingot_from_smelting");
+
+        SimpleCookingRecipeBuilder.blasting(
+            Ingredient.of(CraftingMaterialRegistry.ANTI_GRAV_ALLOY.get()),
+            RecipeCategory.MISC, 
+            CraftingMaterialRegistry.ANTI_GRAV_INGOT.get(),
+            1.0f,
+            250
+        )
+        .unlockedBy("has_anti_grav_alloy", has(CraftingMaterialRegistry.ANTI_GRAV_ALLOY.get()))
+        .save(this.output, "anti_grav_ingot_from_blasting");
     }
     protected void registerMetalRecipes() {
 

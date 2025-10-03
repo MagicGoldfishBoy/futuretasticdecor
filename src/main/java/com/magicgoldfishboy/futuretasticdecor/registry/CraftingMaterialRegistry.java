@@ -34,6 +34,11 @@ public class CraftingMaterialRegistry {
 
     public static DeferredItem<Item> PINK_STARDUST_POWDER;
 
+
+    public static DeferredItem<Item> ANTI_GRAV_ALLOY;
+
+    public static DeferredItem<Item> ANTI_GRAV_INGOT;
+
     public static void registerCraftingMaterials() {
 
         COKE = FuturetasticDecor.ITEMS.registerSimpleItem(
@@ -102,6 +107,16 @@ public class CraftingMaterialRegistry {
             new Item.Properties()
         );
 
+
+        ANTI_GRAV_ALLOY = FuturetasticDecor.ITEMS.registerSimpleItem(
+            "anti_grav_alloy", 
+            new Item.Properties()
+        );
+
+        ANTI_GRAV_INGOT = FuturetasticDecor.ITEMS.registerSimpleItem(
+            "anti_grav_ingot", 
+            new Item.Properties()
+        );
     }
     
 }

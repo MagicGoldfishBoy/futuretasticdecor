@@ -1,0 +1,11 @@
+{
+  "type": "minecraft:smelting",
+  "category": "misc",
+  "cookingtime": 500,
+  "experience": 1.0,
+  "ingredient": "futuretasticdecor:anti_grav_alloy",
+  "result": {
+    "count": 1,
+    "id": "futuretasticdecor:anti_grav_ingot"
+  }
+}
