@@ -1,0 +1,11 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "category": "misc",
+  "ingredients": [
+    "futuretasticdecor:anti_grav_block"
+  ],
+  "result": {
+    "count": 9,
+    "id": "futuretasticdecor:anti_grav_ingot"
+  }
+}

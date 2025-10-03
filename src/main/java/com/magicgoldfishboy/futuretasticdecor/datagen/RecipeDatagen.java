@@ -162,6 +162,7 @@ public class RecipeDatagen extends RecipeProvider {
             .save(this.output, "pink_stardust_powder_from_stardust_and_pink_dye");
 
 
+
         ShapedRecipeBuilder.shaped(this.registries.lookupOrThrow(Registries.ITEM), RecipeCategory.MISC, CraftingMaterialRegistry.ANTI_GRAV_ALLOY.get(), 2)
             .pattern("%#%")
             .pattern("#$#")
@@ -173,6 +174,7 @@ public class RecipeDatagen extends RecipeProvider {
             .unlockedBy("has_ender_eye", has(Items.ENDER_EYE))
             .unlockedBy("has_crying_obsidian", has(Items.CRYING_OBSIDIAN))
             .save(this.output);
+
 
         SimpleCookingRecipeBuilder.smelting(
             Ingredient.of(CraftingMaterialRegistry.ANTI_GRAV_ALLOY.get()),
@@ -193,6 +195,36 @@ public class RecipeDatagen extends RecipeProvider {
         )
         .unlockedBy("has_anti_grav_alloy", has(CraftingMaterialRegistry.ANTI_GRAV_ALLOY.get()))
         .save(this.output, "anti_grav_ingot_from_blasting");
+
+        ShapelessRecipeBuilder.shapeless(this.registries.lookupOrThrow(Registries.ITEM), RecipeCategory.MISC, CraftingMaterialRegistry.ANTI_GRAV_INGOT.get(), 9)
+            .requires(CraftingMaterialRegistry.ANTI_GRAV_BLOCK_ITEM.get())
+            .unlockedBy("has_anti_grav_block", has(CraftingMaterialRegistry.ANTI_GRAV_BLOCK.get()))
+            .save(this.output, "anti_grav_ingot_from_anti_grav_block");
+
+        ShapedRecipeBuilder.shaped(this.registries.lookupOrThrow(Registries.ITEM), RecipeCategory.MISC, CraftingMaterialRegistry.ANTI_GRAV_INGOT.get())
+            .pattern("###")
+            .pattern("###")
+            .pattern("###")
+            .define('#', CraftingMaterialRegistry.ANTI_GRAV_NUGGET.get())
+            .unlockedBy("has_anti_grav_nugget", has(CraftingMaterialRegistry.ANTI_GRAV_NUGGET.get()))
+            .save(this.output, "anti_grav_ingot_from_anti_grav_nugget");
+
+
+        ShapelessRecipeBuilder.shapeless(this.registries.lookupOrThrow(Registries.ITEM), RecipeCategory.MISC, CraftingMaterialRegistry.ANTI_GRAV_NUGGET.get(), 9)
+            .requires(CraftingMaterialRegistry.ANTI_GRAV_INGOT.get())
+            .unlockedBy("has_anti_grav_ingot", has(CraftingMaterialRegistry.ANTI_GRAV_INGOT.get()))
+            .save(this.output, "anti_grav_nugget_from_anti_grav_ingot");
+
+            
+        ShapedRecipeBuilder.shaped(this.registries.lookupOrThrow(Registries.ITEM), RecipeCategory.BUILDING_BLOCKS, CraftingMaterialRegistry.ANTI_GRAV_BLOCK.get())
+            .pattern("###")
+            .pattern("###")
+            .pattern("###")
+            .define('#', CraftingMaterialRegistry.ANTI_GRAV_INGOT.get())
+            .unlockedBy("has_anti_grav_ingot", has(CraftingMaterialRegistry.ANTI_GRAV_INGOT.get()))
+            .save(this.output, "anti_grav_block_from_anti_grav_ingot");
+
+
     }
     protected void registerMetalRecipes() {
 

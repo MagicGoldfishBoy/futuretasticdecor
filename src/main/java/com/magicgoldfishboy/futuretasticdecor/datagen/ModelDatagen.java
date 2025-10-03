@@ -54,6 +54,8 @@ public class ModelDatagen extends ModelProvider {
 
         itemModels.generateFlatItem(CraftingMaterialRegistry.ANTI_GRAV_ALLOY.get(), ModelTemplates.FLAT_ITEM);
         itemModels.generateFlatItem(CraftingMaterialRegistry.ANTI_GRAV_INGOT.get(), ModelTemplates.FLAT_ITEM);
+        itemModels.generateFlatItem(CraftingMaterialRegistry.ANTI_GRAV_NUGGET.get(), ModelTemplates.FLAT_ITEM);
+        blockModels.createTrivialCube(CraftingMaterialRegistry.ANTI_GRAV_BLOCK.get());
     }
 
     protected void registerMetalModels(BlockModelGenerators blockModels, ItemModelGenerators itemModels) {

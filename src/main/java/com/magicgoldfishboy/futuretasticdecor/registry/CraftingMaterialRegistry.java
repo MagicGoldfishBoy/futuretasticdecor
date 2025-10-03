@@ -2,7 +2,14 @@ package com.magicgoldfishboy.futuretasticdecor.registry;
 
 import com.magicgoldfishboy.futuretasticdecor.FuturetasticDecor;
 
+import net.minecraft.core.registries.Registries;
+import net.minecraft.resources.ResourceKey;
+import net.minecraft.world.item.BlockItem;
 import net.minecraft.world.item.Item;
+import net.minecraft.world.level.block.Block;
+import net.minecraft.world.level.block.SoundType;
+import net.minecraft.world.level.block.state.BlockBehaviour;
+import net.neoforged.neoforge.registries.DeferredBlock;
 import net.neoforged.neoforge.registries.DeferredItem;
 
 public class CraftingMaterialRegistry {
@@ -38,6 +45,12 @@ public class CraftingMaterialRegistry {
     public static DeferredItem<Item> ANTI_GRAV_ALLOY;
 
     public static DeferredItem<Item> ANTI_GRAV_INGOT;
+
+    public static DeferredItem<Item> ANTI_GRAV_NUGGET;
+
+    public static DeferredBlock<Block> ANTI_GRAV_BLOCK;
+
+    public static DeferredItem<BlockItem> ANTI_GRAV_BLOCK_ITEM;
 
     public static void registerCraftingMaterials() {
 
@@ -117,6 +130,26 @@ public class CraftingMaterialRegistry {
             "anti_grav_ingot", 
             new Item.Properties()
         );
+
+        ANTI_GRAV_NUGGET = FuturetasticDecor.ITEMS.registerSimpleItem(
+            "anti_grav_nugget", 
+            new Item.Properties()
+        );
+
+        ANTI_GRAV_BLOCK = FuturetasticDecor.BLOCKS.register(
+            "anti_grav_block", 
+            registryName -> new Block(BlockBehaviour.Properties.of()
+                .setId(ResourceKey.create(Registries.BLOCK, registryName))
+                .strength(5.75f, 10.0f)
+                .requiresCorrectToolForDrops()
+                .sound(SoundType.GILDED_BLACKSTONE)
+                .friction(0.5f)
+            )
+        ); 
+        ANTI_GRAV_BLOCK_ITEM = FuturetasticDecor.ITEMS.registerSimpleBlockItem(
+            "anti_grav_block", 
+            ANTI_GRAV_BLOCK
+        ); 
     }
     
 }
