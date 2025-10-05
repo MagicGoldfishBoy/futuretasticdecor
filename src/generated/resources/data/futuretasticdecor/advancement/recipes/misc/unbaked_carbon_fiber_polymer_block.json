@@ -1,0 +1,43 @@
+{
+  "parent": "minecraft:recipes/root",
+  "criteria": {
+    "has_carbon_tow": {
+      "conditions": {
+        "items": [
+          {
+            "items": "futuretasticdecor:carbon_fiber_tow"
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    },
+    "has_plastic_pellet": {
+      "conditions": {
+        "items": [
+          {
+            "items": "futuretasticdecor:plastic_pellet"
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    },
+    "has_the_recipe": {
+      "conditions": {
+        "recipe": "futuretasticdecor:unbaked_carbon_fiber_polymer_block"
+      },
+      "trigger": "minecraft:recipe_unlocked"
+    }
+  },
+  "requirements": [
+    [
+      "has_the_recipe",
+      "has_plastic_pellet",
+      "has_carbon_tow"
+    ]
+  ],
+  "rewards": {
+    "recipes": [
+      "futuretasticdecor:unbaked_carbon_fiber_polymer_block"
+    ]
+  }
+}

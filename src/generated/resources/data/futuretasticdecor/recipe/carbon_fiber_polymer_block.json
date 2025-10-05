@@ -1,0 +1,11 @@
+{
+  "type": "minecraft:smelting",
+  "category": "blocks",
+  "cookingtime": 200,
+  "experience": 0.75,
+  "ingredient": "futuretasticdecor:unbaked_carbon_fiber_polymer_block",
+  "result": {
+    "count": 1,
+    "id": "futuretasticdecor:carbon_fiber_polymer_block"
+  }
+}

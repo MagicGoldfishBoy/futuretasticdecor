@@ -12,6 +12,7 @@ import net.minecraft.client.data.models.MultiVariant;
 import net.minecraft.client.data.models.blockstates.MultiVariantGenerator;
 import net.minecraft.client.data.models.blockstates.PropertyDispatch;
 import net.minecraft.client.data.models.model.ModelLocationUtils;
+import net.minecraft.client.data.models.model.ModelTemplate;
 import net.minecraft.client.data.models.model.ModelTemplates;
 import net.minecraft.client.renderer.block.model.Variant;
 import net.minecraft.core.Direction;
@@ -56,6 +57,15 @@ public class ModelDatagen extends ModelProvider {
         itemModels.generateFlatItem(CraftingMaterialRegistry.ANTI_GRAV_INGOT.get(), ModelTemplates.FLAT_ITEM);
         itemModels.generateFlatItem(CraftingMaterialRegistry.ANTI_GRAV_NUGGET.get(), ModelTemplates.FLAT_ITEM);
         blockModels.createTrivialCube(CraftingMaterialRegistry.ANTI_GRAV_BLOCK.get());
+
+        itemModels.generateFlatItem(CraftingMaterialRegistry.CARBON_POWDER.get(), ModelTemplates.FLAT_ITEM);
+        itemModels.generateFlatItem(CraftingMaterialRegistry.CARBON_FIBER_TOW.get(), ModelTemplates.FLAT_ITEM);
+        blockModels.createTrivialCube(CraftingMaterialRegistry.UNBAKED_CARBON_FIBER_POLYMER_BLOCK.get());
+        blockModels.createTrivialCube(CraftingMaterialRegistry.CARBON_FIBER_POLYMER_BLOCK.get());
+
+        itemModels.generateFlatItem(CraftingMaterialRegistry.RAW_PLASTIC.get(), ModelTemplates.FLAT_ITEM);
+        itemModels.generateFlatItem(CraftingMaterialRegistry.PLASTIC_PELLET.get(), ModelTemplates.FLAT_ITEM);
+        blockModels.createTrivialCube(CraftingMaterialRegistry.PLASTIC_BLOCK.get());
     }
 
     protected void registerMetalModels(BlockModelGenerators blockModels, ItemModelGenerators itemModels) {

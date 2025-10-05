@@ -1,0 +1,6 @@
+{
+  "parent": "minecraft:block/cube_all",
+  "textures": {
+    "all": "futuretasticdecor:block/unbaked_carbon_fiber_polymer_block"
+  }
+}

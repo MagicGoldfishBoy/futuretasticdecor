@@ -1,0 +1,17 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "misc",
+  "key": {
+    "#": "futuretasticdecor:plastic_pellet",
+    "$": "futuretasticdecor:carbon_fiber_tow"
+  },
+  "pattern": [
+    "$#$",
+    "#$#",
+    "$#$"
+  ],
+  "result": {
+    "count": 1,
+    "id": "futuretasticdecor:unbaked_carbon_fiber_polymer_block"
+  }
+}

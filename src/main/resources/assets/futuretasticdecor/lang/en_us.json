@@ -21,6 +21,14 @@
   "item.futuretasticdecor.anti_grav_nugget": "Anti-Grav Nugget",
   "block.futuretasticdecor.anti_grav_block": "Anti-Grav Block",
 
+  "item.futuretasticdecor.carbon_powder": "Carbon Powder",
+  "item.futuretasticdecor.carbon_fiber_tow": "Carbon Tow",
+  "block.futuretasticdecor.unbaked_carbon_fiber_polymer_block": "Unbaked Carbon Fiber Block",
+  "block.futuretasticdecor.carbon_fiber_polymer_block": "Carbon Fiber Block",
+  "item.futuretasticdecor.raw_plastic": "Raw Plastic",
+  "item.futuretasticdecor.plastic_pellet": "Plastic Pellet",
+  "block.futuretasticdecor.plastic_block": "Plastic Block",
+
   "block.futuretasticdecor.glow_block": "Glow Block",
   "block.futuretasticdecor.red_glow_block": "Red Glow Block",
   "block.futuretasticdecor.orange_glow_block": "Orange Glow Block",

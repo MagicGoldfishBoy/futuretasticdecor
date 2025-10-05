@@ -215,7 +215,7 @@ public class RecipeDatagen extends RecipeProvider {
             .unlockedBy("has_anti_grav_ingot", has(CraftingMaterialRegistry.ANTI_GRAV_INGOT.get()))
             .save(this.output, "anti_grav_nugget_from_anti_grav_ingot");
 
-            
+
         ShapedRecipeBuilder.shaped(this.registries.lookupOrThrow(Registries.ITEM), RecipeCategory.BUILDING_BLOCKS, CraftingMaterialRegistry.ANTI_GRAV_BLOCK.get())
             .pattern("###")
             .pattern("###")
@@ -225,6 +225,69 @@ public class RecipeDatagen extends RecipeProvider {
             .save(this.output, "anti_grav_block_from_anti_grav_ingot");
 
 
+
+        SingleItemRecipeBuilder.stonecutting(tag(COALS_TAG), RecipeCategory.MISC, CraftingMaterialRegistry.CARBON_POWDER, 2)
+            .unlockedBy("has_coal", has(Items.COAL))
+            .unlockedBy("has_charcoal", has(Items.CHARCOAL))
+            .save(this.output);
+
+
+        ShapedRecipeBuilder.shaped(this.registries.lookupOrThrow(Registries.ITEM), RecipeCategory.MISC, CraftingMaterialRegistry.CARBON_FIBER_TOW.get())
+            .pattern("##")
+            .pattern("##")
+            .define('#', CraftingMaterialRegistry.CARBON_POWDER.get())
+            .unlockedBy("has_carbon_powder", has(CraftingMaterialRegistry.CARBON_POWDER.get()))
+            .save(this.output);
+
+
+        ShapedRecipeBuilder.shaped(this.registries.lookupOrThrow(Registries.ITEM), RecipeCategory.MISC, CraftingMaterialRegistry.UNBAKED_CARBON_FIBER_POLYMER_ITEM.get())
+            .pattern("$#$")
+            .pattern("#$#")
+            .pattern("$#$")
+            .define('#', CraftingMaterialRegistry.PLASTIC_PELLET.get())
+            .define('$', CraftingMaterialRegistry.CARBON_FIBER_TOW.get())
+            .unlockedBy("has_plastic_pellet", has(CraftingMaterialRegistry.PLASTIC_PELLET.get()))
+            .unlockedBy("has_carbon_tow", has(CraftingMaterialRegistry.CARBON_FIBER_TOW.get()))
+            .save(this.output);
+
+
+        SimpleCookingRecipeBuilder.smelting(
+            Ingredient.of(CraftingMaterialRegistry.UNBAKED_CARBON_FIBER_POLYMER_ITEM.get()), 
+            RecipeCategory.MISC, 
+            CraftingMaterialRegistry.CARBON_FIBER_POLYMER_ITEM.get(), 
+            0.75f, 
+            200)
+            .unlockedBy("has_unbaked_carbon_fiber_polymer_item", has(CraftingMaterialRegistry.UNBAKED_CARBON_FIBER_POLYMER_ITEM.get()))
+            .save(this.output);
+
+
+        ShapelessRecipeBuilder.shapeless(this.registries.lookupOrThrow(Registries.ITEM), RecipeCategory.MISC, CraftingMaterialRegistry.RAW_PLASTIC.get(), 6)
+            .requires(CraftingMaterialRegistry.CARBON_POWDER.get())
+            .requires(Items.MAGMA_CREAM)
+            .requires(Items.WHITE_DYE)
+            .unlockedBy("has_carbon_powder", has(CraftingMaterialRegistry.CARBON_POWDER.get()))
+            .unlockedBy("has_magma_cream", has(Items.MAGMA_CREAM))
+            .unlockedBy("has_white_dye", has(Items.WHITE_DYE))
+            .save(this.output);
+
+
+        SimpleCookingRecipeBuilder.smelting(
+            Ingredient.of(CraftingMaterialRegistry.RAW_PLASTIC.get()), 
+            RecipeCategory.MISC, 
+            CraftingMaterialRegistry.PLASTIC_PELLET.get(), 
+            0.5f, 
+            100)
+            .unlockedBy("has_raw_plastic", has(CraftingMaterialRegistry.RAW_PLASTIC.get()))
+            .save(this.output);
+
+
+        ShapedRecipeBuilder.shaped(this.registries.lookupOrThrow(Registries.ITEM), RecipeCategory.MISC, CraftingMaterialRegistry.PLASTIC_BLOCK_ITEM.get())
+            .pattern("###")
+            .pattern("###")
+            .pattern("###")
+            .define('#', CraftingMaterialRegistry.PLASTIC_PELLET.get())
+            .unlockedBy("has_plastic_pellet", has(CraftingMaterialRegistry.PLASTIC_PELLET.get()))
+            .save(this.output);
     }
     protected void registerMetalRecipes() {
 
