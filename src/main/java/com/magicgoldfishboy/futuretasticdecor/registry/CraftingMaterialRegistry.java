@@ -66,14 +66,6 @@ public class CraftingMaterialRegistry {
     public static DeferredItem<BlockItem> CARBON_FIBER_POLYMER_ITEM;
 
 
-    public static DeferredItem<Item> RAW_PLASTIC;
-
-    public static DeferredItem<Item> PLASTIC_PELLET;
-
-    public static DeferredBlock<Block> PLASTIC_BLOCK;
-
-    public static DeferredItem<BlockItem> PLASTIC_BLOCK_ITEM;
-
     public static void registerCraftingMaterials() {
 
         COKE = FuturetasticDecor.ITEMS.registerSimpleItem(
@@ -209,26 +201,6 @@ public class CraftingMaterialRegistry {
         );
         CARBON_FIBER_POLYMER_ITEM = FuturetasticDecor.ITEMS.registerSimpleBlockItem(
             CARBON_FIBER_POLYMER_BLOCK
-        );
-
-
-        RAW_PLASTIC = FuturetasticDecor.ITEMS.registerSimpleItem(
-            "raw_plastic"
-        );
-
-        PLASTIC_PELLET = FuturetasticDecor.ITEMS.registerSimpleItem(
-            "plastic_pellet"
-        );
-
-        PLASTIC_BLOCK = FuturetasticDecor.BLOCKS.registerSimpleBlock(
-            "plastic_block",
-            BlockBehaviour.Properties.of()
-                .strength(2.75f, 4.0f)
-                .requiresCorrectToolForDrops()
-                .sound(SoundType.TUFF)
-        );
-        PLASTIC_BLOCK_ITEM = FuturetasticDecor.ITEMS.registerSimpleBlockItem(
-            PLASTIC_BLOCK
         );
     }
     

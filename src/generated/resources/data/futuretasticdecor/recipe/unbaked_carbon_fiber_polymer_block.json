@@ -2,7 +2,7 @@
   "type": "minecraft:crafting_shaped",
   "category": "misc",
   "key": {
-    "#": "futuretasticdecor:plastic_pellet",
+    "#": "futuretasticdecor:white_plastic_pellet",
     "$": "futuretasticdecor:carbon_fiber_tow"
   },
   "pattern": [

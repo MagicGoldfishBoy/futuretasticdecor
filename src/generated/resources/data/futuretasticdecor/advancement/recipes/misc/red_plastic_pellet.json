@@ -1,0 +1,32 @@
+{
+  "parent": "minecraft:recipes/root",
+  "criteria": {
+    "has_raw_red_plastic": {
+      "conditions": {
+        "items": [
+          {
+            "items": "futuretasticdecor:raw_red_plastic"
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    },
+    "has_the_recipe": {
+      "conditions": {
+        "recipe": "futuretasticdecor:red_plastic_pellet"
+      },
+      "trigger": "minecraft:recipe_unlocked"
+    }
+  },
+  "requirements": [
+    [
+      "has_the_recipe",
+      "has_raw_red_plastic"
+    ]
+  ],
+  "rewards": {
+    "recipes": [
+      "futuretasticdecor:red_plastic_pellet"
+    ]
+  }
+}

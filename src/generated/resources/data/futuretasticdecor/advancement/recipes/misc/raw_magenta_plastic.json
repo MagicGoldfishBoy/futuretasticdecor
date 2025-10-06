@@ -1,0 +1,54 @@
+{
+  "parent": "minecraft:recipes/root",
+  "criteria": {
+    "has_carbon_powder": {
+      "conditions": {
+        "items": [
+          {
+            "items": "futuretasticdecor:carbon_powder"
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    },
+    "has_magenta_dye": {
+      "conditions": {
+        "items": [
+          {
+            "items": "minecraft:magenta_dye"
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    },
+    "has_magma_cream": {
+      "conditions": {
+        "items": [
+          {
+            "items": "minecraft:magma_cream"
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    },
+    "has_the_recipe": {
+      "conditions": {
+        "recipe": "futuretasticdecor:raw_magenta_plastic"
+      },
+      "trigger": "minecraft:recipe_unlocked"
+    }
+  },
+  "requirements": [
+    [
+      "has_the_recipe",
+      "has_carbon_powder",
+      "has_magma_cream",
+      "has_magenta_dye"
+    ]
+  ],
+  "rewards": {
+    "recipes": [
+      "futuretasticdecor:raw_magenta_plastic"
+    ]
+  }
+}

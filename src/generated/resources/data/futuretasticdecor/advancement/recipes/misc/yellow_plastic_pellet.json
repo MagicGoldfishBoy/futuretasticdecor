@@ -1,0 +1,32 @@
+{
+  "parent": "minecraft:recipes/root",
+  "criteria": {
+    "has_raw_yellow_plastic": {
+      "conditions": {
+        "items": [
+          {
+            "items": "futuretasticdecor:raw_yellow_plastic"
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    },
+    "has_the_recipe": {
+      "conditions": {
+        "recipe": "futuretasticdecor:yellow_plastic_pellet"
+      },
+      "trigger": "minecraft:recipe_unlocked"
+    }
+  },
+  "requirements": [
+    [
+      "has_the_recipe",
+      "has_raw_yellow_plastic"
+    ]
+  ],
+  "rewards": {
+    "recipes": [
+      "futuretasticdecor:yellow_plastic_pellet"
+    ]
+  }
+}

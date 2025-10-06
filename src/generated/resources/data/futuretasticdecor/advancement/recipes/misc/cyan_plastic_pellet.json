@@ -1,0 +1,32 @@
+{
+  "parent": "minecraft:recipes/root",
+  "criteria": {
+    "has_raw_cyan_plastic": {
+      "conditions": {
+        "items": [
+          {
+            "items": "futuretasticdecor:raw_cyan_plastic"
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    },
+    "has_the_recipe": {
+      "conditions": {
+        "recipe": "futuretasticdecor:cyan_plastic_pellet"
+      },
+      "trigger": "minecraft:recipe_unlocked"
+    }
+  },
+  "requirements": [
+    [
+      "has_the_recipe",
+      "has_raw_cyan_plastic"
+    ]
+  ],
+  "rewards": {
+    "recipes": [
+      "futuretasticdecor:cyan_plastic_pellet"
+    ]
+  }
+}

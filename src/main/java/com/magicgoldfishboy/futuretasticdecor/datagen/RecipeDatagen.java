@@ -1,15 +1,12 @@
 package com.magicgoldfishboy.futuretasticdecor.datagen;
 
-import java.rmi.registry.Registry;
 import java.util.concurrent.CompletableFuture;
 
-import com.fasterxml.jackson.annotation.JsonFormat.Shape;
 import com.magicgoldfishboy.futuretasticdecor.registry.CraftingMaterialRegistry;
 import com.magicgoldfishboy.futuretasticdecor.registry.GlowBlockRegistry;
 import com.magicgoldfishboy.futuretasticdecor.registry.MetalRegistry;
+import com.magicgoldfishboy.futuretasticdecor.registry.PlasticRegistry;
 
-import net.minecraft.WorldVersion.Simple;
-import net.minecraft.client.resources.model.Material;
 import net.minecraft.core.HolderLookup;
 import net.minecraft.core.HolderLookup.Provider;
 import net.minecraft.core.registries.Registries;
@@ -27,8 +24,6 @@ import net.minecraft.tags.TagKey;
 import net.minecraft.world.item.Item;
 import net.minecraft.world.item.Items;
 import net.minecraft.world.item.crafting.Ingredient;
-import net.minecraft.world.item.crafting.SingleRecipeInput;
-import net.neoforged.neoforge.common.Tags;
 
 public class RecipeDatagen extends RecipeProvider {
 
@@ -43,6 +38,7 @@ public class RecipeDatagen extends RecipeProvider {
     @Override
     protected void buildRecipes() {
         registerMaterialRecipes();
+        registerPlasticRecipes();
         registerMetalRecipes();
         registerGlowBlockRecipes();
     }
@@ -244,9 +240,9 @@ public class RecipeDatagen extends RecipeProvider {
             .pattern("$#$")
             .pattern("#$#")
             .pattern("$#$")
-            .define('#', CraftingMaterialRegistry.PLASTIC_PELLET.get())
+            .define('#', PlasticRegistry.WHITE_PLASTIC_PELLET.get())
             .define('$', CraftingMaterialRegistry.CARBON_FIBER_TOW.get())
-            .unlockedBy("has_plastic_pellet", has(CraftingMaterialRegistry.PLASTIC_PELLET.get()))
+            .unlockedBy("has_plastic_pellet", has(PlasticRegistry.WHITE_PLASTIC_PELLET.get()))
             .unlockedBy("has_carbon_tow", has(CraftingMaterialRegistry.CARBON_FIBER_TOW.get()))
             .save(this.output);
 
@@ -261,7 +257,10 @@ public class RecipeDatagen extends RecipeProvider {
             .save(this.output);
 
 
-        ShapelessRecipeBuilder.shapeless(this.registries.lookupOrThrow(Registries.ITEM), RecipeCategory.MISC, CraftingMaterialRegistry.RAW_PLASTIC.get(), 6)
+    }
+    protected void registerPlasticRecipes() {
+
+        ShapelessRecipeBuilder.shapeless(this.registries.lookupOrThrow(Registries.ITEM), RecipeCategory.MISC, PlasticRegistry.RAW_WHITE_PLASTIC.get(), 6)
             .requires(CraftingMaterialRegistry.CARBON_POWDER.get())
             .requires(Items.MAGMA_CREAM)
             .requires(Items.WHITE_DYE)
@@ -270,24 +269,311 @@ public class RecipeDatagen extends RecipeProvider {
             .unlockedBy("has_white_dye", has(Items.WHITE_DYE))
             .save(this.output);
 
+        ShapelessRecipeBuilder.shapeless(this.registries.lookupOrThrow(Registries.ITEM), RecipeCategory.MISC, PlasticRegistry.RAW_RED_PLASTIC.get(), 6)
+            .requires(CraftingMaterialRegistry.CARBON_POWDER.get())
+            .requires(Items.MAGMA_CREAM)
+            .requires(Items.RED_DYE)
+            .unlockedBy("has_carbon_powder", has(CraftingMaterialRegistry.CARBON_POWDER.get()))
+            .unlockedBy("has_magma_cream", has(Items.MAGMA_CREAM))
+            .unlockedBy("has_red_dye", has(Items.RED_DYE))
+            .save(this.output);
+
+        ShapelessRecipeBuilder.shapeless(this.registries.lookupOrThrow(Registries.ITEM), RecipeCategory.MISC, PlasticRegistry.RAW_ORANGE_PLASTIC.get(), 6)
+            .requires(CraftingMaterialRegistry.CARBON_POWDER.get())
+            .requires(Items.MAGMA_CREAM)
+            .requires(Items.ORANGE_DYE)
+            .unlockedBy("has_carbon_powder", has(CraftingMaterialRegistry.CARBON_POWDER.get()))
+            .unlockedBy("has_magma_cream", has(Items.MAGMA_CREAM))
+            .unlockedBy("has_orange_dye", has(Items.ORANGE_DYE))
+            .save(this.output);
+
+        ShapelessRecipeBuilder.shapeless(this.registries.lookupOrThrow(Registries.ITEM), RecipeCategory.MISC, PlasticRegistry.RAW_YELLOW_PLASTIC.get(), 6)
+            .requires(CraftingMaterialRegistry.CARBON_POWDER.get())
+            .requires(Items.MAGMA_CREAM)
+            .requires(Items.YELLOW_DYE)
+            .unlockedBy("has_carbon_powder", has(CraftingMaterialRegistry.CARBON_POWDER.get()))
+            .unlockedBy("has_magma_cream", has(Items.MAGMA_CREAM))
+            .unlockedBy("has_yellow_dye", has(Items.YELLOW_DYE))
+            .save(this.output);
+
+        ShapelessRecipeBuilder.shapeless(this.registries.lookupOrThrow(Registries.ITEM), RecipeCategory.MISC, PlasticRegistry.RAW_LIME_PLASTIC.get(), 6)
+            .requires(CraftingMaterialRegistry.CARBON_POWDER.get())
+            .requires(Items.MAGMA_CREAM)
+            .requires(Items.LIME_DYE)
+            .unlockedBy("has_carbon_powder", has(CraftingMaterialRegistry.CARBON_POWDER.get()))
+            .unlockedBy("has_magma_cream", has(Items.MAGMA_CREAM))
+            .unlockedBy("has_lime_dye", has(Items.LIME_DYE))
+            .save(this.output);
+
+        ShapelessRecipeBuilder.shapeless(this.registries.lookupOrThrow(Registries.ITEM), RecipeCategory.MISC, PlasticRegistry.RAW_GREEN_PLASTIC.get(), 6)
+            .requires(CraftingMaterialRegistry.CARBON_POWDER.get())
+            .requires(Items.MAGMA_CREAM)
+            .requires(Items.GREEN_DYE)
+            .unlockedBy("has_carbon_powder", has(CraftingMaterialRegistry.CARBON_POWDER.get()))
+            .unlockedBy("has_magma_cream", has(Items.MAGMA_CREAM))
+            .unlockedBy("has_green_dye", has(Items.GREEN_DYE))
+            .save(this.output);
+
+        ShapelessRecipeBuilder.shapeless(this.registries.lookupOrThrow(Registries.ITEM), RecipeCategory.MISC, PlasticRegistry.RAW_CYAN_PLASTIC.get(), 6)
+            .requires(CraftingMaterialRegistry.CARBON_POWDER.get())
+            .requires(Items.MAGMA_CREAM)
+            .requires(Items.CYAN_DYE)
+            .unlockedBy("has_carbon_powder", has(CraftingMaterialRegistry.CARBON_POWDER.get()))
+            .unlockedBy("has_magma_cream", has(Items.MAGMA_CREAM))
+            .unlockedBy("has_cyan_dye", has(Items.CYAN_DYE))
+            .save(this.output);
+
+        ShapelessRecipeBuilder.shapeless(this.registries.lookupOrThrow(Registries.ITEM), RecipeCategory.MISC, PlasticRegistry.RAW_LIGHT_BLUE_PLASTIC.get(), 6)
+            .requires(CraftingMaterialRegistry.CARBON_POWDER.get())
+            .requires(Items.MAGMA_CREAM)
+            .requires(Items.LIGHT_BLUE_DYE)
+            .unlockedBy("has_carbon_powder", has(CraftingMaterialRegistry.CARBON_POWDER.get()))
+            .unlockedBy("has_magma_cream", has(Items.MAGMA_CREAM))
+            .unlockedBy("has_light_blue_dye", has(Items.LIGHT_BLUE_DYE))
+            .save(this.output);
+
+        ShapelessRecipeBuilder.shapeless(this.registries.lookupOrThrow(Registries.ITEM), RecipeCategory.MISC, PlasticRegistry.RAW_BLUE_PLASTIC.get(), 6)
+            .requires(CraftingMaterialRegistry.CARBON_POWDER.get())
+            .requires(Items.MAGMA_CREAM)
+            .requires(Items.BLUE_DYE)
+            .unlockedBy("has_carbon_powder", has(CraftingMaterialRegistry.CARBON_POWDER.get()))
+            .unlockedBy("has_magma_cream", has(Items.MAGMA_CREAM))
+            .unlockedBy("has_blue_dye", has(Items.BLUE_DYE))
+            .save(this.output);
+
+        ShapelessRecipeBuilder.shapeless(this.registries.lookupOrThrow(Registries.ITEM), RecipeCategory.MISC, PlasticRegistry.RAW_PURPLE_PLASTIC.get(), 6)
+            .requires(CraftingMaterialRegistry.CARBON_POWDER.get())
+            .requires(Items.MAGMA_CREAM)
+            .requires(Items.PURPLE_DYE)
+            .unlockedBy("has_carbon_powder", has(CraftingMaterialRegistry.CARBON_POWDER.get()))
+            .unlockedBy("has_magma_cream", has(Items.MAGMA_CREAM))
+            .unlockedBy("has_purple_dye", has(Items.PURPLE_DYE))
+            .save(this.output);
+
+        ShapelessRecipeBuilder.shapeless(this.registries.lookupOrThrow(Registries.ITEM), RecipeCategory.MISC, PlasticRegistry.RAW_MAGENTA_PLASTIC.get(), 6)
+            .requires(CraftingMaterialRegistry.CARBON_POWDER.get())
+            .requires(Items.MAGMA_CREAM)
+            .requires(Items.MAGENTA_DYE)
+            .unlockedBy("has_carbon_powder", has(CraftingMaterialRegistry.CARBON_POWDER.get()))
+            .unlockedBy("has_magma_cream", has(Items.MAGMA_CREAM))
+            .unlockedBy("has_magenta_dye", has(Items.MAGENTA_DYE))
+            .save(this.output);
+
+        ShapelessRecipeBuilder.shapeless(this.registries.lookupOrThrow(Registries.ITEM), RecipeCategory.MISC, PlasticRegistry.RAW_PINK_PLASTIC.get(), 6)
+            .requires(CraftingMaterialRegistry.CARBON_POWDER.get())
+            .requires(Items.MAGMA_CREAM)
+            .requires(Items.PINK_DYE)
+            .unlockedBy("has_carbon_powder", has(CraftingMaterialRegistry.CARBON_POWDER.get()))
+            .unlockedBy("has_magma_cream", has(Items.MAGMA_CREAM))
+            .unlockedBy("has_pink_dye", has(Items.PINK_DYE))
+            .save(this.output);
+
 
         SimpleCookingRecipeBuilder.smelting(
-            Ingredient.of(CraftingMaterialRegistry.RAW_PLASTIC.get()), 
+            Ingredient.of(PlasticRegistry.RAW_WHITE_PLASTIC.get()), 
             RecipeCategory.MISC, 
-            CraftingMaterialRegistry.PLASTIC_PELLET.get(), 
+            PlasticRegistry.WHITE_PLASTIC_PELLET.get(), 
             0.5f, 
             100)
-            .unlockedBy("has_raw_plastic", has(CraftingMaterialRegistry.RAW_PLASTIC.get()))
+            .unlockedBy("has_raw_white_plastic", has(PlasticRegistry.RAW_WHITE_PLASTIC.get()))
+            .save(this.output);
+
+        SimpleCookingRecipeBuilder.smelting(
+            Ingredient.of(PlasticRegistry.RAW_RED_PLASTIC.get()), 
+            RecipeCategory.MISC, 
+            PlasticRegistry.RED_PLASTIC_PELLET.get(), 
+            0.5f, 
+            100)
+            .unlockedBy("has_raw_red_plastic", has(PlasticRegistry.RAW_RED_PLASTIC.get()))
+            .save(this.output);
+
+        SimpleCookingRecipeBuilder.smelting(
+            Ingredient.of(PlasticRegistry.RAW_ORANGE_PLASTIC.get()), 
+            RecipeCategory.MISC, 
+            PlasticRegistry.ORANGE_PLASTIC_PELLET.get(), 
+            0.5f, 
+            100)
+            .unlockedBy("has_raw_orange_plastic", has(PlasticRegistry.RAW_ORANGE_PLASTIC.get()))
+            .save(this.output);
+
+        SimpleCookingRecipeBuilder.smelting(
+            Ingredient.of(PlasticRegistry.RAW_YELLOW_PLASTIC.get()), 
+            RecipeCategory.MISC, 
+            PlasticRegistry.YELLOW_PLASTIC_PELLET.get(), 
+            0.5f, 
+            100)
+            .unlockedBy("has_raw_yellow_plastic", has(PlasticRegistry.RAW_YELLOW_PLASTIC.get()))
+            .save(this.output);
+
+        SimpleCookingRecipeBuilder.smelting(
+            Ingredient.of(PlasticRegistry.RAW_LIME_PLASTIC.get()), 
+            RecipeCategory.MISC, 
+            PlasticRegistry.LIME_PLASTIC_PELLET.get(), 
+            0.5f, 
+            100)
+            .unlockedBy("has_raw_lime_plastic", has(PlasticRegistry.RAW_LIME_PLASTIC.get()))
+            .save(this.output);
+
+        SimpleCookingRecipeBuilder.smelting(
+            Ingredient.of(PlasticRegistry.RAW_GREEN_PLASTIC.get()), 
+            RecipeCategory.MISC, 
+            PlasticRegistry.GREEN_PLASTIC_PELLET.get(), 
+            0.5f, 
+            100)
+            .unlockedBy("has_raw_green_plastic", has(PlasticRegistry.RAW_GREEN_PLASTIC.get()))
+            .save(this.output);
+
+        SimpleCookingRecipeBuilder.smelting(
+            Ingredient.of(PlasticRegistry.RAW_CYAN_PLASTIC.get()), 
+            RecipeCategory.MISC, 
+            PlasticRegistry.CYAN_PLASTIC_PELLET.get(), 
+            0.5f, 
+            100)
+            .unlockedBy("has_raw_cyan_plastic", has(PlasticRegistry.RAW_CYAN_PLASTIC.get()))
+            .save(this.output);
+
+        SimpleCookingRecipeBuilder.smelting(
+            Ingredient.of(PlasticRegistry.RAW_LIGHT_BLUE_PLASTIC.get()), 
+            RecipeCategory.MISC, 
+            PlasticRegistry.LIGHT_BLUE_PLASTIC_PELLET.get(), 
+            0.5f, 
+            100)
+            .unlockedBy("has_raw_light_blue_plastic", has(PlasticRegistry.RAW_LIGHT_BLUE_PLASTIC.get()))
+            .save(this.output);
+
+        SimpleCookingRecipeBuilder.smelting(
+            Ingredient.of(PlasticRegistry.RAW_BLUE_PLASTIC.get()), 
+            RecipeCategory.MISC, 
+            PlasticRegistry.BLUE_PLASTIC_PELLET.get(), 
+            0.5f, 
+            100)
+            .unlockedBy("has_raw_blue_plastic", has(PlasticRegistry.RAW_BLUE_PLASTIC.get()))
+            .save(this.output);
+
+        SimpleCookingRecipeBuilder.smelting(
+            Ingredient.of(PlasticRegistry.RAW_PURPLE_PLASTIC.get()), 
+            RecipeCategory.MISC, 
+            PlasticRegistry.PURPLE_PLASTIC_PELLET.get(), 
+            0.5f, 
+            100)
+            .unlockedBy("has_raw_purple_plastic", has(PlasticRegistry.RAW_PURPLE_PLASTIC.get()))
+            .save(this.output);
+
+        SimpleCookingRecipeBuilder.smelting(
+            Ingredient.of(PlasticRegistry.RAW_MAGENTA_PLASTIC.get()), 
+            RecipeCategory.MISC, 
+            PlasticRegistry.MAGENTA_PLASTIC_PELLET.get(), 
+            0.5f, 
+            100)
+            .unlockedBy("has_raw_magenta_plastic", has(PlasticRegistry.RAW_MAGENTA_PLASTIC.get()))
+            .save(this.output);
+
+        SimpleCookingRecipeBuilder.smelting(
+            Ingredient.of(PlasticRegistry.RAW_PINK_PLASTIC.get()), 
+            RecipeCategory.MISC, 
+            PlasticRegistry.PINK_PLASTIC_PELLET.get(), 
+            0.5f, 
+            100)
+            .unlockedBy("has_raw_pink_plastic", has(PlasticRegistry.RAW_PINK_PLASTIC.get()))
             .save(this.output);
 
 
-        ShapedRecipeBuilder.shaped(this.registries.lookupOrThrow(Registries.ITEM), RecipeCategory.MISC, CraftingMaterialRegistry.PLASTIC_BLOCK_ITEM.get())
+        ShapedRecipeBuilder.shaped(this.registries.lookupOrThrow(Registries.ITEM), RecipeCategory.MISC, PlasticRegistry.WHITE_PLASTIC_BLOCK_ITEM.get())
             .pattern("###")
             .pattern("###")
             .pattern("###")
-            .define('#', CraftingMaterialRegistry.PLASTIC_PELLET.get())
-            .unlockedBy("has_plastic_pellet", has(CraftingMaterialRegistry.PLASTIC_PELLET.get()))
+            .define('#', PlasticRegistry.WHITE_PLASTIC_PELLET.get())
+            .unlockedBy("has_plastic_pellet", has(PlasticRegistry.WHITE_PLASTIC_PELLET.get()))
             .save(this.output);
+
+        ShapedRecipeBuilder.shaped(this.registries.lookupOrThrow(Registries.ITEM), RecipeCategory.MISC, PlasticRegistry.RED_PLASTIC_BLOCK_ITEM.get())
+            .pattern("###")
+            .pattern("###")
+            .pattern("###")
+            .define('#', PlasticRegistry.RED_PLASTIC_PELLET.get())
+            .unlockedBy("has_plastic_pellet", has(PlasticRegistry.RED_PLASTIC_PELLET.get()))
+            .save(this.output);
+
+        ShapedRecipeBuilder.shaped(this.registries.lookupOrThrow(Registries.ITEM), RecipeCategory.MISC, PlasticRegistry.ORANGE_PLASTIC_BLOCK_ITEM.get())
+            .pattern("###")
+            .pattern("###")
+            .pattern("###")
+            .define('#', PlasticRegistry.ORANGE_PLASTIC_PELLET.get())
+            .unlockedBy("has_plastic_pellet", has(PlasticRegistry.ORANGE_PLASTIC_PELLET.get()))
+            .save(this.output);
+
+        ShapedRecipeBuilder.shaped(this.registries.lookupOrThrow(Registries.ITEM), RecipeCategory.MISC, PlasticRegistry.YELLOW_PLASTIC_BLOCK_ITEM.get())
+            .pattern("###")
+            .pattern("###")
+            .pattern("###")
+            .define('#', PlasticRegistry.YELLOW_PLASTIC_PELLET.get())
+            .unlockedBy("has_plastic_pellet", has(PlasticRegistry.YELLOW_PLASTIC_PELLET.get()))
+            .save(this.output);
+
+        ShapedRecipeBuilder.shaped(this.registries.lookupOrThrow(Registries.ITEM), RecipeCategory.MISC, PlasticRegistry.LIME_PLASTIC_BLOCK_ITEM.get())
+            .pattern("###")
+            .pattern("###")
+            .pattern("###")
+            .define('#', PlasticRegistry.LIME_PLASTIC_PELLET.get())
+            .unlockedBy("has_plastic_pellet", has(PlasticRegistry.LIME_PLASTIC_PELLET.get()))
+            .save(this.output);
+
+        ShapedRecipeBuilder.shaped(this.registries.lookupOrThrow(Registries.ITEM), RecipeCategory.MISC, PlasticRegistry.GREEN_PLASTIC_BLOCK_ITEM.get())
+            .pattern("###")
+            .pattern("###")
+            .pattern("###")
+            .define('#', PlasticRegistry.GREEN_PLASTIC_PELLET.get())
+            .unlockedBy("has_plastic_pellet", has(PlasticRegistry.GREEN_PLASTIC_PELLET.get()))
+            .save(this.output);
+
+        ShapedRecipeBuilder.shaped(this.registries.lookupOrThrow(Registries.ITEM), RecipeCategory.MISC, PlasticRegistry.CYAN_PLASTIC_BLOCK_ITEM.get())
+            .pattern("###")
+            .pattern("###")
+            .pattern("###")
+            .define('#', PlasticRegistry.CYAN_PLASTIC_PELLET.get())
+            .unlockedBy("has_plastic_pellet", has(PlasticRegistry.CYAN_PLASTIC_PELLET.get()))
+            .save(this.output);
+
+        ShapedRecipeBuilder.shaped(this.registries.lookupOrThrow(Registries.ITEM), RecipeCategory.MISC, PlasticRegistry.LIGHT_BLUE_PLASTIC_BLOCK_ITEM.get())
+            .pattern("###")
+            .pattern("###")
+            .pattern("###")
+            .define('#', PlasticRegistry.LIGHT_BLUE_PLASTIC_PELLET.get())
+            .unlockedBy("has_plastic_pellet", has(PlasticRegistry.LIGHT_BLUE_PLASTIC_PELLET.get()))
+            .save(this.output);
+
+        ShapedRecipeBuilder.shaped(this.registries.lookupOrThrow(Registries.ITEM), RecipeCategory.MISC, PlasticRegistry.BLUE_PLASTIC_BLOCK_ITEM.get())
+            .pattern("###")
+            .pattern("###")
+            .pattern("###")
+            .define('#', PlasticRegistry.BLUE_PLASTIC_PELLET.get())
+            .unlockedBy("has_plastic_pellet", has(PlasticRegistry.BLUE_PLASTIC_PELLET.get()))
+            .save(this.output);
+
+        ShapedRecipeBuilder.shaped(this.registries.lookupOrThrow(Registries.ITEM), RecipeCategory.MISC, PlasticRegistry.PURPLE_PLASTIC_BLOCK_ITEM.get())
+            .pattern("###")
+            .pattern("###")
+            .pattern("###")
+            .define('#', PlasticRegistry.PURPLE_PLASTIC_PELLET.get())
+            .unlockedBy("has_plastic_pellet", has(PlasticRegistry.PURPLE_PLASTIC_PELLET.get()))
+            .save(this.output);
+
+        ShapedRecipeBuilder.shaped(this.registries.lookupOrThrow(Registries.ITEM), RecipeCategory.MISC, PlasticRegistry.MAGENTA_PLASTIC_BLOCK_ITEM.get())
+            .pattern("###")
+            .pattern("###")
+            .pattern("###")
+            .define('#', PlasticRegistry.MAGENTA_PLASTIC_PELLET.get())
+            .unlockedBy("has_plastic_pellet", has(PlasticRegistry.MAGENTA_PLASTIC_PELLET.get()))
+            .save(this.output);
+
+        ShapedRecipeBuilder.shaped(this.registries.lookupOrThrow(Registries.ITEM), RecipeCategory.MISC, PlasticRegistry.PINK_PLASTIC_BLOCK_ITEM.get())
+            .pattern("###")
+            .pattern("###")
+            .pattern("###")
+            .define('#', PlasticRegistry.PINK_PLASTIC_PELLET.get())
+            .unlockedBy("has_plastic_pellet", has(PlasticRegistry.PINK_PLASTIC_PELLET.get()))
+            .save(this.output);
+
     }
     protected void registerMetalRecipes() {
 

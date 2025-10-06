@@ -5,23 +5,15 @@ import com.magicgoldfishboy.futuretasticdecor.block.Panel;
 import com.magicgoldfishboy.futuretasticdecor.registry.CraftingMaterialRegistry;
 import com.magicgoldfishboy.futuretasticdecor.registry.GlowBlockRegistry;
 import com.magicgoldfishboy.futuretasticdecor.registry.MetalRegistry;
+import com.magicgoldfishboy.futuretasticdecor.registry.PlasticRegistry;
+
 import net.minecraft.client.data.models.BlockModelGenerators;
 import net.minecraft.client.data.models.ItemModelGenerators;
 import net.minecraft.client.data.models.ModelProvider;
-import net.minecraft.client.data.models.MultiVariant;
-import net.minecraft.client.data.models.blockstates.MultiVariantGenerator;
-import net.minecraft.client.data.models.blockstates.PropertyDispatch;
 import net.minecraft.client.data.models.model.ModelLocationUtils;
-import net.minecraft.client.data.models.model.ModelTemplate;
 import net.minecraft.client.data.models.model.ModelTemplates;
 import net.minecraft.client.renderer.block.model.Variant;
-import net.minecraft.core.Direction;
 import net.minecraft.data.PackOutput;
-import net.minecraft.util.random.WeightedList;
-import net.minecraft.world.level.block.DirectionalBlock;
-import net.minecraft.world.level.block.HorizontalDirectionalBlock;
-import net.minecraft.world.level.block.state.properties.BlockStateProperties;
-
 import javax.annotation.Nonnull;
 
 public class ModelDatagen extends ModelProvider {
@@ -32,6 +24,7 @@ public class ModelDatagen extends ModelProvider {
     @Override
     protected void registerModels(@Nonnull BlockModelGenerators blockModels, @Nonnull ItemModelGenerators itemModels) {
         registerMaterialModels(blockModels, itemModels);
+        registerPlasticModels(blockModels, itemModels);
         registerMetalModels(blockModels, itemModels);
         registerGlowBlockModels(blockModels, itemModels);
     }
@@ -63,9 +56,49 @@ public class ModelDatagen extends ModelProvider {
         blockModels.createTrivialCube(CraftingMaterialRegistry.UNBAKED_CARBON_FIBER_POLYMER_BLOCK.get());
         blockModels.createTrivialCube(CraftingMaterialRegistry.CARBON_FIBER_POLYMER_BLOCK.get());
 
-        itemModels.generateFlatItem(CraftingMaterialRegistry.RAW_PLASTIC.get(), ModelTemplates.FLAT_ITEM);
-        itemModels.generateFlatItem(CraftingMaterialRegistry.PLASTIC_PELLET.get(), ModelTemplates.FLAT_ITEM);
-        blockModels.createTrivialCube(CraftingMaterialRegistry.PLASTIC_BLOCK.get());
+    }
+
+    protected void registerPlasticModels(BlockModelGenerators blockModels, ItemModelGenerators itemModels) {
+
+        itemModels.generateFlatItem(PlasticRegistry.RAW_WHITE_PLASTIC.get(), ModelTemplates.FLAT_ITEM);
+        itemModels.generateFlatItem(PlasticRegistry.RAW_RED_PLASTIC.get(), ModelTemplates.FLAT_ITEM);
+        itemModels.generateFlatItem(PlasticRegistry.RAW_ORANGE_PLASTIC.get(), ModelTemplates.FLAT_ITEM);
+        itemModels.generateFlatItem(PlasticRegistry.RAW_YELLOW_PLASTIC.get(), ModelTemplates.FLAT_ITEM);
+        itemModels.generateFlatItem(PlasticRegistry.RAW_LIME_PLASTIC.get(), ModelTemplates.FLAT_ITEM);
+        itemModels.generateFlatItem(PlasticRegistry.RAW_GREEN_PLASTIC.get(), ModelTemplates.FLAT_ITEM);
+        itemModels.generateFlatItem(PlasticRegistry.RAW_CYAN_PLASTIC.get(), ModelTemplates.FLAT_ITEM);
+        itemModels.generateFlatItem(PlasticRegistry.RAW_LIGHT_BLUE_PLASTIC.get(), ModelTemplates.FLAT_ITEM);
+        itemModels.generateFlatItem(PlasticRegistry.RAW_BLUE_PLASTIC.get(), ModelTemplates.FLAT_ITEM);
+        itemModels.generateFlatItem(PlasticRegistry.RAW_PURPLE_PLASTIC.get(), ModelTemplates.FLAT_ITEM);
+        itemModels.generateFlatItem(PlasticRegistry.RAW_MAGENTA_PLASTIC.get(), ModelTemplates.FLAT_ITEM);
+        itemModels.generateFlatItem(PlasticRegistry.RAW_PINK_PLASTIC.get(), ModelTemplates.FLAT_ITEM);
+
+        itemModels.generateFlatItem(PlasticRegistry.WHITE_PLASTIC_PELLET.get(), ModelTemplates.FLAT_ITEM);
+        itemModels.generateFlatItem(PlasticRegistry.RED_PLASTIC_PELLET.get(), ModelTemplates.FLAT_ITEM);
+        itemModels.generateFlatItem(PlasticRegistry.ORANGE_PLASTIC_PELLET.get(), ModelTemplates.FLAT_ITEM);
+        itemModels.generateFlatItem(PlasticRegistry.YELLOW_PLASTIC_PELLET.get(), ModelTemplates.FLAT_ITEM);
+        itemModels.generateFlatItem(PlasticRegistry.LIME_PLASTIC_PELLET.get(), ModelTemplates.FLAT_ITEM);
+        itemModels.generateFlatItem(PlasticRegistry.GREEN_PLASTIC_PELLET.get(), ModelTemplates.FLAT_ITEM);
+        itemModels.generateFlatItem(PlasticRegistry.CYAN_PLASTIC_PELLET.get(), ModelTemplates.FLAT_ITEM);
+        itemModels.generateFlatItem(PlasticRegistry.LIGHT_BLUE_PLASTIC_PELLET.get(), ModelTemplates.FLAT_ITEM);
+        itemModels.generateFlatItem(PlasticRegistry.BLUE_PLASTIC_PELLET.get(), ModelTemplates.FLAT_ITEM);
+        itemModels.generateFlatItem(PlasticRegistry.PURPLE_PLASTIC_PELLET.get(), ModelTemplates.FLAT_ITEM);
+        itemModels.generateFlatItem(PlasticRegistry.MAGENTA_PLASTIC_PELLET.get(), ModelTemplates.FLAT_ITEM);
+        itemModels.generateFlatItem(PlasticRegistry.PINK_PLASTIC_PELLET.get(), ModelTemplates.FLAT_ITEM);
+
+        blockModels.createTrivialCube(PlasticRegistry.WHITE_PLASTIC_BLOCK.get());
+        blockModels.createTrivialCube(PlasticRegistry.RED_PLASTIC_BLOCK.get());
+        blockModels.createTrivialCube(PlasticRegistry.ORANGE_PLASTIC_BLOCK.get());
+        blockModels.createTrivialCube(PlasticRegistry.YELLOW_PLASTIC_BLOCK.get());
+        blockModels.createTrivialCube(PlasticRegistry.LIME_PLASTIC_BLOCK.get());
+        blockModels.createTrivialCube(PlasticRegistry.GREEN_PLASTIC_BLOCK.get());
+        blockModels.createTrivialCube(PlasticRegistry.CYAN_PLASTIC_BLOCK.get());
+        blockModels.createTrivialCube(PlasticRegistry.LIGHT_BLUE_PLASTIC_BLOCK.get());
+        blockModels.createTrivialCube(PlasticRegistry.BLUE_PLASTIC_BLOCK.get());
+        blockModels.createTrivialCube(PlasticRegistry.PURPLE_PLASTIC_BLOCK.get());
+        blockModels.createTrivialCube(PlasticRegistry.MAGENTA_PLASTIC_BLOCK.get());
+        blockModels.createTrivialCube(PlasticRegistry.PINK_PLASTIC_BLOCK.get());
+
     }
 
     protected void registerMetalModels(BlockModelGenerators blockModels, ItemModelGenerators itemModels) {

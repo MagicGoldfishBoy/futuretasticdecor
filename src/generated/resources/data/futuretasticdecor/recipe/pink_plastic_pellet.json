@@ -1,0 +1,11 @@
+{
+  "type": "minecraft:smelting",
+  "category": "misc",
+  "cookingtime": 100,
+  "experience": 0.5,
+  "ingredient": "futuretasticdecor:raw_pink_plastic",
+  "result": {
+    "count": 1,
+    "id": "futuretasticdecor:pink_plastic_pellet"
+  }
+}

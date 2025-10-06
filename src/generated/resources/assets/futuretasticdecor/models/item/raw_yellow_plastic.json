@@ -1,0 +1,6 @@
+{
+  "parent": "minecraft:item/generated",
+  "textures": {
+    "layer0": "futuretasticdecor:item/raw_yellow_plastic"
+  }
+}

@@ -1,0 +1,32 @@
+{
+  "parent": "minecraft:recipes/root",
+  "criteria": {
+    "has_raw_lime_plastic": {
+      "conditions": {
+        "items": [
+          {
+            "items": "futuretasticdecor:raw_lime_plastic"
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    },
+    "has_the_recipe": {
+      "conditions": {
+        "recipe": "futuretasticdecor:lime_plastic_pellet"
+      },
+      "trigger": "minecraft:recipe_unlocked"
+    }
+  },
+  "requirements": [
+    [
+      "has_the_recipe",
+      "has_raw_lime_plastic"
+    ]
+  ],
+  "rewards": {
+    "recipes": [
+      "futuretasticdecor:lime_plastic_pellet"
+    ]
+  }
+}

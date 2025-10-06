@@ -1,7 +1,5 @@
 package com.magicgoldfishboy.futuretasticdecor.registry;
 
-import java.rmi.registry.Registry;
-
 import com.magicgoldfishboy.futuretasticdecor.FuturetasticDecor;
 
 import net.minecraft.core.registries.Registries;
