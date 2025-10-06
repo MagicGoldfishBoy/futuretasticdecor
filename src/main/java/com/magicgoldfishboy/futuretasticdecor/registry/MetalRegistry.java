@@ -67,8 +67,12 @@ public class MetalRegistry {
     public static DeferredBlock<Block> PINK_GLOWING_STEEL_BLOCK;
     public static DeferredItem<BlockItem> PINK_GLOWING_STEEL_BLOCK_ITEM;
 
+
     public static DeferredBlock<Block> STEEL_PLANTER;
     public static DeferredItem<BlockItem> STEEL_PLANTER_ITEM;
+
+    public static DeferredBlock<Block> FLOATING_STEEL_PLANTER;
+    public static DeferredItem<BlockItem> FLOATING_STEEL_PLANTER_ITEM;
 
 
     public static void registerMetals() {
@@ -337,13 +341,28 @@ public class MetalRegistry {
                 .setId(ResourceKey.create(Registries.BLOCK, registryName))
                 .strength(STEEL_DESTROY_TIME / 1.5f, STEEL_EXPLOSION_RESISTANCE / 1.5f)
                 .requiresCorrectToolForDrops()
-                .lightLevel(state -> 2)
+                .lightLevel(state -> 5)
                 .sound(SoundType.METAL)
                 .noOcclusion()
             )
         );
         STEEL_PLANTER_ITEM = FuturetasticDecor.ITEMS.registerSimpleBlockItem(
             STEEL_PLANTER
+        );
+
+        FLOATING_STEEL_PLANTER = FuturetasticDecor.BLOCKS.register(
+            "floating_steel_planter", 
+            registryName -> new Block(BlockBehaviour.Properties.of()
+                .setId(ResourceKey.create(Registries.BLOCK, registryName))
+                .strength(STEEL_DESTROY_TIME / 1.5f, STEEL_EXPLOSION_RESISTANCE / 1.5f)
+                .requiresCorrectToolForDrops()
+                .lightLevel(state -> 5)
+                .sound(SoundType.METAL)
+                .noOcclusion()
+            )
+        );
+        FLOATING_STEEL_PLANTER_ITEM = FuturetasticDecor.ITEMS.registerSimpleBlockItem(
+            FLOATING_STEEL_PLANTER
         );
     }
     

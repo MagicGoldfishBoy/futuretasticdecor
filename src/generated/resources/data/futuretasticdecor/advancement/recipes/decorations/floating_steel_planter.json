@@ -1,0 +1,54 @@
+{
+  "parent": "minecraft:recipes/root",
+  "criteria": {
+    "has_anti_grav_ingot": {
+      "conditions": {
+        "items": [
+          {
+            "items": "futuretasticdecor:anti_grav_ingot"
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    },
+    "has_redstone": {
+      "conditions": {
+        "items": [
+          {
+            "items": "minecraft:redstone"
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    },
+    "has_steel_planter": {
+      "conditions": {
+        "items": [
+          {
+            "items": "futuretasticdecor:steel_planter"
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    },
+    "has_the_recipe": {
+      "conditions": {
+        "recipe": "futuretasticdecor:floating_steel_planter"
+      },
+      "trigger": "minecraft:recipe_unlocked"
+    }
+  },
+  "requirements": [
+    [
+      "has_the_recipe",
+      "has_redstone",
+      "has_steel_planter",
+      "has_anti_grav_ingot"
+    ]
+  ],
+  "rewards": {
+    "recipes": [
+      "futuretasticdecor:floating_steel_planter"
+    ]
+  }
+}

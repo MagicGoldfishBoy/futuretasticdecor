@@ -799,6 +799,18 @@ public class RecipeDatagen extends RecipeProvider {
             .unlockedBy("has_steel_ingot", has(MetalRegistry.STEEL_INGOT.get()))
             .unlockedBy("has_super_grow_mulch", has(CraftingMaterialRegistry.SUPER_GROW_MULCH_ITEM.get()))
             .save(this.output);
+
+        ShapedRecipeBuilder.shaped(this.registries.lookupOrThrow(Registries.ITEM), RecipeCategory.DECORATIONS, MetalRegistry.FLOATING_STEEL_PLANTER_ITEM.get())
+            .pattern("#")
+            .pattern("$")
+            .pattern("%")
+            .define('#', Items.REDSTONE)
+            .define('$', MetalRegistry.STEEL_PLANTER_ITEM.get())
+            .define('%', CraftingMaterialRegistry.ANTI_GRAV_INGOT.get())
+            .unlockedBy("has_redstone", has(Items.REDSTONE))
+            .unlockedBy("has_steel_planter", has(MetalRegistry.STEEL_PLANTER_ITEM.get()))
+            .unlockedBy("has_anti_grav_ingot", has(CraftingMaterialRegistry.ANTI_GRAV_INGOT.get()))
+            .save(this.output);
     
     }
     protected void registerGlowBlockRecipes() {
