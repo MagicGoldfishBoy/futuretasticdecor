@@ -10,10 +10,17 @@ import com.magicgoldfishboy.futuretasticdecor.registry.PlasticRegistry;
 import net.minecraft.client.data.models.BlockModelGenerators;
 import net.minecraft.client.data.models.ItemModelGenerators;
 import net.minecraft.client.data.models.ModelProvider;
+import net.minecraft.client.data.models.blockstates.MultiVariantGenerator;
+import net.minecraft.client.data.models.model.ItemModelUtils;
 import net.minecraft.client.data.models.model.ModelLocationUtils;
 import net.minecraft.client.data.models.model.ModelTemplates;
 import net.minecraft.client.renderer.block.model.Variant;
 import net.minecraft.data.PackOutput;
+import net.minecraft.resources.ResourceLocation;
+import net.minecraft.world.item.Item;
+import net.minecraft.world.level.block.Block;
+import net.neoforged.neoforge.registries.DeferredHolder;
+
 import javax.annotation.Nonnull;
 
 public class ModelDatagen extends ModelProvider {
@@ -27,6 +34,7 @@ public class ModelDatagen extends ModelProvider {
         registerPlasticModels(blockModels, itemModels);
         registerMetalModels(blockModels, itemModels);
         registerGlowBlockModels(blockModels, itemModels);
+        registerPlanterModels(blockModels, itemModels);
     }
 
     protected void registerMaterialModels(BlockModelGenerators blockModels, ItemModelGenerators itemModels) {
@@ -55,6 +63,8 @@ public class ModelDatagen extends ModelProvider {
         itemModels.generateFlatItem(CraftingMaterialRegistry.CARBON_FIBER_TOW.get(), ModelTemplates.FLAT_ITEM);
         blockModels.createTrivialCube(CraftingMaterialRegistry.UNBAKED_CARBON_FIBER_POLYMER_BLOCK.get());
         blockModels.createTrivialCube(CraftingMaterialRegistry.CARBON_FIBER_POLYMER_BLOCK.get());
+
+        blockModels.createTrivialCube(CraftingMaterialRegistry.SUPER_GROW_MULCH_BLOCK.get());
 
     }
 
@@ -137,6 +147,16 @@ public class ModelDatagen extends ModelProvider {
         blockModels.createTrivialCube(MetalRegistry.MAGENTA_GLOWING_STEEL_BLOCK.get());
 
         blockModels.createTrivialCube(MetalRegistry.PINK_GLOWING_STEEL_BLOCK.get());
+
+        // ResourceLocation steel_planter = modLocation("steel_planter");
+        // Variant steel_planter_variant = new Variant(steel_planter);
+
+        //     blockModels.blockStateOutput.accept(
+        //         MultiVariantGenerator.dispatch(
+        //             MetalRegistry.STEEL_PLANTER.get(),
+        //             BlockModelGenerators.variant(steel_planter_variant)
+        //         )
+        //     );
     }
     protected void registerGlowBlockModels(BlockModelGenerators blockModels, ItemModelGenerators itemModels) {
 
@@ -237,5 +257,44 @@ public class ModelDatagen extends ModelProvider {
 
         ModelDatagenHelpers.createPanelModel(blockModels, itemModels, pink_glow_panel, pink_glow_panel_variant);
 
+    }
+
+
+    protected void registerPlanterModels(BlockModelGenerators blockModels, ItemModelGenerators itemModels) {
+
+        LOGGER.info("Creating Planter Models");
+
+        for (DeferredHolder<Block, ? extends Block> holder : FuturetasticDecor.BLOCKS.getEntries()) {
+            String rawName = holder.getId().getPath();
+            if (rawName.contains("planter")) {
+                String name = "block/" + rawName;
+
+                LOGGER.info("Generating model for: {}", name);
+
+                ResourceLocation planter = modLocation(name);
+                Variant plantervariant = new Variant(planter);
+
+                blockModels.blockStateOutput.accept(
+                    MultiVariantGenerator.dispatch(
+                        holder.get(),
+                        BlockModelGenerators.variant(plantervariant)
+                    )
+                );
+            }
+        }
+
+        for (DeferredHolder<Item, ? extends Item> holder : FuturetasticDecor.ITEMS.getEntries()) {
+            String rawName = holder.getId().getPath();
+            if (rawName.contains("planter")) {
+                String name = "block/" + rawName;
+
+                LOGGER.info("Generating model for: {}", name);
+
+                itemModels.itemModelOutput.accept(
+                holder.get(),
+                ItemModelUtils.plainModel(modLocation(name))
+            );
+            }
+        }
     }
 }

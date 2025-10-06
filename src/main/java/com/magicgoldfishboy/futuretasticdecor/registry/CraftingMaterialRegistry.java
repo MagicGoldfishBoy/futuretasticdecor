@@ -1,6 +1,7 @@
 package com.magicgoldfishboy.futuretasticdecor.registry;
 
 import com.magicgoldfishboy.futuretasticdecor.FuturetasticDecor;
+import com.magicgoldfishboy.futuretasticdecor.block.SuperGrowMulch;
 
 import net.minecraft.core.registries.Registries;
 import net.minecraft.resources.ResourceKey;
@@ -64,6 +65,10 @@ public class CraftingMaterialRegistry {
     public static DeferredBlock<Block> CARBON_FIBER_POLYMER_BLOCK;
 
     public static DeferredItem<BlockItem> CARBON_FIBER_POLYMER_ITEM;
+
+
+    public static DeferredBlock<Block> SUPER_GROW_MULCH_BLOCK;
+    public static DeferredItem<BlockItem> SUPER_GROW_MULCH_ITEM;
 
 
     public static void registerCraftingMaterials() {
@@ -201,6 +206,19 @@ public class CraftingMaterialRegistry {
         );
         CARBON_FIBER_POLYMER_ITEM = FuturetasticDecor.ITEMS.registerSimpleBlockItem(
             CARBON_FIBER_POLYMER_BLOCK
+        );
+
+
+        SUPER_GROW_MULCH_BLOCK = FuturetasticDecor.BLOCKS.register(
+            "super_grow_mulch", 
+            registryName -> new SuperGrowMulch(BlockBehaviour.Properties.of()
+                .setId(ResourceKey.create(Registries.BLOCK, registryName))
+                .strength(1.15f, 2.30f)
+                .sound(SoundType.PACKED_MUD)
+            )
+        );
+        SUPER_GROW_MULCH_ITEM = FuturetasticDecor.ITEMS.registerSimpleBlockItem(
+            SUPER_GROW_MULCH_BLOCK
         );
     }
     

@@ -1,0 +1,6 @@
+{
+  "parent": "minecraft:block/cube_all",
+  "textures": {
+    "all": "futuretasticdecor:block/super_grow_mulch"
+  }
+}

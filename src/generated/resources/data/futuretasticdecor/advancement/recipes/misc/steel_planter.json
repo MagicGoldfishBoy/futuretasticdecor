@@ -1,0 +1,43 @@
+{
+  "parent": "minecraft:recipes/root",
+  "criteria": {
+    "has_steel_ingot": {
+      "conditions": {
+        "items": [
+          {
+            "items": "futuretasticdecor:steel_ingot"
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    },
+    "has_super_grow_mulch": {
+      "conditions": {
+        "items": [
+          {
+            "items": "futuretasticdecor:super_grow_mulch"
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    },
+    "has_the_recipe": {
+      "conditions": {
+        "recipe": "futuretasticdecor:steel_planter"
+      },
+      "trigger": "minecraft:recipe_unlocked"
+    }
+  },
+  "requirements": [
+    [
+      "has_the_recipe",
+      "has_steel_ingot",
+      "has_super_grow_mulch"
+    ]
+  ],
+  "rewards": {
+    "recipes": [
+      "futuretasticdecor:steel_planter"
+    ]
+  }
+}

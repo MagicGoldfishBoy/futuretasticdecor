@@ -1,0 +1,21 @@
+{
+  "type": "minecraft:block",
+  "pools": [
+    {
+      "bonus_rolls": 0.0,
+      "conditions": [
+        {
+          "condition": "minecraft:survives_explosion"
+        }
+      ],
+      "entries": [
+        {
+          "type": "minecraft:item",
+          "name": "futuretasticdecor:super_grow_mulch"
+        }
+      ],
+      "rolls": 1.0
+    }
+  ],
+  "random_sequence": "futuretasticdecor:blocks/super_grow_mulch"
+}

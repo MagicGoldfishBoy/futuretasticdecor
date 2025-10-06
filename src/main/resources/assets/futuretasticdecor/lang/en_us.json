@@ -25,6 +25,7 @@
   "item.futuretasticdecor.carbon_fiber_tow": "Carbon Tow",
   "block.futuretasticdecor.unbaked_carbon_fiber_polymer_block": "Unbaked Carbon Fiber Block",
   "block.futuretasticdecor.carbon_fiber_polymer_block": "Carbon Fiber Block",
+  "block.futuretasticdecor.super_grow_mulch": "Super Grow Mulch",
 
   "item.futuretasticdecor.raw_white_plastic": "Raw White Plastic",
   "item.futuretasticdecor.raw_red_plastic": "Raw Red Plastic",
@@ -114,6 +115,8 @@
   "block.futuretasticdecor.purple_glowing_steel_block": "Purple Glowing Steel Block",
   "block.futuretasticdecor.magenta_glowing_steel_block": "Magenta Glowing Steel Block",
   "block.futuretasticdecor.pink_glowing_steel_block": "Pink Glowing Steel Block",
+
+  "block.futuretasticdecor.steel_planter": "Steel Planter",
 
   "futuretasticdecor.configuration.title": "FuturetasticDecor Configs",
   "futuretasticdecor.configuration.section.futuretasticdecor.common.toml": "FuturetasticDecor Configs",

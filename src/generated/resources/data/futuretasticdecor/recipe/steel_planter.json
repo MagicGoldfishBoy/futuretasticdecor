@@ -1,0 +1,17 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "misc",
+  "key": {
+    "#": "futuretasticdecor:steel_ingot",
+    "$": "futuretasticdecor:super_grow_mulch"
+  },
+  "pattern": [
+    "#$#",
+    "###",
+    "# #"
+  ],
+  "result": {
+    "count": 1,
+    "id": "futuretasticdecor:steel_planter"
+  }
+}

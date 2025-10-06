@@ -1,0 +1,13 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "category": "building",
+  "ingredients": [
+    "minecraft:dirt",
+    "minecraft:bone",
+    "minecraft:soul_soil"
+  ],
+  "result": {
+    "count": 6,
+    "id": "futuretasticdecor:super_grow_mulch"
+  }
+}

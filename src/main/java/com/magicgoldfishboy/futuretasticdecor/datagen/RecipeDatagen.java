@@ -257,6 +257,16 @@ public class RecipeDatagen extends RecipeProvider {
             .save(this.output);
 
 
+        ShapelessRecipeBuilder.shapeless(this.registries.lookupOrThrow(Registries.ITEM), RecipeCategory.BUILDING_BLOCKS, CraftingMaterialRegistry.SUPER_GROW_MULCH_ITEM.get(), 6)
+            .requires(Items.DIRT)
+            .requires(Items.BONE)
+            .requires(Items.SOUL_SOIL)
+            .unlockedBy("has_dirt", has(Items.DIRT))
+            .unlockedBy("has_bone", has(Items.BONE))
+            .unlockedBy("has_soul_soil", has(Items.SOUL_SOIL))
+            .save(this.output);
+
+
     }
     protected void registerPlasticRecipes() {
 
@@ -778,6 +788,17 @@ public class RecipeDatagen extends RecipeProvider {
             .unlockedBy("has_steel_ingot", has(MetalRegistry.STEEL_INGOT.get()))
             .unlockedBy("has_pink_stardust_powder", has(CraftingMaterialRegistry.PINK_STARDUST_POWDER.get()))
             .save(this.output, "pink_glowing_steel_block_from_steel_block_and_pink_glowstone");
+
+        
+        ShapedRecipeBuilder.shaped(this.registries.lookupOrThrow(Registries.ITEM), RecipeCategory.MISC, MetalRegistry.STEEL_PLANTER_ITEM.get())
+            .pattern("#$#")
+            .pattern("###")
+            .pattern("# #")
+            .define('#', MetalRegistry.STEEL_INGOT)
+            .define('$', CraftingMaterialRegistry.SUPER_GROW_MULCH_ITEM.get())
+            .unlockedBy("has_steel_ingot", has(MetalRegistry.STEEL_INGOT.get()))
+            .unlockedBy("has_super_grow_mulch", has(CraftingMaterialRegistry.SUPER_GROW_MULCH_ITEM.get()))
+            .save(this.output);
     
     }
     protected void registerGlowBlockRecipes() {
