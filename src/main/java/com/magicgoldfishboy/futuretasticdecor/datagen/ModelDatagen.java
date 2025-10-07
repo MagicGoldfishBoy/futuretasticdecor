@@ -254,7 +254,7 @@ public class ModelDatagen extends ModelProvider {
 
         ModelDatagenHelpers.createPanelModel(blockModels, itemModels, pink_glow_panel, pink_glow_panel_variant);
 
-        ConnectableGlowBlock connectable_glowing_steel_block = MetalRegistry.CONNECTABLE_GLOWING_STEEL_BLOCK.get();
+        // ConnectableGlowBlock connectable_glowing_steel_block = MetalRegistry.CONNECTABLE_GLOWING_STEEL_BLOCK.get();
         // MultiVariant plain = new MultiVariant(WeightedList.of(block_variant_plain));
         // MultiVariant line = new MultiVariant(WeightedList.of(block_variant_line));
         // MultiVariant corner = new MultiVariant(WeightedList.of(block_variant_corner));

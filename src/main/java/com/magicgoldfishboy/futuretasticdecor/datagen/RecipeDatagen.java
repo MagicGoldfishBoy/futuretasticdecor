@@ -585,6 +585,17 @@ public class RecipeDatagen extends RecipeProvider {
             200)
             .unlockedBy("has_unbaked_carbon_fiber_polymer_item", has(CarbonFiberRegistry.UNBAKED_CARBON_FIBER_POLYMER_ITEM.get()))
             .save(this.output);
+
+
+        ShapedRecipeBuilder.shaped(this.registries.lookupOrThrow(Registries.ITEM), RecipeCategory.DECORATIONS, CarbonFiberRegistry.CARBON_FIBER_PLANTER_ITEM.get())
+            .pattern("#$#")
+            .pattern("###")
+            .pattern("# #")
+            .define('#', CarbonFiberRegistry.CARBON_FIBER_TOW.get())
+            .define('$', CraftingMaterialRegistry.SUPER_GROW_MULCH_ITEM.get())
+            .unlockedBy("has_carbon_fiber_tow", has(CarbonFiberRegistry.CARBON_FIBER_TOW.get()))
+            .unlockedBy("has_super_grow_mulch", has(CraftingMaterialRegistry.SUPER_GROW_MULCH_ITEM.get()))
+            .save(this.output);
     }
     protected void registerMetalRecipes() {
 
@@ -680,15 +691,15 @@ public class RecipeDatagen extends RecipeProvider {
             .unlockedBy("has_stardust_powder", has(CraftingMaterialRegistry.STARDUST_POWDER.get()))
             .save(this.output, "glowing_steel_block_from_steel_block_and_stardust");
 
-        ShapelessRecipeBuilder.shapeless(this.registries.lookupOrThrow(Registries.ITEM), RecipeCategory.BUILDING_BLOCKS, MetalRegistry.CONNECTABLE_GLOWING_STEEL_BLOCK_ITEM.get())
-            .requires(MetalRegistry.GLOWING_STEEL_BLOCK_ITEM.get())
-            .unlockedBy("has_glowing_steel_block", has(MetalRegistry.GLOWING_STEEL_BLOCK_ITEM.get()))
-            .save(this.output);
+        // ShapelessRecipeBuilder.shapeless(this.registries.lookupOrThrow(Registries.ITEM), RecipeCategory.BUILDING_BLOCKS, MetalRegistry.CONNECTABLE_GLOWING_STEEL_BLOCK_ITEM.get())
+        //     .requires(MetalRegistry.GLOWING_STEEL_BLOCK_ITEM.get())
+        //     .unlockedBy("has_glowing_steel_block", has(MetalRegistry.GLOWING_STEEL_BLOCK_ITEM.get()))
+        //     .save(this.output);
 
-        ShapelessRecipeBuilder.shapeless(this.registries.lookupOrThrow(Registries.ITEM), RecipeCategory.BUILDING_BLOCKS, MetalRegistry.GLOWING_STEEL_BLOCK_ITEM.get())
-            .requires(MetalRegistry.CONNECTABLE_GLOWING_STEEL_BLOCK_ITEM.get())
-            .unlockedBy("has_connectable_glowing_steel_block", has(MetalRegistry.CONNECTABLE_GLOWING_STEEL_BLOCK_ITEM.get()))
-            .save(this.output, "glowing_steel_block_from_connectable_glowing_steel_block");
+        // ShapelessRecipeBuilder.shapeless(this.registries.lookupOrThrow(Registries.ITEM), RecipeCategory.BUILDING_BLOCKS, MetalRegistry.GLOWING_STEEL_BLOCK_ITEM.get())
+        //     .requires(MetalRegistry.CONNECTABLE_GLOWING_STEEL_BLOCK_ITEM.get())
+        //     .unlockedBy("has_connectable_glowing_steel_block", has(MetalRegistry.CONNECTABLE_GLOWING_STEEL_BLOCK_ITEM.get()))
+        //     .save(this.output, "glowing_steel_block_from_connectable_glowing_steel_block");
 
 
         ShapedRecipeBuilder.shaped(this.registries.lookupOrThrow(Registries.ITEM), RecipeCategory.BUILDING_BLOCKS, MetalRegistry.RED_GLOWING_STEEL_BLOCK.get())

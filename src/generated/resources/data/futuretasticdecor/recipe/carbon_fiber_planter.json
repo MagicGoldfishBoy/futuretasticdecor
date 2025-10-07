@@ -1,0 +1,17 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "misc",
+  "key": {
+    "#": "futuretasticdecor:carbon_fiber_tow",
+    "$": "futuretasticdecor:super_grow_mulch"
+  },
+  "pattern": [
+    "#$#",
+    "###",
+    "# #"
+  ],
+  "result": {
+    "count": 1,
+    "id": "futuretasticdecor:carbon_fiber_planter"
+  }
+}

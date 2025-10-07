@@ -42,6 +42,9 @@
         "futuretasticdecor:purple_glow_panel",
         "futuretasticdecor:magenta_glow_panel",
         "futuretasticdecor:pink_glow_panel",
-        "futuretasticdecor:anti_grav_block"
+        "futuretasticdecor:anti_grav_block",
+        "futuretasticdecor:unbaked_carbon_fiber_polymer_block",
+        "futuretasticdecor:carbon_fiber_polymer_block",
+        "futuretasticdecor:carbon_fiber_planter"
     ]
 }

@@ -161,6 +161,8 @@ public class MetalRegistry {
             GLOWING_STEEL_BLOCK
         );
 
+        //NOTE: I'll probably just wait for a library to handle connectable textures, I have little time right now and it's very tedious
+
         // CONNECTABLE_GLOWING_STEEL_BLOCK = FuturetasticDecor.BLOCKS.register(
         //     "connectable_glowing_steel_block", 
         //     registryName -> new ConnectableGlowBlock(BlockBehaviour.Properties.of()
@@ -175,6 +177,7 @@ public class MetalRegistry {
         // CONNECTABLE_GLOWING_STEEL_BLOCK_ITEM = FuturetasticDecor.ITEMS.registerSimpleBlockItem(
         //     CONNECTABLE_GLOWING_STEEL_BLOCK
         // );
+
 
 
         RED_GLOWING_STEEL_BLOCK = FuturetasticDecor.BLOCKS.register(
