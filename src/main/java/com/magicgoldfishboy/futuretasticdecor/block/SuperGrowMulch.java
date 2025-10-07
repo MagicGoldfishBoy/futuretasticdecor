@@ -1,6 +1,9 @@
 package com.magicgoldfishboy.futuretasticdecor.block;
 
 import org.slf4j.Logger;
+
+import com.magicgoldfishboy.futuretasticdecor.Config;
+import com.magicgoldfishboy.futuretasticdecor.FuturetasticDecor;
 import com.mojang.logging.LogUtils;
 import java.util.Random;
 import javax.annotation.Nonnull;
@@ -21,7 +24,7 @@ public class SuperGrowMulch extends Block {
     }
     
     public static final Logger LOGGER = LogUtils.getLogger();
-    private static final int SPREAD_INTERVAL = 20; // 1 second (20 ticks)
+    private static final int SPREAD_INTERVAL = 3000; // 1 second (20 ticks)
     Random randomDirectionNumber = new Random();
     
     @Override

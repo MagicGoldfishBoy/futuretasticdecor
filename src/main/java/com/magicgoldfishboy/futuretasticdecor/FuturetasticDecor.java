@@ -31,6 +31,8 @@ import net.neoforged.neoforge.registries.DeferredRegister;
 @Mod(FuturetasticDecor.MODID)
 public class FuturetasticDecor {
 
+    //public static Integer SUPER_MULCH_SPREAD_INTERVAL;
+    
     public static final String MODID = "futuretasticdecor";
 
     public static final Logger LOGGER = LogUtils.getLogger();
@@ -82,12 +84,16 @@ public class FuturetasticDecor {
 
         modEventBus.addListener(this::gatherData);
 
-      //  modContainer.registerConfig(ModConfig.Type.COMMON, Config.SPEC);
-    }
+        modContainer.registerConfig(ModConfig.Type.COMMON, Config.SPEC);
 
+        
+    }
+    
     private void commonSetup(FMLCommonSetupEvent event) {
 
         LOGGER.info("HELLO FROM COMMON SETUP");
+
+        //SUPER_MULCH_SPREAD_INTERVAL = Integer.parseInt(Config.SUPER_MULCH_SPREAD_INTERVAL.toString());
 
         // if (Config.LOG_DIRT_BLOCK.getAsBoolean()) {
         //     LOGGER.info("DIRT BLOCK >> {}", BuiltInRegistries.BLOCK.getKey(Blocks.DIRT));
