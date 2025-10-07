@@ -80,16 +80,17 @@ public class SuperGrowMulch extends Block {
         BlockState eastState = level.getBlockState(pos.east());
         
         if (eastState.getBlock() instanceof SuperGrowMulch) {
-            
             BlockPos targetPos = pos.east().above();
             BlockState targetState = level.getBlockState(targetPos);
+            BlockState flowerState = level.getBlockState(pos.above());
             
-            if (targetState.isAir()) {
-                level.setBlock(targetPos, level.getBlockState(pos.above()), 3);
-                // if (level.getBlockState(pos.above()).getBlock() instanceof TallFlowerBlock) {
-                //     level.setBlock(pos, level.getBlockState(pos.above()) state.setValue(TallFlowerBlock.HALF, DoubleBlockHalf.UPPER, 0));
-                // }
-            } else {
+            if (targetState.isAir() && level.getBlockState(targetPos.above()).isAir()) {
+                if (flowerState.getBlock() instanceof TallFlowerBlock) {
+                    level.setBlock(targetPos, flowerState.setValue(TallFlowerBlock.HALF, DoubleBlockHalf.LOWER), 3);
+                    level.setBlock(targetPos.above(), flowerState.setValue(TallFlowerBlock.HALF, DoubleBlockHalf.UPPER), 3);
+                } else {
+                    level.setBlock(targetPos, flowerState, 3);
+                }
             }
         }
     }
@@ -100,10 +101,15 @@ public class SuperGrowMulch extends Block {
             
             BlockPos targetPos = pos.west().above();
             BlockState targetState = level.getBlockState(targetPos);
+            BlockState flowerState = level.getBlockState(pos.above());
             
-            if (targetState.isAir()) {
-                level.setBlock(targetPos, level.getBlockState(pos.above()), 3);
-            } else {
+            if (targetState.isAir() && level.getBlockState(targetPos.above()).isAir()) {
+                if (flowerState.getBlock() instanceof TallFlowerBlock) {
+                    level.setBlock(targetPos, flowerState.setValue(TallFlowerBlock.HALF, DoubleBlockHalf.LOWER), 3);
+                    level.setBlock(targetPos.above(), flowerState.setValue(TallFlowerBlock.HALF, DoubleBlockHalf.UPPER), 3);
+                } else {
+                    level.setBlock(targetPos, flowerState, 3);
+                }
             }
         }
     }
@@ -114,10 +120,15 @@ public class SuperGrowMulch extends Block {
             
             BlockPos targetPos = pos.north().above();
             BlockState targetState = level.getBlockState(targetPos);
+            BlockState flowerState = level.getBlockState(pos.above());
             
-            if (targetState.isAir()) {
-                level.setBlock(targetPos, level.getBlockState(pos.above()), 3);
-            } else {
+            if (targetState.isAir() && level.getBlockState(targetPos.above()).isAir()) {
+                if (flowerState.getBlock() instanceof TallFlowerBlock) {
+                    level.setBlock(targetPos, flowerState.setValue(TallFlowerBlock.HALF, DoubleBlockHalf.LOWER), 3);
+                    level.setBlock(targetPos.above(), flowerState.setValue(TallFlowerBlock.HALF, DoubleBlockHalf.UPPER), 3);
+                } else {
+                    level.setBlock(targetPos, flowerState, 3);
+                }
             }
         }
     }
@@ -128,10 +139,15 @@ public class SuperGrowMulch extends Block {
             
             BlockPos targetPos = pos.south().above();
             BlockState targetState = level.getBlockState(targetPos);
+            BlockState flowerState = level.getBlockState(pos.above());
             
-            if (targetState.isAir()) {
-                level.setBlock(targetPos, level.getBlockState(pos.above()), 3);
-            } else {
+            if (targetState.isAir() && level.getBlockState(targetPos.above()).isAir()) {
+                if (flowerState.getBlock() instanceof TallFlowerBlock) {
+                    level.setBlock(targetPos, flowerState.setValue(TallFlowerBlock.HALF, DoubleBlockHalf.LOWER), 3);
+                    level.setBlock(targetPos.above(), flowerState.setValue(TallFlowerBlock.HALF, DoubleBlockHalf.UPPER), 3);
+                } else {
+                    level.setBlock(targetPos, flowerState, 3);
+                }
             }
         }
     }
