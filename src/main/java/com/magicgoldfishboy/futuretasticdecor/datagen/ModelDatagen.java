@@ -1,6 +1,7 @@
 package com.magicgoldfishboy.futuretasticdecor.datagen;
 
 import com.magicgoldfishboy.futuretasticdecor.FuturetasticDecor;
+import com.magicgoldfishboy.futuretasticdecor.block.ConnectableGlowBlock;
 import com.magicgoldfishboy.futuretasticdecor.block.Panel;
 import com.magicgoldfishboy.futuretasticdecor.registry.CarbonFiberRegistry;
 import com.magicgoldfishboy.futuretasticdecor.registry.CraftingMaterialRegistry;
@@ -11,6 +12,7 @@ import com.magicgoldfishboy.futuretasticdecor.registry.PlasticRegistry;
 import net.minecraft.client.data.models.BlockModelGenerators;
 import net.minecraft.client.data.models.ItemModelGenerators;
 import net.minecraft.client.data.models.ModelProvider;
+import net.minecraft.client.data.models.MultiVariant;
 import net.minecraft.client.data.models.blockstates.MultiVariantGenerator;
 import net.minecraft.client.data.models.model.ItemModelUtils;
 import net.minecraft.client.data.models.model.ModelLocationUtils;
@@ -18,6 +20,7 @@ import net.minecraft.client.data.models.model.ModelTemplates;
 import net.minecraft.client.renderer.block.model.Variant;
 import net.minecraft.data.PackOutput;
 import net.minecraft.resources.ResourceLocation;
+import net.minecraft.util.random.WeightedList;
 import net.minecraft.world.item.Item;
 import net.minecraft.world.level.block.Block;
 import net.neoforged.neoforge.registries.DeferredHolder;
@@ -250,6 +253,11 @@ public class ModelDatagen extends ModelProvider {
         Variant pink_glow_panel_variant = new Variant(ModelLocationUtils.getModelLocation(pink_glow_panel));
 
         ModelDatagenHelpers.createPanelModel(blockModels, itemModels, pink_glow_panel, pink_glow_panel_variant);
+
+        ConnectableGlowBlock connectable_glowing_steel_block = MetalRegistry.CONNECTABLE_GLOWING_STEEL_BLOCK.get();
+        // MultiVariant plain = new MultiVariant(WeightedList.of(block_variant_plain));
+        // MultiVariant line = new MultiVariant(WeightedList.of(block_variant_line));
+        // MultiVariant corner = new MultiVariant(WeightedList.of(block_variant_corner));
 
     }
 

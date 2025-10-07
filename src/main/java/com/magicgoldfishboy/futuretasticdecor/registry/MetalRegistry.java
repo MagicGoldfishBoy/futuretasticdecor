@@ -1,6 +1,8 @@
 package com.magicgoldfishboy.futuretasticdecor.registry;
 
 import com.magicgoldfishboy.futuretasticdecor.FuturetasticDecor;
+import com.magicgoldfishboy.futuretasticdecor.block.ConnectableGlowBlock;
+
 import net.minecraft.core.registries.Registries;
 import net.minecraft.resources.ResourceKey;
 import net.minecraft.world.item.BlockItem;
@@ -31,6 +33,10 @@ public class MetalRegistry {
 
     public static DeferredBlock<Block> GLOWING_STEEL_BLOCK;
     public static DeferredItem<BlockItem> GLOWING_STEEL_BLOCK_ITEM;
+
+    public static DeferredBlock<ConnectableGlowBlock> CONNECTABLE_GLOWING_STEEL_BLOCK;
+    public static DeferredItem<BlockItem> CONNECTABLE_GLOWING_STEEL_BLOCK_ITEM;
+
 
     public static DeferredBlock<Block> RED_GLOWING_STEEL_BLOCK;
     public static DeferredItem<BlockItem> RED_GLOWING_STEEL_BLOCK_ITEM;
@@ -146,15 +152,30 @@ public class MetalRegistry {
                 .setId(ResourceKey.create(Registries.BLOCK, registryName))
                 .strength(STEEL_DESTROY_TIME, STEEL_EXPLOSION_RESISTANCE)
                 .requiresCorrectToolForDrops()
-                .lightLevel(state -> 14)
+                .lightLevel(state -> 12)
                 .sound(SoundType.METAL)
                 .friction(0.5f)
             )
         );
         GLOWING_STEEL_BLOCK_ITEM = FuturetasticDecor.ITEMS.registerSimpleBlockItem(
-            "glowing_steel_block", 
             GLOWING_STEEL_BLOCK
         );
+
+        // CONNECTABLE_GLOWING_STEEL_BLOCK = FuturetasticDecor.BLOCKS.register(
+        //     "connectable_glowing_steel_block", 
+        //     registryName -> new ConnectableGlowBlock(BlockBehaviour.Properties.of()
+        //         .setId(ResourceKey.create(Registries.BLOCK, registryName))
+        //         .strength(STEEL_DESTROY_TIME, STEEL_EXPLOSION_RESISTANCE)
+        //         .requiresCorrectToolForDrops()
+        //         .lightLevel(state -> 12)
+        //         .sound(SoundType.METAL)
+        //         .friction(0.5f)
+        //     )
+        // );
+        // CONNECTABLE_GLOWING_STEEL_BLOCK_ITEM = FuturetasticDecor.ITEMS.registerSimpleBlockItem(
+        //     CONNECTABLE_GLOWING_STEEL_BLOCK
+        // );
+
 
         RED_GLOWING_STEEL_BLOCK = FuturetasticDecor.BLOCKS.register(
             "red_glowing_steel_block", 

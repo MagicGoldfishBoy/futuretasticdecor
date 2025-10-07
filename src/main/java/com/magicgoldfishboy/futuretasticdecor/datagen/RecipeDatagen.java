@@ -678,7 +678,18 @@ public class RecipeDatagen extends RecipeProvider {
             .define('$', CraftingMaterialRegistry.STARDUST_POWDER.get())
             .unlockedBy("has_steel_ingot", has(MetalRegistry.STEEL_INGOT.get()))
             .unlockedBy("has_stardust_powder", has(CraftingMaterialRegistry.STARDUST_POWDER.get()))
-            .save(this.output, "glowing_steel_block_from_steel_block_and_glowstone");
+            .save(this.output, "glowing_steel_block_from_steel_block_and_stardust");
+
+        ShapelessRecipeBuilder.shapeless(this.registries.lookupOrThrow(Registries.ITEM), RecipeCategory.BUILDING_BLOCKS, MetalRegistry.CONNECTABLE_GLOWING_STEEL_BLOCK_ITEM.get())
+            .requires(MetalRegistry.GLOWING_STEEL_BLOCK_ITEM.get())
+            .unlockedBy("has_glowing_steel_block", has(MetalRegistry.GLOWING_STEEL_BLOCK_ITEM.get()))
+            .save(this.output);
+
+        ShapelessRecipeBuilder.shapeless(this.registries.lookupOrThrow(Registries.ITEM), RecipeCategory.BUILDING_BLOCKS, MetalRegistry.GLOWING_STEEL_BLOCK_ITEM.get())
+            .requires(MetalRegistry.CONNECTABLE_GLOWING_STEEL_BLOCK_ITEM.get())
+            .unlockedBy("has_connectable_glowing_steel_block", has(MetalRegistry.CONNECTABLE_GLOWING_STEEL_BLOCK_ITEM.get()))
+            .save(this.output, "glowing_steel_block_from_connectable_glowing_steel_block");
+
 
         ShapedRecipeBuilder.shaped(this.registries.lookupOrThrow(Registries.ITEM), RecipeCategory.BUILDING_BLOCKS, MetalRegistry.RED_GLOWING_STEEL_BLOCK.get())
             .pattern("###")
