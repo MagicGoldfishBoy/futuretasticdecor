@@ -122,6 +122,9 @@
   "block.futuretasticdecor.steel_planter": "Steel Planter",
   "block.futuretasticdecor.floating_steel_planter": "Floating Steel Planter",
 
+  "block.futuretasticdecor.hologlass": "Hologlass",
+  "block.futuretasticdecor.hologlass.tooltip": "Crouch + Right Click to toggle between translucent and opaque states",
+
   "futuretasticdecor.configuration.title": "FuturetasticDecor Configs",
   "futuretasticdecor.configuration.section.futuretasticdecor.common.toml": "FuturetasticDecor Configs",
   "futuretasticdecor.configuration.section.futuretasticdecor.common.toml.title": "FuturetasticDecor Configs",

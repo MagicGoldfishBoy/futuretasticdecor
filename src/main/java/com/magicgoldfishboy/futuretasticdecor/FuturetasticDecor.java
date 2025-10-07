@@ -5,6 +5,7 @@ import org.slf4j.Logger;
 import com.magicgoldfishboy.futuretasticdecor.datagen.Datagen;
 import com.magicgoldfishboy.futuretasticdecor.registry.CarbonFiberRegistry;
 import com.magicgoldfishboy.futuretasticdecor.registry.CraftingMaterialRegistry;
+import com.magicgoldfishboy.futuretasticdecor.registry.GlassRegistry;
 import com.magicgoldfishboy.futuretasticdecor.registry.GlowBlockRegistry;
 import com.magicgoldfishboy.futuretasticdecor.registry.MetalRegistry;
 import com.magicgoldfishboy.futuretasticdecor.registry.PlasticRegistry;
@@ -18,12 +19,14 @@ import net.minecraft.world.item.CreativeModeTabs;
 import net.minecraft.world.level.block.Blocks;
 import net.neoforged.bus.api.IEventBus;
 import net.neoforged.bus.api.SubscribeEvent;
+import net.neoforged.fml.common.EventBusSubscriber;
 import net.neoforged.fml.common.Mod;
 import net.neoforged.fml.config.ModConfig;
 import net.neoforged.fml.ModContainer;
 import net.neoforged.fml.event.lifecycle.FMLCommonSetupEvent;
 import net.neoforged.neoforge.common.NeoForge;
 import net.neoforged.neoforge.data.event.GatherDataEvent;
+import net.neoforged.neoforge.event.entity.player.ItemTooltipEvent;
 import net.neoforged.neoforge.event.server.ServerStartingEvent;
 import net.neoforged.neoforge.registries.DeferredHolder;
 import net.neoforged.neoforge.registries.DeferredRegister;
@@ -79,8 +82,11 @@ public class FuturetasticDecor {
 
         GlowBlockRegistry.registerGlowBlocks();
 
+        GlassRegistry.registerglass();
+
 
         NeoForge.EVENT_BUS.register(this);
+        NeoForge.EVENT_BUS.register(TooltipHandler.class);
 
         modEventBus.addListener(this::gatherData);
 
@@ -113,4 +119,16 @@ public class FuturetasticDecor {
         Datagen datagen = new Datagen();
         datagen.gatherData(event);
     }
+
+//@EventBusSubscriber(modid = "futuretasticdecor", bus = EventBusSubscriber.Bus.GAME)
+public class TooltipHandler {
+
+    @SubscribeEvent
+    public static void onItemTooltip(ItemTooltipEvent event) {
+        LOGGER.info("Tooltips");
+        if (event.getItemStack().getItem() == GlassRegistry.HOLOGLASS_BLOCK_ITEM.get()) {
+            event.getToolTip().add(Component.translatable("block.futuretasticdecor.hologlass.tooltip"));
+        }
+    }
+}
 }
