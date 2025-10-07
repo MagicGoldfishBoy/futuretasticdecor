@@ -1,0 +1,18 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "misc",
+  "key": {
+    "#": "minecraft:redstone",
+    "$": "futuretasticdecor:carbon_fiber_planter",
+    "%": "futuretasticdecor:anti_grav_ingot"
+  },
+  "pattern": [
+    "#",
+    "$",
+    "%"
+  ],
+  "result": {
+    "count": 1,
+    "id": "futuretasticdecor:floating_carbon_fiber_planter"
+  }
+}

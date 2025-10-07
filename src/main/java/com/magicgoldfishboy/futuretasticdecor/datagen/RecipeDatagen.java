@@ -596,6 +596,18 @@ public class RecipeDatagen extends RecipeProvider {
             .unlockedBy("has_carbon_fiber_tow", has(CarbonFiberRegistry.CARBON_FIBER_TOW.get()))
             .unlockedBy("has_super_grow_mulch", has(CraftingMaterialRegistry.SUPER_GROW_MULCH_ITEM.get()))
             .save(this.output);
+
+        ShapedRecipeBuilder.shaped(this.registries.lookupOrThrow(Registries.ITEM), RecipeCategory.DECORATIONS, CarbonFiberRegistry.FLOATING_CARBON_FIBER_PLANTER_ITEM.get())
+            .pattern("#")
+            .pattern("$")
+            .pattern("%")
+            .define('#', Items.REDSTONE)
+            .define('$', CarbonFiberRegistry.CARBON_FIBER_PLANTER_ITEM.get())
+            .define('%', CraftingMaterialRegistry.ANTI_GRAV_INGOT.get())
+            .unlockedBy("has_redstone", has(Items.REDSTONE))
+            .unlockedBy("has_carbon_fiber_planter", has(CarbonFiberRegistry.CARBON_FIBER_PLANTER_ITEM.get()))
+            .unlockedBy("has_anti_grav_ingot", has(CraftingMaterialRegistry.ANTI_GRAV_INGOT.get()))
+            .save(this.output);
     }
     protected void registerMetalRecipes() {
 

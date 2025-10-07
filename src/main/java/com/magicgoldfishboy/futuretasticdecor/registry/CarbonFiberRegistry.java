@@ -32,6 +32,11 @@ public class CarbonFiberRegistry {
 
     public static DeferredItem<BlockItem> CARBON_FIBER_PLANTER_ITEM;
 
+
+    public static DeferredBlock<Block> FLOATING_CARBON_FIBER_PLANTER;
+
+    public static DeferredItem<BlockItem> FLOATING_CARBON_FIBER_PLANTER_ITEM;
+
     public static void registerCarbonFiber() {
 
         CARBON_POWDER = FuturetasticDecor.ITEMS.registerSimpleItem(
@@ -83,6 +88,20 @@ public class CarbonFiberRegistry {
         );
         CARBON_FIBER_PLANTER_ITEM = FuturetasticDecor.ITEMS.registerSimpleBlockItem(
             CARBON_FIBER_PLANTER
+        );
+
+        FLOATING_CARBON_FIBER_PLANTER = FuturetasticDecor.BLOCKS.register(
+            "floating_carbon_fiber_planter", 
+            registryName -> new Block(BlockBehaviour.Properties.of()
+                .setId(ResourceKey.create(Registries.BLOCK, registryName))
+                .strength(5.25f, 9.5f)
+                .requiresCorrectToolForDrops()
+                .sound(SoundType.IRON)
+                .noOcclusion()
+            )
+        );
+        FLOATING_CARBON_FIBER_PLANTER_ITEM = FuturetasticDecor.ITEMS.registerSimpleBlockItem(
+            FLOATING_CARBON_FIBER_PLANTER
         );
     }
     
