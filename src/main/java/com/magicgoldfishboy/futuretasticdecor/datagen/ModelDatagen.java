@@ -2,6 +2,7 @@ package com.magicgoldfishboy.futuretasticdecor.datagen;
 
 import com.magicgoldfishboy.futuretasticdecor.FuturetasticDecor;
 import com.magicgoldfishboy.futuretasticdecor.block.Panel;
+import com.magicgoldfishboy.futuretasticdecor.registry.CarbonFiberRegistry;
 import com.magicgoldfishboy.futuretasticdecor.registry.CraftingMaterialRegistry;
 import com.magicgoldfishboy.futuretasticdecor.registry.GlowBlockRegistry;
 import com.magicgoldfishboy.futuretasticdecor.registry.MetalRegistry;
@@ -32,6 +33,7 @@ public class ModelDatagen extends ModelProvider {
     protected void registerModels(@Nonnull BlockModelGenerators blockModels, @Nonnull ItemModelGenerators itemModels) {
         registerMaterialModels(blockModels, itemModels);
         registerPlasticModels(blockModels, itemModels);
+        registerCarbonFiberModels(blockModels, itemModels);
         registerMetalModels(blockModels, itemModels);
         registerGlowBlockModels(blockModels, itemModels);
         registerPlanterModels(blockModels, itemModels);
@@ -59,10 +61,6 @@ public class ModelDatagen extends ModelProvider {
         itemModels.generateFlatItem(CraftingMaterialRegistry.ANTI_GRAV_NUGGET.get(), ModelTemplates.FLAT_ITEM);
         blockModels.createTrivialCube(CraftingMaterialRegistry.ANTI_GRAV_BLOCK.get());
 
-        itemModels.generateFlatItem(CraftingMaterialRegistry.CARBON_POWDER.get(), ModelTemplates.FLAT_ITEM);
-        itemModels.generateFlatItem(CraftingMaterialRegistry.CARBON_FIBER_TOW.get(), ModelTemplates.FLAT_ITEM);
-        blockModels.createTrivialCube(CraftingMaterialRegistry.UNBAKED_CARBON_FIBER_POLYMER_BLOCK.get());
-        blockModels.createTrivialCube(CraftingMaterialRegistry.CARBON_FIBER_POLYMER_BLOCK.get());
 
         blockModels.createTrivialCube(CraftingMaterialRegistry.SUPER_GROW_MULCH_BLOCK.get());
 
@@ -110,7 +108,13 @@ public class ModelDatagen extends ModelProvider {
         blockModels.createTrivialCube(PlasticRegistry.PINK_PLASTIC_BLOCK.get());
 
     }
+    protected void registerCarbonFiberModels(BlockModelGenerators blockModels, ItemModelGenerators itemModels) {
 
+        itemModels.generateFlatItem(CarbonFiberRegistry.CARBON_POWDER.get(), ModelTemplates.FLAT_ITEM);
+        itemModels.generateFlatItem(CarbonFiberRegistry.CARBON_FIBER_TOW.get(), ModelTemplates.FLAT_ITEM);
+        blockModels.createTrivialCube(CarbonFiberRegistry.UNBAKED_CARBON_FIBER_POLYMER_BLOCK.get());
+        blockModels.createTrivialCube(CarbonFiberRegistry.CARBON_FIBER_POLYMER_BLOCK.get());
+    }
     protected void registerMetalModels(BlockModelGenerators blockModels, ItemModelGenerators itemModels) {
 
         itemModels.generateFlatItem(MetalRegistry.STEEL_ALLOY.get(), ModelTemplates.FLAT_ITEM);
@@ -147,16 +151,6 @@ public class ModelDatagen extends ModelProvider {
         blockModels.createTrivialCube(MetalRegistry.MAGENTA_GLOWING_STEEL_BLOCK.get());
 
         blockModels.createTrivialCube(MetalRegistry.PINK_GLOWING_STEEL_BLOCK.get());
-
-        // ResourceLocation steel_planter = modLocation("steel_planter");
-        // Variant steel_planter_variant = new Variant(steel_planter);
-
-        //     blockModels.blockStateOutput.accept(
-        //         MultiVariantGenerator.dispatch(
-        //             MetalRegistry.STEEL_PLANTER.get(),
-        //             BlockModelGenerators.variant(steel_planter_variant)
-        //         )
-        //     );
     }
     protected void registerGlowBlockModels(BlockModelGenerators blockModels, ItemModelGenerators itemModels) {
 

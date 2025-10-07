@@ -3,6 +3,7 @@ package com.magicgoldfishboy.futuretasticdecor;
 import org.slf4j.Logger;
 
 import com.magicgoldfishboy.futuretasticdecor.datagen.Datagen;
+import com.magicgoldfishboy.futuretasticdecor.registry.CarbonFiberRegistry;
 import com.magicgoldfishboy.futuretasticdecor.registry.CraftingMaterialRegistry;
 import com.magicgoldfishboy.futuretasticdecor.registry.GlowBlockRegistry;
 import com.magicgoldfishboy.futuretasticdecor.registry.MetalRegistry;
@@ -69,6 +70,8 @@ public class FuturetasticDecor {
         CraftingMaterialRegistry.registerCraftingMaterials();
 
         PlasticRegistry.registerPlastics();
+
+        CarbonFiberRegistry.registerCarbonFiber();
 
         MetalRegistry.registerMetals();
 

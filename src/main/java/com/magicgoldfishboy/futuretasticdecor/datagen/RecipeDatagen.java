@@ -2,6 +2,7 @@ package com.magicgoldfishboy.futuretasticdecor.datagen;
 
 import java.util.concurrent.CompletableFuture;
 
+import com.magicgoldfishboy.futuretasticdecor.registry.CarbonFiberRegistry;
 import com.magicgoldfishboy.futuretasticdecor.registry.CraftingMaterialRegistry;
 import com.magicgoldfishboy.futuretasticdecor.registry.GlowBlockRegistry;
 import com.magicgoldfishboy.futuretasticdecor.registry.MetalRegistry;
@@ -39,6 +40,7 @@ public class RecipeDatagen extends RecipeProvider {
     protected void buildRecipes() {
         registerMaterialRecipes();
         registerPlasticRecipes();
+        registerCarbonFiberRecipes();
         registerMetalRecipes();
         registerGlowBlockRecipes();
     }
@@ -220,43 +222,6 @@ public class RecipeDatagen extends RecipeProvider {
             .unlockedBy("has_anti_grav_ingot", has(CraftingMaterialRegistry.ANTI_GRAV_INGOT.get()))
             .save(this.output, "anti_grav_block_from_anti_grav_ingot");
 
-
-
-        SingleItemRecipeBuilder.stonecutting(tag(COALS_TAG), RecipeCategory.MISC, CraftingMaterialRegistry.CARBON_POWDER, 2)
-            .unlockedBy("has_coal", has(Items.COAL))
-            .unlockedBy("has_charcoal", has(Items.CHARCOAL))
-            .save(this.output);
-
-
-        ShapedRecipeBuilder.shaped(this.registries.lookupOrThrow(Registries.ITEM), RecipeCategory.MISC, CraftingMaterialRegistry.CARBON_FIBER_TOW.get())
-            .pattern("##")
-            .pattern("##")
-            .define('#', CraftingMaterialRegistry.CARBON_POWDER.get())
-            .unlockedBy("has_carbon_powder", has(CraftingMaterialRegistry.CARBON_POWDER.get()))
-            .save(this.output);
-
-
-        ShapedRecipeBuilder.shaped(this.registries.lookupOrThrow(Registries.ITEM), RecipeCategory.MISC, CraftingMaterialRegistry.UNBAKED_CARBON_FIBER_POLYMER_ITEM.get())
-            .pattern("$#$")
-            .pattern("#$#")
-            .pattern("$#$")
-            .define('#', PlasticRegistry.WHITE_PLASTIC_PELLET.get())
-            .define('$', CraftingMaterialRegistry.CARBON_FIBER_TOW.get())
-            .unlockedBy("has_plastic_pellet", has(PlasticRegistry.WHITE_PLASTIC_PELLET.get()))
-            .unlockedBy("has_carbon_tow", has(CraftingMaterialRegistry.CARBON_FIBER_TOW.get()))
-            .save(this.output);
-
-
-        SimpleCookingRecipeBuilder.smelting(
-            Ingredient.of(CraftingMaterialRegistry.UNBAKED_CARBON_FIBER_POLYMER_ITEM.get()), 
-            RecipeCategory.MISC, 
-            CraftingMaterialRegistry.CARBON_FIBER_POLYMER_ITEM.get(), 
-            0.75f, 
-            200)
-            .unlockedBy("has_unbaked_carbon_fiber_polymer_item", has(CraftingMaterialRegistry.UNBAKED_CARBON_FIBER_POLYMER_ITEM.get()))
-            .save(this.output);
-
-
         ShapelessRecipeBuilder.shapeless(this.registries.lookupOrThrow(Registries.ITEM), RecipeCategory.BUILDING_BLOCKS, CraftingMaterialRegistry.SUPER_GROW_MULCH_ITEM.get(), 6)
             .requires(Items.DIRT)
             .requires(Items.BONE)
@@ -271,109 +236,109 @@ public class RecipeDatagen extends RecipeProvider {
     protected void registerPlasticRecipes() {
 
         ShapelessRecipeBuilder.shapeless(this.registries.lookupOrThrow(Registries.ITEM), RecipeCategory.MISC, PlasticRegistry.RAW_WHITE_PLASTIC.get(), 6)
-            .requires(CraftingMaterialRegistry.CARBON_POWDER.get())
+            .requires(CarbonFiberRegistry.CARBON_POWDER.get())
             .requires(Items.MAGMA_CREAM)
             .requires(Items.WHITE_DYE)
-            .unlockedBy("has_carbon_powder", has(CraftingMaterialRegistry.CARBON_POWDER.get()))
+            .unlockedBy("has_carbon_powder", has(CarbonFiberRegistry.CARBON_POWDER.get()))
             .unlockedBy("has_magma_cream", has(Items.MAGMA_CREAM))
             .unlockedBy("has_white_dye", has(Items.WHITE_DYE))
             .save(this.output);
 
         ShapelessRecipeBuilder.shapeless(this.registries.lookupOrThrow(Registries.ITEM), RecipeCategory.MISC, PlasticRegistry.RAW_RED_PLASTIC.get(), 6)
-            .requires(CraftingMaterialRegistry.CARBON_POWDER.get())
+            .requires(CarbonFiberRegistry.CARBON_POWDER.get())
             .requires(Items.MAGMA_CREAM)
             .requires(Items.RED_DYE)
-            .unlockedBy("has_carbon_powder", has(CraftingMaterialRegistry.CARBON_POWDER.get()))
+            .unlockedBy("has_carbon_powder", has(CarbonFiberRegistry.CARBON_POWDER.get()))
             .unlockedBy("has_magma_cream", has(Items.MAGMA_CREAM))
             .unlockedBy("has_red_dye", has(Items.RED_DYE))
             .save(this.output);
 
         ShapelessRecipeBuilder.shapeless(this.registries.lookupOrThrow(Registries.ITEM), RecipeCategory.MISC, PlasticRegistry.RAW_ORANGE_PLASTIC.get(), 6)
-            .requires(CraftingMaterialRegistry.CARBON_POWDER.get())
+            .requires(CarbonFiberRegistry.CARBON_POWDER.get())
             .requires(Items.MAGMA_CREAM)
             .requires(Items.ORANGE_DYE)
-            .unlockedBy("has_carbon_powder", has(CraftingMaterialRegistry.CARBON_POWDER.get()))
+            .unlockedBy("has_carbon_powder", has(CarbonFiberRegistry.CARBON_POWDER.get()))
             .unlockedBy("has_magma_cream", has(Items.MAGMA_CREAM))
             .unlockedBy("has_orange_dye", has(Items.ORANGE_DYE))
             .save(this.output);
 
         ShapelessRecipeBuilder.shapeless(this.registries.lookupOrThrow(Registries.ITEM), RecipeCategory.MISC, PlasticRegistry.RAW_YELLOW_PLASTIC.get(), 6)
-            .requires(CraftingMaterialRegistry.CARBON_POWDER.get())
+            .requires(CarbonFiberRegistry.CARBON_POWDER.get())
             .requires(Items.MAGMA_CREAM)
             .requires(Items.YELLOW_DYE)
-            .unlockedBy("has_carbon_powder", has(CraftingMaterialRegistry.CARBON_POWDER.get()))
+            .unlockedBy("has_carbon_powder", has(CarbonFiberRegistry.CARBON_POWDER.get()))
             .unlockedBy("has_magma_cream", has(Items.MAGMA_CREAM))
             .unlockedBy("has_yellow_dye", has(Items.YELLOW_DYE))
             .save(this.output);
 
         ShapelessRecipeBuilder.shapeless(this.registries.lookupOrThrow(Registries.ITEM), RecipeCategory.MISC, PlasticRegistry.RAW_LIME_PLASTIC.get(), 6)
-            .requires(CraftingMaterialRegistry.CARBON_POWDER.get())
+            .requires(CarbonFiberRegistry.CARBON_POWDER.get())
             .requires(Items.MAGMA_CREAM)
             .requires(Items.LIME_DYE)
-            .unlockedBy("has_carbon_powder", has(CraftingMaterialRegistry.CARBON_POWDER.get()))
+            .unlockedBy("has_carbon_powder", has(CarbonFiberRegistry.CARBON_POWDER.get()))
             .unlockedBy("has_magma_cream", has(Items.MAGMA_CREAM))
             .unlockedBy("has_lime_dye", has(Items.LIME_DYE))
             .save(this.output);
 
         ShapelessRecipeBuilder.shapeless(this.registries.lookupOrThrow(Registries.ITEM), RecipeCategory.MISC, PlasticRegistry.RAW_GREEN_PLASTIC.get(), 6)
-            .requires(CraftingMaterialRegistry.CARBON_POWDER.get())
+            .requires(CarbonFiberRegistry.CARBON_POWDER.get())
             .requires(Items.MAGMA_CREAM)
             .requires(Items.GREEN_DYE)
-            .unlockedBy("has_carbon_powder", has(CraftingMaterialRegistry.CARBON_POWDER.get()))
+            .unlockedBy("has_carbon_powder", has(CarbonFiberRegistry.CARBON_POWDER.get()))
             .unlockedBy("has_magma_cream", has(Items.MAGMA_CREAM))
             .unlockedBy("has_green_dye", has(Items.GREEN_DYE))
             .save(this.output);
 
         ShapelessRecipeBuilder.shapeless(this.registries.lookupOrThrow(Registries.ITEM), RecipeCategory.MISC, PlasticRegistry.RAW_CYAN_PLASTIC.get(), 6)
-            .requires(CraftingMaterialRegistry.CARBON_POWDER.get())
+            .requires(CarbonFiberRegistry.CARBON_POWDER.get())
             .requires(Items.MAGMA_CREAM)
             .requires(Items.CYAN_DYE)
-            .unlockedBy("has_carbon_powder", has(CraftingMaterialRegistry.CARBON_POWDER.get()))
+            .unlockedBy("has_carbon_powder", has(CarbonFiberRegistry.CARBON_POWDER.get()))
             .unlockedBy("has_magma_cream", has(Items.MAGMA_CREAM))
             .unlockedBy("has_cyan_dye", has(Items.CYAN_DYE))
             .save(this.output);
 
         ShapelessRecipeBuilder.shapeless(this.registries.lookupOrThrow(Registries.ITEM), RecipeCategory.MISC, PlasticRegistry.RAW_LIGHT_BLUE_PLASTIC.get(), 6)
-            .requires(CraftingMaterialRegistry.CARBON_POWDER.get())
+            .requires(CarbonFiberRegistry.CARBON_POWDER.get())
             .requires(Items.MAGMA_CREAM)
             .requires(Items.LIGHT_BLUE_DYE)
-            .unlockedBy("has_carbon_powder", has(CraftingMaterialRegistry.CARBON_POWDER.get()))
+            .unlockedBy("has_carbon_powder", has(CarbonFiberRegistry.CARBON_POWDER.get()))
             .unlockedBy("has_magma_cream", has(Items.MAGMA_CREAM))
             .unlockedBy("has_light_blue_dye", has(Items.LIGHT_BLUE_DYE))
             .save(this.output);
 
         ShapelessRecipeBuilder.shapeless(this.registries.lookupOrThrow(Registries.ITEM), RecipeCategory.MISC, PlasticRegistry.RAW_BLUE_PLASTIC.get(), 6)
-            .requires(CraftingMaterialRegistry.CARBON_POWDER.get())
+            .requires(CarbonFiberRegistry.CARBON_POWDER.get())
             .requires(Items.MAGMA_CREAM)
             .requires(Items.BLUE_DYE)
-            .unlockedBy("has_carbon_powder", has(CraftingMaterialRegistry.CARBON_POWDER.get()))
+            .unlockedBy("has_carbon_powder", has(CarbonFiberRegistry.CARBON_POWDER.get()))
             .unlockedBy("has_magma_cream", has(Items.MAGMA_CREAM))
             .unlockedBy("has_blue_dye", has(Items.BLUE_DYE))
             .save(this.output);
 
         ShapelessRecipeBuilder.shapeless(this.registries.lookupOrThrow(Registries.ITEM), RecipeCategory.MISC, PlasticRegistry.RAW_PURPLE_PLASTIC.get(), 6)
-            .requires(CraftingMaterialRegistry.CARBON_POWDER.get())
+            .requires(CarbonFiberRegistry.CARBON_POWDER.get())
             .requires(Items.MAGMA_CREAM)
             .requires(Items.PURPLE_DYE)
-            .unlockedBy("has_carbon_powder", has(CraftingMaterialRegistry.CARBON_POWDER.get()))
+            .unlockedBy("has_carbon_powder", has(CarbonFiberRegistry.CARBON_POWDER.get()))
             .unlockedBy("has_magma_cream", has(Items.MAGMA_CREAM))
             .unlockedBy("has_purple_dye", has(Items.PURPLE_DYE))
             .save(this.output);
 
         ShapelessRecipeBuilder.shapeless(this.registries.lookupOrThrow(Registries.ITEM), RecipeCategory.MISC, PlasticRegistry.RAW_MAGENTA_PLASTIC.get(), 6)
-            .requires(CraftingMaterialRegistry.CARBON_POWDER.get())
+            .requires(CarbonFiberRegistry.CARBON_POWDER.get())
             .requires(Items.MAGMA_CREAM)
             .requires(Items.MAGENTA_DYE)
-            .unlockedBy("has_carbon_powder", has(CraftingMaterialRegistry.CARBON_POWDER.get()))
+            .unlockedBy("has_carbon_powder", has(CarbonFiberRegistry.CARBON_POWDER.get()))
             .unlockedBy("has_magma_cream", has(Items.MAGMA_CREAM))
             .unlockedBy("has_magenta_dye", has(Items.MAGENTA_DYE))
             .save(this.output);
 
         ShapelessRecipeBuilder.shapeless(this.registries.lookupOrThrow(Registries.ITEM), RecipeCategory.MISC, PlasticRegistry.RAW_PINK_PLASTIC.get(), 6)
-            .requires(CraftingMaterialRegistry.CARBON_POWDER.get())
+            .requires(CarbonFiberRegistry.CARBON_POWDER.get())
             .requires(Items.MAGMA_CREAM)
             .requires(Items.PINK_DYE)
-            .unlockedBy("has_carbon_powder", has(CraftingMaterialRegistry.CARBON_POWDER.get()))
+            .unlockedBy("has_carbon_powder", has(CarbonFiberRegistry.CARBON_POWDER.get()))
             .unlockedBy("has_magma_cream", has(Items.MAGMA_CREAM))
             .unlockedBy("has_pink_dye", has(Items.PINK_DYE))
             .save(this.output);
@@ -584,6 +549,42 @@ public class RecipeDatagen extends RecipeProvider {
             .unlockedBy("has_plastic_pellet", has(PlasticRegistry.PINK_PLASTIC_PELLET.get()))
             .save(this.output);
 
+    }
+    protected void registerCarbonFiberRecipes() {
+
+        SingleItemRecipeBuilder.stonecutting(tag(COALS_TAG), RecipeCategory.MISC, CarbonFiberRegistry.CARBON_POWDER, 2)
+            .unlockedBy("has_coal", has(Items.COAL))
+            .unlockedBy("has_charcoal", has(Items.CHARCOAL))
+            .save(this.output);
+
+
+        ShapedRecipeBuilder.shaped(this.registries.lookupOrThrow(Registries.ITEM), RecipeCategory.MISC, CarbonFiberRegistry.CARBON_FIBER_TOW.get())
+            .pattern("##")
+            .pattern("##")
+            .define('#', CarbonFiberRegistry.CARBON_POWDER.get())
+            .unlockedBy("has_carbon_powder", has(CarbonFiberRegistry.CARBON_POWDER.get()))
+            .save(this.output);
+
+
+        ShapedRecipeBuilder.shaped(this.registries.lookupOrThrow(Registries.ITEM), RecipeCategory.MISC, CarbonFiberRegistry.UNBAKED_CARBON_FIBER_POLYMER_ITEM.get())
+            .pattern("$#$")
+            .pattern("#$#")
+            .pattern("$#$")
+            .define('#', PlasticRegistry.WHITE_PLASTIC_PELLET.get())
+            .define('$', CarbonFiberRegistry.CARBON_FIBER_TOW.get())
+            .unlockedBy("has_plastic_pellet", has(PlasticRegistry.WHITE_PLASTIC_PELLET.get()))
+            .unlockedBy("has_carbon_tow", has(CarbonFiberRegistry.CARBON_FIBER_TOW.get()))
+            .save(this.output);
+
+
+        SimpleCookingRecipeBuilder.smelting(
+            Ingredient.of(CarbonFiberRegistry.UNBAKED_CARBON_FIBER_POLYMER_ITEM.get()), 
+            RecipeCategory.MISC, 
+            CarbonFiberRegistry.CARBON_FIBER_POLYMER_ITEM.get(), 
+            0.75f, 
+            200)
+            .unlockedBy("has_unbaked_carbon_fiber_polymer_item", has(CarbonFiberRegistry.UNBAKED_CARBON_FIBER_POLYMER_ITEM.get()))
+            .save(this.output);
     }
     protected void registerMetalRecipes() {
 

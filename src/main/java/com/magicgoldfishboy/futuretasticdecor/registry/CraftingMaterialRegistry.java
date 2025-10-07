@@ -53,20 +53,6 @@ public class CraftingMaterialRegistry {
 
     public static DeferredItem<BlockItem> ANTI_GRAV_BLOCK_ITEM;
 
-
-    public static DeferredItem<Item> CARBON_POWDER;
-
-    public static DeferredItem<Item> CARBON_FIBER_TOW;
-
-    public static DeferredBlock<Block> UNBAKED_CARBON_FIBER_POLYMER_BLOCK;
-
-    public static DeferredItem<BlockItem> UNBAKED_CARBON_FIBER_POLYMER_ITEM;
-
-    public static DeferredBlock<Block> CARBON_FIBER_POLYMER_BLOCK;
-
-    public static DeferredItem<BlockItem> CARBON_FIBER_POLYMER_ITEM;
-
-
     public static DeferredBlock<Block> SUPER_GROW_MULCH_BLOCK;
     public static DeferredItem<BlockItem> SUPER_GROW_MULCH_ITEM;
 
@@ -171,42 +157,6 @@ public class CraftingMaterialRegistry {
         ); 
 
 
-        CARBON_POWDER = FuturetasticDecor.ITEMS.registerSimpleItem(
-            "carbon_powder", 
-            new Item.Properties()
-        );
-
-        CARBON_FIBER_TOW = FuturetasticDecor.ITEMS.registerSimpleItem(
-            "carbon_fiber_tow",
-            new Item.Properties()
-                .fireResistant()
-        );
-
-        UNBAKED_CARBON_FIBER_POLYMER_BLOCK = FuturetasticDecor.BLOCKS.register(
-            "unbaked_carbon_fiber_polymer_block", 
-            registryName -> new Block(BlockBehaviour.Properties.of()
-                .setId(ResourceKey.create(Registries.BLOCK, registryName))
-                .strength(5.5f, 9.75f)
-                .requiresCorrectToolForDrops()
-                .sound(SoundType.PACKED_MUD)
-            )
-        );
-        UNBAKED_CARBON_FIBER_POLYMER_ITEM = FuturetasticDecor.ITEMS.registerSimpleBlockItem(
-            UNBAKED_CARBON_FIBER_POLYMER_BLOCK
-        );
-
-        CARBON_FIBER_POLYMER_BLOCK = FuturetasticDecor.BLOCKS.register(
-            "carbon_fiber_polymer_block", 
-            registryName -> new Block(BlockBehaviour.Properties.of()
-                .setId(ResourceKey.create(Registries.BLOCK, registryName))
-                .strength(5.75f, 10.0f)
-                .requiresCorrectToolForDrops()
-                .sound(SoundType.IRON)
-            )
-        );
-        CARBON_FIBER_POLYMER_ITEM = FuturetasticDecor.ITEMS.registerSimpleBlockItem(
-            CARBON_FIBER_POLYMER_BLOCK
-        );
 
 
         SUPER_GROW_MULCH_BLOCK = FuturetasticDecor.BLOCKS.register(
