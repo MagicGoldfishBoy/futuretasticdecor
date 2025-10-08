@@ -86,10 +86,86 @@
     },
     {
       "apply": {
-        "model": "futuretasticdecor:block/hologlass_block_open"
+        "model": "futuretasticdecor:block/opaque_hologlass_glass_pane_post"
       },
       "when": {
         "open": "true"
+      }
+    },
+    {
+      "apply": {
+        "model": "futuretasticdecor:block/opaque_hologlass_glass_pane_side"
+      },
+      "when": {
+        "north": "true",
+        "open": "true"
+      }
+    },
+    {
+      "apply": {
+        "model": "futuretasticdecor:block/opaque_hologlass_glass_pane_side",
+        "y": 90
+      },
+      "when": {
+        "east": "true",
+        "open": "true"
+      }
+    },
+    {
+      "apply": {
+        "model": "futuretasticdecor:block/opaque_hologlass_pane_side_alt"
+      },
+      "when": {
+        "open": "true",
+        "south": "true"
+      }
+    },
+    {
+      "apply": {
+        "model": "futuretasticdecor:block/opaque_hologlass_pane_side_alt",
+        "y": 90
+      },
+      "when": {
+        "open": "true",
+        "west": "true"
+      }
+    },
+    {
+      "apply": {
+        "model": "futuretasticdecor:block/opaque_hologlass_glass_pane_noside"
+      },
+      "when": {
+        "north": "false",
+        "open": "true"
+      }
+    },
+    {
+      "apply": {
+        "model": "futuretasticdecor:block/opaque_hologlass_glass_pane_noside_alt"
+      },
+      "when": {
+        "east": "false",
+        "open": "true"
+      }
+    },
+    {
+      "apply": {
+        "model": "futuretasticdecor:block/opaque_hologlass_glass_pane_noside_alt",
+        "y": 90
+      },
+      "when": {
+        "open": "true",
+        "south": "false"
+      }
+    },
+    {
+      "apply": {
+        "model": "futuretasticdecor:block/opaque_hologlass_glass_pane_noside",
+        "y": 270
+      },
+      "when": {
+        "open": "true",
+        "west": "false"
       }
     }
   ]

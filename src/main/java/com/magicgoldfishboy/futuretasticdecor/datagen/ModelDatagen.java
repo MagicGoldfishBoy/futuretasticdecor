@@ -310,8 +310,17 @@ MultiVariant multivariant3_closed = BlockModelGenerators.plainVariant(ModelTempl
 MultiVariant multivariant4_closed = BlockModelGenerators.plainVariant(ModelTemplates.STAINED_GLASS_PANE_NOSIDE_ALT.create(hologlass_pane, texturemapping, blockModels.modelOutput));
 
 // Create variants for open state (you'll need separate model templates or models for the open state)
-Variant hologlass_pane_open = new Variant(modLocation("block/hologlass_block_open"));
-// Create corresponding open variants for all pane parts if needed
+Variant hologlass_pane_open_post = new Variant(modLocation("block/opaque_hologlass_glass_pane_post"));
+Variant hologlass_pane_open_side = new Variant(modLocation("block/opaque_hologlass_glass_pane_side"));
+Variant hologlass_pane_open_side_alt = new Variant(modLocation("block/opaque_hologlass_pane_side_alt"));
+Variant hologlass_pane_open_noside = new Variant(modLocation("block/opaque_hologlass_glass_pane_noside"));
+Variant hologlass_pane_open_noside_alt = new Variant(modLocation("block/opaque_hologlass_glass_pane_noside_alt"));
+
+MultiVariant multivariant_open = BlockModelGenerators.variant(hologlass_pane_open_post);
+MultiVariant multivariant1_open = BlockModelGenerators.variant(hologlass_pane_open_side);
+MultiVariant multivariant2_open = BlockModelGenerators.variant(hologlass_pane_open_side_alt);
+MultiVariant multivariant3_open = BlockModelGenerators.variant(hologlass_pane_open_noside);
+MultiVariant multivariant4_open = BlockModelGenerators.variant(hologlass_pane_open_noside_alt);
 
 Item item = hologlass_pane.asItem();
 blockModels.registerSimpleItemModel(item, blockModels.createFlatItemModelWithBlockTexture(item, hologlass_block));
@@ -358,7 +367,39 @@ blockModels.blockStateOutput.accept(
         )
         .with(
             BlockModelGenerators.condition().term(BlockStateProperties.OPEN, true),
-            new MultiVariant(WeightedList.of(hologlass_pane_open))
+            multivariant_open
+        )
+        .with(
+            BlockModelGenerators.condition().term(BlockStateProperties.NORTH, true).term(BlockStateProperties.OPEN, true),
+            multivariant1_open
+        )
+        .with(
+            BlockModelGenerators.condition().term(BlockStateProperties.EAST, true).term(BlockStateProperties.OPEN, true),
+            multivariant1_open.with(BlockModelGenerators.Y_ROT_90)
+        )
+        .with(
+            BlockModelGenerators.condition().term(BlockStateProperties.SOUTH, true).term(BlockStateProperties.OPEN, true),
+            multivariant2_open
+        )
+        .with(
+            BlockModelGenerators.condition().term(BlockStateProperties.WEST, true).term(BlockStateProperties.OPEN, true),
+            multivariant2_open.with(BlockModelGenerators.Y_ROT_90)
+        )
+        .with(
+            BlockModelGenerators.condition().term(BlockStateProperties.NORTH, false).term(BlockStateProperties.OPEN, true),
+            multivariant3_open
+        )
+        .with(
+            BlockModelGenerators.condition().term(BlockStateProperties.EAST, false).term(BlockStateProperties.OPEN, true),
+            multivariant4_open
+        )
+        .with(
+            BlockModelGenerators.condition().term(BlockStateProperties.SOUTH, false).term(BlockStateProperties.OPEN, true),
+            multivariant4_open.with(BlockModelGenerators.Y_ROT_90)
+        )
+        .with(
+            BlockModelGenerators.condition().term(BlockStateProperties.WEST, false).term(BlockStateProperties.OPEN, true),
+            multivariant3_open.with(BlockModelGenerators.Y_ROT_270)
         )
 );
         // Hologlass hologlass_pane = GlassRegistry.HOLOGLASS_PANE.get();

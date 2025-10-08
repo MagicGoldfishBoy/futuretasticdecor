@@ -1,0 +1,22 @@
+{
+	"format_version": "1.21.6",
+	"credit": "Made with Blockbench",
+	"ambientocclusion": false,
+	"textures": {
+		"0": "futuretasticdecor:block/hologlass_opaque",
+		"particle": "futuretasticdecor:block/hologlass_opaque"
+	},
+	"elements": [
+		{
+			"from": [7, 0, 9],
+			"to": [9, 16, 16],
+			"faces": {
+				"east": {"uv": [0, 0, 7, 16], "texture": "#0"},
+				"south": {"uv": [7, 0, 9, 16], "texture": "#0", "cullface": "south"},
+				"west": {"uv": [7, 0, 0, 16], "texture": "#0"},
+				"up": {"uv": [7, 0, 9, 7], "texture": "#0"},
+				"down": {"uv": [7, 0, 9, 7], "texture": "#0"}
+			}
+		}
+	]
+}

@@ -1,0 +1,18 @@
+{
+	"format_version": "1.21.6",
+	"credit": "Made with Blockbench",
+	"ambientocclusion": false,
+	"textures": {
+		"particle": "futuretasticdecor:block/hologlass_opaque",
+		"pane": "futuretasticdecor:block/hologlass_opaque"
+	},
+	"elements": [
+		{
+			"from": [7, 0, 7],
+			"to": [9, 16, 9],
+			"faces": {
+				"east": {"uv": [7, 0, 9, 16], "texture": "#pane"}
+			}
+		}
+	]
+}
