@@ -9,6 +9,7 @@ import com.magicgoldfishboy.futuretasticdecor.registry.CarbonFiberRegistry;
 import com.magicgoldfishboy.futuretasticdecor.registry.CraftingMaterialRegistry;
 import com.magicgoldfishboy.futuretasticdecor.registry.GlassRegistry;
 import com.magicgoldfishboy.futuretasticdecor.registry.GlowBlockRegistry;
+import com.magicgoldfishboy.futuretasticdecor.registry.LaboratoryDecorRegistry;
 import com.magicgoldfishboy.futuretasticdecor.registry.MetalRegistry;
 import com.magicgoldfishboy.futuretasticdecor.registry.PlasticRegistry;
 import com.mojang.datafixers.types.templates.List;
@@ -60,6 +61,7 @@ public class ModelDatagen extends ModelProvider {
         registerGlowBlockModels(blockModels, itemModels);
         registerPlanterModels(blockModels, itemModels);
         registerGlassModels(blockModels, itemModels);
+        registerLabDecorModels(blockModels, itemModels);
     }
 
     protected void registerMaterialModels(BlockModelGenerators blockModels, ItemModelGenerators itemModels) {
@@ -282,7 +284,6 @@ public class ModelDatagen extends ModelProvider {
         // MultiVariant corner = new MultiVariant(WeightedList.of(block_variant_corner));
 
     }
-
     protected void registerGlassModels(BlockModelGenerators blockModels, ItemModelGenerators itemModels) {
 
         HologlassBlock hologlass_block = GlassRegistry.HOLOGLASS_BLOCK.get();
@@ -399,8 +400,9 @@ public class ModelDatagen extends ModelProvider {
                 )
             );
     }
-
-
+    protected void registerLabDecorModels(BlockModelGenerators blockModels, ItemModelGenerators itemModels) {
+        blockModels.createTrivialCube(LaboratoryDecorRegistry.HOLOTILES_BLOCK.get());
+    }
     protected void registerPlanterModels(BlockModelGenerators blockModels, ItemModelGenerators itemModels) {
 
         LOGGER.info("Creating Planter Models");

@@ -130,6 +130,8 @@
   "block.futuretasticdecor.hologlass_pane": "Hologlass Pane",
   "block.futuretasticdecor.hologlass_pane.tooltip": "Crouch + Right Click to toggle between translucent and opaque states",
 
+  "block.futuretasticdecor.holotiles_block": "Holotiles Block",
+
   "futuretasticdecor.configuration.title": "FuturetasticDecor Configs",
   "futuretasticdecor.configuration.section.futuretasticdecor.common.toml": "FuturetasticDecor Configs",
   "futuretasticdecor.configuration.section.futuretasticdecor.common.toml.title": "FuturetasticDecor Configs",

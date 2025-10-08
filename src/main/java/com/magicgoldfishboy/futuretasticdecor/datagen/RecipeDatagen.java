@@ -6,6 +6,7 @@ import com.magicgoldfishboy.futuretasticdecor.registry.CarbonFiberRegistry;
 import com.magicgoldfishboy.futuretasticdecor.registry.CraftingMaterialRegistry;
 import com.magicgoldfishboy.futuretasticdecor.registry.GlassRegistry;
 import com.magicgoldfishboy.futuretasticdecor.registry.GlowBlockRegistry;
+import com.magicgoldfishboy.futuretasticdecor.registry.LaboratoryDecorRegistry;
 import com.magicgoldfishboy.futuretasticdecor.registry.MetalRegistry;
 import com.magicgoldfishboy.futuretasticdecor.registry.PlasticRegistry;
 
@@ -45,6 +46,7 @@ public class RecipeDatagen extends RecipeProvider {
         registerMetalRecipes();
         registerGlowBlockRecipes();
         registerGlassBlockRecipes();
+        registerLabDecorRecipes();
     }
 
     protected void registerMaterialRecipes() {
@@ -1043,6 +1045,16 @@ public class RecipeDatagen extends RecipeProvider {
             .unlockedBy("has_hologlass_block_item", has(GlassRegistry.HOLOGLASS_BLOCK_ITEM.get()))
             .save(this.output);
 
+    }
+    protected void registerLabDecorRecipes() {
+        ShapedRecipeBuilder.shaped(this.registries.lookupOrThrow(Registries.ITEM), RecipeCategory.BUILDING_BLOCKS, LaboratoryDecorRegistry.HOLOTILES_BLOCK_ITEM.get(), 8)
+            .pattern("#$")
+            .pattern("$#")
+            .define('#', Items.QUARTZ_BLOCK)
+            .define('$', GlassRegistry.HOLOGLASS_BLOCK_ITEM.get())
+            .unlockedBy("has_quartz_block", has(Items.QUARTZ_BLOCK))
+            .unlockedBy("has_hologlass_block", has(GlassRegistry.HOLOGLASS_BLOCK_ITEM.get()))
+            .save(this.output);
     }
     public static class Runner extends RecipeProvider.Runner {
 

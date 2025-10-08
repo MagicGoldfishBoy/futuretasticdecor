@@ -7,6 +7,7 @@ import com.magicgoldfishboy.futuretasticdecor.registry.CarbonFiberRegistry;
 import com.magicgoldfishboy.futuretasticdecor.registry.CraftingMaterialRegistry;
 import com.magicgoldfishboy.futuretasticdecor.registry.GlassRegistry;
 import com.magicgoldfishboy.futuretasticdecor.registry.GlowBlockRegistry;
+import com.magicgoldfishboy.futuretasticdecor.registry.LaboratoryDecorRegistry;
 import com.magicgoldfishboy.futuretasticdecor.registry.MetalRegistry;
 import com.magicgoldfishboy.futuretasticdecor.registry.PlasticRegistry;
 import com.mojang.logging.LogUtils;
@@ -88,6 +89,8 @@ public class FuturetasticDecor {
         GlowBlockRegistry.registerGlowBlocks();
 
         GlassRegistry.registerglass();
+
+        LaboratoryDecorRegistry.registerAll();
 
 
         NeoForge.EVENT_BUS.register(this);
