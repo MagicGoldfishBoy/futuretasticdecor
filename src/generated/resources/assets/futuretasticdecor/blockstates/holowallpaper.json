@@ -1,0 +1,40 @@
+{
+  "multipart": [
+    {
+      "apply": {
+        "model": "futuretasticdecor:block/holowallpaper_down"
+      },
+      "when": {
+        "down": "false",
+        "up": "true"
+      }
+    },
+    {
+      "apply": {
+        "model": "futuretasticdecor:block/holowallpaper_single"
+      },
+      "when": {
+        "down": "false",
+        "up": "false"
+      }
+    },
+    {
+      "apply": {
+        "model": "futuretasticdecor:block/holowallpaper_middle"
+      },
+      "when": {
+        "down": "true",
+        "up": "true"
+      }
+    },
+    {
+      "apply": {
+        "model": "futuretasticdecor:block/holowallpaper_up"
+      },
+      "when": {
+        "down": "true",
+        "up": "false"
+      }
+    }
+  ]
+}

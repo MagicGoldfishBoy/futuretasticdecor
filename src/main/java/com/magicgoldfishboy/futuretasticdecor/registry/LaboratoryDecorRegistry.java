@@ -45,6 +45,10 @@ public class LaboratoryDecorRegistry {
             "holowallpaper", 
             registryName -> new Wallpaper(BlockBehaviour.Properties.of()
                 .setId(ResourceKey.create(Registries.BLOCK, registryName))
+                .strength(5.5f, 5.5f)
+                .lightLevel(state -> 5)
+                .requiresCorrectToolForDrops()
+                .sound(SoundType.TUFF)
             )
         );
         HOLOWALLPAPER_ITEM = FuturetasticDecor.ITEMS.registerSimpleBlockItem(

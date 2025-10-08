@@ -5,6 +5,7 @@ import com.magicgoldfishboy.futuretasticdecor.block.ConnectableGlowBlock;
 import com.magicgoldfishboy.futuretasticdecor.block.Hologlass;
 import com.magicgoldfishboy.futuretasticdecor.block.HologlassBlock;
 import com.magicgoldfishboy.futuretasticdecor.block.Panel;
+import com.magicgoldfishboy.futuretasticdecor.block.Wallpaper;
 import com.magicgoldfishboy.futuretasticdecor.registry.CarbonFiberRegistry;
 import com.magicgoldfishboy.futuretasticdecor.registry.CraftingMaterialRegistry;
 import com.magicgoldfishboy.futuretasticdecor.registry.GlassRegistry;
@@ -402,6 +403,41 @@ public class ModelDatagen extends ModelProvider {
     }
     protected void registerLabDecorModels(BlockModelGenerators blockModels, ItemModelGenerators itemModels) {
         blockModels.createTrivialCube(LaboratoryDecorRegistry.HOLOTILES_BLOCK.get());
+
+            Wallpaper holowallpaper = LaboratoryDecorRegistry.HOLOWALLPAPER.get();
+            Variant holowallpaper_up = new Variant(modLocation("block/holowallpaper_up"));
+            Variant holowallpaper_middle = new Variant(modLocation("block/holowallpaper_middle"));
+            Variant holowallpaper_down = new Variant(modLocation("block/holowallpaper_down"));
+            Variant holowallpaper_single = new Variant(modLocation("block/holowallpaper_single"));
+
+            MultiVariant holowallpaper_up_multi = new MultiVariant(WeightedList.of(holowallpaper_up));
+            MultiVariant holowallpaper_middle_multi = new MultiVariant(WeightedList.of(holowallpaper_middle));
+            MultiVariant holowallpaper_down_multi = new MultiVariant(WeightedList.of(holowallpaper_down));
+            MultiVariant holowallpaper_single_multi = new MultiVariant(WeightedList.of(holowallpaper_single));
+
+        blockModels.blockStateOutput.accept(
+            MultiPartGenerator.multiPart(holowallpaper)
+                .with(
+                    BlockModelGenerators.condition().term(BlockStateProperties.UP, true).term(BlockStateProperties.DOWN, false),
+                    holowallpaper_down_multi
+                )
+                .with(
+                    BlockModelGenerators.condition().term(BlockStateProperties.UP, false).term(BlockStateProperties.DOWN, false),
+                    holowallpaper_single_multi
+                )
+                .with(
+                    BlockModelGenerators.condition().term(BlockStateProperties.UP, true).term(BlockStateProperties.DOWN, true),
+                    holowallpaper_middle_multi
+                )
+                .with(
+                    BlockModelGenerators.condition().term(BlockStateProperties.UP, false).term(BlockStateProperties.DOWN, true),
+                    holowallpaper_up_multi
+                )
+        );
+        itemModels.itemModelOutput.accept(
+            LaboratoryDecorRegistry.HOLOWALLPAPER_ITEM.get(),
+            ItemModelUtils.plainModel(modLocation("block/holowallpaper_single"))
+        );
     }
     protected void registerPlanterModels(BlockModelGenerators blockModels, ItemModelGenerators itemModels) {
 
