@@ -3,6 +3,7 @@ package com.magicgoldfishboy.futuretasticdecor.registry;
 import java.rmi.registry.Registry;
 
 import com.magicgoldfishboy.futuretasticdecor.FuturetasticDecor;
+import com.magicgoldfishboy.futuretasticdecor.block.Wallpaper;
 
 import net.minecraft.core.registries.Registries;
 import net.minecraft.resources.ResourceKey;
@@ -19,6 +20,11 @@ public class LaboratoryDecorRegistry {
 
     public static DeferredItem<BlockItem> HOLOTILES_BLOCK_ITEM;
 
+
+    public static DeferredBlock<Wallpaper> HOLOWALLPAPER;
+
+    public static DeferredItem<BlockItem> HOLOWALLPAPER_ITEM;
+
     public static void registerAll() {
 
         HOLOTILES_BLOCK = FuturetasticDecor.BLOCKS.register(
@@ -33,6 +39,16 @@ public class LaboratoryDecorRegistry {
         );
         HOLOTILES_BLOCK_ITEM = FuturetasticDecor.ITEMS.registerSimpleBlockItem(
             HOLOTILES_BLOCK
+        );
+
+        HOLOWALLPAPER = FuturetasticDecor.BLOCKS.register(
+            "holowallpaper", 
+            registryName -> new Wallpaper(BlockBehaviour.Properties.of()
+                .setId(ResourceKey.create(Registries.BLOCK, registryName))
+            )
+        );
+        HOLOWALLPAPER_ITEM = FuturetasticDecor.ITEMS.registerSimpleBlockItem(
+            HOLOWALLPAPER
         );
 
     }
