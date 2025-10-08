@@ -1,0 +1,10 @@
+{
+  "variants": {
+    "open=false": {
+      "model": "futuretasticdecor:block/hologlass_block"
+    },
+    "open=true": {
+      "model": "futuretasticdecor:block/hologlass_block_open"
+    }
+  }
+}

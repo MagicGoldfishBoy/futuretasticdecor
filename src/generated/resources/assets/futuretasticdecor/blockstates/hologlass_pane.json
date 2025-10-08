@@ -1,0 +1,96 @@
+{
+  "multipart": [
+    {
+      "apply": {
+        "model": "futuretasticdecor:block/hologlass_pane_post"
+      },
+      "when": {
+        "open": "false"
+      }
+    },
+    {
+      "apply": {
+        "model": "futuretasticdecor:block/hologlass_pane_side"
+      },
+      "when": {
+        "north": "true",
+        "open": "false"
+      }
+    },
+    {
+      "apply": {
+        "model": "futuretasticdecor:block/hologlass_pane_side",
+        "y": 90
+      },
+      "when": {
+        "east": "true",
+        "open": "false"
+      }
+    },
+    {
+      "apply": {
+        "model": "futuretasticdecor:block/hologlass_pane_side_alt"
+      },
+      "when": {
+        "open": "false",
+        "south": "true"
+      }
+    },
+    {
+      "apply": {
+        "model": "futuretasticdecor:block/hologlass_pane_side_alt",
+        "y": 90
+      },
+      "when": {
+        "open": "false",
+        "west": "true"
+      }
+    },
+    {
+      "apply": {
+        "model": "futuretasticdecor:block/hologlass_pane_noside"
+      },
+      "when": {
+        "north": "false",
+        "open": "false"
+      }
+    },
+    {
+      "apply": {
+        "model": "futuretasticdecor:block/hologlass_pane_noside_alt"
+      },
+      "when": {
+        "east": "false",
+        "open": "false"
+      }
+    },
+    {
+      "apply": {
+        "model": "futuretasticdecor:block/hologlass_pane_noside_alt",
+        "y": 90
+      },
+      "when": {
+        "open": "false",
+        "south": "false"
+      }
+    },
+    {
+      "apply": {
+        "model": "futuretasticdecor:block/hologlass_pane_noside",
+        "y": 270
+      },
+      "when": {
+        "open": "false",
+        "west": "false"
+      }
+    },
+    {
+      "apply": {
+        "model": "futuretasticdecor:block/hologlass_block_open"
+      },
+      "when": {
+        "open": "true"
+      }
+    }
+  ]
+}

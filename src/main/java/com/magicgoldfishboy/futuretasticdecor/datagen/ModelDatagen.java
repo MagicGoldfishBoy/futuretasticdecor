@@ -2,28 +2,44 @@ package com.magicgoldfishboy.futuretasticdecor.datagen;
 
 import com.magicgoldfishboy.futuretasticdecor.FuturetasticDecor;
 import com.magicgoldfishboy.futuretasticdecor.block.ConnectableGlowBlock;
+import com.magicgoldfishboy.futuretasticdecor.block.Hologlass;
+import com.magicgoldfishboy.futuretasticdecor.block.HologlassBlock;
 import com.magicgoldfishboy.futuretasticdecor.block.Panel;
 import com.magicgoldfishboy.futuretasticdecor.registry.CarbonFiberRegistry;
 import com.magicgoldfishboy.futuretasticdecor.registry.CraftingMaterialRegistry;
+import com.magicgoldfishboy.futuretasticdecor.registry.GlassRegistry;
 import com.magicgoldfishboy.futuretasticdecor.registry.GlowBlockRegistry;
 import com.magicgoldfishboy.futuretasticdecor.registry.MetalRegistry;
 import com.magicgoldfishboy.futuretasticdecor.registry.PlasticRegistry;
+import com.mojang.datafixers.types.templates.List;
 
+import net.minecraft.client.renderer.block.model.multipart.CombinedCondition;
+import net.minecraft.client.renderer.block.model.multipart.Condition;
 import net.minecraft.client.data.models.BlockModelGenerators;
 import net.minecraft.client.data.models.ItemModelGenerators;
+import net.minecraft.client.data.models.ItemModelOutput;
 import net.minecraft.client.data.models.ModelProvider;
 import net.minecraft.client.data.models.MultiVariant;
+import net.minecraft.client.data.models.blockstates.MultiPartGenerator;
 import net.minecraft.client.data.models.blockstates.MultiVariantGenerator;
+import net.minecraft.client.data.models.blockstates.PropertyDispatch;
 import net.minecraft.client.data.models.model.ItemModelUtils;
+import net.minecraft.client.data.models.model.ModelInstance;
 import net.minecraft.client.data.models.model.ModelLocationUtils;
 import net.minecraft.client.data.models.model.ModelTemplates;
+import net.minecraft.client.data.models.model.TextureMapping;
 import net.minecraft.client.renderer.block.model.Variant;
+import net.minecraft.core.registries.BuiltInRegistries;
 import net.minecraft.data.PackOutput;
 import net.minecraft.resources.ResourceLocation;
 import net.minecraft.util.random.WeightedList;
 import net.minecraft.world.item.Item;
 import net.minecraft.world.level.block.Block;
+import net.minecraft.world.level.block.DirectionalBlock;
+import net.minecraft.world.level.block.state.properties.BlockStateProperties;
 import net.neoforged.neoforge.registries.DeferredHolder;
+
+import java.util.function.BiConsumer;
 
 import javax.annotation.Nonnull;
 
@@ -31,6 +47,9 @@ public class ModelDatagen extends ModelProvider {
     public ModelDatagen(PackOutput output) {
         super(output, FuturetasticDecor.MODID);
     }
+
+    // public final ItemModelOutput itemModelOutput;
+    // public final BiConsumer<ResourceLocation, ModelInstance> modelOutput;
 
     @Override
     protected void registerModels(@Nonnull BlockModelGenerators blockModels, @Nonnull ItemModelGenerators itemModels) {
@@ -40,6 +59,7 @@ public class ModelDatagen extends ModelProvider {
         registerMetalModels(blockModels, itemModels);
         registerGlowBlockModels(blockModels, itemModels);
         registerPlanterModels(blockModels, itemModels);
+        registerGlassModels(blockModels, itemModels);
     }
 
     protected void registerMaterialModels(BlockModelGenerators blockModels, ItemModelGenerators itemModels) {
@@ -259,6 +279,125 @@ public class ModelDatagen extends ModelProvider {
         // MultiVariant line = new MultiVariant(WeightedList.of(block_variant_line));
         // MultiVariant corner = new MultiVariant(WeightedList.of(block_variant_corner));
 
+    }
+
+    protected void registerGlassModels(BlockModelGenerators blockModels, ItemModelGenerators itemModels) {
+        //blockModels.createGlassBlocks(GlassRegistry.HOLOGLASS_BLOCK.get(), GlassRegistry.HOLOGLASS_PANE.get());
+
+        HologlassBlock hologlass_block = GlassRegistry.HOLOGLASS_BLOCK.get();
+        Variant hologlass_block_closed = new Variant(ModelLocationUtils.getModelLocation(hologlass_block));
+        Variant hologlass_block_open = new Variant(modLocation("block/hologlass_block_open"));
+        MultiVariant hologlass_block_closed_multi = new MultiVariant(WeightedList.of(hologlass_block_closed));
+        MultiVariant hologlass_block_open_multi = new MultiVariant(WeightedList.of(hologlass_block_open));
+
+        blockModels.blockStateOutput.accept(
+            MultiVariantGenerator.dispatch(hologlass_block).with(
+                PropertyDispatch.initial(BlockStateProperties.OPEN)
+                    .select(false, hologlass_block_closed_multi)
+                    .select(true, hologlass_block_open_multi)
+            )
+        );
+//TODO: create closed pane models
+Hologlass hologlass_pane = GlassRegistry.HOLOGLASS_PANE.get();
+TextureMapping texturemapping = TextureMapping.pane(hologlass_block, hologlass_pane);
+
+// Create variants for closed state
+Variant hologlass_pane_closed = new Variant(ModelLocationUtils.getModelLocation(hologlass_pane));
+MultiVariant multivariant_closed = BlockModelGenerators.plainVariant(ModelTemplates.STAINED_GLASS_PANE_POST.create(hologlass_pane, texturemapping, blockModels.modelOutput));
+MultiVariant multivariant1_closed = BlockModelGenerators.plainVariant(ModelTemplates.STAINED_GLASS_PANE_SIDE.create(hologlass_pane, texturemapping, blockModels.modelOutput));
+MultiVariant multivariant2_closed = BlockModelGenerators.plainVariant(ModelTemplates.STAINED_GLASS_PANE_SIDE_ALT.create(hologlass_pane, texturemapping, blockModels.modelOutput));
+MultiVariant multivariant3_closed = BlockModelGenerators.plainVariant(ModelTemplates.STAINED_GLASS_PANE_NOSIDE.create(hologlass_pane, texturemapping, blockModels.modelOutput));
+MultiVariant multivariant4_closed = BlockModelGenerators.plainVariant(ModelTemplates.STAINED_GLASS_PANE_NOSIDE_ALT.create(hologlass_pane, texturemapping, blockModels.modelOutput));
+
+// Create variants for open state (you'll need separate model templates or models for the open state)
+Variant hologlass_pane_open = new Variant(modLocation("block/hologlass_block_open"));
+// Create corresponding open variants for all pane parts if needed
+
+Item item = hologlass_pane.asItem();
+blockModels.registerSimpleItemModel(item, blockModels.createFlatItemModelWithBlockTexture(item, hologlass_block));
+
+// Combine both multipart AND property dispatch
+blockModels.blockStateOutput.accept(
+    MultiPartGenerator.multiPart(hologlass_pane)
+        // Closed state multipart
+        .with(
+            BlockModelGenerators.condition().term(BlockStateProperties.OPEN, false),
+            multivariant_closed
+        )
+        .with(
+            BlockModelGenerators.condition().term(BlockStateProperties.NORTH, true).term(BlockStateProperties.OPEN, false),
+            multivariant1_closed
+        )
+        .with(
+            BlockModelGenerators.condition().term(BlockStateProperties.EAST, true).term(BlockStateProperties.OPEN, false),
+            multivariant1_closed.with(BlockModelGenerators.Y_ROT_90)
+        )
+        .with(
+            BlockModelGenerators.condition().term(BlockStateProperties.SOUTH, true).term(BlockStateProperties.OPEN, false),
+            multivariant2_closed
+        )
+        .with(
+            BlockModelGenerators.condition().term(BlockStateProperties.WEST, true).term(BlockStateProperties.OPEN, false),
+            multivariant2_closed.with(BlockModelGenerators.Y_ROT_90)
+        )
+        .with(
+            BlockModelGenerators.condition().term(BlockStateProperties.NORTH, false).term(BlockStateProperties.OPEN, false),
+            multivariant3_closed
+        )
+        .with(
+            BlockModelGenerators.condition().term(BlockStateProperties.EAST, false).term(BlockStateProperties.OPEN, false),
+            multivariant4_closed
+        )
+        .with(
+            BlockModelGenerators.condition().term(BlockStateProperties.SOUTH, false).term(BlockStateProperties.OPEN, false),
+            multivariant4_closed.with(BlockModelGenerators.Y_ROT_90)
+        )
+        .with(
+            BlockModelGenerators.condition().term(BlockStateProperties.WEST, false).term(BlockStateProperties.OPEN, false),
+            multivariant3_closed.with(BlockModelGenerators.Y_ROT_270)
+        )
+        .with(
+            BlockModelGenerators.condition().term(BlockStateProperties.OPEN, true),
+            new MultiVariant(WeightedList.of(hologlass_pane_open))
+        )
+);
+        // Hologlass hologlass_pane = GlassRegistry.HOLOGLASS_PANE.get();
+        // TextureMapping texturemapping = TextureMapping.pane(hologlass_block, hologlass_pane);
+
+        // Variant hologlass_pane_closed = new Variant(ModelLocationUtils.getModelLocation(hologlass_pane));
+        // Variant hologlass_pane_open = new Variant(modLocation("block/hologlass_block_open"));
+        // MultiVariant hologlass_pane_closed_multi = new MultiVariant(WeightedList.of(hologlass_pane_closed));
+        // MultiVariant hologlass_pane_open_multi = new MultiVariant(WeightedList.of(hologlass_pane_open));
+
+        // MultiVariant multivariant = BlockModelGenerators.plainVariant(ModelTemplates.STAINED_GLASS_PANE_POST.create(hologlass_pane, texturemapping, blockModels.modelOutput));
+        // MultiVariant multivariant1 = BlockModelGenerators.plainVariant(ModelTemplates.STAINED_GLASS_PANE_SIDE.create(hologlass_pane, texturemapping, blockModels.modelOutput));
+        // MultiVariant multivariant2 = BlockModelGenerators.plainVariant(ModelTemplates.STAINED_GLASS_PANE_SIDE_ALT.create(hologlass_pane, texturemapping, blockModels.modelOutput));
+        // MultiVariant multivariant3 = BlockModelGenerators.plainVariant(ModelTemplates.STAINED_GLASS_PANE_NOSIDE.create(hologlass_pane, texturemapping, blockModels.modelOutput));
+        // MultiVariant multivariant4 = BlockModelGenerators.plainVariant(ModelTemplates.STAINED_GLASS_PANE_NOSIDE_ALT.create(hologlass_pane, texturemapping, blockModels.modelOutput));
+
+        // Item item = hologlass_pane.asItem();
+
+        // blockModels.registerSimpleItemModel(item, blockModels.createFlatItemModelWithBlockTexture(item, hologlass_block));
+        // blockModels.blockStateOutput
+        //     .accept(
+        //         MultiPartGenerator.multiPart(hologlass_pane)
+        //             .with(multivariant)
+        //             .with(BlockModelGenerators.condition().term(BlockStateProperties.NORTH, true), multivariant1)
+        //             .with(BlockModelGenerators.condition().term(BlockStateProperties.EAST, true), multivariant1.with(BlockModelGenerators.Y_ROT_90))
+        //             .with(BlockModelGenerators.condition().term(BlockStateProperties.SOUTH, true), multivariant2)
+        //             .with(BlockModelGenerators.condition().term(BlockStateProperties.WEST, true), multivariant2.with(BlockModelGenerators.Y_ROT_90))
+        //             .with(BlockModelGenerators.condition().term(BlockStateProperties.NORTH, false), multivariant3)
+        //             .with(BlockModelGenerators.condition().term(BlockStateProperties.EAST, false), multivariant4)
+        //             .with(BlockModelGenerators.condition().term(BlockStateProperties.SOUTH, false), multivariant4.with(BlockModelGenerators.Y_ROT_90))
+        //             .with(BlockModelGenerators.condition().term(BlockStateProperties.WEST, false), multivariant3.with(BlockModelGenerators.Y_ROT_270))
+        //     );
+        //     blockModels.blockStateOutput.accept(
+        //         MultiVariantGenerator.dispatch(hologlass_pane).with(
+        //             PropertyDispatch.initial(BlockStateProperties.OPEN)
+        //                 .select(false, hologlass_pane_closed_multi)
+        //                 .select(true, hologlass_pane_open_multi)
+        //         )
+        //     );
     }
 
 

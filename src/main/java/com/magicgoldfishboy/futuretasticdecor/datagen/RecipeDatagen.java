@@ -4,6 +4,7 @@ import java.util.concurrent.CompletableFuture;
 
 import com.magicgoldfishboy.futuretasticdecor.registry.CarbonFiberRegistry;
 import com.magicgoldfishboy.futuretasticdecor.registry.CraftingMaterialRegistry;
+import com.magicgoldfishboy.futuretasticdecor.registry.GlassRegistry;
 import com.magicgoldfishboy.futuretasticdecor.registry.GlowBlockRegistry;
 import com.magicgoldfishboy.futuretasticdecor.registry.MetalRegistry;
 import com.magicgoldfishboy.futuretasticdecor.registry.PlasticRegistry;
@@ -43,6 +44,7 @@ public class RecipeDatagen extends RecipeProvider {
         registerCarbonFiberRecipes();
         registerMetalRecipes();
         registerGlowBlockRecipes();
+        registerGlassBlockRecipes();
     }
 
     protected void registerMaterialRecipes() {
@@ -1006,6 +1008,28 @@ public class RecipeDatagen extends RecipeProvider {
         SingleItemRecipeBuilder.stonecutting(Ingredient.of(GlowBlockRegistry.PINK_GLOW_BLOCK_ITEM.get()), RecipeCategory.BUILDING_BLOCKS, GlowBlockRegistry.PINK_GLOW_PANEL.get(), 4)
             .unlockedBy("has_pink_glow_block", has(GlowBlockRegistry.PINK_GLOW_BLOCK_ITEM.get()))
             .save(this.output);
+    }
+    protected void registerGlassBlockRecipes() {
+
+        ShapedRecipeBuilder.shaped(this.registries.lookupOrThrow(Registries.ITEM), RecipeCategory.BUILDING_BLOCKS, GlassRegistry.HOLOGLASS_BLOCK_ITEM.get(), 6)
+            .pattern("#$#")
+            .pattern("#%#")
+            .pattern("#$#")
+            .define('#', Items.GLASS)
+            .define('$', Items.REDSTONE)
+            .define('%', CraftingMaterialRegistry.STARDUST_POWDER.get())
+            .unlockedBy("has_glass", has(Items.GLASS))
+            .unlockedBy("has_redstone", has(Items.REDSTONE))
+            .unlockedBy("has_stardust_powder", has(CraftingMaterialRegistry.STARDUST_POWDER.get()))
+            .save(this.output);
+
+        ShapedRecipeBuilder.shaped(this.registries.lookupOrThrow(Registries.ITEM), RecipeCategory.BUILDING_BLOCKS, GlassRegistry.HOLOGLASS_PANE_ITEM.get(), 16)
+            .pattern("###")
+            .pattern("###")
+            .define('#', GlassRegistry.HOLOGLASS_BLOCK_ITEM.get())
+            .unlockedBy("has_hologlass_block_item", has(GlassRegistry.HOLOGLASS_BLOCK_ITEM.get()))
+            .save(this.output);
+
     }
     public static class Runner extends RecipeProvider.Runner {
 

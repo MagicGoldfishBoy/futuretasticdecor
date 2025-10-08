@@ -11,6 +11,8 @@ import com.magicgoldfishboy.futuretasticdecor.registry.MetalRegistry;
 import com.magicgoldfishboy.futuretasticdecor.registry.PlasticRegistry;
 import com.mojang.logging.LogUtils;
 
+import net.minecraft.client.renderer.ItemBlockRenderTypes;
+import net.minecraft.client.renderer.chunk.ChunkSectionLayer;
 import net.minecraft.core.registries.BuiltInRegistries;
 import net.minecraft.core.registries.Registries;
 import net.minecraft.network.chat.Component;
@@ -23,6 +25,7 @@ import net.neoforged.fml.common.EventBusSubscriber;
 import net.neoforged.fml.common.Mod;
 import net.neoforged.fml.config.ModConfig;
 import net.neoforged.fml.ModContainer;
+import net.neoforged.fml.event.lifecycle.FMLClientSetupEvent;
 import net.neoforged.fml.event.lifecycle.FMLCommonSetupEvent;
 import net.neoforged.neoforge.common.NeoForge;
 import net.neoforged.neoforge.data.event.GatherDataEvent;
@@ -63,6 +66,8 @@ public class FuturetasticDecor {
     public FuturetasticDecor(IEventBus modEventBus, ModContainer modContainer) {
 
         modEventBus.addListener(this::commonSetup);
+
+        modEventBus.addListener(this::onClientSetup);
 
 
         BLOCKS.register(modEventBus);
@@ -120,15 +125,26 @@ public class FuturetasticDecor {
         datagen.gatherData(event);
     }
 
-//@EventBusSubscriber(modid = "futuretasticdecor", bus = EventBusSubscriber.Bus.GAME)
-public class TooltipHandler {
 
-    @SubscribeEvent
-    public static void onItemTooltip(ItemTooltipEvent event) {
-        LOGGER.info("Tooltips");
-        if (event.getItemStack().getItem() == GlassRegistry.HOLOGLASS_BLOCK_ITEM.get()) {
-            event.getToolTip().add(Component.translatable("block.futuretasticdecor.hologlass.tooltip"));
+    public class TooltipHandler {
+
+        @SubscribeEvent
+        public static void onItemTooltip(ItemTooltipEvent event) {
+            LOGGER.info("Adding Tooltips");
+            if (event.getItemStack().getItem() == GlassRegistry.HOLOGLASS_BLOCK_ITEM.get()) {
+                event.getToolTip().add(Component.translatable("block.futuretasticdecor.hologlass_block.tooltip"));
+            }
+            if (event.getItemStack().getItem() == GlassRegistry.HOLOGLASS_PANE_ITEM.get()) {
+                event.getToolTip().add(Component.translatable("block.futuretasticdecor.hologlass_pane.tooltip"));
+            }
         }
     }
-}
+
+
+    public void onClientSetup(FMLClientSetupEvent event)
+    {
+        LOGGER.info("Setting Render Layers");
+        ItemBlockRenderTypes.setRenderLayer(GlassRegistry.HOLOGLASS_BLOCK.get(), ChunkSectionLayer.TRANSLUCENT);
+        ItemBlockRenderTypes.setRenderLayer(GlassRegistry.HOLOGLASS_PANE.get(), ChunkSectionLayer.TRANSLUCENT);
+    }
 }

@@ -1,0 +1,7 @@
+{
+  "parent": "minecraft:block/template_glass_pane_side_alt",
+  "textures": {
+    "edge": "futuretasticdecor:block/hologlass_pane_top",
+    "pane": "futuretasticdecor:block/hologlass_block"
+  }
+}
