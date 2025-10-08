@@ -130,7 +130,7 @@ public class FuturetasticDecor {
 
         @SubscribeEvent
         public static void onItemTooltip(ItemTooltipEvent event) {
-            LOGGER.info("Adding Tooltips");
+           // LOGGER.info("Adding Tooltips");
             if (event.getItemStack().getItem() == GlassRegistry.HOLOGLASS_BLOCK_ITEM.get()) {
                 event.getToolTip().add(Component.translatable("block.futuretasticdecor.hologlass_block.tooltip"));
             }
@@ -146,5 +146,6 @@ public class FuturetasticDecor {
         LOGGER.info("Setting Render Layers");
         ItemBlockRenderTypes.setRenderLayer(GlassRegistry.HOLOGLASS_BLOCK.get(), ChunkSectionLayer.TRANSLUCENT);
         ItemBlockRenderTypes.setRenderLayer(GlassRegistry.HOLOGLASS_PANE.get(), ChunkSectionLayer.TRANSLUCENT);
+        ItemBlockRenderTypes.setRenderLayer(MetalRegistry.STEEL_DOOR.get(), ChunkSectionLayer.TRANSLUCENT);
     }
 }

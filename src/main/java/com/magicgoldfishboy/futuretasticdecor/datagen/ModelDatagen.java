@@ -148,8 +148,9 @@ public class ModelDatagen extends ModelProvider {
 
         blockModels.familyWithExistingFullBlock(MetalRegistry.STEEL_BLOCK.get())
             .slab(MetalRegistry.STEEL_SLAB.get())
-            .stairs(MetalRegistry.STEEL_STAIRS.get())
-        ;
+            .stairs(MetalRegistry.STEEL_STAIRS.get());
+
+        blockModels.createDoor(MetalRegistry.STEEL_DOOR.get());
 
         blockModels.createTrivialCube(MetalRegistry.GLOWING_STEEL_BLOCK.get());
 
@@ -282,7 +283,6 @@ public class ModelDatagen extends ModelProvider {
     }
 
     protected void registerGlassModels(BlockModelGenerators blockModels, ItemModelGenerators itemModels) {
-        //blockModels.createGlassBlocks(GlassRegistry.HOLOGLASS_BLOCK.get(), GlassRegistry.HOLOGLASS_PANE.get());
 
         HologlassBlock hologlass_block = GlassRegistry.HOLOGLASS_BLOCK.get();
         Variant hologlass_block_closed = new Variant(ModelLocationUtils.getModelLocation(hologlass_block));
@@ -297,148 +297,106 @@ public class ModelDatagen extends ModelProvider {
                     .select(true, hologlass_block_open_multi)
             )
         );
-//TODO: create closed pane models
-Hologlass hologlass_pane = GlassRegistry.HOLOGLASS_PANE.get();
-TextureMapping texturemapping = TextureMapping.pane(hologlass_block, hologlass_pane);
+        Hologlass hologlass_pane = GlassRegistry.HOLOGLASS_PANE.get();
+        TextureMapping texturemapping = TextureMapping.pane(hologlass_block, hologlass_pane);
 
-// Create variants for closed state
-Variant hologlass_pane_closed = new Variant(ModelLocationUtils.getModelLocation(hologlass_pane));
-MultiVariant multivariant_closed = BlockModelGenerators.plainVariant(ModelTemplates.STAINED_GLASS_PANE_POST.create(hologlass_pane, texturemapping, blockModels.modelOutput));
-MultiVariant multivariant1_closed = BlockModelGenerators.plainVariant(ModelTemplates.STAINED_GLASS_PANE_SIDE.create(hologlass_pane, texturemapping, blockModels.modelOutput));
-MultiVariant multivariant2_closed = BlockModelGenerators.plainVariant(ModelTemplates.STAINED_GLASS_PANE_SIDE_ALT.create(hologlass_pane, texturemapping, blockModels.modelOutput));
-MultiVariant multivariant3_closed = BlockModelGenerators.plainVariant(ModelTemplates.STAINED_GLASS_PANE_NOSIDE.create(hologlass_pane, texturemapping, blockModels.modelOutput));
-MultiVariant multivariant4_closed = BlockModelGenerators.plainVariant(ModelTemplates.STAINED_GLASS_PANE_NOSIDE_ALT.create(hologlass_pane, texturemapping, blockModels.modelOutput));
+        Variant hologlass_pane_closed = new Variant(ModelLocationUtils.getModelLocation(hologlass_pane));
+        MultiVariant multivariant_closed = BlockModelGenerators.plainVariant(ModelTemplates.STAINED_GLASS_PANE_POST.create(hologlass_pane, texturemapping, blockModels.modelOutput));
+        MultiVariant multivariant1_closed = BlockModelGenerators.plainVariant(ModelTemplates.STAINED_GLASS_PANE_SIDE.create(hologlass_pane, texturemapping, blockModels.modelOutput));
+        MultiVariant multivariant2_closed = BlockModelGenerators.plainVariant(ModelTemplates.STAINED_GLASS_PANE_SIDE_ALT.create(hologlass_pane, texturemapping, blockModels.modelOutput));
+        MultiVariant multivariant3_closed = BlockModelGenerators.plainVariant(ModelTemplates.STAINED_GLASS_PANE_NOSIDE.create(hologlass_pane, texturemapping, blockModels.modelOutput));
+        MultiVariant multivariant4_closed = BlockModelGenerators.plainVariant(ModelTemplates.STAINED_GLASS_PANE_NOSIDE_ALT.create(hologlass_pane, texturemapping, blockModels.modelOutput));
 
-// Create variants for open state (you'll need separate model templates or models for the open state)
-Variant hologlass_pane_open_post = new Variant(modLocation("block/opaque_hologlass_glass_pane_post"));
-Variant hologlass_pane_open_side = new Variant(modLocation("block/opaque_hologlass_glass_pane_side"));
-Variant hologlass_pane_open_side_alt = new Variant(modLocation("block/opaque_hologlass_pane_side_alt"));
-Variant hologlass_pane_open_noside = new Variant(modLocation("block/opaque_hologlass_glass_pane_noside"));
-Variant hologlass_pane_open_noside_alt = new Variant(modLocation("block/opaque_hologlass_glass_pane_noside_alt"));
+        Variant hologlass_pane_open_post = new Variant(modLocation("block/opaque_hologlass_glass_pane_post"));
+        Variant hologlass_pane_open_side = new Variant(modLocation("block/opaque_hologlass_glass_pane_side"));
+        Variant hologlass_pane_open_side_alt = new Variant(modLocation("block/opaque_hologlass_pane_side_alt"));
+        Variant hologlass_pane_open_noside = new Variant(modLocation("block/opaque_hologlass_glass_pane_noside"));
+        Variant hologlass_pane_open_noside_alt = new Variant(modLocation("block/opaque_hologlass_glass_pane_noside_alt"));
 
-MultiVariant multivariant_open = BlockModelGenerators.variant(hologlass_pane_open_post);
-MultiVariant multivariant1_open = BlockModelGenerators.variant(hologlass_pane_open_side);
-MultiVariant multivariant2_open = BlockModelGenerators.variant(hologlass_pane_open_side_alt);
-MultiVariant multivariant3_open = BlockModelGenerators.variant(hologlass_pane_open_noside);
-MultiVariant multivariant4_open = BlockModelGenerators.variant(hologlass_pane_open_noside_alt);
+        MultiVariant multivariant_open = BlockModelGenerators.variant(hologlass_pane_open_post);
+        MultiVariant multivariant1_open = BlockModelGenerators.variant(hologlass_pane_open_side);
+        MultiVariant multivariant2_open = BlockModelGenerators.variant(hologlass_pane_open_side_alt);
+        MultiVariant multivariant3_open = BlockModelGenerators.variant(hologlass_pane_open_noside);
+        MultiVariant multivariant4_open = BlockModelGenerators.variant(hologlass_pane_open_noside_alt);
 
-Item item = hologlass_pane.asItem();
-blockModels.registerSimpleItemModel(item, blockModels.createFlatItemModelWithBlockTexture(item, hologlass_block));
+        Item item = hologlass_pane.asItem();
+        blockModels.registerSimpleItemModel(item, blockModels.createFlatItemModelWithBlockTexture(item, hologlass_block));
 
-// Combine both multipart AND property dispatch
-blockModels.blockStateOutput.accept(
-    MultiPartGenerator.multiPart(hologlass_pane)
-        // Closed state multipart
-        .with(
-            BlockModelGenerators.condition().term(BlockStateProperties.OPEN, false),
-            multivariant_closed
-        )
-        .with(
-            BlockModelGenerators.condition().term(BlockStateProperties.NORTH, true).term(BlockStateProperties.OPEN, false),
-            multivariant1_closed
-        )
-        .with(
-            BlockModelGenerators.condition().term(BlockStateProperties.EAST, true).term(BlockStateProperties.OPEN, false),
-            multivariant1_closed.with(BlockModelGenerators.Y_ROT_90)
-        )
-        .with(
-            BlockModelGenerators.condition().term(BlockStateProperties.SOUTH, true).term(BlockStateProperties.OPEN, false),
-            multivariant2_closed
-        )
-        .with(
-            BlockModelGenerators.condition().term(BlockStateProperties.WEST, true).term(BlockStateProperties.OPEN, false),
-            multivariant2_closed.with(BlockModelGenerators.Y_ROT_90)
-        )
-        .with(
-            BlockModelGenerators.condition().term(BlockStateProperties.NORTH, false).term(BlockStateProperties.OPEN, false),
-            multivariant3_closed
-        )
-        .with(
-            BlockModelGenerators.condition().term(BlockStateProperties.EAST, false).term(BlockStateProperties.OPEN, false),
-            multivariant4_closed
-        )
-        .with(
-            BlockModelGenerators.condition().term(BlockStateProperties.SOUTH, false).term(BlockStateProperties.OPEN, false),
-            multivariant4_closed.with(BlockModelGenerators.Y_ROT_90)
-        )
-        .with(
-            BlockModelGenerators.condition().term(BlockStateProperties.WEST, false).term(BlockStateProperties.OPEN, false),
-            multivariant3_closed.with(BlockModelGenerators.Y_ROT_270)
-        )
-        .with(
-            BlockModelGenerators.condition().term(BlockStateProperties.OPEN, true),
-            multivariant_open
-        )
-        .with(
-            BlockModelGenerators.condition().term(BlockStateProperties.NORTH, true).term(BlockStateProperties.OPEN, true),
-            multivariant1_open
-        )
-        .with(
-            BlockModelGenerators.condition().term(BlockStateProperties.EAST, true).term(BlockStateProperties.OPEN, true),
-            multivariant1_open.with(BlockModelGenerators.Y_ROT_90)
-        )
-        .with(
-            BlockModelGenerators.condition().term(BlockStateProperties.SOUTH, true).term(BlockStateProperties.OPEN, true),
-            multivariant2_open
-        )
-        .with(
-            BlockModelGenerators.condition().term(BlockStateProperties.WEST, true).term(BlockStateProperties.OPEN, true),
-            multivariant2_open.with(BlockModelGenerators.Y_ROT_90)
-        )
-        .with(
-            BlockModelGenerators.condition().term(BlockStateProperties.NORTH, false).term(BlockStateProperties.OPEN, true),
-            multivariant3_open
-        )
-        .with(
-            BlockModelGenerators.condition().term(BlockStateProperties.EAST, false).term(BlockStateProperties.OPEN, true),
-            multivariant4_open
-        )
-        .with(
-            BlockModelGenerators.condition().term(BlockStateProperties.SOUTH, false).term(BlockStateProperties.OPEN, true),
-            multivariant4_open.with(BlockModelGenerators.Y_ROT_90)
-        )
-        .with(
-            BlockModelGenerators.condition().term(BlockStateProperties.WEST, false).term(BlockStateProperties.OPEN, true),
-            multivariant3_open.with(BlockModelGenerators.Y_ROT_270)
-        )
-);
-        // Hologlass hologlass_pane = GlassRegistry.HOLOGLASS_PANE.get();
-        // TextureMapping texturemapping = TextureMapping.pane(hologlass_block, hologlass_pane);
-
-        // Variant hologlass_pane_closed = new Variant(ModelLocationUtils.getModelLocation(hologlass_pane));
-        // Variant hologlass_pane_open = new Variant(modLocation("block/hologlass_block_open"));
-        // MultiVariant hologlass_pane_closed_multi = new MultiVariant(WeightedList.of(hologlass_pane_closed));
-        // MultiVariant hologlass_pane_open_multi = new MultiVariant(WeightedList.of(hologlass_pane_open));
-
-        // MultiVariant multivariant = BlockModelGenerators.plainVariant(ModelTemplates.STAINED_GLASS_PANE_POST.create(hologlass_pane, texturemapping, blockModels.modelOutput));
-        // MultiVariant multivariant1 = BlockModelGenerators.plainVariant(ModelTemplates.STAINED_GLASS_PANE_SIDE.create(hologlass_pane, texturemapping, blockModels.modelOutput));
-        // MultiVariant multivariant2 = BlockModelGenerators.plainVariant(ModelTemplates.STAINED_GLASS_PANE_SIDE_ALT.create(hologlass_pane, texturemapping, blockModels.modelOutput));
-        // MultiVariant multivariant3 = BlockModelGenerators.plainVariant(ModelTemplates.STAINED_GLASS_PANE_NOSIDE.create(hologlass_pane, texturemapping, blockModels.modelOutput));
-        // MultiVariant multivariant4 = BlockModelGenerators.plainVariant(ModelTemplates.STAINED_GLASS_PANE_NOSIDE_ALT.create(hologlass_pane, texturemapping, blockModels.modelOutput));
-
-        // Item item = hologlass_pane.asItem();
-
-        // blockModels.registerSimpleItemModel(item, blockModels.createFlatItemModelWithBlockTexture(item, hologlass_block));
-        // blockModels.blockStateOutput
-        //     .accept(
-        //         MultiPartGenerator.multiPart(hologlass_pane)
-        //             .with(multivariant)
-        //             .with(BlockModelGenerators.condition().term(BlockStateProperties.NORTH, true), multivariant1)
-        //             .with(BlockModelGenerators.condition().term(BlockStateProperties.EAST, true), multivariant1.with(BlockModelGenerators.Y_ROT_90))
-        //             .with(BlockModelGenerators.condition().term(BlockStateProperties.SOUTH, true), multivariant2)
-        //             .with(BlockModelGenerators.condition().term(BlockStateProperties.WEST, true), multivariant2.with(BlockModelGenerators.Y_ROT_90))
-        //             .with(BlockModelGenerators.condition().term(BlockStateProperties.NORTH, false), multivariant3)
-        //             .with(BlockModelGenerators.condition().term(BlockStateProperties.EAST, false), multivariant4)
-        //             .with(BlockModelGenerators.condition().term(BlockStateProperties.SOUTH, false), multivariant4.with(BlockModelGenerators.Y_ROT_90))
-        //             .with(BlockModelGenerators.condition().term(BlockStateProperties.WEST, false), multivariant3.with(BlockModelGenerators.Y_ROT_270))
-        //     );
-        //     blockModels.blockStateOutput.accept(
-        //         MultiVariantGenerator.dispatch(hologlass_pane).with(
-        //             PropertyDispatch.initial(BlockStateProperties.OPEN)
-        //                 .select(false, hologlass_pane_closed_multi)
-        //                 .select(true, hologlass_pane_open_multi)
-        //         )
-        //     );
+        blockModels.blockStateOutput.accept(
+            MultiPartGenerator.multiPart(hologlass_pane)
+                .with(
+                    BlockModelGenerators.condition().term(BlockStateProperties.OPEN, false),
+                    multivariant_closed
+                )
+                .with(
+                    BlockModelGenerators.condition().term(BlockStateProperties.NORTH, true).term(BlockStateProperties.OPEN, false),
+                    multivariant1_closed
+                )
+                .with(
+                    BlockModelGenerators.condition().term(BlockStateProperties.EAST, true).term(BlockStateProperties.OPEN, false),
+                    multivariant1_closed.with(BlockModelGenerators.Y_ROT_90)
+                )
+                .with(
+                    BlockModelGenerators.condition().term(BlockStateProperties.SOUTH, true).term(BlockStateProperties.OPEN, false),
+                    multivariant2_closed
+                )
+                .with(
+                    BlockModelGenerators.condition().term(BlockStateProperties.WEST, true).term(BlockStateProperties.OPEN, false),
+                    multivariant2_closed.with(BlockModelGenerators.Y_ROT_90)
+                )
+                .with(
+                    BlockModelGenerators.condition().term(BlockStateProperties.NORTH, false).term(BlockStateProperties.OPEN, false),
+                    multivariant3_closed
+                )
+                .with(
+                    BlockModelGenerators.condition().term(BlockStateProperties.EAST, false).term(BlockStateProperties.OPEN, false),
+                    multivariant4_closed
+                )
+                .with(
+                    BlockModelGenerators.condition().term(BlockStateProperties.SOUTH, false).term(BlockStateProperties.OPEN, false),
+                    multivariant4_closed.with(BlockModelGenerators.Y_ROT_90)
+                )
+                .with(
+                    BlockModelGenerators.condition().term(BlockStateProperties.WEST, false).term(BlockStateProperties.OPEN, false),
+                    multivariant3_closed.with(BlockModelGenerators.Y_ROT_270)
+                )
+                .with(
+                    BlockModelGenerators.condition().term(BlockStateProperties.OPEN, true),
+                    multivariant_open
+                )
+                .with(
+                    BlockModelGenerators.condition().term(BlockStateProperties.NORTH, true).term(BlockStateProperties.OPEN, true),
+                    multivariant1_open
+                )
+                .with(
+                    BlockModelGenerators.condition().term(BlockStateProperties.EAST, true).term(BlockStateProperties.OPEN, true),
+                    multivariant1_open.with(BlockModelGenerators.Y_ROT_90)
+                )
+                .with(
+                    BlockModelGenerators.condition().term(BlockStateProperties.SOUTH, true).term(BlockStateProperties.OPEN, true),
+                    multivariant2_open
+                )
+                .with(
+                    BlockModelGenerators.condition().term(BlockStateProperties.WEST, true).term(BlockStateProperties.OPEN, true),
+                    multivariant2_open.with(BlockModelGenerators.Y_ROT_90)
+                )
+                .with(
+                    BlockModelGenerators.condition().term(BlockStateProperties.NORTH, false).term(BlockStateProperties.OPEN, true),
+                    multivariant3_open
+                )
+                .with(
+                    BlockModelGenerators.condition().term(BlockStateProperties.EAST, false).term(BlockStateProperties.OPEN, true),
+                    multivariant4_open
+                )
+                .with(
+                    BlockModelGenerators.condition().term(BlockStateProperties.SOUTH, false).term(BlockStateProperties.OPEN, true),
+                    multivariant4_open.with(BlockModelGenerators.Y_ROT_90)
+                )
+                .with(
+                    BlockModelGenerators.condition().term(BlockStateProperties.WEST, false).term(BlockStateProperties.OPEN, true),
+                    multivariant3_open.with(BlockModelGenerators.Y_ROT_270)
+                )
+            );
     }
 
 

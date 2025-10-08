@@ -8,10 +8,12 @@ import net.minecraft.resources.ResourceKey;
 import net.minecraft.world.item.BlockItem;
 import net.minecraft.world.item.Item;
 import net.minecraft.world.level.block.Block;
+import net.minecraft.world.level.block.DoorBlock;
 import net.minecraft.world.level.block.SlabBlock;
 import net.minecraft.world.level.block.SoundType;
 import net.minecraft.world.level.block.StairBlock;
 import net.minecraft.world.level.block.state.BlockBehaviour;
+import net.minecraft.world.level.block.state.properties.BlockSetType;
 import net.neoforged.neoforge.registries.DeferredBlock;
 import net.neoforged.neoforge.registries.DeferredItem;
 
@@ -29,6 +31,9 @@ public class MetalRegistry {
 
     public static DeferredBlock<StairBlock> STEEL_STAIRS;
     public static DeferredItem<BlockItem> STEEL_STAIRS_ITEM;
+
+    public static DeferredBlock<DoorBlock> STEEL_DOOR;
+    public static DeferredItem<BlockItem> STEEL_DOOR_ITEM;
 
 
     public static DeferredBlock<Block> GLOWING_STEEL_BLOCK;
@@ -144,6 +149,20 @@ public class MetalRegistry {
         STEEL_STAIRS_ITEM = FuturetasticDecor.ITEMS.registerSimpleBlockItem(
             "steel_stairs", 
             STEEL_STAIRS
+        );
+
+        STEEL_DOOR = FuturetasticDecor.BLOCKS.register(
+            "steel_door", 
+            registryName -> new DoorBlock(BlockSetType.IRON, BlockBehaviour.Properties.of()
+                .setId(ResourceKey.create(Registries.BLOCK, registryName))
+                .strength(STEEL_DESTROY_TIME / 1.5f, STEEL_EXPLOSION_RESISTANCE / 1.5f)
+                .requiresCorrectToolForDrops()
+                .sound(SoundType.METAL)
+                .noOcclusion()
+            )
+        );
+        STEEL_DOOR_ITEM = FuturetasticDecor.ITEMS.registerSimpleBlockItem(
+            STEEL_DOOR
         );
 
         GLOWING_STEEL_BLOCK = FuturetasticDecor.BLOCKS.register(
