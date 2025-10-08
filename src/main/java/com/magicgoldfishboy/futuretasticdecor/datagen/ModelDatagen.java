@@ -148,6 +148,7 @@ public class ModelDatagen extends ModelProvider {
 
         blockModels.familyWithExistingFullBlock(MetalRegistry.STEEL_BLOCK.get())
             .slab(MetalRegistry.STEEL_SLAB.get())
+            .button(MetalRegistry.STEEL_BUTTON.get())
             .stairs(MetalRegistry.STEEL_STAIRS.get());
 
         blockModels.createDoor(MetalRegistry.STEEL_DOOR.get());

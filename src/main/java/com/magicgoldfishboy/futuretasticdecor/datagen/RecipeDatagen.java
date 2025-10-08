@@ -689,6 +689,11 @@ public class RecipeDatagen extends RecipeProvider {
             .unlockedBy("has_steel_block", has(MetalRegistry.STEEL_BLOCK.get()))
             .save(this.output, "steel_stairs_from_steel_block");
 
+        ShapelessRecipeBuilder.shapeless(this.registries.lookupOrThrow(Registries.ITEM), RecipeCategory.REDSTONE, MetalRegistry.STEEL_BUTTON_ITEM.get())
+            .requires(MetalRegistry.STEEL_BLOCK_ITEM.get())
+            .unlockedBy("has_steel_block", has(MetalRegistry.STEEL_BLOCK.get()))
+            .save(this.output);
+
         ShapedRecipeBuilder.shaped(this.registries.lookupOrThrow(Registries.ITEM), RecipeCategory.BUILDING_BLOCKS, MetalRegistry.STEEL_DOOR_ITEM.get(), 3)
             .pattern("##")
             .pattern("##")

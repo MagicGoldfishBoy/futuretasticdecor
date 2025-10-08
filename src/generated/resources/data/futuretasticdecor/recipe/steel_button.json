@@ -1,0 +1,11 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "category": "redstone",
+  "ingredients": [
+    "futuretasticdecor:steel_block"
+  ],
+  "result": {
+    "count": 1,
+    "id": "futuretasticdecor:steel_button"
+  }
+}

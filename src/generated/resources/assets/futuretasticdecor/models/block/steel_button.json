@@ -1,0 +1,6 @@
+{
+  "parent": "minecraft:block/button",
+  "textures": {
+    "texture": "futuretasticdecor:block/steel_block"
+  }
+}

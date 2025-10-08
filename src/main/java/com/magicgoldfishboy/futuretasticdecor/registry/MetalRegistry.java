@@ -3,11 +3,13 @@ package com.magicgoldfishboy.futuretasticdecor.registry;
 import com.magicgoldfishboy.futuretasticdecor.FuturetasticDecor;
 import com.magicgoldfishboy.futuretasticdecor.block.ConnectableGlowBlock;
 
+import net.minecraft.client.gui.components.Button;
 import net.minecraft.core.registries.Registries;
 import net.minecraft.resources.ResourceKey;
 import net.minecraft.world.item.BlockItem;
 import net.minecraft.world.item.Item;
 import net.minecraft.world.level.block.Block;
+import net.minecraft.world.level.block.ButtonBlock;
 import net.minecraft.world.level.block.DoorBlock;
 import net.minecraft.world.level.block.SlabBlock;
 import net.minecraft.world.level.block.SoundType;
@@ -31,6 +33,9 @@ public class MetalRegistry {
 
     public static DeferredBlock<StairBlock> STEEL_STAIRS;
     public static DeferredItem<BlockItem> STEEL_STAIRS_ITEM;
+
+    public static DeferredBlock<ButtonBlock> STEEL_BUTTON;
+    public static DeferredItem<BlockItem> STEEL_BUTTON_ITEM;
 
     public static DeferredBlock<DoorBlock> STEEL_DOOR;
     public static DeferredItem<BlockItem> STEEL_DOOR_ITEM;
@@ -149,6 +154,20 @@ public class MetalRegistry {
         STEEL_STAIRS_ITEM = FuturetasticDecor.ITEMS.registerSimpleBlockItem(
             "steel_stairs", 
             STEEL_STAIRS
+        );
+
+        STEEL_BUTTON = FuturetasticDecor.BLOCKS.register(
+            "steel_button", 
+            registryName -> new ButtonBlock(BlockSetType.IRON, 25, BlockBehaviour.Properties.of()
+                .setId(ResourceKey.create(Registries.BLOCK, registryName))
+                .strength(0.5f, 0.5f)
+                .instabreak()
+                .noOcclusion()
+                .sound(SoundType.METAL)
+            )
+        );
+        STEEL_BUTTON_ITEM = FuturetasticDecor.ITEMS.registerSimpleBlockItem(
+            STEEL_BUTTON
         );
 
         STEEL_DOOR = FuturetasticDecor.BLOCKS.register(
