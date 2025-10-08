@@ -50,19 +50,8 @@ public class HologlassBlock extends Block {
                 return InteractionResult.CONSUME;
             }
         }
-         return InteractionResult.SUCCESS;
+         return InteractionResult.PASS;
     }
-
-    // @Override
-    // public void appendHoverText(ItemStack stack, Item.TooltipContext ctx, List<Component> tooltips, TooltipFlag flags) {
-    //     provider.addToTooltip(ctx, tooltips::add, flags);
-    // }
-
-    // @Override
-    // public void appendHoverText(ItemStack stack, Item.TooltipContext context, List<net.minecraft.network.chat.Component> tooltipComponents, TooltipFlag tooltipFlag) {
-    //     tooltipComponents.add(net.minecraft.network.chat.Component.translatable("block.futuretasticdecor.hologlass.tooltip"));
-    //     super.appendHoverText(stack, context, tooltipComponents, tooltipFlag);
-    // }
 
     @Override
     protected void createBlockStateDefinition(StateDefinition.Builder<Block, BlockState> builder) {

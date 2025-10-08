@@ -52,7 +52,7 @@ public class Hologlass extends IronBarsBlock {
                 return InteractionResult.CONSUME;
             }
         }
-         return InteractionResult.SUCCESS;
+         return InteractionResult.PASS;
     }
 
     public void appendHoverText(ItemStack stack, Level level, List<Component> tooltips, TooltipFlag flags) {
