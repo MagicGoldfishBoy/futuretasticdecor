@@ -1,4 +1,4 @@
-// 1.21.9	2025-10-09T16:55:01.10063381	Loot Tables
+// 1.21.9	2025-10-09T17:57:37.622838867	Loot Tables
 09a8b1713eaf0424d7db9b60e471b96bbbbe6f8b data/futuretasticdecor/loot_table/blocks/anti_grav_block.json
 7bdf73669a2e2e4b2de14d41ad96a1730de70b69 data/futuretasticdecor/loot_table/blocks/blue_glow_block.json
 4b1610f22f03c06236bdc1f25d4adeb1fce6556f data/futuretasticdecor/loot_table/blocks/blue_glow_panel.json
@@ -69,6 +69,7 @@ c19047498a3dbed3e01c2a3fe2a1f92c3d392404 data/futuretasticdecor/loot_table/block
 6f509d89ae3fe884693e93f52ce73229b9d5a7da data/futuretasticdecor/loot_table/blocks/super_grow_mulch.json
 6bb9cb58b1666bc16619d3372dbdfc841969b74c data/futuretasticdecor/loot_table/blocks/unbaked_carbon_fiber_polymer_block.json
 f0bb14999d927b31001b57026219591fb4cbab8f data/futuretasticdecor/loot_table/blocks/white_plastic_block.json
+acd06d8c61587813acba069f5770726516dbf9e9 data/futuretasticdecor/loot_table/blocks/white_sliding_door.json
 fb0a7b1d61ee65486e27666dba2e077ec7e1f3c5 data/futuretasticdecor/loot_table/blocks/yellow_glow_block.json
 4250eb0e3fe20dbe27e94be027641438ae3bb9d7 data/futuretasticdecor/loot_table/blocks/yellow_glow_panel.json
 1dbfaf3bc51f8ad654d213c5083be7dd562267b1 data/futuretasticdecor/loot_table/blocks/yellow_glowing_steel_block.json

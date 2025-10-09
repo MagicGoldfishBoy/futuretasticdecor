@@ -1,0 +1,17 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "building",
+  "key": {
+    "#": "futuretasticdecor:white_plastic_block",
+    "$": "futuretasticdecor:hologlass_block"
+  },
+  "pattern": [
+    "##",
+    "$$",
+    "##"
+  ],
+  "result": {
+    "count": 3,
+    "id": "futuretasticdecor:white_sliding_door"
+  }
+}

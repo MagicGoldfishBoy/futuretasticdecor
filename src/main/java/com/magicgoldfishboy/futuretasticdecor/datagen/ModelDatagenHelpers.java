@@ -11,6 +11,7 @@ import net.minecraft.client.data.models.BlockModelGenerators;
 import net.minecraft.client.data.models.ItemModelGenerators;
 import net.minecraft.client.data.models.ModelProvider;
 import net.minecraft.client.data.models.MultiVariant;
+import net.minecraft.client.data.models.blockstates.BlockModelDefinitionGenerator;
 import net.minecraft.client.data.models.blockstates.MultiPartGenerator;
 import net.minecraft.client.data.models.blockstates.MultiVariantGenerator;
 import net.minecraft.client.data.models.blockstates.PropertyDispatch;
@@ -22,6 +23,8 @@ import net.minecraft.world.level.block.Block;
 import net.minecraft.world.level.block.DirectionalBlock;
 import net.minecraft.world.level.block.HorizontalDirectionalBlock;
 import net.minecraft.world.level.block.state.properties.BlockStateProperties;
+import net.minecraft.world.level.block.state.properties.DoorHingeSide;
+import net.minecraft.world.level.block.state.properties.DoubleBlockHalf;
 
 public class ModelDatagenHelpers extends ModelProvider {
     public ModelDatagenHelpers(PackOutput output) {
@@ -198,6 +201,62 @@ public class ModelDatagenHelpers extends ModelProvider {
         );
     }
 
+    public static void createSlidingDoor(BlockModelGenerators blockModels, ItemModelGenerators itemModels, Block block, Variant closed_top,
+    Variant open_top_left, Variant open_top_right, Variant closed_bottom, Variant open_bottom_left, Variant open_bottom_right) {
+
+        MultiVariant closed_top_multivariant = new MultiVariant(WeightedList.of(closed_top));
+        MultiVariant open_top_left_multivariant = new MultiVariant(WeightedList.of(open_top_left));
+        MultiVariant open_top_right_multivariant = new MultiVariant(WeightedList.of(open_top_right));
+
+        MultiVariant closed_bottom_multivariant = new MultiVariant(WeightedList.of(closed_bottom));
+        MultiVariant open_bottom_left_multivariant = new MultiVariant(WeightedList.of(open_bottom_left));
+        MultiVariant open_bottom_right_multivariant = new MultiVariant(WeightedList.of(open_bottom_right));
+
+        blockModels.blockStateOutput.accept(
+            MultiVariantGenerator.dispatch(block).with(
+                PropertyDispatch.initial(                        
+                       BlockStateProperties.HORIZONTAL_FACING,
+                        BlockStateProperties.DOUBLE_BLOCK_HALF,
+                        BlockStateProperties.DOOR_HINGE,
+                        BlockStateProperties.OPEN)
+
+                    .select(Direction.EAST, DoubleBlockHalf.LOWER, DoorHingeSide.LEFT, false, closed_bottom_multivariant.with(BlockModelGenerators.Y_ROT_90))
+                    .select(Direction.SOUTH, DoubleBlockHalf.LOWER, DoorHingeSide.LEFT, false, closed_bottom_multivariant)//.with(BlockModelGenerators.Y_ROT_90))
+                    .select(Direction.WEST, DoubleBlockHalf.LOWER, DoorHingeSide.LEFT, false, closed_bottom_multivariant.with(BlockModelGenerators.Y_ROT_90))
+                    .select(Direction.NORTH, DoubleBlockHalf.LOWER, DoorHingeSide.LEFT, false, closed_bottom_multivariant)//.with(BlockModelGenerators.Y_ROT_270))
+                    .select(Direction.EAST, DoubleBlockHalf.LOWER, DoorHingeSide.RIGHT, false, closed_bottom_multivariant.with(BlockModelGenerators.Y_ROT_90))
+                    .select(Direction.SOUTH, DoubleBlockHalf.LOWER, DoorHingeSide.RIGHT, false, closed_bottom_multivariant)//.with(BlockModelGenerators.Y_ROT_90))
+                    .select(Direction.WEST, DoubleBlockHalf.LOWER, DoorHingeSide.RIGHT, false, closed_bottom_multivariant.with(BlockModelGenerators.Y_ROT_90))
+                    .select(Direction.NORTH, DoubleBlockHalf.LOWER, DoorHingeSide.RIGHT, false, closed_bottom_multivariant)//.with(BlockModelGenerators.Y_ROT_270))
+                    .select(Direction.EAST, DoubleBlockHalf.LOWER, DoorHingeSide.LEFT, true, open_bottom_left_multivariant.with(BlockModelGenerators.Y_ROT_90))
+                    .select(Direction.SOUTH, DoubleBlockHalf.LOWER, DoorHingeSide.LEFT, true, open_bottom_left_multivariant)//.with(BlockModelGenerators.Y_ROT_180))
+                    .select(Direction.WEST, DoubleBlockHalf.LOWER, DoorHingeSide.LEFT, true, open_bottom_left_multivariant.with(BlockModelGenerators.Y_ROT_90))
+                    .select(Direction.NORTH, DoubleBlockHalf.LOWER, DoorHingeSide.LEFT, true, open_bottom_left_multivariant)
+                    .select(Direction.EAST, DoubleBlockHalf.LOWER, DoorHingeSide.RIGHT, true, open_bottom_right_multivariant.with(BlockModelGenerators.Y_ROT_90))
+                    .select(Direction.SOUTH, DoubleBlockHalf.LOWER, DoorHingeSide.RIGHT, true, open_bottom_right_multivariant)
+                    .select(Direction.WEST, DoubleBlockHalf.LOWER, DoorHingeSide.RIGHT, true, open_bottom_right_multivariant.with(BlockModelGenerators.Y_ROT_90))
+                    .select(Direction.NORTH, DoubleBlockHalf.LOWER, DoorHingeSide.RIGHT, true, open_bottom_right_multivariant)//.with(BlockModelGenerators.Y_ROT_180))
+
+                    .select(Direction.EAST, DoubleBlockHalf.UPPER, DoorHingeSide.LEFT, false, closed_top_multivariant.with(BlockModelGenerators.Y_ROT_90))
+                    .select(Direction.SOUTH, DoubleBlockHalf.UPPER, DoorHingeSide.LEFT, false, closed_top_multivariant)//.with(BlockModelGenerators.Y_ROT_90))
+                    .select(Direction.WEST, DoubleBlockHalf.UPPER, DoorHingeSide.LEFT, false, closed_top_multivariant.with(BlockModelGenerators.Y_ROT_90))
+                    .select(Direction.NORTH, DoubleBlockHalf.UPPER, DoorHingeSide.LEFT, false, closed_top_multivariant)//.with(BlockModelGenerators.Y_ROT_270))
+                    .select(Direction.EAST, DoubleBlockHalf.UPPER, DoorHingeSide.RIGHT, false, closed_top_multivariant.with(BlockModelGenerators.Y_ROT_90))
+                    .select(Direction.SOUTH, DoubleBlockHalf.UPPER, DoorHingeSide.RIGHT, false, closed_top_multivariant)//.with(BlockModelGenerators.Y_ROT_90))
+                    .select(Direction.WEST, DoubleBlockHalf.UPPER, DoorHingeSide.RIGHT, false, closed_top_multivariant.with(BlockModelGenerators.Y_ROT_90))
+                    .select(Direction.NORTH, DoubleBlockHalf.UPPER, DoorHingeSide.RIGHT, false, closed_top_multivariant)//.with(BlockModelGenerators.Y_ROT_270))
+                    .select(Direction.EAST, DoubleBlockHalf.UPPER, DoorHingeSide.LEFT, true, open_top_left_multivariant.with(BlockModelGenerators.Y_ROT_90))
+                    .select(Direction.SOUTH, DoubleBlockHalf.UPPER, DoorHingeSide.LEFT, true, open_top_left_multivariant)//.with(BlockModelGenerators.Y_ROT_180))
+                    .select(Direction.WEST, DoubleBlockHalf.UPPER, DoorHingeSide.LEFT, true, open_top_left_multivariant.with(BlockModelGenerators.Y_ROT_90))
+                    .select(Direction.NORTH, DoubleBlockHalf.UPPER, DoorHingeSide.LEFT, true, open_top_left_multivariant)
+                    .select(Direction.EAST, DoubleBlockHalf.UPPER, DoorHingeSide.RIGHT, true, open_top_right_multivariant.with(BlockModelGenerators.Y_ROT_90))
+                    .select(Direction.SOUTH, DoubleBlockHalf.UPPER, DoorHingeSide.RIGHT, true, open_top_right_multivariant)
+                    .select(Direction.WEST, DoubleBlockHalf.UPPER, DoorHingeSide.RIGHT, true, open_top_right_multivariant.with(BlockModelGenerators.Y_ROT_90))
+                    .select(Direction.NORTH, DoubleBlockHalf.UPPER, DoorHingeSide.RIGHT, true, open_top_right_multivariant)//.with(BlockModelGenerators.Y_ROT_180))
+            )
+        );
+
+    }
     
     public static void createConnectableBlock(BlockModelGenerators blockModels, ItemModelGenerators itemModels, Block block,
         Variant block_variant_plain, Variant block_variant_line, Variant block_variant_corner) {

@@ -454,6 +454,17 @@ public class ModelDatagen extends ModelProvider {
         blockModels.createTrivialCube(LaboratoryDecorRegistry.HOLOCEILING.get());
 
 
+        Variant closed_top = new Variant(modLocation("block/white_sliding_door_top_closed"));
+        Variant open_top_left = new Variant(modLocation("block/white_sliding_door_top_left_open"));
+        Variant open_top_right = new Variant(modLocation("block/white_sliding_door_top_right_open"));
+
+        Variant closed_bottom = new Variant(modLocation("block/white_sliding_door_bottom_closed"));
+        Variant open_bottom_left = new Variant(modLocation("block/white_sliding_door_bottom_left_open"));
+        Variant open_bottom_right = new Variant(modLocation("block/white_sliding_door_bottom_right_open"));
+
+        ModelDatagenHelpers.createSlidingDoor(blockModels, itemModels, LaboratoryDecorRegistry.WHITE_SLIDING_DOOR.get(), 
+        closed_top, open_top_left, open_top_right, closed_bottom, open_bottom_left, open_bottom_right);
+
 
         Block block = LaboratoryDecorRegistry.HOLOTABLE.get();
 

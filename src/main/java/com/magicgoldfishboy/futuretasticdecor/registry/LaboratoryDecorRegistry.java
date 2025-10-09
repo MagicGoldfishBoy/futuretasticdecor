@@ -161,19 +161,19 @@ public class LaboratoryDecorRegistry {
             HOLOCEILING
         );
 
-        // WHITE_SLIDING_DOOR = FuturetasticDecor.BLOCKS.register(
-        //     "white_sliding_door", 
-        //     registryName -> new SlidingDoor(BlockSetType.COPPER, BlockBehaviour.Properties.of()
-        //         .setId(ResourceKey.create(Registries.BLOCK, registryName))
-        //         .strength(7.5f, 7.5f)
-        //         .lightLevel(state -> 5)
-        //         .requiresCorrectToolForDrops()
-        //         .sound(SoundType.TUFF)
-        //     )
-        // );
-        // WHITE_SLIDING_DOOR_ITEM = FuturetasticDecor.ITEMS.registerSimpleBlockItem(
-        //     WHITE_SLIDING_DOOR
-        // );
+        WHITE_SLIDING_DOOR = FuturetasticDecor.BLOCKS.register(
+            "white_sliding_door", 
+            registryName -> new SlidingDoor(BlockSetType.COPPER, BlockBehaviour.Properties.of()
+                .setId(ResourceKey.create(Registries.BLOCK, registryName))
+                .strength(7.5f, 7.5f)
+                .lightLevel(state -> 5)
+                .requiresCorrectToolForDrops()
+                .sound(SoundType.TUFF)
+            )
+        );
+        WHITE_SLIDING_DOOR_ITEM = FuturetasticDecor.ITEMS.registerSimpleBlockItem(
+            WHITE_SLIDING_DOOR
+        );
 
         HOLOTABLE = FuturetasticDecor.BLOCKS.register(
             "holotable",
