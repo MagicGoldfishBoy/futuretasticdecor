@@ -465,6 +465,8 @@ public class ModelDatagen extends ModelProvider {
         ModelDatagenHelpers.createSlidingDoor(blockModels, itemModels, LaboratoryDecorRegistry.WHITE_SLIDING_DOOR.get(), 
         closed_top, open_top_left, open_top_right, closed_bottom, open_bottom_left, open_bottom_right);
 
+        itemModels.generateFlatItem(LaboratoryDecorRegistry.WHITE_SLIDING_DOOR_ITEM.get(), ModelTemplates.FLAT_ITEM);
+
 
         Block block = LaboratoryDecorRegistry.HOLOTABLE.get();
 
