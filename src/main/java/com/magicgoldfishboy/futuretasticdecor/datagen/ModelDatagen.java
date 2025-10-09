@@ -407,6 +407,10 @@ public class ModelDatagen extends ModelProvider {
 
         blockModels.createTrivialCube(LaboratoryDecorRegistry.HOLOTILES_BLOCK.get());
 
+        blockModels.familyWithExistingFullBlock(LaboratoryDecorRegistry.HOLOTILES_BLOCK.get())
+            .slab(LaboratoryDecorRegistry.HOLOTILES_SLAB.get())
+            .stairs(LaboratoryDecorRegistry.HOLOTILES_STAIRS.get());
+
 
             Wallpaper holowallpaper = LaboratoryDecorRegistry.HOLOWALLPAPER.get();
             Variant holowallpaper_up = new Variant(modLocation("block/holowallpaper_up"));
@@ -446,7 +450,7 @@ public class ModelDatagen extends ModelProvider {
 
         blockModels.createTrivialCube(LaboratoryDecorRegistry.HOLOBRICKS.get());
 
-        
+
         blockModels.createTrivialCube(LaboratoryDecorRegistry.HOLOCEILING.get());
 
 

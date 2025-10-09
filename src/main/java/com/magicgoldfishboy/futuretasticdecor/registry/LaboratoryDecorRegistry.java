@@ -8,6 +8,7 @@ import com.magicgoldfishboy.futuretasticdecor.block.Chair;
 import com.magicgoldfishboy.futuretasticdecor.block.Holoshelf;
 import com.magicgoldfishboy.futuretasticdecor.block.Holotv;
 import com.magicgoldfishboy.futuretasticdecor.block.MidSizedContainer;
+import com.magicgoldfishboy.futuretasticdecor.block.SlidingDoor;
 import com.magicgoldfishboy.futuretasticdecor.block.Table;
 import com.magicgoldfishboy.futuretasticdecor.block.Wallpaper;
 import com.magicgoldfishboy.futuretasticdecor.block.entity.MidSizedContainerEntity;
@@ -16,58 +17,61 @@ import net.minecraft.core.registries.Registries;
 import net.minecraft.resources.ResourceKey;
 import net.minecraft.world.item.BlockItem;
 import net.minecraft.world.level.block.Block;
+import net.minecraft.world.level.block.SlabBlock;
 import net.minecraft.world.level.block.SoundType;
+import net.minecraft.world.level.block.StairBlock;
 import net.minecraft.world.level.block.entity.BlockEntityType;
 import net.minecraft.world.level.block.state.BlockBehaviour;
+import net.minecraft.world.level.block.state.properties.BlockSetType;
 import net.neoforged.neoforge.registries.DeferredBlock;
 import net.neoforged.neoforge.registries.DeferredItem;
 
 public class LaboratoryDecorRegistry {
 
     public static DeferredBlock<Block> HOLOTILES_BLOCK;
-
     public static DeferredItem<BlockItem> HOLOTILES_BLOCK_ITEM;
+
+    public static DeferredBlock<SlabBlock> HOLOTILES_SLAB;
+    public static DeferredItem<BlockItem> HOLOTILES_SLAB_ITEM;
+
+    public static DeferredBlock<StairBlock> HOLOTILES_STAIRS;
+    public static DeferredItem<BlockItem> HOLOTILES_STAIRS_ITEM;
 
 
     public static DeferredBlock<Wallpaper> HOLOWALLPAPER;
-
     public static DeferredItem<BlockItem> HOLOWALLPAPER_ITEM;
 
 
     public static DeferredBlock<Block> HOLOBRICKS;
-
     public static DeferredItem<BlockItem> HOLOBRICKS_ITEM;
 
 
     public static DeferredBlock<Block> HOLOCEILING;
-
     public static DeferredItem<BlockItem> HOLOCEILING_ITEM;
+
+    
+    public static DeferredBlock<SlidingDoor> WHITE_SLIDING_DOOR;
+    public static DeferredItem<BlockItem> WHITE_SLIDING_DOOR_ITEM;
 
 
     public static DeferredBlock<Table> HOLOTABLE;
-
     public static DeferredItem<BlockItem> HOLOTABLE_ITEM;
 
 
     public static DeferredBlock<Chair> HOLOCHAIR;
-
     public static DeferredItem<BlockItem> HOLOCHAIR_ITEM; 
 
 
     public static DeferredBlock<MidSizedContainer> HOLOBARREL;
-
     public static Supplier<BlockEntityType<MidSizedContainerEntity>> HOLOBARREL_ENTITY;
-    
     public static DeferredItem<BlockItem> HOLOBARREL_ITEM;
 
 
     public static DeferredBlock<Holoshelf> HOLOSHELF;
-
     public static DeferredItem<BlockItem> HOLOSHELF_ITEM;
 
 
     public static DeferredBlock<Holotv> HOLOTV;
-
     public static DeferredItem<BlockItem> HOLOTV_ITEM;
 
 
@@ -85,6 +89,34 @@ public class LaboratoryDecorRegistry {
         );
         HOLOTILES_BLOCK_ITEM = FuturetasticDecor.ITEMS.registerSimpleBlockItem(
             HOLOTILES_BLOCK
+        );
+
+        HOLOTILES_SLAB = FuturetasticDecor.BLOCKS.register(
+            "holotiles_slab", 
+            registryName -> new SlabBlock(BlockBehaviour.Properties.of()
+                .setId(ResourceKey.create(Registries.BLOCK, registryName))
+                .strength(6.5f, 7.5f)
+                .lightLevel(state -> 4)
+                .requiresCorrectToolForDrops()
+                .sound(SoundType.TUFF_BRICKS)
+            )
+        );
+        HOLOTILES_SLAB_ITEM = FuturetasticDecor.ITEMS.registerSimpleBlockItem(
+            HOLOTILES_SLAB
+        );
+
+        HOLOTILES_STAIRS = FuturetasticDecor.BLOCKS.register(
+            "holotiles_stairs", 
+            registryName -> new StairBlock(LaboratoryDecorRegistry.HOLOTILES_BLOCK.get().defaultBlockState(), BlockBehaviour.Properties.of()
+                .setId(ResourceKey.create(Registries.BLOCK, registryName))
+                .strength(7.5f, 7.5f)
+                .lightLevel(state -> 5)
+                .requiresCorrectToolForDrops()
+                .sound(SoundType.TUFF_BRICKS)
+            )
+        );
+        HOLOTILES_STAIRS_ITEM = FuturetasticDecor.ITEMS.registerSimpleBlockItem(
+            HOLOTILES_STAIRS
         );
 
         HOLOWALLPAPER = FuturetasticDecor.BLOCKS.register(
@@ -128,6 +160,20 @@ public class LaboratoryDecorRegistry {
         HOLOCEILING_ITEM = FuturetasticDecor.ITEMS.registerSimpleBlockItem(
             HOLOCEILING
         );
+
+        // WHITE_SLIDING_DOOR = FuturetasticDecor.BLOCKS.register(
+        //     "white_sliding_door", 
+        //     registryName -> new SlidingDoor(BlockSetType.COPPER, BlockBehaviour.Properties.of()
+        //         .setId(ResourceKey.create(Registries.BLOCK, registryName))
+        //         .strength(7.5f, 7.5f)
+        //         .lightLevel(state -> 5)
+        //         .requiresCorrectToolForDrops()
+        //         .sound(SoundType.TUFF)
+        //     )
+        // );
+        // WHITE_SLIDING_DOOR_ITEM = FuturetasticDecor.ITEMS.registerSimpleBlockItem(
+        //     WHITE_SLIDING_DOOR
+        // );
 
         HOLOTABLE = FuturetasticDecor.BLOCKS.register(
             "holotable",

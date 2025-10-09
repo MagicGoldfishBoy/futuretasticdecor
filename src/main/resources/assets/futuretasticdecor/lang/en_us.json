@@ -131,6 +131,8 @@
   "block.futuretasticdecor.hologlass_pane.tooltip": "Crouch + Right Click to toggle between translucent and opaque states",
 
   "block.futuretasticdecor.holotiles_block": "Holotiles Block",
+  "block.futuretasticdecor.holotiles_slab": "Holotiles Slab",
+  "block.futuretasticdecor.holotiles_stairs": "Holotiles Stairs",
   "block.futuretasticdecor.holowallpaper": "Holowallpaper",
   "block.futuretasticdecor.holobricks": "HoloBricks",
   "block.futuretasticdecor.holoceiling": "Holoceiling",

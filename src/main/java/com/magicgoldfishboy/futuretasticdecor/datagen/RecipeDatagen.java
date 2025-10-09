@@ -1056,6 +1056,27 @@ public class RecipeDatagen extends RecipeProvider {
             .unlockedBy("has_hologlass_block", has(GlassRegistry.HOLOGLASS_BLOCK_ITEM.get()))
             .save(this.output);
 
+        ShapedRecipeBuilder.shaped(this.registries.lookupOrThrow(Registries.ITEM), RecipeCategory.BUILDING_BLOCKS, LaboratoryDecorRegistry.HOLOTILES_SLAB_ITEM.get(), 6)
+            .pattern("###")
+            .define('#', LaboratoryDecorRegistry.HOLOTILES_BLOCK_ITEM.get())
+            .unlockedBy("has_holotiles_block_item", has(LaboratoryDecorRegistry.HOLOTILES_BLOCK_ITEM.get()))
+            .save(this.output, "holotiles_slab_by_crafting");
+        SingleItemRecipeBuilder.stonecutting(Ingredient.of(LaboratoryDecorRegistry.HOLOTILES_BLOCK_ITEM.get()), RecipeCategory.BUILDING_BLOCKS, LaboratoryDecorRegistry.HOLOTILES_SLAB_ITEM.get(), 2)
+            .unlockedBy("has_holotiles_block_item", has(LaboratoryDecorRegistry.HOLOTILES_BLOCK_ITEM.get()))
+            .save(this.output, "holotiles_slab_by_stonecutting");
+
+        ShapedRecipeBuilder.shaped(this.registries.lookupOrThrow(Registries.ITEM), RecipeCategory.BUILDING_BLOCKS, LaboratoryDecorRegistry.HOLOTILES_STAIRS_ITEM.get(), 4)
+            .pattern("#  ")
+            .pattern("## ")
+            .pattern("###")
+            .define('#', LaboratoryDecorRegistry.HOLOTILES_BLOCK_ITEM.get())
+            .unlockedBy("has_holotiles_block_item", has(LaboratoryDecorRegistry.HOLOTILES_BLOCK_ITEM.get()))
+            .save(this.output, "holotiles_stairs_by_crafting");
+        SingleItemRecipeBuilder.stonecutting(Ingredient.of(LaboratoryDecorRegistry.HOLOTILES_BLOCK_ITEM.get()), RecipeCategory.BUILDING_BLOCKS, LaboratoryDecorRegistry.HOLOTILES_STAIRS_ITEM.get())
+            .unlockedBy("has_holotiles_block_item", has(LaboratoryDecorRegistry.HOLOTILES_BLOCK_ITEM.get()))
+            .save(this.output, "holotiles_stairs_by_stonecutting");
+
+
         ShapedRecipeBuilder.shaped(this.registries.lookupOrThrow(Registries.ITEM), RecipeCategory.BUILDING_BLOCKS, LaboratoryDecorRegistry.HOLOWALLPAPER_ITEM.get(), 8)
             .pattern("$#")
             .pattern("$#")

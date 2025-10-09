@@ -1,0 +1,13 @@
+{
+  "variants": {
+    "type=bottom": {
+      "model": "futuretasticdecor:block/holotiles_slab"
+    },
+    "type=double": {
+      "model": "futuretasticdecor:block/holotiles_block"
+    },
+    "type=top": {
+      "model": "futuretasticdecor:block/holotiles_slab_top"
+    }
+  }
+}

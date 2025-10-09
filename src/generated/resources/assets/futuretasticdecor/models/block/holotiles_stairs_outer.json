@@ -1,0 +1,8 @@
+{
+  "parent": "minecraft:block/outer_stairs",
+  "textures": {
+    "bottom": "futuretasticdecor:block/holotiles_block",
+    "side": "futuretasticdecor:block/holotiles_block",
+    "top": "futuretasticdecor:block/holotiles_block"
+  }
+}
