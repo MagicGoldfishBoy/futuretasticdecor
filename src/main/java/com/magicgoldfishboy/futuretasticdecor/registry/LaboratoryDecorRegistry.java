@@ -27,6 +27,11 @@ public class LaboratoryDecorRegistry {
     public static DeferredItem<BlockItem> HOLOWALLPAPER_ITEM;
 
 
+    public static DeferredBlock<Block> HOLOCEILING;
+
+    public static DeferredItem<BlockItem> HOLOCEILING_ITEM;
+
+
     public static DeferredBlock<Table> HOLOTABLE;
 
     public static DeferredItem<BlockItem> HOLOTABLE_ITEM;
@@ -59,6 +64,20 @@ public class LaboratoryDecorRegistry {
         );
         HOLOWALLPAPER_ITEM = FuturetasticDecor.ITEMS.registerSimpleBlockItem(
             HOLOWALLPAPER
+        );
+
+        HOLOCEILING = FuturetasticDecor.BLOCKS.register(
+            "holoceiling", 
+            registryName -> new Block(BlockBehaviour.Properties.of()
+                .setId(ResourceKey.create(Registries.BLOCK, registryName))
+                .strength(7.5f, 7.5f)
+                .lightLevel(state -> 5)
+                .requiresCorrectToolForDrops()
+                .sound(SoundType.TUFF)
+            )
+        );
+        HOLOCEILING_ITEM = FuturetasticDecor.ITEMS.registerSimpleBlockItem(
+            HOLOCEILING
         );
 
         HOLOTABLE = FuturetasticDecor.BLOCKS.register(
