@@ -50,7 +50,7 @@ public class ModelDatagenHelpers extends ModelProvider {
                 block,
                 BlockModelGenerators.variant(variant)
             ).with(
-                PropertyDispatch.modify(BlockStateProperties.HORIZONTAL_FACING) // Changed from DirectionalBlock.FACING
+                PropertyDispatch.modify(BlockStateProperties.HORIZONTAL_FACING)
                     .select(Direction.SOUTH, BlockModelGenerators.NOP)
                     .select(Direction.NORTH, BlockModelGenerators.Y_ROT_180)
                     .select(Direction.WEST, BlockModelGenerators.Y_ROT_90)
@@ -174,6 +174,26 @@ public class ModelDatagenHelpers extends ModelProvider {
                 .select(Direction.EAST, BlockModelGenerators.Y_ROT_270)
                 .select(Direction.UP, BlockModelGenerators.X_ROT_90)
                 .select(Direction.DOWN, BlockModelGenerators.X_ROT_270)
+            )
+        );
+    }
+    public static void createDeviceBlock(BlockModelGenerators blockModels, ItemModelGenerators itemModels, Block block,
+    Variant closed_variant, Variant open_variant) {
+
+        MultiVariant closed_multivariant = new MultiVariant(WeightedList.of(closed_variant));
+        MultiVariant open_multivariant = new MultiVariant(WeightedList.of(open_variant));
+
+        blockModels.blockStateOutput.accept(
+            MultiVariantGenerator.dispatch(block).with(
+                PropertyDispatch.initial(BlockStateProperties.OPEN)
+                    .select(false, closed_multivariant)
+                    .select(true, open_multivariant)
+            ).with(
+            PropertyDispatch.modify(BlockStateProperties.HORIZONTAL_FACING)
+                .select(Direction.SOUTH, BlockModelGenerators.NOP)
+                .select(Direction.NORTH, BlockModelGenerators.Y_ROT_180)
+                .select(Direction.WEST, BlockModelGenerators.Y_ROT_90)
+                .select(Direction.EAST, BlockModelGenerators.Y_ROT_270)
             )
         );
     }

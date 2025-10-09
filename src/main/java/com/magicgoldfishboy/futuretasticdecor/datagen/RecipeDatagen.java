@@ -1082,6 +1082,7 @@ public class RecipeDatagen extends RecipeProvider {
             .unlockedBy("has_steel_ingot", has(MetalRegistry.STEEL_INGOT.get()))
             .unlockedBy("has_hologlass", has(GlassRegistry.HOLOGLASS_BLOCK_ITEM.get()))
             .save(this.output);
+
         ShapedRecipeBuilder.shaped(this.registries.lookupOrThrow(Registries.ITEM), RecipeCategory.DECORATIONS, LaboratoryDecorRegistry.HOLOCHAIR_ITEM.get(), 4)
             .pattern("  #")
             .pattern("#$#")
@@ -1091,6 +1092,7 @@ public class RecipeDatagen extends RecipeProvider {
             .unlockedBy("has_steel_ingot", has(MetalRegistry.STEEL_INGOT.get()))
             .unlockedBy("has_hologlass", has(GlassRegistry.HOLOGLASS_BLOCK_ITEM.get()))
             .save(this.output);
+
         ShapedRecipeBuilder.shaped(this.registries.lookupOrThrow(Registries.ITEM), RecipeCategory.DECORATIONS, LaboratoryDecorRegistry.HOLOBARREL_ITEM.get(), 2)
             .pattern("#$#")
             .pattern("#%#")
@@ -1102,6 +1104,7 @@ public class RecipeDatagen extends RecipeProvider {
             .unlockedBy("has_hologlass_pane", has(GlassRegistry.HOLOGLASS_PANE_ITEM.get()))
             .unlockedBy("has_redstone", has(Items.REDSTONE))
             .save(this.output);
+
         ShapedRecipeBuilder.shaped(this.registries.lookupOrThrow(Registries.ITEM), RecipeCategory.DECORATIONS, LaboratoryDecorRegistry.HOLOSHELF_ITEM.get(), 4)
             .pattern("###")
             .pattern("$ $")
@@ -1109,6 +1112,20 @@ public class RecipeDatagen extends RecipeProvider {
             .define('$', MetalRegistry.STEEL_NUGGET.get())
             .unlockedBy("has_hologlass_pane", has(GlassRegistry.HOLOGLASS_PANE_ITEM.get()))
             .unlockedBy("has_steel_nugget", has(MetalRegistry.STEEL_NUGGET.get()))
+            .save(this.output);
+
+        ShapedRecipeBuilder.shaped(this.registries.lookupOrThrow(Registries.ITEM), RecipeCategory.REDSTONE, LaboratoryDecorRegistry.HOLOTV_ITEM.get())
+            .pattern("#$%")
+            .pattern("$&$")
+            .pattern("%$#")
+            .define('#', CraftingMaterialRegistry.STARDUST_POWDER.get())
+            .define('$', MetalRegistry.STEEL_NUGGET.get())
+            .define('%', Items.GOLD_NUGGET)
+            .define('&', Items.REDSTONE_BLOCK)
+            .unlockedBy("has_stardust_powder", has(CraftingMaterialRegistry.STARDUST_POWDER.get()))
+            .unlockedBy("has_steel_nugget", has(MetalRegistry.STEEL_NUGGET.get()))
+            .unlockedBy("has_gold_nugget", has(Items.GOLD_NUGGET))
+            .unlockedBy("has_redstone_block", has(Items.REDSTONE_BLOCK))
             .save(this.output);
     }
     public static class Runner extends RecipeProvider.Runner {

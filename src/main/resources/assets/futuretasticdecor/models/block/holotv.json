@@ -1,0 +1,86 @@
+{
+	"format_version": "1.21.6",
+	"credit": "Made with Blockbench",
+	"ambientocclusion": false,
+	"textures": {
+		"0": "futuretasticdecor:block/holo_tv_01",
+		"1": "futuretasticdecor:block/holo_tv_background",
+		"2": "futuretasticdecor:block/steel_block",
+		"3": "futuretasticdecor:block/hologlass_opaque",
+		"particle": "futuretasticdecor:block/holo_tv_background"
+	},
+	"elements": [
+		{
+			"from": [7, 0, 7],
+			"to": [9, 1, 9],
+			"faces": {
+				"north": {"uv": [0, 0, 2, 1], "texture": "#2"},
+				"east": {"uv": [0, 0, 2, 1], "texture": "#2"},
+				"south": {"uv": [0, 0, 2, 1], "texture": "#2"},
+				"west": {"uv": [0, 0, 2, 1], "texture": "#2"},
+				"up": {"uv": [7, 6, 9, 8], "texture": "#2"},
+				"down": {"uv": [7, 6, 9, 8], "texture": "#2"}
+			}
+		},
+		{
+			"from": [7.25, 1, 7.25],
+			"to": [8.75, 1.25, 8.75],
+			"rotation": {"angle": 0, "axis": "y", "origin": [0, 1, 0]},
+			"faces": {
+				"north": {"uv": [0, 0, 2, 1], "texture": "#3"},
+				"east": {"uv": [0, 0, 2, 1], "texture": "#3"},
+				"south": {"uv": [0, 0, 2, 1], "texture": "#3"},
+				"west": {"uv": [0, 0, 2, 1], "texture": "#3"},
+				"up": {"uv": [7, 6, 9, 8], "texture": "#3"},
+				"down": {"uv": [7, 6, 9, 8], "texture": "#3"}
+			}
+		},
+		{
+			"from": [-14, 7, 7.75],
+			"to": [0, 23, 8.25],
+			"rotation": {"angle": 0, "axis": "y", "origin": [0, 7, 7]},
+			"faces": {
+				"north": {"uv": [0, 0, 14, 16], "texture": "#1"},
+				"south": {"uv": [0, 0, 14, 16], "texture": "#1"},
+				"west": {"uv": [0, 0, 0.5, 16], "texture": "#1"},
+				"up": {"uv": [0, 0, 14, 0.5], "texture": "#1"},
+				"down": {"uv": [0, 0, 14, 0.5], "texture": "#1"}
+			}
+		},
+		{
+			"from": [0, 7, 7.75],
+			"to": [14, 23, 8.25],
+			"rotation": {"angle": 0, "axis": "y", "origin": [14, 7, 7]},
+			"faces": {
+				"north": {"uv": [0, 0, 14, 16], "texture": "#0"},
+				"south": {"uv": [1, 0, 15, 16], "texture": "#0"},
+				"up": {"uv": [0, 0, 14, 0.5], "texture": "#0"},
+				"down": {"uv": [0, 0, 14, 0.5], "texture": "#0"}
+			}
+		},
+		{
+			"from": [14, 7, 7.75],
+			"to": [28, 23, 8.25],
+			"rotation": {"angle": 0, "axis": "y", "origin": [28, 7, 7]},
+			"faces": {
+				"north": {"uv": [0, 0, 14, 16], "texture": "#1"},
+				"east": {"uv": [0, 0, 0.5, 16], "texture": "#1"},
+				"south": {"uv": [2, 0, 16, 16], "texture": "#1"},
+				"up": {"uv": [0, 0, 14, 0.5], "texture": "#1"},
+				"down": {"uv": [0, 0, 14, 0.5], "texture": "#1"}
+			}
+		}
+	],
+	"display": {},
+	"groups": [
+		{
+			"name": "VoxelShapes",
+			"origin": [8, 8, 8],
+			"color": 0,
+			"children": [0, 1]
+		},
+		2,
+		3,
+		4
+	]
+}

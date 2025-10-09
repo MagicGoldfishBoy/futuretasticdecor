@@ -1,4 +1,4 @@
-// 1.21.9	2025-10-09T14:42:29.325490817	SpooktasticDecor Recipes
+// 1.21.9	2025-10-09T15:53:05.815093414	SpooktasticDecor Recipes
 e68b43f2ecbc968598fa545c5cab66cdd7c7eaa2 data/futuretasticdecor/advancement/recipes/building_blocks/blue_glow_block.json
 9a8b9505d8aec11a22bbe8293e009261125893fb data/futuretasticdecor/advancement/recipes/building_blocks/blue_glow_panel.json
 13b9ba612420c38e843d0ab4ad6f3075907dbd88 data/futuretasticdecor/advancement/recipes/building_blocks/cyan_glow_block.json
@@ -80,6 +80,7 @@ ae7f664e3865024b31df049461a981092c9cc30c data/futuretasticdecor/advancement/reci
 7530dc6baa2307e2c4f540b0c0b5a8835ec7a3ab data/futuretasticdecor/advancement/recipes/misc/white_plastic_pellet.json
 7c69da92cadbb8108318effe67b53e3f9bd48756 data/futuretasticdecor/advancement/recipes/misc/yellow_plastic_block.json
 af94c62d9222d882c96a509f3b030f989fc52718 data/futuretasticdecor/advancement/recipes/misc/yellow_plastic_pellet.json
+1327056ce5cba62ae4d5416a464896077f87cbd3 data/futuretasticdecor/advancement/recipes/redstone/holotv.json
 69a643e1053ccac10fb0c59495678c9d4fb15662 data/futuretasticdecor/advancement/recipes/redstone/steel_button.json
 9af8055844ab5bc938b46f7da6b072a668e27439 data/futuretasticdecor/recipe/anti_grav_alloy.json
 e99480eb883e2231f34c1f5cd4e1ddace68c97ea data/futuretasticdecor/recipe/blue_glow_block.json
@@ -110,6 +111,7 @@ cc56a62efa2fa222b07e9f9b76ed60d3ae437c27 data/futuretasticdecor/recipe/holochair
 e0c24180ff1a713b1e0d079e094ee9673e1a788b data/futuretasticdecor/recipe/holoshelf.json
 7869a3877ffdd8f8e143ca45c5da08c834faa684 data/futuretasticdecor/recipe/holotable.json
 70a7de0c5bbefa17fc5f6deb7efd8c27098abbac data/futuretasticdecor/recipe/holotiles_block.json
+09337ea37f530c43adf3b4a4ad26aa12692ac9ee data/futuretasticdecor/recipe/holotv.json
 30c3d0326134ac850d516c5522e1a9936324541c data/futuretasticdecor/recipe/holowallpaper.json
 99ea410c15f4157a87a13af65e72d2467990cd34 data/futuretasticdecor/recipe/light_blue_glow_block.json
 0b247c11e3df9ff1647bc12f1a03712c1b83678c data/futuretasticdecor/recipe/light_blue_glow_panel.json

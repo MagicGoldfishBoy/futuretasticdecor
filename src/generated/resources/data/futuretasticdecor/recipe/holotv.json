@@ -1,0 +1,19 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "redstone",
+  "key": {
+    "#": "futuretasticdecor:stardust_powder",
+    "$": "futuretasticdecor:steel_nugget",
+    "%": "minecraft:gold_nugget",
+    "&": "minecraft:redstone_block"
+  },
+  "pattern": [
+    "#$%",
+    "$&$",
+    "%$#"
+  ],
+  "result": {
+    "count": 1,
+    "id": "futuretasticdecor:holotv"
+  }
+}

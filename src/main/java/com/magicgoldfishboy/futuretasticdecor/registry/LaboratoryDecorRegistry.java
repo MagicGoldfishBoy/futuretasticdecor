@@ -6,6 +6,7 @@ import java.util.function.Supplier;
 import com.magicgoldfishboy.futuretasticdecor.FuturetasticDecor;
 import com.magicgoldfishboy.futuretasticdecor.block.Chair;
 import com.magicgoldfishboy.futuretasticdecor.block.Holoshelf;
+import com.magicgoldfishboy.futuretasticdecor.block.Holotv;
 import com.magicgoldfishboy.futuretasticdecor.block.MidSizedContainer;
 import com.magicgoldfishboy.futuretasticdecor.block.Table;
 import com.magicgoldfishboy.futuretasticdecor.block.Wallpaper;
@@ -58,6 +59,11 @@ public class LaboratoryDecorRegistry {
     public static DeferredBlock<Holoshelf> HOLOSHELF;
 
     public static DeferredItem<BlockItem> HOLOSHELF_ITEM;
+
+
+    public static DeferredBlock<Holotv> HOLOTV;
+
+    public static DeferredItem<BlockItem> HOLOTV_ITEM;
 
 
     public static void registerAll() {
@@ -166,6 +172,21 @@ public class LaboratoryDecorRegistry {
         );
         HOLOSHELF_ITEM = FuturetasticDecor.ITEMS.registerSimpleBlockItem(
             HOLOSHELF
+        );
+
+        HOLOTV = FuturetasticDecor.BLOCKS.register(
+            "holotv", 
+            registryName -> new Holotv(BlockBehaviour.Properties.of()
+                .setId(ResourceKey.create(Registries.BLOCK, registryName))
+                .strength(4.0f, 4.5f)
+                .instabreak()
+                .explosionResistance(1.0f)
+                .sound(SoundType.POLISHED_TUFF)
+                .noOcclusion()
+            )
+        );
+        HOLOTV_ITEM = FuturetasticDecor.ITEMS.registerSimpleBlockItem(
+            HOLOTV
         );
 
     }

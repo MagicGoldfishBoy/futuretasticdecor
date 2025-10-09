@@ -519,6 +519,13 @@ public class ModelDatagen extends ModelProvider {
             ItemModelUtils.plainModel(modLocation("block/holoshelf"))
         );
 
+
+        ModelDatagenHelpers.createDeviceBlock(blockModels, itemModels, LaboratoryDecorRegistry.HOLOTV.get(), new Variant(modLocation("block/holotv_off")), new Variant(modLocation("block/holotv")));
+
+        itemModels.itemModelOutput.accept(
+            LaboratoryDecorRegistry.HOLOTV_ITEM.get(), ItemModelUtils.plainModel(modLocation("block/holotv_off"))
+        );
+
     }
     protected void registerPlanterModels(BlockModelGenerators blockModels, ItemModelGenerators itemModels) {
 
