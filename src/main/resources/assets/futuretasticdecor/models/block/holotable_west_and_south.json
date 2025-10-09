@@ -28,8 +28,6 @@
 			"faces": {
 				"north": {"uv": [3, 0, 13, 3], "texture": "#0"},
 				"east": {"uv": [3, 0, 13, 3], "texture": "#0"},
-				"south": {"uv": [3, 0, 13, 3], "texture": "#0"},
-				"west": {"uv": [3, 0, 13, 3], "texture": "#0"},
 				"up": {"uv": [3, 3, 16, 16], "rotation": 180, "texture": "#0"},
 				"down": {"uv": [3, 3, 16, 16], "rotation": 180, "texture": "#0"}
 			}
