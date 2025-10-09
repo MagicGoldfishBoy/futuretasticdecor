@@ -1,0 +1,18 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "misc",
+  "key": {
+    "#": "futuretasticdecor:hologlass_block",
+    "$": "futuretasticdecor:hologlass_pane",
+    "%": "minecraft:redstone"
+  },
+  "pattern": [
+    "#$#",
+    "#%#",
+    "#$#"
+  ],
+  "result": {
+    "count": 2,
+    "id": "futuretasticdecor:holobarrel"
+  }
+}

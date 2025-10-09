@@ -44,59 +44,20 @@ public class ModelDatagenHelpers extends ModelProvider {
             )
         );
     }
-public static void createHorizontalRotationModel(BlockModelGenerators blockModels, ItemModelGenerators itemModels, HorizontalDirectionalBlock block, Variant variant) {
-    blockModels.blockStateOutput.accept(
-        MultiVariantGenerator.dispatch(
-            block,
-            BlockModelGenerators.variant(variant)
-        ).with(
-            PropertyDispatch.modify(BlockStateProperties.HORIZONTAL_FACING) // Changed from DirectionalBlock.FACING
-                .select(Direction.SOUTH, BlockModelGenerators.NOP)
-                .select(Direction.NORTH, BlockModelGenerators.Y_ROT_180)
-                .select(Direction.WEST, BlockModelGenerators.Y_ROT_90)
-                .select(Direction.EAST, BlockModelGenerators.Y_ROT_270)
-        )
-    );
-}
-    // public static void createWallpaperModel(BlockModelGenerators blockModels, ItemModelGenerators itemModels) {
-    //     blockModels.createTrivialCube(LaboratoryDecorRegistry.HOLOTILES_BLOCK.get());
-
-    //         Wallpaper holowallpaper = LaboratoryDecorRegistry.HOLOWALLPAPER.get();
-    //         Variant holowallpaper_up = new Variant(modLocation("block/holowallpaper_up"));
-    //         Variant holowallpaper_middle = new Variant(modLocation("block/holowallpaper_middle"));
-    //         Variant holowallpaper_down = new Variant(modLocation("block/holowallpaper_down"));
-    //         Variant holowallpaper_single = new Variant(modLocation("block/holowallpaper_single"));
-
-    //         MultiVariant holowallpaper_up_multi = new MultiVariant(WeightedList.of(holowallpaper_up));
-    //         MultiVariant holowallpaper_middle_multi = new MultiVariant(WeightedList.of(holowallpaper_middle));
-    //         MultiVariant holowallpaper_down_multi = new MultiVariant(WeightedList.of(holowallpaper_down));
-    //         MultiVariant holowallpaper_single_multi = new MultiVariant(WeightedList.of(holowallpaper_single));
-
-    //     blockModels.blockStateOutput.accept(
-    //         MultiPartGenerator.multiPart(holowallpaper)
-    //             .with(
-    //                 BlockModelGenerators.condition().term(BlockStateProperties.UP, true).term(BlockStateProperties.DOWN, false),
-    //                 holowallpaper_down_multi
-    //             )
-    //             .with(
-    //                 BlockModelGenerators.condition().term(BlockStateProperties.UP, false).term(BlockStateProperties.DOWN, false),
-    //                 holowallpaper_single_multi
-    //             )
-    //             .with(
-    //                 BlockModelGenerators.condition().term(BlockStateProperties.UP, true).term(BlockStateProperties.DOWN, true),
-    //                 holowallpaper_middle_multi
-    //             )
-    //             .with(
-    //                 BlockModelGenerators.condition().term(BlockStateProperties.UP, false).term(BlockStateProperties.DOWN, true),
-    //                 holowallpaper_up_multi
-    //             )
-    //     );
-    //     itemModels.itemModelOutput.accept(
-    //         LaboratoryDecorRegistry.HOLOWALLPAPER_ITEM.get(),
-    //         ItemModelUtils.plainModel(modLocation("block/holowallpaper_single"))
-    //     );
-    // }
-
+    public static void createHorizontalRotationModel(BlockModelGenerators blockModels, ItemModelGenerators itemModels, HorizontalDirectionalBlock block, Variant variant) {
+        blockModels.blockStateOutput.accept(
+            MultiVariantGenerator.dispatch(
+                block,
+                BlockModelGenerators.variant(variant)
+            ).with(
+                PropertyDispatch.modify(BlockStateProperties.HORIZONTAL_FACING) // Changed from DirectionalBlock.FACING
+                    .select(Direction.SOUTH, BlockModelGenerators.NOP)
+                    .select(Direction.NORTH, BlockModelGenerators.Y_ROT_180)
+                    .select(Direction.WEST, BlockModelGenerators.Y_ROT_90)
+                    .select(Direction.EAST, BlockModelGenerators.Y_ROT_270)
+            )
+        );
+    }
     public static void createTableModel(BlockModelGenerators blockModels, ItemModelGenerators itemModels, Block block, Variant single,
         Variant center, Variant north, Variant east, Variant south, Variant west, Variant north_and_south, Variant east_and_north, Variant east_and_south, 
         Variant east_and_west, Variant west_and_north, Variant west_and_south, Variant north_east_south, Variant north_west_south, Variant east_south_west,
@@ -194,56 +155,56 @@ public static void createHorizontalRotationModel(BlockModelGenerators blockModel
                     )
             );
     }
+    public static void createRotatableStorageBlock(BlockModelGenerators blockModels, ItemModelGenerators itemModels, Block block,
+    Variant closed_variant, Variant open_variant) {
 
+        MultiVariant closed_multivariant = new MultiVariant(WeightedList.of(closed_variant));
+        MultiVariant open_multivariant = new MultiVariant(WeightedList.of(open_variant));
+
+        blockModels.blockStateOutput.accept(
+            MultiVariantGenerator.dispatch(block).with(
+                PropertyDispatch.initial(BlockStateProperties.OPEN)
+                    .select(false, closed_multivariant)
+                    .select(true, open_multivariant)
+            ).with(
+            PropertyDispatch.modify(DirectionalBlock.FACING)
+                .select(Direction.SOUTH, BlockModelGenerators.NOP)
+                .select(Direction.NORTH, BlockModelGenerators.Y_ROT_180)
+                .select(Direction.WEST, BlockModelGenerators.Y_ROT_90)
+                .select(Direction.EAST, BlockModelGenerators.Y_ROT_270)
+                .select(Direction.UP, BlockModelGenerators.X_ROT_90)
+                .select(Direction.DOWN, BlockModelGenerators.X_ROT_270)
+            )
+        );
+    }
     public static void createConnectableBlock(BlockModelGenerators blockModels, ItemModelGenerators itemModels, Block block,
-                                              Variant block_variant_plain, Variant block_variant_line, Variant block_variant_corner) {
+        Variant block_variant_plain, Variant block_variant_line, Variant block_variant_corner) {
 
         MultiVariant plain = new MultiVariant(WeightedList.of(block_variant_plain));
         MultiVariant line = new MultiVariant(WeightedList.of(block_variant_line));
         MultiVariant corner = new MultiVariant(WeightedList.of(block_variant_corner));
 
-        // Assumes the block has boolean properties for connections in each direction (NORTH, SOUTH, EAST, WEST, UP, DOWN)
-blockModels.blockStateOutput.accept(
-    MultiVariantGenerator.dispatch(block).with(
-        PropertyDispatch.initial(
-            BlockStateProperties.DOWN, 
-            BlockStateProperties.EAST, 
-            BlockStateProperties.WEST, 
-            BlockStateProperties.UP
-        )
 
-        .select(false, false, false, false, plain)
-        // Lines (opposite connections)
-        .select(true, false, false, false, line)
-        .select(false, true, true, false, line)
-        .select(false, false, true, true, line)
-        // Corners (adjacent connections)
-        .select(true, false, true, false,corner)
-        .select(true, false, false, true,corner)
-    )
-);
+        blockModels.blockStateOutput.accept(
+            MultiVariantGenerator.dispatch(block).with(
+                PropertyDispatch.initial(
+                    BlockStateProperties.DOWN, 
+                    BlockStateProperties.EAST, 
+                    BlockStateProperties.WEST, 
+                    BlockStateProperties.UP
+                )
+
+                .select(false, false, false, false, plain)
+
+                .select(true, false, false, false, line)
+                .select(false, true, true, false, line)
+                .select(false, false, true, true, line)
+
+                .select(true, false, true, false,corner)
+                .select(true, false, false, true,corner)
+            )
+        );
     }
     
 }
 
-    //     SoulBrassBarrel soul_brass_barrel = MetalRegistry.SOUL_BRASS_BARREL.get();
-    //     Variant soul_brass_barrel_closed = new Variant(ModelLocationUtils.getModelLocation(soul_brass_barrel));
-    //     Variant soul_brass_barrel_open = new Variant(modLocation("block/soul_brass_barrel_open"));
-    //     MultiVariant soul_brass_barrel_closed_multi = new MultiVariant(WeightedList.of(soul_brass_barrel_closed));
-    //     MultiVariant soul_brass_barrel_open_multi = new MultiVariant(WeightedList.of(soul_brass_barrel_open));
-
-    //     blockModels.blockStateOutput.accept(
-    //         MultiVariantGenerator.dispatch(soul_brass_barrel).with(
-    //             PropertyDispatch.initial(BlockStateProperties.OPEN)
-    //                 .select(false, soul_brass_barrel_closed_multi)
-    //                 .select(true, soul_brass_barrel_open_multi)
-    //         ).with(
-    //         PropertyDispatch.modify(DirectionalBlock.FACING)
-    //             .select(Direction.SOUTH, BlockModelGenerators.NOP)
-    //             .select(Direction.NORTH, BlockModelGenerators.Y_ROT_180)
-    //             .select(Direction.WEST, BlockModelGenerators.Y_ROT_90)
-    //             .select(Direction.EAST, BlockModelGenerators.Y_ROT_270)
-    //             .select(Direction.UP, BlockModelGenerators.X_ROT_90)
-    //             .select(Direction.DOWN, BlockModelGenerators.X_ROT_270)
-    //         )
-    //    );

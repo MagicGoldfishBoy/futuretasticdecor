@@ -1,4 +1,4 @@
-// 1.21.9	2025-10-09T11:21:03.463252295	Loot Tables
+// 1.21.9	2025-10-09T13:49:34.80285491	Loot Tables
 09a8b1713eaf0424d7db9b60e471b96bbbbe6f8b data/futuretasticdecor/loot_table/blocks/anti_grav_block.json
 7bdf73669a2e2e4b2de14d41ad96a1730de70b69 data/futuretasticdecor/loot_table/blocks/blue_glow_block.json
 4b1610f22f03c06236bdc1f25d4adeb1fce6556f data/futuretasticdecor/loot_table/blocks/blue_glow_panel.json
@@ -19,6 +19,7 @@ d1b25c31a18c2e702a5003c2d239511324e8f266 data/futuretasticdecor/loot_table/block
 7b4a007f060f63adaafdb8fac973ee50ebe5d075 data/futuretasticdecor/loot_table/blocks/green_glow_panel.json
 d1ce7ececea11267eadd0af7a6f3a2c4932482e9 data/futuretasticdecor/loot_table/blocks/green_glowing_steel_block.json
 22aad9fce9b55fd50689352440ba5683bb5401fb data/futuretasticdecor/loot_table/blocks/green_plastic_block.json
+389b62fb1ef1708d39f8b2699bd13a22f3efba16 data/futuretasticdecor/loot_table/blocks/holobarrel.json
 35748cec06c1e0f5a5290815b3e08163dd7b59f4 data/futuretasticdecor/loot_table/blocks/holoceiling.json
 f4bca0d910fa3bec4b18b2c2aa9fbee2fda84ca3 data/futuretasticdecor/loot_table/blocks/holochair.json
 f121490c5b89a9f24c713c14583d5296488c63c5 data/futuretasticdecor/loot_table/blocks/hologlass_block.json

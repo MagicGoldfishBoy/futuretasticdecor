@@ -1,17 +1,21 @@
 package com.magicgoldfishboy.futuretasticdecor.registry;
 
 import java.rmi.registry.Registry;
+import java.util.function.Supplier;
 
 import com.magicgoldfishboy.futuretasticdecor.FuturetasticDecor;
 import com.magicgoldfishboy.futuretasticdecor.block.Chair;
+import com.magicgoldfishboy.futuretasticdecor.block.MidSizedContainer;
 import com.magicgoldfishboy.futuretasticdecor.block.Table;
 import com.magicgoldfishboy.futuretasticdecor.block.Wallpaper;
+import com.magicgoldfishboy.futuretasticdecor.block.entity.MidSizedContainerEntity;
 
 import net.minecraft.core.registries.Registries;
 import net.minecraft.resources.ResourceKey;
 import net.minecraft.world.item.BlockItem;
 import net.minecraft.world.level.block.Block;
 import net.minecraft.world.level.block.SoundType;
+import net.minecraft.world.level.block.entity.BlockEntityType;
 import net.minecraft.world.level.block.state.BlockBehaviour;
 import net.neoforged.neoforge.registries.DeferredBlock;
 import net.neoforged.neoforge.registries.DeferredItem;
@@ -41,6 +45,13 @@ public class LaboratoryDecorRegistry {
     public static DeferredBlock<Chair> HOLOCHAIR;
 
     public static DeferredItem<BlockItem> HOLOCHAIR_ITEM; 
+
+
+    public static DeferredBlock<MidSizedContainer> HOLOBARREL;
+
+    public static Supplier<BlockEntityType<MidSizedContainerEntity>> HOLOBARREL_ENTITY;
+    
+    public static DeferredItem<BlockItem> HOLOBARREL_ITEM;
 
     public static void registerAll() {
 
@@ -114,6 +125,26 @@ public class LaboratoryDecorRegistry {
         );
         HOLOCHAIR_ITEM = FuturetasticDecor.ITEMS.registerSimpleBlockItem(
             HOLOCHAIR
+        );
+
+        HOLOBARREL = FuturetasticDecor.BLOCKS.register(
+            "holobarrel", 
+            registryName -> new MidSizedContainer(BlockBehaviour.Properties.of()
+                .setId(ResourceKey.create(Registries.BLOCK, registryName))
+                .strength(5.0f, 5.5f)
+                .requiresCorrectToolForDrops()
+                .sound(SoundType.POLISHED_TUFF)
+            )
+        );
+        HOLOBARREL_ENTITY = FuturetasticDecor.BLOCK_ENTITIES.register(
+            "holobarrel_entity",
+            () -> new BlockEntityType<>(
+                MidSizedContainerEntity::new,
+                false,
+                HOLOBARREL.get())
+        );
+        HOLOBARREL_ITEM = FuturetasticDecor.ITEMS.registerSimpleBlockItem(
+            HOLOBARREL
         );
 
     }

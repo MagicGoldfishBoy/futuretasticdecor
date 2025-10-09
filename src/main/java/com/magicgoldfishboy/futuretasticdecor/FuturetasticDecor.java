@@ -21,9 +21,11 @@ import net.minecraft.client.renderer.entity.NoopRenderer;
 import net.minecraft.core.registries.BuiltInRegistries;
 import net.minecraft.core.registries.Registries;
 import net.minecraft.network.chat.Component;
+import net.minecraft.world.entity.EntityType;
 import net.minecraft.world.item.CreativeModeTab;
 import net.minecraft.world.item.CreativeModeTabs;
 import net.minecraft.world.level.block.Blocks;
+import net.minecraft.world.level.block.entity.BlockEntityType;
 import net.neoforged.bus.api.IEventBus;
 import net.neoforged.bus.api.SubscribeEvent;
 import net.neoforged.fml.common.EventBusSubscriber;
@@ -49,6 +51,9 @@ public class FuturetasticDecor {
 
     public static final Logger LOGGER = LogUtils.getLogger();
 
+    public static final DeferredRegister<EntityType<?>> ENTITIES = DeferredRegister.create(BuiltInRegistries.ENTITY_TYPE, FuturetasticDecor.MODID);
+    public static final DeferredRegister<BlockEntityType<?>> BLOCK_ENTITIES = DeferredRegister.create(BuiltInRegistries.BLOCK_ENTITY_TYPE, FuturetasticDecor.MODID);
+    
     public static final DeferredRegister.Blocks BLOCKS = DeferredRegister.createBlocks(MODID);
 
     public static final DeferredRegister.Items ITEMS = DeferredRegister.createItems(MODID);
@@ -83,6 +88,10 @@ public class FuturetasticDecor {
         ITEMS.register(modEventBus);
 
         CREATIVE_MODE_TABS.register(modEventBus);
+
+        ENTITIES.register(modEventBus);
+
+        BLOCK_ENTITIES.register(modEventBus);
 
 
         EntityRegistry.init(modEventBus);

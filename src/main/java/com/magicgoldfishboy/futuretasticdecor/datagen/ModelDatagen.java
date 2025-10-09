@@ -497,6 +497,19 @@ public class ModelDatagen extends ModelProvider {
             ItemModelUtils.plainModel(modLocation("block/holochair"))
         );
 
+        Block holobarrel = LaboratoryDecorRegistry.HOLOBARREL.get();
+
+        Variant holobarrel_variant_closed = new Variant(modLocation("block/holobarrel"));
+
+        Variant holobarrel_variant_open = new Variant(modLocation("block/holobarrel_open"));
+
+        ModelDatagenHelpers.createRotatableStorageBlock(blockModels, itemModels, holobarrel, holobarrel_variant_closed, holobarrel_variant_open);
+
+        itemModels.itemModelOutput.accept(
+            LaboratoryDecorRegistry.HOLOBARREL_ITEM.get(),
+            ItemModelUtils.plainModel(modLocation("block/holobarrel"))
+        );
+
     }
     protected void registerPlanterModels(BlockModelGenerators blockModels, ItemModelGenerators itemModels) {
 
