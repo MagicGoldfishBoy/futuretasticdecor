@@ -1,0 +1,16 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "misc",
+  "key": {
+    "#": "futuretasticdecor:steel_ingot",
+    "$": "futuretasticdecor:hologlass_block"
+  },
+  "pattern": [
+    "#$#",
+    "# #"
+  ],
+  "result": {
+    "count": 2,
+    "id": "futuretasticdecor:holotable"
+  }
+}

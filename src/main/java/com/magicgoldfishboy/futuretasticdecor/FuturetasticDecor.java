@@ -150,5 +150,6 @@ public class FuturetasticDecor {
         ItemBlockRenderTypes.setRenderLayer(GlassRegistry.HOLOGLASS_BLOCK.get(), ChunkSectionLayer.TRANSLUCENT);
         ItemBlockRenderTypes.setRenderLayer(GlassRegistry.HOLOGLASS_PANE.get(), ChunkSectionLayer.TRANSLUCENT);
         ItemBlockRenderTypes.setRenderLayer(MetalRegistry.STEEL_DOOR.get(), ChunkSectionLayer.TRANSLUCENT);
+        ItemBlockRenderTypes.setRenderLayer(LaboratoryDecorRegistry.HOLOTABLE.get(), ChunkSectionLayer.TRANSLUCENT);
     }
 }

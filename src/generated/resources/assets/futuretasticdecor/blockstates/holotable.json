@@ -1,0 +1,180 @@
+{
+  "multipart": [
+    {
+      "apply": {
+        "model": "futuretasticdecor:block/holotable_single"
+      },
+      "when": {
+        "east": "false",
+        "north": "false",
+        "south": "false",
+        "west": "false"
+      }
+    },
+    {
+      "apply": {
+        "model": "futuretasticdecor:block/holotable_center"
+      },
+      "when": {
+        "east": "true",
+        "north": "true",
+        "south": "true",
+        "west": "true"
+      }
+    },
+    {
+      "apply": {
+        "model": "futuretasticdecor:block/holotable_north"
+      },
+      "when": {
+        "east": "false",
+        "north": "true",
+        "south": "false",
+        "west": "false"
+      }
+    },
+    {
+      "apply": {
+        "model": "futuretasticdecor:block/holotable_north_and_south"
+      },
+      "when": {
+        "east": "false",
+        "north": "true",
+        "south": "true",
+        "west": "false"
+      }
+    },
+    {
+      "apply": {
+        "model": "futuretasticdecor:block/holotable_east"
+      },
+      "when": {
+        "east": "true",
+        "north": "false",
+        "south": "false",
+        "west": "false"
+      }
+    },
+    {
+      "apply": {
+        "model": "futuretasticdecor:block/holotable_east_and_north"
+      },
+      "when": {
+        "east": "true",
+        "north": "true",
+        "south": "false",
+        "west": "false"
+      }
+    },
+    {
+      "apply": {
+        "model": "futuretasticdecor:block/holotable_east_and_south"
+      },
+      "when": {
+        "east": "true",
+        "north": "false",
+        "south": "true",
+        "west": "false"
+      }
+    },
+    {
+      "apply": {
+        "model": "futuretasticdecor:block/holotable_east_and_west"
+      },
+      "when": {
+        "east": "true",
+        "north": "false",
+        "south": "false",
+        "west": "true"
+      }
+    },
+    {
+      "apply": {
+        "model": "futuretasticdecor:block/holotable_south"
+      },
+      "when": {
+        "east": "false",
+        "north": "false",
+        "south": "true",
+        "west": "false"
+      }
+    },
+    {
+      "apply": {
+        "model": "futuretasticdecor:block/holotable_west"
+      },
+      "when": {
+        "east": "false",
+        "north": "false",
+        "south": "false",
+        "west": "true"
+      }
+    },
+    {
+      "apply": {
+        "model": "futuretasticdecor:block/holotable_west_and_north"
+      },
+      "when": {
+        "east": "false",
+        "north": "true",
+        "south": "false",
+        "west": "true"
+      }
+    },
+    {
+      "apply": {
+        "model": "futuretasticdecor:block/holotable_west_and_south"
+      },
+      "when": {
+        "east": "false",
+        "north": "false",
+        "south": "true",
+        "west": "true"
+      }
+    },
+    {
+      "apply": {
+        "model": "futuretasticdecor:block/holotable_north_east_south"
+      },
+      "when": {
+        "east": "true",
+        "north": "true",
+        "south": "true",
+        "west": "false"
+      }
+    },
+    {
+      "apply": {
+        "model": "futuretasticdecor:block/holotable_north_west_south"
+      },
+      "when": {
+        "east": "false",
+        "north": "true",
+        "south": "true",
+        "west": "true"
+      }
+    },
+    {
+      "apply": {
+        "model": "futuretasticdecor:block/holotable_east_south_west"
+      },
+      "when": {
+        "east": "true",
+        "north": "false",
+        "south": "true",
+        "west": "true"
+      }
+    },
+    {
+      "apply": {
+        "model": "futuretasticdecor:block/holotable_north_east_west"
+      },
+      "when": {
+        "east": "true",
+        "north": "true",
+        "south": "false",
+        "west": "true"
+      }
+    }
+  ]
+}

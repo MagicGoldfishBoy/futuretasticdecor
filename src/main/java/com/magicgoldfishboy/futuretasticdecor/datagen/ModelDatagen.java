@@ -438,6 +438,42 @@ public class ModelDatagen extends ModelProvider {
             LaboratoryDecorRegistry.HOLOWALLPAPER_ITEM.get(),
             ItemModelUtils.plainModel(modLocation("block/holowallpaper_single"))
         );
+
+
+        Block block = LaboratoryDecorRegistry.HOLOTABLE.get();
+
+        Variant single = new Variant(modLocation("block/holotable_single"));
+
+        Variant center = new Variant(modLocation("block/holotable_center"));
+
+        Variant north = new Variant(modLocation("block/holotable_north"));
+        Variant east = new Variant(modLocation("block/holotable_east"));
+        Variant south = new Variant(modLocation("block/holotable_south"));
+        Variant west = new Variant(modLocation("block/holotable_west"));
+
+        Variant north_and_south = new Variant(modLocation("block/holotable_north_and_south"));
+        Variant east_and_north = new Variant(modLocation("block/holotable_east_and_north"));
+        Variant east_and_south = new Variant(modLocation("block/holotable_east_and_south"));
+        Variant east_and_west = new Variant(modLocation("block/holotable_east_and_west"));
+        Variant west_and_north = new Variant(modLocation("block/holotable_west_and_north"));
+        Variant west_and_south = new Variant(modLocation("block/holotable_west_and_south"));
+
+        Variant north_east_south = new Variant(modLocation("block/holotable_north_east_south"));
+
+        Variant north_west_south = new Variant(modLocation("block/holotable_north_west_south"));
+
+        Variant east_south_west = new Variant(modLocation("block/holotable_east_south_west"));
+
+        Variant north_east_west = new Variant(modLocation("block/holotable_north_east_west"));
+
+        ModelDatagenHelpers.createTableModel(blockModels, itemModels, block, single, center, north, east, south, west, 
+        north_and_south, east_and_north, east_and_south, east_and_west, west_and_north, west_and_south, north_east_south,
+        north_west_south, east_south_west, north_east_west);
+
+        itemModels.itemModelOutput.accept(
+            LaboratoryDecorRegistry.HOLOTABLE_ITEM.get(),
+            ItemModelUtils.plainModel(modLocation("block/holotable_single"))
+        );
     }
     protected void registerPlanterModels(BlockModelGenerators blockModels, ItemModelGenerators itemModels) {
 
