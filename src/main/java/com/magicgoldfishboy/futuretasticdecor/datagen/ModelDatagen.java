@@ -444,6 +444,9 @@ public class ModelDatagen extends ModelProvider {
         );
 
 
+        blockModels.createTrivialCube(LaboratoryDecorRegistry.HOLOBRICKS.get());
+
+        
         blockModels.createTrivialCube(LaboratoryDecorRegistry.HOLOCEILING.get());
 
 

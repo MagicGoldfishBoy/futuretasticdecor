@@ -1065,6 +1065,15 @@ public class RecipeDatagen extends RecipeProvider {
             .unlockedBy("has_hologlass_block", has(GlassRegistry.HOLOGLASS_BLOCK_ITEM.get()))
             .save(this.output);
 
+        ShapedRecipeBuilder.shaped(this.registries.lookupOrThrow(Registries.ITEM), RecipeCategory.BUILDING_BLOCKS, LaboratoryDecorRegistry.HOLOBRICKS_ITEM.get(), 8)
+            .pattern("##")
+            .pattern("$$")
+            .define('#', Items.QUARTZ_BLOCK)
+            .define('$', GlassRegistry.HOLOGLASS_BLOCK_ITEM.get())
+            .unlockedBy("has_quartz_block", has(Items.QUARTZ_BLOCK))
+            .unlockedBy("has_hologlass_block", has(GlassRegistry.HOLOGLASS_BLOCK_ITEM.get()))
+            .save(this.output);
+
         ShapedRecipeBuilder.shaped(this.registries.lookupOrThrow(Registries.ITEM), RecipeCategory.BUILDING_BLOCKS, LaboratoryDecorRegistry.HOLOCEILING_ITEM.get(), 8)
             .pattern("$#")
             .pattern("#$")
