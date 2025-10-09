@@ -57,60 +57,68 @@
       "model": "futuretasticdecor:block/white_sliding_door_top_right_open"
     },
     "facing=south,half=lower,hinge=left,open=false": {
-      "model": "futuretasticdecor:block/white_sliding_door_bottom_closed"
+      "model": "futuretasticdecor:block/white_sliding_door_bottom_closed",
+      "y": 180
     },
     "facing=south,half=lower,hinge=left,open=true": {
-      "model": "futuretasticdecor:block/white_sliding_door_bottom_left_open"
+      "model": "futuretasticdecor:block/white_sliding_door_bottom_left_open",
+      "y": 180
     },
     "facing=south,half=lower,hinge=right,open=false": {
-      "model": "futuretasticdecor:block/white_sliding_door_bottom_closed"
+      "model": "futuretasticdecor:block/white_sliding_door_bottom_closed",
+      "y": 180
     },
     "facing=south,half=lower,hinge=right,open=true": {
-      "model": "futuretasticdecor:block/white_sliding_door_bottom_right_open"
+      "model": "futuretasticdecor:block/white_sliding_door_bottom_right_open",
+      "y": 180
     },
     "facing=south,half=upper,hinge=left,open=false": {
-      "model": "futuretasticdecor:block/white_sliding_door_top_closed"
+      "model": "futuretasticdecor:block/white_sliding_door_top_closed",
+      "y": 180
     },
     "facing=south,half=upper,hinge=left,open=true": {
-      "model": "futuretasticdecor:block/white_sliding_door_top_left_open"
+      "model": "futuretasticdecor:block/white_sliding_door_top_left_open",
+      "y": 180
     },
     "facing=south,half=upper,hinge=right,open=false": {
-      "model": "futuretasticdecor:block/white_sliding_door_top_closed"
+      "model": "futuretasticdecor:block/white_sliding_door_top_closed",
+      "y": 180
     },
     "facing=south,half=upper,hinge=right,open=true": {
-      "model": "futuretasticdecor:block/white_sliding_door_top_right_open"
+      "model": "futuretasticdecor:block/white_sliding_door_top_right_open",
+      "y": 180
     },
     "facing=west,half=lower,hinge=left,open=false": {
       "model": "futuretasticdecor:block/white_sliding_door_bottom_closed",
-      "y": 90
+      "y": 270
     },
     "facing=west,half=lower,hinge=left,open=true": {
       "model": "futuretasticdecor:block/white_sliding_door_bottom_left_open",
-      "y": 90
+      "y": 270
     },
     "facing=west,half=lower,hinge=right,open=false": {
       "model": "futuretasticdecor:block/white_sliding_door_bottom_closed",
-      "y": 90
+      "y": 270
     },
     "facing=west,half=lower,hinge=right,open=true": {
       "model": "futuretasticdecor:block/white_sliding_door_bottom_right_open",
-      "y": 90
+      "y": 270
     },
     "facing=west,half=upper,hinge=left,open=false": {
       "model": "futuretasticdecor:block/white_sliding_door_top_closed",
-      "y": 90
+      "y": 270
     },
     "facing=west,half=upper,hinge=left,open=true": {
       "model": "futuretasticdecor:block/white_sliding_door_top_left_open",
-      "y": 90
+      "y": 270
     },
     "facing=west,half=upper,hinge=right,open=false": {
       "model": "futuretasticdecor:block/white_sliding_door_top_closed",
-      "y": 90
+      "y": 270
     },
     "facing=west,half=upper,hinge=right,open=true": {
       "model": "futuretasticdecor:block/white_sliding_door_top_right_open",
-      "y": 90
+      "y": 270
     }
   }
 }
