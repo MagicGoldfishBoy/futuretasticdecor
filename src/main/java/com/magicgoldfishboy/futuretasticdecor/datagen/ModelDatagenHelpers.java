@@ -20,6 +20,7 @@ import net.minecraft.data.PackOutput;
 import net.minecraft.util.random.WeightedList;
 import net.minecraft.world.level.block.Block;
 import net.minecraft.world.level.block.DirectionalBlock;
+import net.minecraft.world.level.block.HorizontalDirectionalBlock;
 import net.minecraft.world.level.block.state.properties.BlockStateProperties;
 
 public class ModelDatagenHelpers extends ModelProvider {
@@ -43,6 +44,20 @@ public class ModelDatagenHelpers extends ModelProvider {
             )
         );
     }
+public static void createHorizontalRotationModel(BlockModelGenerators blockModels, ItemModelGenerators itemModels, HorizontalDirectionalBlock block, Variant variant) {
+    blockModels.blockStateOutput.accept(
+        MultiVariantGenerator.dispatch(
+            block,
+            BlockModelGenerators.variant(variant)
+        ).with(
+            PropertyDispatch.modify(BlockStateProperties.HORIZONTAL_FACING) // Changed from DirectionalBlock.FACING
+                .select(Direction.SOUTH, BlockModelGenerators.NOP)
+                .select(Direction.NORTH, BlockModelGenerators.Y_ROT_180)
+                .select(Direction.WEST, BlockModelGenerators.Y_ROT_90)
+                .select(Direction.EAST, BlockModelGenerators.Y_ROT_270)
+        )
+    );
+}
     // public static void createWallpaperModel(BlockModelGenerators blockModels, ItemModelGenerators itemModels) {
     //     blockModels.createTrivialCube(LaboratoryDecorRegistry.HOLOTILES_BLOCK.get());
 

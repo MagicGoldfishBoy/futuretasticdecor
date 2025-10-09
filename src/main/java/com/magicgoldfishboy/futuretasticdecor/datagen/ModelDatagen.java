@@ -1,6 +1,7 @@
 package com.magicgoldfishboy.futuretasticdecor.datagen;
 
 import com.magicgoldfishboy.futuretasticdecor.FuturetasticDecor;
+import com.magicgoldfishboy.futuretasticdecor.block.Chair;
 import com.magicgoldfishboy.futuretasticdecor.block.ConnectableGlowBlock;
 import com.magicgoldfishboy.futuretasticdecor.block.Hologlass;
 import com.magicgoldfishboy.futuretasticdecor.block.HologlassBlock;
@@ -38,6 +39,7 @@ import net.minecraft.util.random.WeightedList;
 import net.minecraft.world.item.Item;
 import net.minecraft.world.level.block.Block;
 import net.minecraft.world.level.block.DirectionalBlock;
+import net.minecraft.world.level.block.HorizontalDirectionalBlock;
 import net.minecraft.world.level.block.state.properties.BlockStateProperties;
 import net.neoforged.neoforge.registries.DeferredHolder;
 
@@ -480,6 +482,21 @@ public class ModelDatagen extends ModelProvider {
             LaboratoryDecorRegistry.HOLOTABLE_ITEM.get(),
             ItemModelUtils.plainModel(modLocation("block/holotable_single"))
         );
+
+
+
+        Chair holochair_block = LaboratoryDecorRegistry.HOLOCHAIR.get();
+
+        Variant holochair_variant = new Variant(modLocation("block/holochair"));
+
+
+        ModelDatagenHelpers.createHorizontalRotationModel(blockModels, itemModels, holochair_block, holochair_variant);
+
+        itemModels.itemModelOutput.accept(
+            LaboratoryDecorRegistry.HOLOCHAIR_ITEM.get(),
+            ItemModelUtils.plainModel(modLocation("block/holochair"))
+        );
+
     }
     protected void registerPlanterModels(BlockModelGenerators blockModels, ItemModelGenerators itemModels) {
 

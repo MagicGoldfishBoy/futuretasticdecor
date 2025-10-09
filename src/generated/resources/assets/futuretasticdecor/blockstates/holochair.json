@@ -1,0 +1,19 @@
+{
+  "variants": {
+    "facing=east": {
+      "model": "futuretasticdecor:block/holochair",
+      "y": 270
+    },
+    "facing=north": {
+      "model": "futuretasticdecor:block/holochair",
+      "y": 180
+    },
+    "facing=south": {
+      "model": "futuretasticdecor:block/holochair"
+    },
+    "facing=west": {
+      "model": "futuretasticdecor:block/holochair",
+      "y": 90
+    }
+  }
+}

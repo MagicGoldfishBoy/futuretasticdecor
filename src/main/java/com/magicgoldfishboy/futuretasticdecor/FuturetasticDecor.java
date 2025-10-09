@@ -1,10 +1,13 @@
 package com.magicgoldfishboy.futuretasticdecor;
 
+import javax.swing.text.html.parser.Entity;
+
 import org.slf4j.Logger;
 
 import com.magicgoldfishboy.futuretasticdecor.datagen.Datagen;
 import com.magicgoldfishboy.futuretasticdecor.registry.CarbonFiberRegistry;
 import com.magicgoldfishboy.futuretasticdecor.registry.CraftingMaterialRegistry;
+import com.magicgoldfishboy.futuretasticdecor.registry.EntityRegistry;
 import com.magicgoldfishboy.futuretasticdecor.registry.GlassRegistry;
 import com.magicgoldfishboy.futuretasticdecor.registry.GlowBlockRegistry;
 import com.magicgoldfishboy.futuretasticdecor.registry.LaboratoryDecorRegistry;
@@ -14,6 +17,7 @@ import com.mojang.logging.LogUtils;
 
 import net.minecraft.client.renderer.ItemBlockRenderTypes;
 import net.minecraft.client.renderer.chunk.ChunkSectionLayer;
+import net.minecraft.client.renderer.entity.NoopRenderer;
 import net.minecraft.core.registries.BuiltInRegistries;
 import net.minecraft.core.registries.Registries;
 import net.minecraft.network.chat.Component;
@@ -28,6 +32,7 @@ import net.neoforged.fml.config.ModConfig;
 import net.neoforged.fml.ModContainer;
 import net.neoforged.fml.event.lifecycle.FMLClientSetupEvent;
 import net.neoforged.fml.event.lifecycle.FMLCommonSetupEvent;
+import net.neoforged.neoforge.client.event.EntityRenderersEvent;
 import net.neoforged.neoforge.common.NeoForge;
 import net.neoforged.neoforge.data.event.GatherDataEvent;
 import net.neoforged.neoforge.event.entity.player.ItemTooltipEvent;
@@ -70,6 +75,8 @@ public class FuturetasticDecor {
 
         modEventBus.addListener(this::onClientSetup);
 
+        modEventBus.addListener(this::onRegisterRenderers);
+
 
         BLOCKS.register(modEventBus);
 
@@ -77,6 +84,8 @@ public class FuturetasticDecor {
 
         CREATIVE_MODE_TABS.register(modEventBus);
 
+
+        EntityRegistry.init(modEventBus);
 
         CraftingMaterialRegistry.registerCraftingMaterials();
 
@@ -151,5 +160,10 @@ public class FuturetasticDecor {
         ItemBlockRenderTypes.setRenderLayer(GlassRegistry.HOLOGLASS_PANE.get(), ChunkSectionLayer.TRANSLUCENT);
         ItemBlockRenderTypes.setRenderLayer(MetalRegistry.STEEL_DOOR.get(), ChunkSectionLayer.TRANSLUCENT);
         ItemBlockRenderTypes.setRenderLayer(LaboratoryDecorRegistry.HOLOTABLE.get(), ChunkSectionLayer.TRANSLUCENT);
+        ItemBlockRenderTypes.setRenderLayer(LaboratoryDecorRegistry.HOLOCHAIR.get(), ChunkSectionLayer.TRANSLUCENT);
+    }
+
+    public void onRegisterRenderers(EntityRenderersEvent.RegisterRenderers event) {
+        event.registerEntityRenderer(EntityRegistry.CHAIR_ENTITY.get(), NoopRenderer::new);
     }
 }

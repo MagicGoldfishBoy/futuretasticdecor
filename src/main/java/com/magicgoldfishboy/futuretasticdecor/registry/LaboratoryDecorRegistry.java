@@ -3,6 +3,7 @@ package com.magicgoldfishboy.futuretasticdecor.registry;
 import java.rmi.registry.Registry;
 
 import com.magicgoldfishboy.futuretasticdecor.FuturetasticDecor;
+import com.magicgoldfishboy.futuretasticdecor.block.Chair;
 import com.magicgoldfishboy.futuretasticdecor.block.Table;
 import com.magicgoldfishboy.futuretasticdecor.block.Wallpaper;
 
@@ -35,6 +36,11 @@ public class LaboratoryDecorRegistry {
     public static DeferredBlock<Table> HOLOTABLE;
 
     public static DeferredItem<BlockItem> HOLOTABLE_ITEM;
+
+
+    public static DeferredBlock<Chair> HOLOCHAIR;
+
+    public static DeferredItem<BlockItem> HOLOCHAIR_ITEM; 
 
     public static void registerAll() {
 
@@ -93,6 +99,21 @@ public class LaboratoryDecorRegistry {
         );
         HOLOTABLE_ITEM = FuturetasticDecor.ITEMS.registerSimpleBlockItem(
             HOLOTABLE
+        );
+
+        HOLOCHAIR = FuturetasticDecor.BLOCKS.register(
+            "holochair", 
+            registryName -> new Chair(BlockBehaviour.Properties.of()
+                .setId(ResourceKey.create(Registries.BLOCK, registryName))
+                .strength(5.0f, 5.5f)
+                .lightLevel(state -> 3)
+                .requiresCorrectToolForDrops()
+                .sound(SoundType.POLISHED_TUFF)
+                .noOcclusion()
+            )
+        );
+        HOLOCHAIR_ITEM = FuturetasticDecor.ITEMS.registerSimpleBlockItem(
+            HOLOCHAIR
         );
 
     }
