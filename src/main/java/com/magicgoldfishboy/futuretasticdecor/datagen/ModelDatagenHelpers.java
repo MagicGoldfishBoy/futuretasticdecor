@@ -177,6 +177,8 @@ public class ModelDatagenHelpers extends ModelProvider {
             )
         );
     }
+
+    
     public static void createConnectableBlock(BlockModelGenerators blockModels, ItemModelGenerators itemModels, Block block,
         Variant block_variant_plain, Variant block_variant_line, Variant block_variant_corner) {
 

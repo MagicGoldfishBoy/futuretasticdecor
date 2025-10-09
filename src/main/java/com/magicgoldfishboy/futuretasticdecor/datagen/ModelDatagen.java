@@ -510,6 +510,15 @@ public class ModelDatagen extends ModelProvider {
             ItemModelUtils.plainModel(modLocation("block/holobarrel"))
         );
 
+
+
+        ModelDatagenHelpers.createHorizontalRotationModel(blockModels, itemModels, LaboratoryDecorRegistry.HOLOSHELF.get(), new Variant(modLocation("block/holoshelf")));
+
+        itemModels.itemModelOutput.accept(
+            LaboratoryDecorRegistry.HOLOSHELF_ITEM.get(),
+            ItemModelUtils.plainModel(modLocation("block/holoshelf"))
+        );
+
     }
     protected void registerPlanterModels(BlockModelGenerators blockModels, ItemModelGenerators itemModels) {
 

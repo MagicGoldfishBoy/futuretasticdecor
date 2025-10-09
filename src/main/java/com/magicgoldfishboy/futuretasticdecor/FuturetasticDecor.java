@@ -170,6 +170,7 @@ public class FuturetasticDecor {
         ItemBlockRenderTypes.setRenderLayer(MetalRegistry.STEEL_DOOR.get(), ChunkSectionLayer.TRANSLUCENT);
         ItemBlockRenderTypes.setRenderLayer(LaboratoryDecorRegistry.HOLOTABLE.get(), ChunkSectionLayer.TRANSLUCENT);
         ItemBlockRenderTypes.setRenderLayer(LaboratoryDecorRegistry.HOLOCHAIR.get(), ChunkSectionLayer.TRANSLUCENT);
+        ItemBlockRenderTypes.setRenderLayer(LaboratoryDecorRegistry.HOLOSHELF.get(), ChunkSectionLayer.TRANSLUCENT);
     }
 
     public void onRegisterRenderers(EntityRenderersEvent.RegisterRenderers event) {

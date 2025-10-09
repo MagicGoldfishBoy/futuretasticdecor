@@ -5,6 +5,7 @@ import java.util.function.Supplier;
 
 import com.magicgoldfishboy.futuretasticdecor.FuturetasticDecor;
 import com.magicgoldfishboy.futuretasticdecor.block.Chair;
+import com.magicgoldfishboy.futuretasticdecor.block.Holoshelf;
 import com.magicgoldfishboy.futuretasticdecor.block.MidSizedContainer;
 import com.magicgoldfishboy.futuretasticdecor.block.Table;
 import com.magicgoldfishboy.futuretasticdecor.block.Wallpaper;
@@ -52,6 +53,12 @@ public class LaboratoryDecorRegistry {
     public static Supplier<BlockEntityType<MidSizedContainerEntity>> HOLOBARREL_ENTITY;
     
     public static DeferredItem<BlockItem> HOLOBARREL_ITEM;
+
+
+    public static DeferredBlock<Holoshelf> HOLOSHELF;
+
+    public static DeferredItem<BlockItem> HOLOSHELF_ITEM;
+
 
     public static void registerAll() {
 
@@ -145,6 +152,20 @@ public class LaboratoryDecorRegistry {
         );
         HOLOBARREL_ITEM = FuturetasticDecor.ITEMS.registerSimpleBlockItem(
             HOLOBARREL
+        );
+
+        HOLOSHELF = FuturetasticDecor.BLOCKS.register(
+            "holoshelf", 
+            registryName -> new Holoshelf(BlockBehaviour.Properties.of()
+                .setId(ResourceKey.create(Registries.BLOCK, registryName))
+                .strength(4.0f, 4.5f)
+                .requiresCorrectToolForDrops()
+                .sound(SoundType.POLISHED_TUFF)
+                .noOcclusion()
+            )
+        );
+        HOLOSHELF_ITEM = FuturetasticDecor.ITEMS.registerSimpleBlockItem(
+            HOLOSHELF
         );
 
     }

@@ -135,7 +135,8 @@
   "block.futuretasticdecor.holoceiling": "Holoceiling",
   "block.futuretasticdecor.holotable": "Holotable",
   "block.futuretasticdecor.holochair": "Holochair",
-  "block.futuretasticdecor.holobarrel": "holobarrel",
+  "block.futuretasticdecor.holobarrel": "Holobarrel",
+  "block.futuretasticdecor.holoshelf": "Holoshelf",
 
   "futuretasticdecor.configuration.title": "FuturetasticDecor Configs",
   "futuretasticdecor.configuration.section.futuretasticdecor.common.toml": "FuturetasticDecor Configs",
