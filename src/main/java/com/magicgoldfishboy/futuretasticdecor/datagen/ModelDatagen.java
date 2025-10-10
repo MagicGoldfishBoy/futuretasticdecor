@@ -143,7 +143,12 @@ public class ModelDatagen extends ModelProvider {
         blockModels.createTrivialCube(CarbonFiberRegistry.UNBAKED_CARBON_FIBER_POLYMER_BLOCK.get());
         blockModels.createTrivialCube(CarbonFiberRegistry.CARBON_FIBER_POLYMER_BLOCK.get());
     }
+
     protected void registerMetalModels(BlockModelGenerators blockModels, ItemModelGenerators itemModels) {
+        registerSteelModels(blockModels, itemModels);
+        registerStarMetalModels(blockModels, itemModels);
+    }
+    protected void registerSteelModels(BlockModelGenerators blockModels, ItemModelGenerators itemModels) {
 
         itemModels.generateFlatItem(MetalRegistry.STEEL_ALLOY.get(), ModelTemplates.FLAT_ITEM);
         itemModels.generateFlatItem(MetalRegistry.STEEL_INGOT.get(), ModelTemplates.FLAT_ITEM);
@@ -182,6 +187,19 @@ public class ModelDatagen extends ModelProvider {
 
         blockModels.createTrivialCube(MetalRegistry.PINK_GLOWING_STEEL_BLOCK.get());
     }
+    protected void registerStarMetalModels(BlockModelGenerators blockModels, ItemModelGenerators itemModels) {
+
+        itemModels.generateFlatItem(MetalRegistry.STARMETAL_ALLOY.get(), ModelTemplates.FLAT_ITEM);
+
+        itemModels.generateFlatItem(MetalRegistry.STARMETAL_NUGGET.get(), ModelTemplates.FLAT_ITEM);
+
+        itemModels.generateFlatItem(MetalRegistry.STARMETAL_INGOT.get(), ModelTemplates.FLAT_ITEM);
+
+
+        blockModels.createTrivialCube(MetalRegistry.STARMETAL_BLOCK.get());
+
+    }
+
     protected void registerGlowBlockModels(BlockModelGenerators blockModels, ItemModelGenerators itemModels) {
 
         blockModels.createTrivialCube(GlowBlockRegistry.GLOW_BLOCK.get());

@@ -1,0 +1,11 @@
+{
+  "type": "minecraft:blasting",
+  "category": "misc",
+  "cookingtime": 200,
+  "experience": 1.0,
+  "ingredient": "futuretasticdecor:starmetal_alloy",
+  "result": {
+    "count": 1,
+    "id": "futuretasticdecor:starmetal_ingot"
+  }
+}

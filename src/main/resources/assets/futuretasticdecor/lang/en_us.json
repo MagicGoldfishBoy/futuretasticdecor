@@ -124,6 +124,13 @@
   "block.futuretasticdecor.steel_planter": "Steel Planter",
   "block.futuretasticdecor.floating_steel_planter": "Floating Steel Planter",
 
+
+  "item.futuretasticdecor.starmetal_alloy": "Starmetal Alloy",
+  "item.futuretasticdecor.starmetal_ingot": "Starmetal Ingot",
+  "item.futuretasticdecor.starmetal_nugget": "Starmetal Nugget",
+  "block.futuretasticdecor.starmetal_block": "Starmetal Block",
+
+
   "block.futuretasticdecor.hologlass_block": "Hologlass Block",
   "block.futuretasticdecor.hologlass_block.tooltip": "Crouch + Right Click to toggle between translucent and opaque states",
 

@@ -1,0 +1,14 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "category": "misc",
+  "ingredients": [
+    "futuretasticdecor:stardust_powder",
+    "minecraft:raw_gold",
+    "futuretasticdecor:coke",
+    "minecraft:blaze_powder"
+  ],
+  "result": {
+    "count": 4,
+    "id": "futuretasticdecor:starmetal_alloy"
+  }
+}

@@ -613,7 +613,12 @@ public class RecipeDatagen extends RecipeProvider {
             .unlockedBy("has_anti_grav_ingot", has(CraftingMaterialRegistry.ANTI_GRAV_INGOT.get()))
             .save(this.output);
     }
+
     protected void registerMetalRecipes() {
+        registerSteelRecipes();
+        registerStarMetalRecipes();
+    }
+    protected void registerSteelRecipes() {
 
         ShapelessRecipeBuilder.shapeless(this.registries.lookupOrThrow(Registries.ITEM), RecipeCategory.MISC, MetalRegistry.STEEL_ALLOY.get(), 2)
             .requires(CraftingMaterialRegistry.COKE.get())
@@ -865,6 +870,70 @@ public class RecipeDatagen extends RecipeProvider {
             .save(this.output);
     
     }
+    protected void registerStarMetalRecipes() {
+
+        ShapelessRecipeBuilder.shapeless(this.registries.lookupOrThrow(Registries.ITEM), RecipeCategory.MISC, MetalRegistry.STARMETAL_ALLOY.get(), 4)
+            .requires(CraftingMaterialRegistry.STARDUST_POWDER.get())
+            .requires(Items.RAW_GOLD)
+            .requires(CraftingMaterialRegistry.COKE.get())
+            .requires(Items.BLAZE_POWDER)
+            .unlockedBy("has_stardust_powder", has(CraftingMaterialRegistry.STARDUST_POWDER.get()))
+            .unlockedBy("has_raw_gold", has(Items.RAW_GOLD))
+            .unlockedBy("has_coke", has(CraftingMaterialRegistry.COKE.get()))
+            .unlockedBy("has_blaze_powder", has(Items.BLAZE_POWDER))
+            .save(this.output);
+
+
+        SimpleCookingRecipeBuilder.smelting(
+            Ingredient.of(MetalRegistry.STARMETAL_ALLOY.get()),
+            RecipeCategory.MISC, 
+            MetalRegistry.STARMETAL_INGOT.get(),
+            1.0f,
+            400
+        )
+        .unlockedBy("has_star_metal_alloy", has(MetalRegistry.STARMETAL_ALLOY.get()))
+        .save(this.output, "star_metal_ingot_from_smelting");
+
+        SimpleCookingRecipeBuilder.blasting(
+            Ingredient.of(MetalRegistry.STARMETAL_ALLOY.get()),
+            RecipeCategory.MISC, 
+            MetalRegistry.STARMETAL_INGOT.get(),
+            1.0f,
+            200
+        )
+        .unlockedBy("has_star_metal_alloy", has(MetalRegistry.STARMETAL_ALLOY.get()))
+        .save(this.output, "star_metal_ingot_from_blasting");
+
+        ShapelessRecipeBuilder.shapeless(this.registries.lookupOrThrow(Registries.ITEM), RecipeCategory.MISC, MetalRegistry.STARMETAL_INGOT.get(), 9)
+            .requires(MetalRegistry.STARMETAL_BLOCK_ITEM.get())
+            .unlockedBy("has_star_metal_block", has(MetalRegistry.STARMETAL_BLOCK_ITEM.get()))
+            .save(this.output, "star_metal_ingot_from_star_metal_block");
+
+        ShapedRecipeBuilder.shaped(this.registries.lookupOrThrow(Registries.ITEM), RecipeCategory.MISC, MetalRegistry.STARMETAL_INGOT.get())
+            .pattern("###")
+            .pattern("###")
+            .pattern("###")
+            .define('#', MetalRegistry.STARMETAL_NUGGET.get())
+            .unlockedBy("has_star_metal_nugget", has(MetalRegistry.STARMETAL_NUGGET.get()))
+            .save(this.output, "star_metal_ingot_from_star_metal_nugget");
+
+
+        ShapedRecipeBuilder.shaped(this.registries.lookupOrThrow(Registries.ITEM), RecipeCategory.MISC, MetalRegistry.STARMETAL_BLOCK_ITEM.get())
+            .pattern("###")
+            .pattern("###")
+            .pattern("###")
+            .define('#', MetalRegistry.STARMETAL_INGOT.get())
+            .unlockedBy("has_star_metal_ingot", has(MetalRegistry.STARMETAL_INGOT.get()))
+            .save(this.output, "star_metal_block_from_steel_ingot");
+
+
+        ShapelessRecipeBuilder.shapeless(this.registries.lookupOrThrow(Registries.ITEM), RecipeCategory.MISC, MetalRegistry.STARMETAL_NUGGET.get(), 9)
+            .requires(MetalRegistry.STARMETAL_INGOT.get())
+            .unlockedBy("has_star_metal_ingot", has(MetalRegistry.STARMETAL_INGOT.get()))
+            .save(this.output, "star_metal_nugget_from_steel_ingot");
+    }
+
+
     protected void registerGlowBlockRecipes() {
 
         ShapelessRecipeBuilder.shapeless(this.registries.lookupOrThrow(Registries.ITEM), RecipeCategory.BUILDING_BLOCKS, GlowBlockRegistry.GLOW_BLOCK_ITEM.get(), 4)
@@ -1213,7 +1282,7 @@ public class RecipeDatagen extends RecipeProvider {
             .unlockedBy("has_hologlass", has(GlassRegistry.HOLOGLASS_BLOCK_ITEM.get()))
             .save(this.output);
 
-            
+
         ShapedRecipeBuilder.shaped(this.registries.lookupOrThrow(Registries.ITEM), RecipeCategory.REDSTONE, LaboratoryDecorRegistry.HOLO_DESK_LAMP_ITEM.get())
             .pattern("#")
             .pattern("$")

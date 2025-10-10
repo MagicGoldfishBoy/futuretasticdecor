@@ -89,12 +89,25 @@ public class MetalRegistry {
     public static DeferredItem<BlockItem> FLOATING_STEEL_PLANTER_ITEM;
 
 
+
+    public static DeferredItem<Item> STARMETAL_ALLOY;
+    public static DeferredItem<Item> STARMETAL_INGOT;
+    public static DeferredItem<Item> STARMETAL_NUGGET;
+
+    public static DeferredBlock<Block> STARMETAL_BLOCK;
+    public static DeferredItem<BlockItem> STARMETAL_BLOCK_ITEM;
+
+
     public static void registerMetals() {
         registerSteel();
+        registerStarMetal();
     }
 
     private static Float STEEL_DESTROY_TIME = 4.25f;
     private static Float STEEL_EXPLOSION_RESISTANCE = 7.25f;    
+
+    private static Float STARMETAL_DESTROY_TIME = 8.5f;
+    private static Float STARMETAL_EXPLOSION_RESISTANCE = 14.5f;    
 
     public static void registerSteel() {
 
@@ -198,25 +211,6 @@ public class MetalRegistry {
         GLOWING_STEEL_BLOCK_ITEM = FuturetasticDecor.ITEMS.registerSimpleBlockItem(
             GLOWING_STEEL_BLOCK
         );
-
-        //NOTE: I'll probably just wait for a library to handle connectable textures, I have little time right now and it's very tedious
-
-        // CONNECTABLE_GLOWING_STEEL_BLOCK = FuturetasticDecor.BLOCKS.register(
-        //     "connectable_glowing_steel_block", 
-        //     registryName -> new ConnectableGlowBlock(BlockBehaviour.Properties.of()
-        //         .setId(ResourceKey.create(Registries.BLOCK, registryName))
-        //         .strength(STEEL_DESTROY_TIME, STEEL_EXPLOSION_RESISTANCE)
-        //         .requiresCorrectToolForDrops()
-        //         .lightLevel(state -> 12)
-        //         .sound(SoundType.METAL)
-        //         .friction(0.5f)
-        //     )
-        // );
-        // CONNECTABLE_GLOWING_STEEL_BLOCK_ITEM = FuturetasticDecor.ITEMS.registerSimpleBlockItem(
-        //     CONNECTABLE_GLOWING_STEEL_BLOCK
-        // );
-
-
 
         RED_GLOWING_STEEL_BLOCK = FuturetasticDecor.BLOCKS.register(
             "red_glowing_steel_block", 
@@ -424,6 +418,36 @@ public class MetalRegistry {
         FLOATING_STEEL_PLANTER_ITEM = FuturetasticDecor.ITEMS.registerSimpleBlockItem(
             FLOATING_STEEL_PLANTER
         );
+    }
+    public static void registerStarMetal() {
+
+        STARMETAL_ALLOY = FuturetasticDecor.ITEMS.registerSimpleItem(
+            "starmetal_alloy", 
+            new Item.Properties()
+        );
+        STARMETAL_INGOT = FuturetasticDecor.ITEMS.registerSimpleItem(
+            "starmetal_ingot", 
+            new Item.Properties()
+        );
+        STARMETAL_NUGGET = FuturetasticDecor.ITEMS.registerSimpleItem(
+            "starmetal_nugget", 
+            new Item.Properties()
+        );
+        
+        STARMETAL_BLOCK = FuturetasticDecor.BLOCKS.register(
+            "starmetal_block", 
+            registryName -> new Block(BlockBehaviour.Properties.of()
+                .setId(ResourceKey.create(Registries.BLOCK, registryName))
+                .strength(STARMETAL_DESTROY_TIME, STARMETAL_EXPLOSION_RESISTANCE)
+                .requiresCorrectToolForDrops()
+                .sound(SoundType.METAL)
+                .friction(0.5f)
+            )
+        ); 
+        STARMETAL_BLOCK_ITEM = FuturetasticDecor.ITEMS.registerSimpleBlockItem(
+            "starmetal_block", 
+            STARMETAL_BLOCK
+        ); 
     }
     
 }
