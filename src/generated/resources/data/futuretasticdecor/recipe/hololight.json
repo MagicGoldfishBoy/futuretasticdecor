@@ -1,0 +1,17 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "redstone",
+  "key": {
+    "#": "futuretasticdecor:steel_nugget",
+    "$": "minecraft:redstone",
+    "%": "futuretasticdecor:hologlass_block"
+  },
+  "pattern": [
+    "#$#",
+    " % "
+  ],
+  "result": {
+    "count": 4,
+    "id": "futuretasticdecor:hololight"
+  }
+}

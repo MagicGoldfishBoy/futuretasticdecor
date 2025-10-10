@@ -6,6 +6,7 @@ import java.util.function.Supplier;
 import com.magicgoldfishboy.futuretasticdecor.FuturetasticDecor;
 import com.magicgoldfishboy.futuretasticdecor.block.Chair;
 import com.magicgoldfishboy.futuretasticdecor.block.HoloCraftingTable;
+import com.magicgoldfishboy.futuretasticdecor.block.Hololight;
 import com.magicgoldfishboy.futuretasticdecor.block.Holoshelf;
 import com.magicgoldfishboy.futuretasticdecor.block.Holotv;
 import com.magicgoldfishboy.futuretasticdecor.block.MidSizedContainer;
@@ -78,6 +79,10 @@ public class LaboratoryDecorRegistry {
 
     public static DeferredBlock<HoloCraftingTable> HOLOCRAFTINGTABLE;
     public static DeferredItem<BlockItem> HOLOCRAFTINGTABLE_ITEM;
+
+
+    public static DeferredBlock<Hololight> HOLOLIGHT;
+    public static DeferredItem<BlockItem> HOLOLIGHT_ITEM;
 
 
     public static void registerAll() {
@@ -274,6 +279,22 @@ public class LaboratoryDecorRegistry {
         );
         HOLOCRAFTINGTABLE_ITEM = FuturetasticDecor.ITEMS.registerSimpleBlockItem(
             HOLOCRAFTINGTABLE
+        );
+
+        HOLOLIGHT = FuturetasticDecor.BLOCKS.register(
+            "hololight", 
+            registryName -> new Hololight(BlockBehaviour.Properties.of()
+                .setId(ResourceKey.create(Registries.BLOCK, registryName))
+                .strength(4.0f, 4.5f)
+                .instabreak()
+                .explosionResistance(1.0f)
+                .sound(SoundType.POLISHED_TUFF)
+                .noOcclusion()
+                .lightLevel(state -> 15)
+            )
+        );
+        HOLOLIGHT_ITEM = FuturetasticDecor.ITEMS.registerSimpleBlockItem(
+            HOLOLIGHT
         );
 
     }

@@ -1,4 +1,4 @@
-// 1.21.9	2025-10-09T20:53:55.185006129	SpooktasticDecor Recipes
+// 1.21.9	2025-10-09T21:43:53.872141186	SpooktasticDecor Recipes
 e68b43f2ecbc968598fa545c5cab66cdd7c7eaa2 data/futuretasticdecor/advancement/recipes/building_blocks/blue_glow_block.json
 9a8b9505d8aec11a22bbe8293e009261125893fb data/futuretasticdecor/advancement/recipes/building_blocks/blue_glow_panel.json
 13b9ba612420c38e843d0ab4ad6f3075907dbd88 data/futuretasticdecor/advancement/recipes/building_blocks/cyan_glow_block.json
@@ -83,6 +83,7 @@ ae7f664e3865024b31df049461a981092c9cc30c data/futuretasticdecor/advancement/reci
 7530dc6baa2307e2c4f540b0c0b5a8835ec7a3ab data/futuretasticdecor/advancement/recipes/misc/white_plastic_pellet.json
 7c69da92cadbb8108318effe67b53e3f9bd48756 data/futuretasticdecor/advancement/recipes/misc/yellow_plastic_block.json
 af94c62d9222d882c96a509f3b030f989fc52718 data/futuretasticdecor/advancement/recipes/misc/yellow_plastic_pellet.json
+e0aec90921d7507daaa039a734dc91c8d8f65184 data/futuretasticdecor/advancement/recipes/redstone/hololight.json
 1327056ce5cba62ae4d5416a464896077f87cbd3 data/futuretasticdecor/advancement/recipes/redstone/holotv.json
 69a643e1053ccac10fb0c59495678c9d4fb15662 data/futuretasticdecor/advancement/recipes/redstone/steel_button.json
 9af8055844ab5bc938b46f7da6b072a668e27439 data/futuretasticdecor/recipe/anti_grav_alloy.json
@@ -113,6 +114,7 @@ c8dcd7dd045a3f3d6ff378b9105ed51d4a7ba1b7 data/futuretasticdecor/recipe/holo_craf
 cc56a62efa2fa222b07e9f9b76ed60d3ae437c27 data/futuretasticdecor/recipe/holochair.json
 9af54c84158dd70378c9ec33705ecc7dd7074534 data/futuretasticdecor/recipe/hologlass_block.json
 983d462b9c4160f86de7915c1c89a71d3e505a31 data/futuretasticdecor/recipe/hologlass_pane.json
+05c2c86f5789d093c902efbed890bbf225504096 data/futuretasticdecor/recipe/hololight.json
 e0c24180ff1a713b1e0d079e094ee9673e1a788b data/futuretasticdecor/recipe/holoshelf.json
 7869a3877ffdd8f8e143ca45c5da08c834faa684 data/futuretasticdecor/recipe/holotable.json
 70a7de0c5bbefa17fc5f6deb7efd8c27098abbac data/futuretasticdecor/recipe/holotiles_block.json
