@@ -1,0 +1,16 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "redstone",
+  "key": {
+    "#": "futuretasticdecor:hololight",
+    "$": "futuretasticdecor:steel_block"
+  },
+  "pattern": [
+    "#",
+    "$"
+  ],
+  "result": {
+    "count": 1,
+    "id": "futuretasticdecor:holo_desk_lamp"
+  }
+}

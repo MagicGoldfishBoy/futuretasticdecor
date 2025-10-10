@@ -562,10 +562,21 @@ public class ModelDatagen extends ModelProvider {
             ItemModelUtils.plainModel(modLocation("block/holo_crafting_table"))
         );
 
+
+
         ModelDatagenHelpers.createRotatableStorageBlock(blockModels, itemModels, LaboratoryDecorRegistry.HOLOLIGHT.get(), new Variant(modLocation("block/hololight_off")), new Variant(modLocation("block/holo_light")));
 
         itemModels.itemModelOutput.accept(
             LaboratoryDecorRegistry.HOLOLIGHT_ITEM.get(), ItemModelUtils.plainModel(modLocation("block/holotv_off"))
+        );
+
+
+
+        ModelDatagenHelpers.createBasicDeskLampModels(blockModels, itemModels, LaboratoryDecorRegistry.HOLO_DESK_LAMP.get(), new Variant(modLocation("block/holo_desk_light_off")), 
+        new Variant(modLocation("block/holo_desk_light")));
+
+        itemModels.itemModelOutput.accept(
+            LaboratoryDecorRegistry.HOLO_DESK_LAMP_ITEM.get(), ItemModelUtils.plainModel(modLocation("block/holo_desk_light_off"))
         );
 
     }

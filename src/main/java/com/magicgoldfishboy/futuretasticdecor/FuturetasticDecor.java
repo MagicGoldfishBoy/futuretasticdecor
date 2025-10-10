@@ -181,6 +181,7 @@ public class FuturetasticDecor {
         ItemBlockRenderTypes.setRenderLayer(LaboratoryDecorRegistry.WHITE_SLIDING_DOOR.get(), ChunkSectionLayer.TRANSLUCENT);
         ItemBlockRenderTypes.setRenderLayer(LaboratoryDecorRegistry.HOLOCRAFTINGTABLE.get(), ChunkSectionLayer.TRANSLUCENT);
         ItemBlockRenderTypes.setRenderLayer(LaboratoryDecorRegistry.HOLOLIGHT.get(), ChunkSectionLayer.TRANSLUCENT);
+        ItemBlockRenderTypes.setRenderLayer(LaboratoryDecorRegistry.HOLO_DESK_LAMP.get(), ChunkSectionLayer.TRANSLUCENT);
     }
 
     public void onRegisterRenderers(EntityRenderersEvent.RegisterRenderers event) {

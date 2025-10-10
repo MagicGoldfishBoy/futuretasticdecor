@@ -1,0 +1,10 @@
+{
+  "variants": {
+    "lit=false": {
+      "model": "futuretasticdecor:block/holo_desk_light_off"
+    },
+    "lit=true": {
+      "model": "futuretasticdecor:block/holo_desk_light"
+    }
+  }
+}

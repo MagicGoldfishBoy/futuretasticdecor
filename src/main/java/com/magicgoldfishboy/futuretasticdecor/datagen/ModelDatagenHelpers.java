@@ -31,6 +31,20 @@ public class ModelDatagenHelpers extends ModelProvider {
         super(output, FuturetasticDecor.MODID);
     }
 
+    public static void createBasicDeskLampModels(BlockModelGenerators blockModels, ItemModelGenerators itemModels, Block block, Variant lamp_off, Variant lamp_on) {
+
+        MultiVariant off_multivariant = new MultiVariant(WeightedList.of(lamp_off));
+        MultiVariant on_multivariant = new MultiVariant(WeightedList.of(lamp_on));
+
+        blockModels.blockStateOutput.accept(
+            MultiVariantGenerator.dispatch(block).with(
+                PropertyDispatch.initial(BlockStateProperties.LIT)
+                    .select(false, off_multivariant)
+                    .select(true, on_multivariant)
+            )
+        );
+    }
+
     public static void createPanelModel(BlockModelGenerators blockModels, ItemModelGenerators itemModels, Panel panel, Variant panel_variant) {
         blockModels.blockStateOutput.accept(
             MultiVariantGenerator.dispatch(
