@@ -33,6 +33,25 @@ public class Hololight extends DirectionalBlock {
     public static final EnumProperty<Direction> FACING = BlockStateProperties.FACING;
     public static final BooleanProperty OPEN = BlockStateProperties.OPEN;
 
+    private static final VoxelShape SHAPE_NORTH = Shapes.or(
+            Block.box(7, 7, 15, 9, 9, 16), Block.box(7.25, 7.25, 14.75, 8.75, 8.75, 15)
+    );
+    private static final VoxelShape SHAPE_EAST = Shapes.or(
+            Block.box(0, 7, 7, 1, 9, 9), Block.box(1, 7.25, 7.25, 1.25, 8.75, 8.75)
+    );
+    private static final VoxelShape SHAPE_SOUTH = Shapes.or(
+            Block.box(7, 7, 0, 9, 9, 1), Block.box(7.25, 7.25, 1, 8.75, 8.75, 1.25)
+    );
+    private static final VoxelShape SHAPE_WEST = Shapes.or(
+            Block.box(15, 7, 7, 16, 9, 9), Block.box(14.75, 7.25, 7.25, 15, 8.75, 8.75)
+    );
+    private static final VoxelShape SHAPE_UP = Shapes.or(
+            Block.box(7, 0, 7, 9, 1, 9), Block.box(7.25, 1, 7.25, 8.75, 1.25, 8.75)
+    );
+    private static final VoxelShape SHAPE_DOWN = Shapes.or(
+            Block.box(7, 15, 7, 9, 16, 9), Block.box(7.25, 14.75, 7.25, 8.75, 15, 8.75)
+    );
+
     public Hololight(Properties properties) {
         super(properties);
     }
@@ -44,9 +63,19 @@ public class Hololight extends DirectionalBlock {
 
     @Override
     public VoxelShape getShape(BlockState state, BlockGetter world, BlockPos pos, CollisionContext context) {
-        return Shapes.or(
-            Block.box(7, 0, 7, 9, 1, 9), Block.box(7.25, 1, 7.25, 8.75, 1.25, 8.75)
-        );
+        VoxelShape facing = switch (state.getValue(FACING)) {
+            case Direction.NORTH -> SHAPE_NORTH;
+            case Direction.EAST -> SHAPE_EAST;
+            case Direction.SOUTH -> SHAPE_SOUTH;
+            case Direction.WEST -> SHAPE_WEST;
+            case Direction.UP -> SHAPE_UP;
+            case Direction.DOWN -> SHAPE_DOWN;
+            default -> SHAPE_SOUTH;
+        };
+        return facing;
+        // return Shapes.or(
+        //     Block.box(7, 0, 7, 9, 1, 9), Block.box(7.25, 1, 7.25, 8.75, 1.25, 8.75)
+        // );
     }
     
     @Override
