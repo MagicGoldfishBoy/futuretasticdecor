@@ -1,0 +1,8 @@
+{
+  "parent": "minecraft:block/outer_stairs",
+  "textures": {
+    "bottom": "futuretasticdecor:block/starmetal_block",
+    "side": "futuretasticdecor:block/starmetal_block",
+    "top": "futuretasticdecor:block/starmetal_block"
+  }
+}

@@ -931,6 +931,36 @@ public class RecipeDatagen extends RecipeProvider {
             .requires(MetalRegistry.STARMETAL_INGOT.get())
             .unlockedBy("has_star_metal_ingot", has(MetalRegistry.STARMETAL_INGOT.get()))
             .save(this.output, "star_metal_nugget_from_steel_ingot");
+
+
+        ShapedRecipeBuilder.shaped(this.registries.lookupOrThrow(Registries.ITEM), RecipeCategory.BUILDING_BLOCKS, MetalRegistry.STARMETAL_SLAB_ITEM.get(), 6)
+            .pattern("###")
+            .define('#', MetalRegistry.STARMETAL_BLOCK_ITEM.get())
+            .unlockedBy("has_starmetal_block", has(MetalRegistry.STARMETAL_BLOCK_ITEM.get()))
+            .save(this.output, "starmetal_slab_by_crafting");
+        
+        SingleItemRecipeBuilder.stonecutting(Ingredient.of(MetalRegistry.STARMETAL_BLOCK_ITEM.get()), RecipeCategory.BUILDING_BLOCKS, MetalRegistry.STARMETAL_SLAB_ITEM.get(), 2)
+            .unlockedBy("has_starmetal_block", has(MetalRegistry.STARMETAL_BLOCK_ITEM.get()))
+            .save(this.output, "starmetal_slab_by_stonecutting");
+
+
+        ShapedRecipeBuilder.shaped(this.registries.lookupOrThrow(Registries.ITEM), RecipeCategory.BUILDING_BLOCKS, MetalRegistry.STARMETAL_STAIRS_ITEM.get(), 4)
+            .pattern("#  ")
+            .pattern("## ")
+            .pattern("###")
+            .define('#', MetalRegistry.STARMETAL_BLOCK_ITEM.get())
+            .unlockedBy("has_starmetal_block", has(MetalRegistry.STARMETAL_BLOCK_ITEM.get()))
+            .save(this.output, "starmetal_stairs_by_crafting");
+        
+        SingleItemRecipeBuilder.stonecutting(Ingredient.of(MetalRegistry.STARMETAL_BLOCK_ITEM.get()), RecipeCategory.BUILDING_BLOCKS, MetalRegistry.STARMETAL_STAIRS_ITEM.get())
+            .unlockedBy("has_starmetal_block", has(MetalRegistry.STARMETAL_BLOCK_ITEM.get()))
+            .save(this.output, "starmetal_stairs_by_stonecutting");
+
+
+        ShapelessRecipeBuilder.shapeless(this.registries.lookupOrThrow(Registries.ITEM), RecipeCategory.REDSTONE, MetalRegistry.STARMETAL_BUTTON_ITEM.get())
+            .requires(MetalRegistry.STARMETAL_BLOCK_ITEM.get())
+            .unlockedBy("has_starmetal_block", has(MetalRegistry.STARMETAL_BLOCK_ITEM.get()))
+            .save(this.output);
     }
 
 

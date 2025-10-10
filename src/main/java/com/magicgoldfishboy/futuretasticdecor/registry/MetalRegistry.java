@@ -97,6 +97,15 @@ public class MetalRegistry {
     public static DeferredBlock<Block> STARMETAL_BLOCK;
     public static DeferredItem<BlockItem> STARMETAL_BLOCK_ITEM;
 
+    public static DeferredBlock<SlabBlock> STARMETAL_SLAB;
+    public static DeferredItem<BlockItem> STARMETAL_SLAB_ITEM;
+
+    public static DeferredBlock<StairBlock> STARMETAL_STAIRS;
+    public static DeferredItem<BlockItem> STARMETAL_STAIRS_ITEM;
+
+    public static DeferredBlock<ButtonBlock> STARMETAL_BUTTON;
+    public static DeferredItem<BlockItem> STARMETAL_BUTTON_ITEM;
+
 
     public static void registerMetals() {
         registerSteel();
@@ -106,8 +115,11 @@ public class MetalRegistry {
     private static Float STEEL_DESTROY_TIME = 4.25f;
     private static Float STEEL_EXPLOSION_RESISTANCE = 7.25f;    
 
+
     private static Float STARMETAL_DESTROY_TIME = 8.5f;
     private static Float STARMETAL_EXPLOSION_RESISTANCE = 14.5f;    
+
+    private static SoundType STARMETAL_SOUND = SoundType.AMETHYST;
 
     public static void registerSteel() {
 
@@ -440,14 +452,56 @@ public class MetalRegistry {
                 .setId(ResourceKey.create(Registries.BLOCK, registryName))
                 .strength(STARMETAL_DESTROY_TIME, STARMETAL_EXPLOSION_RESISTANCE)
                 .requiresCorrectToolForDrops()
-                .sound(SoundType.METAL)
-                .friction(0.5f)
+                .sound(STARMETAL_SOUND)
+                .friction(0.46f)
             )
         ); 
         STARMETAL_BLOCK_ITEM = FuturetasticDecor.ITEMS.registerSimpleBlockItem(
             "starmetal_block", 
             STARMETAL_BLOCK
         ); 
+
+        STARMETAL_SLAB = FuturetasticDecor.BLOCKS.register(
+            "starmetal_slab", 
+            registryName -> new SlabBlock(BlockBehaviour.Properties.of()
+                .setId(ResourceKey.create(Registries.BLOCK, registryName))
+                .strength(STARMETAL_DESTROY_TIME / 2, STARMETAL_EXPLOSION_RESISTANCE / 2)
+                .requiresCorrectToolForDrops()
+                .sound(STARMETAL_SOUND)
+                .friction(0.46f)
+            )
+        );
+        STARMETAL_SLAB_ITEM = FuturetasticDecor.ITEMS.registerSimpleBlockItem(
+            STARMETAL_SLAB
+        );
+
+        STARMETAL_STAIRS = FuturetasticDecor.BLOCKS.register(
+            "starmetal_stairs", 
+            registryName -> new StairBlock(STARMETAL_BLOCK.get().defaultBlockState(), BlockBehaviour.Properties.of()
+                .setId(ResourceKey.create(Registries.BLOCK, registryName))
+                .strength(STARMETAL_DESTROY_TIME / 1.5f, STARMETAL_EXPLOSION_RESISTANCE / 1.5f)
+                .requiresCorrectToolForDrops()
+                .sound(STARMETAL_SOUND)
+                .friction(0.46f)
+            )
+        );
+        STARMETAL_STAIRS_ITEM = FuturetasticDecor.ITEMS.registerSimpleBlockItem(
+            STARMETAL_STAIRS
+        );
+
+        STARMETAL_BUTTON = FuturetasticDecor.BLOCKS.register(
+            "starmetal_button", 
+            registryName -> new ButtonBlock(BlockSetType.GOLD, 35, BlockBehaviour.Properties.of()
+                .setId(ResourceKey.create(Registries.BLOCK, registryName))
+                .strength(STARMETAL_DESTROY_TIME / 3.0f, STARMETAL_EXPLOSION_RESISTANCE / 3.0f)
+                .sound(STARMETAL_SOUND)
+                .instabreak()
+                .noOcclusion()
+            )
+        );
+        STARMETAL_BUTTON_ITEM = FuturetasticDecor.ITEMS.registerSimpleBlockItem(
+            STARMETAL_BUTTON
+        );
     }
     
 }

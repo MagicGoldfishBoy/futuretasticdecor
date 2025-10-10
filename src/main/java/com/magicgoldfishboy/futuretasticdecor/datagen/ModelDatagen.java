@@ -198,6 +198,11 @@ public class ModelDatagen extends ModelProvider {
 
         blockModels.createTrivialCube(MetalRegistry.STARMETAL_BLOCK.get());
 
+        blockModels.familyWithExistingFullBlock(MetalRegistry.STARMETAL_BLOCK.get())
+            .slab(MetalRegistry.STARMETAL_SLAB.get())
+            .stairs(MetalRegistry.STARMETAL_STAIRS.get())
+            .button(MetalRegistry.STARMETAL_BUTTON.get());
+
     }
 
     protected void registerGlowBlockModels(BlockModelGenerators blockModels, ItemModelGenerators itemModels) {
