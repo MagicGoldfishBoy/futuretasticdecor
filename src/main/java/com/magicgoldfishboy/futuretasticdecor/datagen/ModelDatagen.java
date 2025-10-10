@@ -205,6 +205,8 @@ public class ModelDatagen extends ModelProvider {
 
         blockModels.createGlassBlocks(MetalRegistry.STARMETAL_BARS_BLOCK.get(), MetalRegistry.STARMETAL_BARS.get());
 
+        blockModels.createTrivialCube(MetalRegistry.STARMETAL_LAMP.get());
+
     }
 
     protected void registerGlowBlockModels(BlockModelGenerators blockModels, ItemModelGenerators itemModels) {

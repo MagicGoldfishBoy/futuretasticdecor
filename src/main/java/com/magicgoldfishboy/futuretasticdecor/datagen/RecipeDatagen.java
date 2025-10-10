@@ -978,6 +978,15 @@ public class RecipeDatagen extends RecipeProvider {
             .define('#', MetalRegistry.STARMETAL_INGOT.get())
             .unlockedBy("has_starmetal_ingot", has(MetalRegistry.STARMETAL_INGOT.get()))
             .save(this.output);
+
+
+
+        ShapelessRecipeBuilder.shapeless(this.registries.lookupOrThrow(Registries.ITEM), RecipeCategory.DECORATIONS, MetalRegistry.STARMETAL_LAMP_ITEM.get())
+            .requires(MetalRegistry.STARMETAL_BARS_BLOCK_ITEM.get())
+            .requires(Items.GLOWSTONE)
+            .unlockedBy("has_starmetal_bars_block", has(MetalRegistry.STARMETAL_BARS_BLOCK_ITEM.get()))
+            .unlockedBy("has_glowstone", has(Items.GLOWSTONE))
+            .save(this.output);
     }
 
 

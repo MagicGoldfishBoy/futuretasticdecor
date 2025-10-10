@@ -113,6 +113,9 @@ public class MetalRegistry {
     public static DeferredBlock<IronBarsBlock> STARMETAL_BARS;
     public static DeferredItem<BlockItem> STARMETAL_BARS_ITEM;
 
+    public static DeferredBlock<Block> STARMETAL_LAMP;
+    public static DeferredItem<BlockItem> STARMETAL_LAMP_ITEM;
+
     public static void registerMetals() {
         registerSteel();
         registerStarMetal();
@@ -535,6 +538,20 @@ public class MetalRegistry {
         );
         STARMETAL_BARS_ITEM = FuturetasticDecor.ITEMS.registerSimpleBlockItem(
             STARMETAL_BARS
+        );
+
+        STARMETAL_LAMP = FuturetasticDecor.BLOCKS.register(
+            "starmetal_lamp", 
+            registryName -> new Block(BlockBehaviour.Properties.of()
+                .setId(ResourceKey.create(Registries.BLOCK, registryName))
+                .strength(STARMETAL_DESTROY_TIME, STARMETAL_EXPLOSION_RESISTANCE)
+                .requiresCorrectToolForDrops()
+                .sound(STARMETAL_SOUND)
+                .lightLevel(state -> 15)
+            )
+        );
+        STARMETAL_LAMP_ITEM = FuturetasticDecor.ITEMS.registerSimpleBlockItem(
+            STARMETAL_LAMP
         );
     }
     
