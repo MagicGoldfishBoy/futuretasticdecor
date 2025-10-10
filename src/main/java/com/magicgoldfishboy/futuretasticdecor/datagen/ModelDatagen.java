@@ -546,6 +546,22 @@ public class ModelDatagen extends ModelProvider {
             LaboratoryDecorRegistry.HOLOTV_ITEM.get(), ItemModelUtils.plainModel(modLocation("block/holotv_off"))
         );
 
+
+        ResourceLocation holo_crafting_table = modLocation("block/holo_crafting_table");
+        Variant holo_crafting_table_variant = new Variant(holo_crafting_table);
+
+        blockModels.blockStateOutput.accept(
+            MultiVariantGenerator.dispatch(
+                LaboratoryDecorRegistry.HOLOCRAFTINGTABLE.get(),
+                BlockModelGenerators.variant(holo_crafting_table_variant)
+            )
+        );
+
+        itemModels.itemModelOutput.accept(
+            LaboratoryDecorRegistry.HOLOCRAFTINGTABLE_ITEM.get(),
+            ItemModelUtils.plainModel(modLocation("block/holo_crafting_table"))
+        );
+
     }
     protected void registerPlanterModels(BlockModelGenerators blockModels, ItemModelGenerators itemModels) {
 

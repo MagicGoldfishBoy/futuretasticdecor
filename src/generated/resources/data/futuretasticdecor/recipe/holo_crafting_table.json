@@ -1,0 +1,8 @@
+{
+  "type": "minecraft:stonecutting",
+  "ingredient": "futuretasticdecor:hologlass_block",
+  "result": {
+    "count": 1,
+    "id": "futuretasticdecor:holo_crafting_table"
+  }
+}

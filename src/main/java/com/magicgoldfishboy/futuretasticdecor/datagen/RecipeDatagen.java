@@ -1167,6 +1167,10 @@ public class RecipeDatagen extends RecipeProvider {
             .unlockedBy("has_gold_nugget", has(Items.GOLD_NUGGET))
             .unlockedBy("has_redstone_block", has(Items.REDSTONE_BLOCK))
             .save(this.output);
+
+        SingleItemRecipeBuilder.stonecutting(Ingredient.of(GlassRegistry.HOLOGLASS_BLOCK_ITEM.get()), RecipeCategory.BUILDING_BLOCKS, LaboratoryDecorRegistry.HOLOCRAFTINGTABLE_ITEM.get())
+            .unlockedBy("has_hologlass_block", has(GlassRegistry.HOLOGLASS_BLOCK_ITEM.get()))
+            .save(this.output);
     }
     public static class Runner extends RecipeProvider.Runner {
 

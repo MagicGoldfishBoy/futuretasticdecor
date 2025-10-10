@@ -88,9 +88,6 @@ public class HoloCraftingTableMenu extends AbstractCraftingMenu {
         serverplayer.connection.send(new ClientboundContainerSetSlotPacket(menu.containerId, menu.incrementStateId(), 0, itemstack));
     }
 
-    /**
-     * Callback for when the crafting matrix is changed.
-     */
     @Override
     public void slotsChanged(Container inventory) {
         if (!this.placingRecipe) {
@@ -113,9 +110,6 @@ public class HoloCraftingTableMenu extends AbstractCraftingMenu {
         slotChangedCraftingGrid(this, level, this.player, this.craftSlots, this.resultSlots, recipe);
     }
 
-    /**
-     * Called when the container is closed.
-     */
     @Override
     public void removed(Player player) {
         super.removed(player);
