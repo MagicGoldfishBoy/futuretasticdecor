@@ -1,0 +1,8 @@
+{
+  "parent": "minecraft:block/inner_stairs",
+  "textures": {
+    "bottom": "futuretasticdecor:block/holobricks",
+    "side": "futuretasticdecor:block/holobricks",
+    "top": "futuretasticdecor:block/holobricks"
+  }
+}

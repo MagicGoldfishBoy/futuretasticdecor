@@ -48,6 +48,12 @@ public class LaboratoryDecorRegistry {
     public static DeferredBlock<Block> HOLOBRICKS;
     public static DeferredItem<BlockItem> HOLOBRICKS_ITEM;
 
+    public static DeferredBlock<SlabBlock> HOLOBRICKS_SLAB;
+    public static DeferredItem<BlockItem> HOLOBRICKS_SLAB_ITEM;
+
+    public static DeferredBlock<StairBlock> HOLOBRICKS_STAIRS;
+    public static DeferredItem<BlockItem> HOLOBRICKS_STAIRS_ITEM;
+
 
     public static DeferredBlock<Block> HOLOCEILING;
     public static DeferredItem<BlockItem> HOLOCEILING_ITEM;
@@ -133,6 +139,7 @@ public class LaboratoryDecorRegistry {
             HOLOTILES_STAIRS
         );
 
+
         HOLOWALLPAPER = FuturetasticDecor.BLOCKS.register(
             "holowallpaper", 
             registryName -> new Wallpaper(BlockBehaviour.Properties.of()
@@ -147,6 +154,7 @@ public class LaboratoryDecorRegistry {
             HOLOWALLPAPER
         );
 
+
         HOLOBRICKS = FuturetasticDecor.BLOCKS.register(
             "holobricks", 
             registryName -> new Block(BlockBehaviour.Properties.of()
@@ -160,6 +168,35 @@ public class LaboratoryDecorRegistry {
         HOLOBRICKS_ITEM = FuturetasticDecor.ITEMS.registerSimpleBlockItem(
             HOLOBRICKS
         );
+
+        HOLOBRICKS_SLAB = FuturetasticDecor.BLOCKS.register(
+            "holobricks_slab", 
+            registryName -> new SlabBlock(BlockBehaviour.Properties.of()
+                .setId(ResourceKey.create(Registries.BLOCK, registryName))
+                .strength(7.5f, 7.75f)
+                .lightLevel(state -> 4)
+                .requiresCorrectToolForDrops()
+                .sound(SoundType.TUFF)
+            )
+        );
+        HOLOBRICKS_SLAB_ITEM = FuturetasticDecor.ITEMS.registerSimpleBlockItem(
+            HOLOBRICKS_SLAB
+        );
+
+        HOLOBRICKS_STAIRS = FuturetasticDecor.BLOCKS.register(
+            "holobricks_stairs", 
+            registryName -> new StairBlock(LaboratoryDecorRegistry.HOLOBRICKS.get().defaultBlockState(), BlockBehaviour.Properties.of()
+                .setId(ResourceKey.create(Registries.BLOCK, registryName))
+                .strength(6.5f, 7.75f)
+                .lightLevel(state -> 5)
+                .requiresCorrectToolForDrops()
+                .sound(SoundType.TUFF)
+            )
+        );
+        HOLOBRICKS_STAIRS_ITEM = FuturetasticDecor.ITEMS.registerSimpleBlockItem(
+            HOLOBRICKS_STAIRS
+        );
+
 
         HOLOCEILING = FuturetasticDecor.BLOCKS.register(
             "holoceiling", 

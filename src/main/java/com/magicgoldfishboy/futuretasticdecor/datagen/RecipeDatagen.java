@@ -1086,6 +1086,7 @@ public class RecipeDatagen extends RecipeProvider {
             .unlockedBy("has_hologlass_block", has(GlassRegistry.HOLOGLASS_BLOCK_ITEM.get()))
             .save(this.output);
 
+
         ShapedRecipeBuilder.shaped(this.registries.lookupOrThrow(Registries.ITEM), RecipeCategory.BUILDING_BLOCKS, LaboratoryDecorRegistry.HOLOBRICKS_ITEM.get(), 8)
             .pattern("##")
             .pattern("$$")
@@ -1095,6 +1096,27 @@ public class RecipeDatagen extends RecipeProvider {
             .unlockedBy("has_hologlass_block", has(GlassRegistry.HOLOGLASS_BLOCK_ITEM.get()))
             .save(this.output);
 
+        ShapedRecipeBuilder.shaped(this.registries.lookupOrThrow(Registries.ITEM), RecipeCategory.BUILDING_BLOCKS, LaboratoryDecorRegistry.HOLOBRICKS_SLAB_ITEM.get(), 6)
+            .pattern("###")
+            .define('#', LaboratoryDecorRegistry.HOLOBRICKS_ITEM.get())
+            .unlockedBy("has_holobricks_item", has(LaboratoryDecorRegistry.HOLOBRICKS_ITEM.get()))
+            .save(this.output, "holobricks_slab_by_crafting");
+        SingleItemRecipeBuilder.stonecutting(Ingredient.of(LaboratoryDecorRegistry.HOLOBRICKS_ITEM.get()), RecipeCategory.BUILDING_BLOCKS, LaboratoryDecorRegistry.HOLOBRICKS_SLAB_ITEM.get(), 2)
+            .unlockedBy("has_holobricks_item", has(LaboratoryDecorRegistry.HOLOBRICKS_ITEM.get()))
+            .save(this.output, "holobricks_slab_by_stonecutting");
+
+        ShapedRecipeBuilder.shaped(this.registries.lookupOrThrow(Registries.ITEM), RecipeCategory.BUILDING_BLOCKS, LaboratoryDecorRegistry.HOLOBRICKS_STAIRS_ITEM.get(), 4)
+            .pattern("#  ")
+            .pattern("## ")
+            .pattern("###")
+            .define('#', LaboratoryDecorRegistry.HOLOBRICKS_ITEM.get())
+            .unlockedBy("has_holobricks_item", has(LaboratoryDecorRegistry.HOLOBRICKS_ITEM.get()))
+            .save(this.output, "holobricks_stairs_by_crafting");
+        SingleItemRecipeBuilder.stonecutting(Ingredient.of(LaboratoryDecorRegistry.HOLOBRICKS_ITEM.get()), RecipeCategory.BUILDING_BLOCKS, LaboratoryDecorRegistry.HOLOBRICKS_STAIRS_ITEM.get())
+            .unlockedBy("has_holobricks_item", has(LaboratoryDecorRegistry.HOLOBRICKS_ITEM.get()))
+            .save(this.output, "holobricks_stairs_by_stonecutting");
+
+
         ShapedRecipeBuilder.shaped(this.registries.lookupOrThrow(Registries.ITEM), RecipeCategory.BUILDING_BLOCKS, LaboratoryDecorRegistry.HOLOCEILING_ITEM.get(), 8)
             .pattern("$#")
             .pattern("#$")
@@ -1103,6 +1125,7 @@ public class RecipeDatagen extends RecipeProvider {
             .unlockedBy("has_quartz_block", has(Items.QUARTZ_BLOCK))
             .unlockedBy("has_hologlass_block", has(GlassRegistry.HOLOGLASS_BLOCK_ITEM.get()))
             .save(this.output);
+
 
         ShapedRecipeBuilder.shaped(this.registries.lookupOrThrow(Registries.ITEM), RecipeCategory.BUILDING_BLOCKS, LaboratoryDecorRegistry.WHITE_SLIDING_DOOR_ITEM.get(), 3)
             .pattern("##")
@@ -1114,6 +1137,7 @@ public class RecipeDatagen extends RecipeProvider {
             .unlockedBy("has_white_hologlass_block", has(GlassRegistry.HOLOGLASS_BLOCK_ITEM.get()))
             .save(this.output);
 
+
         ShapedRecipeBuilder.shaped(this.registries.lookupOrThrow(Registries.ITEM), RecipeCategory.DECORATIONS, LaboratoryDecorRegistry.HOLOTABLE_ITEM.get(), 2)
             .pattern("#$#")
             .pattern("# #")
@@ -1122,6 +1146,7 @@ public class RecipeDatagen extends RecipeProvider {
             .unlockedBy("has_steel_ingot", has(MetalRegistry.STEEL_INGOT.get()))
             .unlockedBy("has_hologlass", has(GlassRegistry.HOLOGLASS_BLOCK_ITEM.get()))
             .save(this.output);
+
 
         ShapedRecipeBuilder.shaped(this.registries.lookupOrThrow(Registries.ITEM), RecipeCategory.DECORATIONS, LaboratoryDecorRegistry.HOLOCHAIR_ITEM.get(), 4)
             .pattern("  #")
@@ -1132,6 +1157,7 @@ public class RecipeDatagen extends RecipeProvider {
             .unlockedBy("has_steel_ingot", has(MetalRegistry.STEEL_INGOT.get()))
             .unlockedBy("has_hologlass", has(GlassRegistry.HOLOGLASS_BLOCK_ITEM.get()))
             .save(this.output);
+
 
         ShapedRecipeBuilder.shaped(this.registries.lookupOrThrow(Registries.ITEM), RecipeCategory.DECORATIONS, LaboratoryDecorRegistry.HOLOBARREL_ITEM.get(), 2)
             .pattern("#$#")
@@ -1145,6 +1171,7 @@ public class RecipeDatagen extends RecipeProvider {
             .unlockedBy("has_redstone", has(Items.REDSTONE))
             .save(this.output);
 
+
         ShapedRecipeBuilder.shaped(this.registries.lookupOrThrow(Registries.ITEM), RecipeCategory.DECORATIONS, LaboratoryDecorRegistry.HOLOSHELF_ITEM.get(), 4)
             .pattern("###")
             .pattern("$ $")
@@ -1153,6 +1180,7 @@ public class RecipeDatagen extends RecipeProvider {
             .unlockedBy("has_hologlass_pane", has(GlassRegistry.HOLOGLASS_PANE_ITEM.get()))
             .unlockedBy("has_steel_nugget", has(MetalRegistry.STEEL_NUGGET.get()))
             .save(this.output);
+
 
         ShapedRecipeBuilder.shaped(this.registries.lookupOrThrow(Registries.ITEM), RecipeCategory.REDSTONE, LaboratoryDecorRegistry.HOLOTV_ITEM.get())
             .pattern("#$%")
@@ -1168,9 +1196,11 @@ public class RecipeDatagen extends RecipeProvider {
             .unlockedBy("has_redstone_block", has(Items.REDSTONE_BLOCK))
             .save(this.output);
 
+
         SingleItemRecipeBuilder.stonecutting(Ingredient.of(GlassRegistry.HOLOGLASS_BLOCK_ITEM.get()), RecipeCategory.BUILDING_BLOCKS, LaboratoryDecorRegistry.HOLOCRAFTINGTABLE_ITEM.get())
             .unlockedBy("has_hologlass_block", has(GlassRegistry.HOLOGLASS_BLOCK_ITEM.get()))
             .save(this.output);
+
 
         ShapedRecipeBuilder.shaped(this.registries.lookupOrThrow(Registries.ITEM), RecipeCategory.REDSTONE, LaboratoryDecorRegistry.HOLOLIGHT_ITEM.get(), 4)
             .pattern("#$#")
@@ -1183,6 +1213,7 @@ public class RecipeDatagen extends RecipeProvider {
             .unlockedBy("has_hologlass", has(GlassRegistry.HOLOGLASS_BLOCK_ITEM.get()))
             .save(this.output);
 
+            
         ShapedRecipeBuilder.shaped(this.registries.lookupOrThrow(Registries.ITEM), RecipeCategory.REDSTONE, LaboratoryDecorRegistry.HOLO_DESK_LAMP_ITEM.get())
             .pattern("#")
             .pattern("$")

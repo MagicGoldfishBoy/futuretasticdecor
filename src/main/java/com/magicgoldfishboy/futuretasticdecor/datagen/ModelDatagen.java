@@ -450,6 +450,10 @@ public class ModelDatagen extends ModelProvider {
 
         blockModels.createTrivialCube(LaboratoryDecorRegistry.HOLOBRICKS.get());
 
+        blockModels.familyWithExistingFullBlock(LaboratoryDecorRegistry.HOLOBRICKS.get())
+            .slab(LaboratoryDecorRegistry.HOLOBRICKS_SLAB.get())
+            .stairs(LaboratoryDecorRegistry.HOLOBRICKS_STAIRS.get());
+
 
         blockModels.createTrivialCube(LaboratoryDecorRegistry.HOLOCEILING.get());
 
