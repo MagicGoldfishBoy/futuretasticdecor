@@ -961,6 +961,23 @@ public class RecipeDatagen extends RecipeProvider {
             .requires(MetalRegistry.STARMETAL_BLOCK_ITEM.get())
             .unlockedBy("has_starmetal_block", has(MetalRegistry.STARMETAL_BLOCK_ITEM.get()))
             .save(this.output);
+
+
+        ShapedRecipeBuilder.shaped(this.registries.lookupOrThrow(Registries.ITEM), RecipeCategory.DECORATIONS, MetalRegistry.STARMETAL_BARS_BLOCK_ITEM.get(), 4)
+            .pattern("###")
+            .pattern("# #")
+            .pattern("###")
+            .define('#', MetalRegistry.STARMETAL_BARS_ITEM.get())
+            .unlockedBy("has_starmetal_bars", has(MetalRegistry.STARMETAL_BARS_ITEM.get()))
+            .save(this.output);
+
+
+        ShapedRecipeBuilder.shaped(this.registries.lookupOrThrow(Registries.ITEM), RecipeCategory.DECORATIONS, MetalRegistry.STARMETAL_BARS_ITEM.get(), 16)
+            .pattern("###")
+            .pattern("###")
+            .define('#', MetalRegistry.STARMETAL_INGOT.get())
+            .unlockedBy("has_starmetal_ingot", has(MetalRegistry.STARMETAL_INGOT.get()))
+            .save(this.output);
     }
 
 

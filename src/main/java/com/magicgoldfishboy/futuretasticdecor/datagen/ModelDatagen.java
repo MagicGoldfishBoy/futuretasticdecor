@@ -203,6 +203,8 @@ public class ModelDatagen extends ModelProvider {
             .stairs(MetalRegistry.STARMETAL_STAIRS.get())
             .button(MetalRegistry.STARMETAL_BUTTON.get());
 
+        blockModels.createGlassBlocks(MetalRegistry.STARMETAL_BARS_BLOCK.get(), MetalRegistry.STARMETAL_BARS.get());
+
     }
 
     protected void registerGlowBlockModels(BlockModelGenerators blockModels, ItemModelGenerators itemModels) {

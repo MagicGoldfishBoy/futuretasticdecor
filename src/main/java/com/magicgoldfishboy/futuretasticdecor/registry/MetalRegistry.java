@@ -11,6 +11,7 @@ import net.minecraft.world.item.Item;
 import net.minecraft.world.level.block.Block;
 import net.minecraft.world.level.block.ButtonBlock;
 import net.minecraft.world.level.block.DoorBlock;
+import net.minecraft.world.level.block.IronBarsBlock;
 import net.minecraft.world.level.block.SlabBlock;
 import net.minecraft.world.level.block.SoundType;
 import net.minecraft.world.level.block.StairBlock;
@@ -106,6 +107,11 @@ public class MetalRegistry {
     public static DeferredBlock<ButtonBlock> STARMETAL_BUTTON;
     public static DeferredItem<BlockItem> STARMETAL_BUTTON_ITEM;
 
+    public static DeferredBlock<Block> STARMETAL_BARS_BLOCK;
+    public static DeferredItem<BlockItem> STARMETAL_BARS_BLOCK_ITEM;
+
+    public static DeferredBlock<IronBarsBlock> STARMETAL_BARS;
+    public static DeferredItem<BlockItem> STARMETAL_BARS_ITEM;
 
     public static void registerMetals() {
         registerSteel();
@@ -501,6 +507,34 @@ public class MetalRegistry {
         );
         STARMETAL_BUTTON_ITEM = FuturetasticDecor.ITEMS.registerSimpleBlockItem(
             STARMETAL_BUTTON
+        );
+
+        STARMETAL_BARS_BLOCK = FuturetasticDecor.BLOCKS.register(
+            "starmetal_bars_block", 
+            registryName -> new Block(BlockBehaviour.Properties.of()
+                .setId(ResourceKey.create(Registries.BLOCK, registryName))
+                .strength(STARMETAL_DESTROY_TIME / 2.5f, STARMETAL_EXPLOSION_RESISTANCE / 2.5f)
+                .requiresCorrectToolForDrops()
+                .sound(STARMETAL_SOUND)
+                .noOcclusion()
+            )
+        );
+        STARMETAL_BARS_BLOCK_ITEM = FuturetasticDecor.ITEMS.registerSimpleBlockItem(
+            STARMETAL_BARS_BLOCK
+        );
+
+        STARMETAL_BARS = FuturetasticDecor.BLOCKS.register(
+            "starmetal_bars", 
+            registryName -> new IronBarsBlock(BlockBehaviour.Properties.of()
+                .setId(ResourceKey.create(Registries.BLOCK, registryName))
+                .strength(STARMETAL_DESTROY_TIME / 3.0f, STARMETAL_EXPLOSION_RESISTANCE / 3.0f)
+                .requiresCorrectToolForDrops()
+                .sound(STARMETAL_SOUND)
+                .noOcclusion()
+            )
+        );
+        STARMETAL_BARS_ITEM = FuturetasticDecor.ITEMS.registerSimpleBlockItem(
+            STARMETAL_BARS
         );
     }
     

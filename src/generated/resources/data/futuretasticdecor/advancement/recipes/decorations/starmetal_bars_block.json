@@ -1,0 +1,32 @@
+{
+  "parent": "minecraft:recipes/root",
+  "criteria": {
+    "has_starmetal_bars": {
+      "conditions": {
+        "items": [
+          {
+            "items": "futuretasticdecor:starmetal_bars"
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    },
+    "has_the_recipe": {
+      "conditions": {
+        "recipe": "futuretasticdecor:starmetal_bars_block"
+      },
+      "trigger": "minecraft:recipe_unlocked"
+    }
+  },
+  "requirements": [
+    [
+      "has_the_recipe",
+      "has_starmetal_bars"
+    ]
+  ],
+  "rewards": {
+    "recipes": [
+      "futuretasticdecor:starmetal_bars_block"
+    ]
+  }
+}
