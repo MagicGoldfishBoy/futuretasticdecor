@@ -17,6 +17,8 @@ import net.minecraft.world.level.BlockGetter;
 import net.minecraft.world.level.Level;
 import net.minecraft.world.level.block.Block;
 import net.minecraft.world.level.block.DirectionalBlock;
+import net.minecraft.world.level.block.RedStoneOreBlock;
+import net.minecraft.world.level.block.RedStoneWireBlock;
 import net.minecraft.world.level.block.state.BlockState;
 import net.minecraft.world.level.block.state.StateDefinition;
 import net.minecraft.world.level.block.state.properties.BlockStateProperties;
@@ -73,9 +75,6 @@ public class Hololight extends DirectionalBlock {
             default -> SHAPE_SOUTH;
         };
         return facing;
-        // return Shapes.or(
-        //     Block.box(7, 0, 7, 9, 1, 9), Block.box(7.25, 1, 7.25, 8.75, 1.25, 8.75)
-        // );
     }
     
     @Override
@@ -105,6 +104,11 @@ public class Hololight extends DirectionalBlock {
             }
         }
          return InteractionResult.PASS;
+    }
+
+    @Override
+    public int getLightEmission(BlockState state, BlockGetter level, BlockPos pos) {
+        return state.getValue(OPEN) ? 15 : 0;
     }
     
 }

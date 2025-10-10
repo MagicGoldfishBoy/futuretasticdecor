@@ -1,4 +1,4 @@
-// 1.21.9	2025-10-09T21:43:53.875994999	Model Definitions - futuretasticdecor
+// 1.21.9	2025-10-10T09:33:05.774856503	Model Definitions - futuretasticdecor
 34b19a4e84c115ddba6e366f8fd71c5b16dc8773 assets/futuretasticdecor/blockstates/anti_grav_block.json
 dd707298ebb534ae609c7dd1d0fb8c39485d06d5 assets/futuretasticdecor/blockstates/blue_glow_block.json
 0e9158c3b4dc5198e4dbb12316b22a12a3a70c50 assets/futuretasticdecor/blockstates/blue_glow_panel.json
@@ -26,7 +26,7 @@ dbd974040df9050ef1dc5f852f6c800a855f3d49 assets/futuretasticdecor/blockstates/ho
 2f4b01abfa65f346b5085356fad09873005e06a2 assets/futuretasticdecor/blockstates/holochair.json
 178ee5f2ba10c72030347ae750b54ebcbd396853 assets/futuretasticdecor/blockstates/hologlass_block.json
 cca282c273d95e7ac556bb91f8fb409369b44865 assets/futuretasticdecor/blockstates/hologlass_pane.json
-444418f5078c3512d20ba1fc3b44ceaa8568450a assets/futuretasticdecor/blockstates/hololight.json
+eb33365658582a32939d7e95fba1edbcaf0a75d3 assets/futuretasticdecor/blockstates/hololight.json
 b0ef8306cf57ec6e87f8e30f44e31a71ed2fe447 assets/futuretasticdecor/blockstates/holoshelf.json
 1bdfaad905e73ff59df5c62c48212d58a6e53a6a assets/futuretasticdecor/blockstates/holotable.json
 e667563bf89cb81cfce2407d693bacdda98f70ec assets/futuretasticdecor/blockstates/holotiles_block.json

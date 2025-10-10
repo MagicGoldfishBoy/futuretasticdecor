@@ -79,5 +79,10 @@ public class Holotv extends HorizontalDirectionalBlock {
         }
          return InteractionResult.PASS;
     }
+
+    @Override
+    public int getLightEmission(BlockState state, BlockGetter level, BlockPos pos) {
+        return state.getValue(OPEN) ? 8 : 0;
+    }
     
 }

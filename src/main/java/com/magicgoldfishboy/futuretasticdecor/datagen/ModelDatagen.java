@@ -562,7 +562,7 @@ public class ModelDatagen extends ModelProvider {
             ItemModelUtils.plainModel(modLocation("block/holo_crafting_table"))
         );
 
-        ModelDatagenHelpers.createRotatableStorageBlock(blockModels, itemModels, LaboratoryDecorRegistry.HOLOLIGHT.get(), new Variant(modLocation("block/holotv_off")), new Variant(modLocation("block/holo_light")));
+        ModelDatagenHelpers.createRotatableStorageBlock(blockModels, itemModels, LaboratoryDecorRegistry.HOLOLIGHT.get(), new Variant(modLocation("block/hololight_off")), new Variant(modLocation("block/holo_light")));
 
         itemModels.itemModelOutput.accept(
             LaboratoryDecorRegistry.HOLOLIGHT_ITEM.get(), ItemModelUtils.plainModel(modLocation("block/holotv_off"))
