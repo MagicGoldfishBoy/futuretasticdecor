@@ -3,6 +3,7 @@ package com.magicgoldfishboy.futuretasticdecor.registry;
 import com.magicgoldfishboy.futuretasticdecor.FuturetasticDecor;
 import com.magicgoldfishboy.futuretasticdecor.block.ConnectableGlowBlock;
 import com.magicgoldfishboy.futuretasticdecor.block.Pillar;
+import com.magicgoldfishboy.futuretasticdecor.block.Table;
 
 import net.minecraft.client.gui.components.Button;
 import net.minecraft.core.registries.Registries;
@@ -119,6 +120,9 @@ public class MetalRegistry {
 
     public static DeferredBlock<Pillar> STARMETAL_PILLAR;
     public static DeferredItem<BlockItem> STARMETAL_PILLAR_ITEM;
+
+    public static DeferredBlock<Table> STARMETAL_TABLE;
+    public static DeferredItem<BlockItem> STARMETAL_TABLE_ITEM;
 
     public static void registerMetals() {
         registerSteel();
@@ -571,6 +575,21 @@ public class MetalRegistry {
         ); 
         STARMETAL_PILLAR_ITEM = FuturetasticDecor.ITEMS.registerSimpleBlockItem(
             STARMETAL_PILLAR
+        ); 
+
+        STARMETAL_TABLE = FuturetasticDecor.BLOCKS.register(
+            "starmetal_table", 
+            registryName -> new Table(BlockBehaviour.Properties.of()
+                .setId(ResourceKey.create(Registries.BLOCK, registryName))
+                .strength(STARMETAL_DESTROY_TIME, STARMETAL_EXPLOSION_RESISTANCE)
+                .requiresCorrectToolForDrops()
+                .sound(STARMETAL_SOUND)
+                .friction(0.46f) 
+                .noOcclusion()               
+            )
+        );
+        STARMETAL_TABLE_ITEM = FuturetasticDecor.ITEMS.registerSimpleBlockItem(
+            STARMETAL_TABLE
         ); 
     }
     

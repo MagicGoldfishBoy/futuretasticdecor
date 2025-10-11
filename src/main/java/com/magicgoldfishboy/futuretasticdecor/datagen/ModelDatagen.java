@@ -217,6 +217,22 @@ public class ModelDatagen extends ModelProvider {
             ItemModelUtils.plainModel(modLocation("block/starmetal_pillar_single"))
         );
 
+
+
+        ModelDatagenHelpers.createTableModel(blockModels, itemModels, MetalRegistry.STARMETAL_TABLE.get(), new Variant(modLocation("block/starmetal_table_single")), 
+        new Variant(modLocation("block/starmetal_table_center")), new Variant(modLocation("block/starmetal_table_north")), new Variant(modLocation("block/starmetal_table_east")), 
+        new Variant(modLocation("block/starmetal_table_south")), new Variant(modLocation("block/starmetal_table_west")), new Variant(modLocation("block/starmetal_table_north_and_south")), 
+        new Variant(modLocation("block/starmetal_table_east_and_north")), new Variant(modLocation("block/starmetal_table_east_and_south")), 
+        new Variant(modLocation("block/starmetal_table_east_and_west")), new Variant(modLocation("block/starmetal_table_west_and_north")), 
+        new Variant(modLocation("block/starmetal_table_west_and_south")), new Variant(modLocation("block/starmetal_table_north_east_south")),
+        new Variant(modLocation("block/starmetal_table_north_south_west")), new Variant(modLocation("block/starmetal_table_east_south_west")), 
+        new Variant(modLocation("block/starmetal_table_north_east_west")));
+
+        itemModels.itemModelOutput.accept(
+            MetalRegistry.STARMETAL_TABLE_ITEM.get(),
+            ItemModelUtils.plainModel(modLocation("block/starmetal_table_single"))
+        );
+
     }
 
     protected void registerGlowBlockModels(BlockModelGenerators blockModels, ItemModelGenerators itemModels) {

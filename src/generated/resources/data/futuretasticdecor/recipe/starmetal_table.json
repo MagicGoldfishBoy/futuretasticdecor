@@ -1,0 +1,15 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "misc",
+  "key": {
+    "#": "futuretasticdecor:starmetal_ingot"
+  },
+  "pattern": [
+    "###",
+    "# #"
+  ],
+  "result": {
+    "count": 2,
+    "id": "futuretasticdecor:starmetal_table"
+  }
+}

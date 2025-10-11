@@ -1,0 +1,180 @@
+{
+  "multipart": [
+    {
+      "apply": {
+        "model": "futuretasticdecor:block/starmetal_table_single"
+      },
+      "when": {
+        "east": "false",
+        "north": "false",
+        "south": "false",
+        "west": "false"
+      }
+    },
+    {
+      "apply": {
+        "model": "futuretasticdecor:block/starmetal_table_center"
+      },
+      "when": {
+        "east": "true",
+        "north": "true",
+        "south": "true",
+        "west": "true"
+      }
+    },
+    {
+      "apply": {
+        "model": "futuretasticdecor:block/starmetal_table_north"
+      },
+      "when": {
+        "east": "false",
+        "north": "true",
+        "south": "false",
+        "west": "false"
+      }
+    },
+    {
+      "apply": {
+        "model": "futuretasticdecor:block/starmetal_table_north_and_south"
+      },
+      "when": {
+        "east": "false",
+        "north": "true",
+        "south": "true",
+        "west": "false"
+      }
+    },
+    {
+      "apply": {
+        "model": "futuretasticdecor:block/starmetal_table_east"
+      },
+      "when": {
+        "east": "true",
+        "north": "false",
+        "south": "false",
+        "west": "false"
+      }
+    },
+    {
+      "apply": {
+        "model": "futuretasticdecor:block/starmetal_table_east_and_north"
+      },
+      "when": {
+        "east": "true",
+        "north": "true",
+        "south": "false",
+        "west": "false"
+      }
+    },
+    {
+      "apply": {
+        "model": "futuretasticdecor:block/starmetal_table_east_and_south"
+      },
+      "when": {
+        "east": "true",
+        "north": "false",
+        "south": "true",
+        "west": "false"
+      }
+    },
+    {
+      "apply": {
+        "model": "futuretasticdecor:block/starmetal_table_east_and_west"
+      },
+      "when": {
+        "east": "true",
+        "north": "false",
+        "south": "false",
+        "west": "true"
+      }
+    },
+    {
+      "apply": {
+        "model": "futuretasticdecor:block/starmetal_table_south"
+      },
+      "when": {
+        "east": "false",
+        "north": "false",
+        "south": "true",
+        "west": "false"
+      }
+    },
+    {
+      "apply": {
+        "model": "futuretasticdecor:block/starmetal_table_west"
+      },
+      "when": {
+        "east": "false",
+        "north": "false",
+        "south": "false",
+        "west": "true"
+      }
+    },
+    {
+      "apply": {
+        "model": "futuretasticdecor:block/starmetal_table_west_and_north"
+      },
+      "when": {
+        "east": "false",
+        "north": "true",
+        "south": "false",
+        "west": "true"
+      }
+    },
+    {
+      "apply": {
+        "model": "futuretasticdecor:block/starmetal_table_west_and_south"
+      },
+      "when": {
+        "east": "false",
+        "north": "false",
+        "south": "true",
+        "west": "true"
+      }
+    },
+    {
+      "apply": {
+        "model": "futuretasticdecor:block/starmetal_table_north_east_south"
+      },
+      "when": {
+        "east": "true",
+        "north": "true",
+        "south": "true",
+        "west": "false"
+      }
+    },
+    {
+      "apply": {
+        "model": "futuretasticdecor:block/starmetal_table_north_south_west"
+      },
+      "when": {
+        "east": "false",
+        "north": "true",
+        "south": "true",
+        "west": "true"
+      }
+    },
+    {
+      "apply": {
+        "model": "futuretasticdecor:block/starmetal_table_east_south_west"
+      },
+      "when": {
+        "east": "true",
+        "north": "false",
+        "south": "true",
+        "west": "true"
+      }
+    },
+    {
+      "apply": {
+        "model": "futuretasticdecor:block/starmetal_table_north_east_west"
+      },
+      "when": {
+        "east": "true",
+        "north": "true",
+        "south": "false",
+        "west": "true"
+      }
+    }
+  ]
+}

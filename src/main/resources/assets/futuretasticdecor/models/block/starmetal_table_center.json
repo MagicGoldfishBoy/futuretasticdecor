@@ -1,0 +1,29 @@
+{
+	"format_version": "1.21.6",
+	"credit": "Made with Blockbench",
+	"ambientocclusion": false,
+	"textures": {
+		"0": "futuretasticdecor:block/pulsating_starmetal_texture",
+		"1": "futuretasticdecor:block/starmetal_block",
+		"particle": "futuretasticdecor:block/starmetal_block"
+	},
+	"elements": [
+		{
+			"from": [0, 14, 0],
+			"to": [16, 16, 16],
+			"rotation": {"angle": 0, "axis": "y", "origin": [8, 0, 8]},
+			"faces": {
+				"up": {"uv": [0, 0, 16, 16], "rotation": 270, "texture": "#0"},
+				"down": {"uv": [0, 0, 16, 16], "rotation": 90, "texture": "#1"}
+			}
+		}
+	],
+	"groups": [
+		{
+			"name": "VoxelShapes",
+			"origin": [8, 8, 8],
+			"color": 0,
+			"children": [0]
+		}
+	]
+}

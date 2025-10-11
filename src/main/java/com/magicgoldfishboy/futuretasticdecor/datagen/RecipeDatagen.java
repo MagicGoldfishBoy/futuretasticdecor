@@ -993,6 +993,15 @@ public class RecipeDatagen extends RecipeProvider {
         SingleItemRecipeBuilder.stonecutting(Ingredient.of(MetalRegistry.STARMETAL_BLOCK_ITEM.get()), RecipeCategory.BUILDING_BLOCKS, MetalRegistry.STARMETAL_PILLAR_ITEM.get())
             .unlockedBy("has_starmetal_block", has(MetalRegistry.STARMETAL_BLOCK_ITEM.get()))
             .save(this.output);
+
+
+
+        ShapedRecipeBuilder.shaped(this.registries.lookupOrThrow(Registries.ITEM), RecipeCategory.DECORATIONS, MetalRegistry.STARMETAL_TABLE_ITEM.get(), 2)
+            .pattern("###")
+            .pattern("# #")
+            .define('#', MetalRegistry.STARMETAL_INGOT.get())
+            .unlockedBy("has_starmetal_ingot", has(MetalRegistry.STARMETAL_INGOT.get()))
+            .save(this.output);
     }
 
 
