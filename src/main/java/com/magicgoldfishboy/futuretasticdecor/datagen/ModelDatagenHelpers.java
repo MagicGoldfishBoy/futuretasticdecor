@@ -302,61 +302,95 @@ public class ModelDatagenHelpers extends ModelProvider {
         );
     }
 
-    public static void createPillarModels(BlockModelGenerators blockModels, ItemModelGenerators itemModels, Block block, Variant up_variant, Variant middle_variant, 
-    Variant down_variant, Variant single_variant) {
-
-        MultiVariant up_multivariant = new MultiVariant(WeightedList.of(up_variant));
-        MultiVariant middle_multivariant = new MultiVariant(WeightedList.of(middle_variant));
-        MultiVariant down_multivariant = new MultiVariant(WeightedList.of(down_variant));
-        MultiVariant single_multivariant = new MultiVariant(WeightedList.of(single_variant));
-
-        blockModels.blockStateOutput.accept(
-            MultiPartGenerator.multiPart(block)
-                .with(
-                    BlockModelGenerators.condition().term(BlockStateProperties.UP, true).term(BlockStateProperties.DOWN, false).term(BlockStateProperties.AXIS, Axis.Y),
-                    down_multivariant
-                ).with(
-                    BlockModelGenerators.condition().term(BlockStateProperties.UP, false).term(BlockStateProperties.DOWN, false).term(BlockStateProperties.AXIS, Axis.Y),
-                    single_multivariant
-                ).with(
-                    BlockModelGenerators.condition().term(BlockStateProperties.UP, true).term(BlockStateProperties.DOWN, true).term(BlockStateProperties.AXIS, Axis.Y),
-                    middle_multivariant
-                ).with(
-                    BlockModelGenerators.condition().term(BlockStateProperties.UP, false).term(BlockStateProperties.DOWN, true).term(BlockStateProperties.AXIS, Axis.Y),
-                    up_multivariant
-                )                
-                .with(
-                    BlockModelGenerators.condition().term(BlockStateProperties.EAST, true).term(BlockStateProperties.WEST, false).term(BlockStateProperties.AXIS, Axis.X),
-                    down_multivariant
-                ).with(
-                    BlockModelGenerators.condition().term(BlockStateProperties.EAST, false).term(BlockStateProperties.WEST, false).term(BlockStateProperties.AXIS, Axis.X),
-                    single_multivariant
-                ).with(
-                    BlockModelGenerators.condition().term(BlockStateProperties.EAST, true).term(BlockStateProperties.WEST, true).term(BlockStateProperties.AXIS, Axis.X),
-                    middle_multivariant
-                ).with(
-                    BlockModelGenerators.condition().term(BlockStateProperties.EAST, false).term(BlockStateProperties.WEST, true).term(BlockStateProperties.AXIS, Axis.X),
-                    up_multivariant
-                )
-                .with(
-                    BlockModelGenerators.condition().term(BlockStateProperties.NORTH, true).term(BlockStateProperties.SOUTH, false).term(BlockStateProperties.AXIS, Axis.Z),
-                    down_multivariant
-                ).with(
-                    BlockModelGenerators.condition().term(BlockStateProperties.NORTH, false).term(BlockStateProperties.SOUTH, false).term(BlockStateProperties.AXIS, Axis.Z),
-                    single_multivariant
-                ).with(
-                    BlockModelGenerators.condition().term(BlockStateProperties.NORTH, true).term(BlockStateProperties.SOUTH, true).term(BlockStateProperties.AXIS, Axis.Z),
-                    middle_multivariant
-                ).with(
-                    BlockModelGenerators.condition().term(BlockStateProperties.NORTH, false).term(BlockStateProperties.SOUTH, true).term(BlockStateProperties.AXIS, Axis.Z),
-                    up_multivariant
-                )
-                );
-            PropertyDispatch.modify(BlockStateProperties.AXIS)
-                .select(Axis.X, BlockModelGenerators.X_ROT_90)
-                .select(Axis.Y, BlockModelGenerators.Y_ROT_180)
-                .select(Axis.Z, BlockModelGenerators.X_ROT_90.then(BlockModelGenerators.Y_ROT_90));
-    }
+public static void createPillarModels(BlockModelGenerators blockModels, ItemModelGenerators itemModels, Block block, 
+    Variant up_variant, Variant middle_variant, Variant down_variant, Variant single_variant) {
+    MultiVariant up_multivariant = new MultiVariant(WeightedList.of(up_variant));
+    MultiVariant middle_multivariant = new MultiVariant(WeightedList.of(middle_variant));
+    MultiVariant down_multivariant = new MultiVariant(WeightedList.of(down_variant));
+    MultiVariant single_multivariant = new MultiVariant(WeightedList.of(single_variant));
+    
+    blockModels.blockStateOutput.accept(
+        MultiPartGenerator.multiPart(block)
+            // Y-axis connections (no rotation needed)
+            .with(
+                BlockModelGenerators.condition()
+                    .term(BlockStateProperties.UP, true)
+                    .term(BlockStateProperties.DOWN, false)
+                    .term(BlockStateProperties.AXIS, Axis.Y),
+                down_multivariant
+            ).with(
+                BlockModelGenerators.condition()
+                    .term(BlockStateProperties.UP, false)
+                    .term(BlockStateProperties.DOWN, false)
+                    .term(BlockStateProperties.AXIS, Axis.Y),
+                single_multivariant
+            ).with(
+                BlockModelGenerators.condition()
+                    .term(BlockStateProperties.UP, true)
+                    .term(BlockStateProperties.DOWN, true)
+                    .term(BlockStateProperties.AXIS, Axis.Y),
+                middle_multivariant
+            ).with(
+                BlockModelGenerators.condition()
+                    .term(BlockStateProperties.UP, false)
+                    .term(BlockStateProperties.DOWN, true)
+                    .term(BlockStateProperties.AXIS, Axis.Y),
+                up_multivariant
+            )
+            // X-axis connections (rotate 90° around X, then 90° around Y)
+            .with(
+                BlockModelGenerators.condition()
+                    .term(BlockStateProperties.EAST, true)
+                    .term(BlockStateProperties.WEST, false)
+                    .term(BlockStateProperties.AXIS, Axis.X),
+                down_multivariant.with(BlockModelGenerators.X_ROT_90).with(BlockModelGenerators.Y_ROT_90)
+            ).with(
+                BlockModelGenerators.condition()
+                    .term(BlockStateProperties.EAST, false)
+                    .term(BlockStateProperties.WEST, false)
+                    .term(BlockStateProperties.AXIS, Axis.X),
+                single_multivariant.with(BlockModelGenerators.X_ROT_90).with(BlockModelGenerators.Y_ROT_90)
+            ).with(
+                BlockModelGenerators.condition()
+                    .term(BlockStateProperties.EAST, true)
+                    .term(BlockStateProperties.WEST, true)
+                    .term(BlockStateProperties.AXIS, Axis.X),
+                middle_multivariant.with(BlockModelGenerators.X_ROT_90).with(BlockModelGenerators.Y_ROT_90)
+            ).with(
+                BlockModelGenerators.condition()
+                    .term(BlockStateProperties.EAST, false)
+                    .term(BlockStateProperties.WEST, true)
+                    .term(BlockStateProperties.AXIS, Axis.X),
+                up_multivariant.with(BlockModelGenerators.X_ROT_90).with(BlockModelGenerators.Y_ROT_90)
+            )
+            // Z-axis connections (rotate 90° around X)
+            .with(
+                BlockModelGenerators.condition()
+                    .term(BlockStateProperties.NORTH, true)
+                    .term(BlockStateProperties.SOUTH, false)
+                    .term(BlockStateProperties.AXIS, Axis.Z),
+                down_multivariant.with(BlockModelGenerators.X_ROT_90)
+            ).with(
+                BlockModelGenerators.condition()
+                    .term(BlockStateProperties.NORTH, false)
+                    .term(BlockStateProperties.SOUTH, false)
+                    .term(BlockStateProperties.AXIS, Axis.Z),
+                single_multivariant.with(BlockModelGenerators.X_ROT_90)
+            ).with(
+                BlockModelGenerators.condition()
+                    .term(BlockStateProperties.NORTH, true)
+                    .term(BlockStateProperties.SOUTH, true)
+                    .term(BlockStateProperties.AXIS, Axis.Z),
+                middle_multivariant.with(BlockModelGenerators.X_ROT_90)
+            ).with(
+                BlockModelGenerators.condition()
+                    .term(BlockStateProperties.NORTH, false)
+                    .term(BlockStateProperties.SOUTH, true)
+                    .term(BlockStateProperties.AXIS, Axis.Z),
+                up_multivariant.with(BlockModelGenerators.X_ROT_90)
+            )
+    );
+}
     
     public static void createConnectableBlock(BlockModelGenerators blockModels, ItemModelGenerators itemModels, Block block,
         Variant block_variant_plain, Variant block_variant_line, Variant block_variant_corner) {

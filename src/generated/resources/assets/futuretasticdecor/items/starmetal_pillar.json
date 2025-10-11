@@ -1,6 +1,6 @@
 {
   "model": {
     "type": "minecraft:model",
-    "model": "futuretasticdecor:block/starmetal_pillar"
+    "model": "futuretasticdecor:block/starmetal_pillar_single"
   }
 }

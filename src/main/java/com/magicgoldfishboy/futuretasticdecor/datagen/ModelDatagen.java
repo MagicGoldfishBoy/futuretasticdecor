@@ -212,6 +212,11 @@ public class ModelDatagen extends ModelProvider {
         ModelDatagenHelpers.createPillarModels(blockModels, itemModels, MetalRegistry.STARMETAL_PILLAR.get(), new Variant(modLocation("block/starmetal_pillar_up")), 
         new Variant(modLocation("block/starmetal_pillar_middle")), new Variant(modLocation("block/starmetal_pillar_down")), new Variant(modLocation("block/starmetal_pillar_single")));
 
+        itemModels.itemModelOutput.accept(
+            MetalRegistry.STARMETAL_PILLAR_ITEM.get(),
+            ItemModelUtils.plainModel(modLocation("block/starmetal_pillar_single"))
+        );
+
     }
 
     protected void registerGlowBlockModels(BlockModelGenerators blockModels, ItemModelGenerators itemModels) {

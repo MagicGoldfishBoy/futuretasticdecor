@@ -42,7 +42,9 @@
     },
     {
       "apply": {
-        "model": "futuretasticdecor:block/starmetal_pillar_down"
+        "model": "futuretasticdecor:block/starmetal_pillar_down",
+        "x": 90,
+        "y": 90
       },
       "when": {
         "axis": "x",
@@ -52,7 +54,9 @@
     },
     {
       "apply": {
-        "model": "futuretasticdecor:block/starmetal_pillar_single"
+        "model": "futuretasticdecor:block/starmetal_pillar_single",
+        "x": 90,
+        "y": 90
       },
       "when": {
         "axis": "x",
@@ -62,7 +66,9 @@
     },
     {
       "apply": {
-        "model": "futuretasticdecor:block/starmetal_pillar_middle"
+        "model": "futuretasticdecor:block/starmetal_pillar_middle",
+        "x": 90,
+        "y": 90
       },
       "when": {
         "axis": "x",
@@ -72,7 +78,9 @@
     },
     {
       "apply": {
-        "model": "futuretasticdecor:block/starmetal_pillar_up"
+        "model": "futuretasticdecor:block/starmetal_pillar_up",
+        "x": 90,
+        "y": 90
       },
       "when": {
         "axis": "x",
@@ -82,7 +90,8 @@
     },
     {
       "apply": {
-        "model": "futuretasticdecor:block/starmetal_pillar_down"
+        "model": "futuretasticdecor:block/starmetal_pillar_down",
+        "x": 90
       },
       "when": {
         "axis": "z",
@@ -92,7 +101,8 @@
     },
     {
       "apply": {
-        "model": "futuretasticdecor:block/starmetal_pillar_single"
+        "model": "futuretasticdecor:block/starmetal_pillar_single",
+        "x": 90
       },
       "when": {
         "axis": "z",
@@ -102,7 +112,8 @@
     },
     {
       "apply": {
-        "model": "futuretasticdecor:block/starmetal_pillar_middle"
+        "model": "futuretasticdecor:block/starmetal_pillar_middle",
+        "x": 90
       },
       "when": {
         "axis": "z",
@@ -112,7 +123,8 @@
     },
     {
       "apply": {
-        "model": "futuretasticdecor:block/starmetal_pillar_up"
+        "model": "futuretasticdecor:block/starmetal_pillar_up",
+        "x": 90
       },
       "when": {
         "axis": "z",
