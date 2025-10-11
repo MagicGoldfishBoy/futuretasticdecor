@@ -207,6 +207,11 @@ public class ModelDatagen extends ModelProvider {
 
         blockModels.createTrivialCube(MetalRegistry.STARMETAL_LAMP.get());
 
+
+
+        ModelDatagenHelpers.createPillarModels(blockModels, itemModels, MetalRegistry.STARMETAL_PILLAR.get(), new Variant(modLocation("block/starmetal_pillar_up")), 
+        new Variant(modLocation("block/starmetal_pillar_middle")), new Variant(modLocation("block/starmetal_pillar_down")), new Variant(modLocation("block/starmetal_pillar_single")));
+
     }
 
     protected void registerGlowBlockModels(BlockModelGenerators blockModels, ItemModelGenerators itemModels) {

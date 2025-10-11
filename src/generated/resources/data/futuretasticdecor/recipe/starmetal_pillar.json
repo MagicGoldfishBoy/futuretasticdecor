@@ -1,0 +1,8 @@
+{
+  "type": "minecraft:stonecutting",
+  "ingredient": "futuretasticdecor:starmetal_block",
+  "result": {
+    "count": 1,
+    "id": "futuretasticdecor:starmetal_pillar"
+  }
+}

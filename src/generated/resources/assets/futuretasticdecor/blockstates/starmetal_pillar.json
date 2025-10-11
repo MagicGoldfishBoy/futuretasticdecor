@@ -1,0 +1,124 @@
+{
+  "multipart": [
+    {
+      "apply": {
+        "model": "futuretasticdecor:block/starmetal_pillar_down"
+      },
+      "when": {
+        "axis": "y",
+        "down": "false",
+        "up": "true"
+      }
+    },
+    {
+      "apply": {
+        "model": "futuretasticdecor:block/starmetal_pillar_single"
+      },
+      "when": {
+        "axis": "y",
+        "down": "false",
+        "up": "false"
+      }
+    },
+    {
+      "apply": {
+        "model": "futuretasticdecor:block/starmetal_pillar_middle"
+      },
+      "when": {
+        "axis": "y",
+        "down": "true",
+        "up": "true"
+      }
+    },
+    {
+      "apply": {
+        "model": "futuretasticdecor:block/starmetal_pillar_up"
+      },
+      "when": {
+        "axis": "y",
+        "down": "true",
+        "up": "false"
+      }
+    },
+    {
+      "apply": {
+        "model": "futuretasticdecor:block/starmetal_pillar_down"
+      },
+      "when": {
+        "axis": "x",
+        "east": "true",
+        "west": "false"
+      }
+    },
+    {
+      "apply": {
+        "model": "futuretasticdecor:block/starmetal_pillar_single"
+      },
+      "when": {
+        "axis": "x",
+        "east": "false",
+        "west": "false"
+      }
+    },
+    {
+      "apply": {
+        "model": "futuretasticdecor:block/starmetal_pillar_middle"
+      },
+      "when": {
+        "axis": "x",
+        "east": "true",
+        "west": "true"
+      }
+    },
+    {
+      "apply": {
+        "model": "futuretasticdecor:block/starmetal_pillar_up"
+      },
+      "when": {
+        "axis": "x",
+        "east": "false",
+        "west": "true"
+      }
+    },
+    {
+      "apply": {
+        "model": "futuretasticdecor:block/starmetal_pillar_down"
+      },
+      "when": {
+        "axis": "z",
+        "north": "true",
+        "south": "false"
+      }
+    },
+    {
+      "apply": {
+        "model": "futuretasticdecor:block/starmetal_pillar_single"
+      },
+      "when": {
+        "axis": "z",
+        "north": "false",
+        "south": "false"
+      }
+    },
+    {
+      "apply": {
+        "model": "futuretasticdecor:block/starmetal_pillar_middle"
+      },
+      "when": {
+        "axis": "z",
+        "north": "true",
+        "south": "true"
+      }
+    },
+    {
+      "apply": {
+        "model": "futuretasticdecor:block/starmetal_pillar_up"
+      },
+      "when": {
+        "axis": "z",
+        "north": "false",
+        "south": "true"
+      }
+    }
+  ]
+}

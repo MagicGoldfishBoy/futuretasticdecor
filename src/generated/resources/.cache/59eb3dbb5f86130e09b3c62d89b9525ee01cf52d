@@ -1,4 +1,4 @@
-// 1.21.9	2025-10-10T13:14:36.952598476	Loot Tables
+// 1.21.9	2025-10-11T10:48:32.136758892	Loot Tables
 09a8b1713eaf0424d7db9b60e471b96bbbbe6f8b data/futuretasticdecor/loot_table/blocks/anti_grav_block.json
 7bdf73669a2e2e4b2de14d41ad96a1730de70b69 data/futuretasticdecor/loot_table/blocks/blue_glow_block.json
 4b1610f22f03c06236bdc1f25d4adeb1fce6556f data/futuretasticdecor/loot_table/blocks/blue_glow_panel.json
@@ -70,6 +70,7 @@ e545c7a930af358776825ddef4f3430c9eb4e3f0 data/futuretasticdecor/loot_table/block
 d6271025d962ca206a1e2fbabae13bea7e1b3a01 data/futuretasticdecor/loot_table/blocks/starmetal_block.json
 eff49a35c357d056c0a9f86a8d621fe7ecc8f20a data/futuretasticdecor/loot_table/blocks/starmetal_button.json
 c347e2f2768c408788ade93cf8826cddf278c9c7 data/futuretasticdecor/loot_table/blocks/starmetal_lamp.json
+dcbba1265a2901922dd2220e170106915f518e2a data/futuretasticdecor/loot_table/blocks/starmetal_pillar.json
 ca4008e7c75936799dd88bd00add95ad7df5d175 data/futuretasticdecor/loot_table/blocks/starmetal_slab.json
 b3d32a3cd32f1ae6964a30232c423668b58da9aa data/futuretasticdecor/loot_table/blocks/starmetal_stairs.json
 96730484e6e600b8854908a12f0ec2c9535375c4 data/futuretasticdecor/loot_table/blocks/steel_block.json

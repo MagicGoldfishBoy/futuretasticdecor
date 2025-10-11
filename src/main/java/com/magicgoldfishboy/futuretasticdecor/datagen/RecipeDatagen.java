@@ -987,6 +987,12 @@ public class RecipeDatagen extends RecipeProvider {
             .unlockedBy("has_starmetal_bars_block", has(MetalRegistry.STARMETAL_BARS_BLOCK_ITEM.get()))
             .unlockedBy("has_glowstone", has(Items.GLOWSTONE))
             .save(this.output);
+
+
+
+        SingleItemRecipeBuilder.stonecutting(Ingredient.of(MetalRegistry.STARMETAL_BLOCK_ITEM.get()), RecipeCategory.BUILDING_BLOCKS, MetalRegistry.STARMETAL_PILLAR_ITEM.get())
+            .unlockedBy("has_starmetal_block", has(MetalRegistry.STARMETAL_BLOCK_ITEM.get()))
+            .save(this.output);
     }
 
 
