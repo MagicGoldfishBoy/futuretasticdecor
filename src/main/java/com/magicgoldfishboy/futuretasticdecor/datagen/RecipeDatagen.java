@@ -1002,6 +1002,14 @@ public class RecipeDatagen extends RecipeProvider {
             .define('#', MetalRegistry.STARMETAL_INGOT.get())
             .unlockedBy("has_starmetal_ingot", has(MetalRegistry.STARMETAL_INGOT.get()))
             .save(this.output);
+
+        ShapedRecipeBuilder.shaped(this.registries.lookupOrThrow(Registries.ITEM), RecipeCategory.DECORATIONS, MetalRegistry.STARMETAL_CHAIR_ITEM.get(), 4)
+            .pattern("  #")
+            .pattern("###")
+            .pattern("# #")
+            .define('#', MetalRegistry.STARMETAL_INGOT.get())
+            .unlockedBy("has_starmetal_ingot", has(MetalRegistry.STARMETAL_INGOT.get()))
+            .save(this.output);
     }
 
 

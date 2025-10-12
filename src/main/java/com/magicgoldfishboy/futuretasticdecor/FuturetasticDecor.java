@@ -189,6 +189,7 @@ public class FuturetasticDecor {
         ItemBlockRenderTypes.setRenderLayer(MetalRegistry.STARMETAL_LAMP.get(), ChunkSectionLayer.TRANSLUCENT);
         ItemBlockRenderTypes.setRenderLayer(MetalRegistry.STARMETAL_PILLAR.get(), ChunkSectionLayer.TRANSLUCENT);
         ItemBlockRenderTypes.setRenderLayer(MetalRegistry.STARMETAL_TABLE.get(), ChunkSectionLayer.TRANSLUCENT);
+        ItemBlockRenderTypes.setRenderLayer(MetalRegistry.STARMETAL_CHAIR.get(), ChunkSectionLayer.TRANSLUCENT);
     }
 
     public void onRegisterRenderers(EntityRenderersEvent.RegisterRenderers event) {

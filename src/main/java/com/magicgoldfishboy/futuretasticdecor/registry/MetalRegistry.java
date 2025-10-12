@@ -1,6 +1,7 @@
 package com.magicgoldfishboy.futuretasticdecor.registry;
 
 import com.magicgoldfishboy.futuretasticdecor.FuturetasticDecor;
+import com.magicgoldfishboy.futuretasticdecor.block.Chair;
 import com.magicgoldfishboy.futuretasticdecor.block.ConnectableGlowBlock;
 import com.magicgoldfishboy.futuretasticdecor.block.Pillar;
 import com.magicgoldfishboy.futuretasticdecor.block.Table;
@@ -123,6 +124,9 @@ public class MetalRegistry {
 
     public static DeferredBlock<Table> STARMETAL_TABLE;
     public static DeferredItem<BlockItem> STARMETAL_TABLE_ITEM;
+
+    public static DeferredBlock<Chair> STARMETAL_CHAIR;
+    public static DeferredItem<BlockItem> STARMETAL_CHAIR_ITEM;
 
     public static void registerMetals() {
         registerSteel();
@@ -591,6 +595,21 @@ public class MetalRegistry {
         STARMETAL_TABLE_ITEM = FuturetasticDecor.ITEMS.registerSimpleBlockItem(
             STARMETAL_TABLE
         ); 
+
+
+        STARMETAL_CHAIR = FuturetasticDecor.BLOCKS.register(
+            "starmetal_chair", 
+            registryName -> new Chair(BlockBehaviour.Properties.of()
+                .setId(ResourceKey.create(Registries.BLOCK, registryName))
+                .strength(STARMETAL_DESTROY_TIME, STARMETAL_EXPLOSION_RESISTANCE)
+                .requiresCorrectToolForDrops()
+                .sound(STARMETAL_SOUND)
+                .noOcclusion()
+            )
+        );
+        STARMETAL_CHAIR_ITEM = FuturetasticDecor.ITEMS.registerSimpleBlockItem(
+            STARMETAL_CHAIR
+        );
     }
     
 }
