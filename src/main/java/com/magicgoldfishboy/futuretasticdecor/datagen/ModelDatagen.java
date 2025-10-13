@@ -36,6 +36,7 @@ import net.minecraft.core.registries.BuiltInRegistries;
 import net.minecraft.data.PackOutput;
 import net.minecraft.resources.ResourceLocation;
 import net.minecraft.util.random.WeightedList;
+import net.minecraft.world.item.DyeColor;
 import net.minecraft.world.item.Item;
 import net.minecraft.world.level.block.Block;
 import net.minecraft.world.level.block.DirectionalBlock;
@@ -255,6 +256,9 @@ public class ModelDatagen extends ModelProvider {
             MetalRegistry.STARMETAL_SHELF_ITEM.get(),
             ItemModelUtils.plainModel(modLocation("block/starmetal_shelf"))
         );
+
+
+        blockModels.createBed(MetalRegistry.STARMETAL_BED.get(), MetalRegistry.STARMETAL_BED.get(), DyeColor.YELLOW);
 
     }
 

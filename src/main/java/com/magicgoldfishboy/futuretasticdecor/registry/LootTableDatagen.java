@@ -9,6 +9,10 @@ import net.minecraft.data.loot.BlockLootSubProvider;
 import net.minecraft.world.flag.FeatureFlags;
 import net.minecraft.world.item.Items;
 import net.minecraft.world.level.block.Block;
+import net.minecraft.world.level.block.DoorBlock;
+import net.minecraft.world.level.block.state.properties.BedPart;
+import net.minecraft.world.level.block.state.properties.BlockStateProperties;
+import net.minecraft.world.level.block.state.properties.DoubleBlockHalf;
 
 public class LootTableDatagen extends BlockLootSubProvider {
 
@@ -40,6 +44,10 @@ protected void generate() {
 }
         if (block.getName().toString().matches(".*slab.*")) {
         this.add(block, this::createSlabItemTable);
+        return;
+}
+        if (block.getName().toString().matches(".*bed.*")) {
+        this.add(block, this.createSinglePropConditionTable(block, BlockStateProperties.BED_PART, BedPart.HEAD));
         return;
 }
         if(block.getName().toString().matches(".*door.*") && !block.getName().toString().matches(".*trapdoor.*")) {

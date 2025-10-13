@@ -1,0 +1,10 @@
+{
+  "model": {
+    "type": "minecraft:special",
+    "base": "futuretasticdecor:item/starmetal_bed",
+    "model": {
+      "type": "minecraft:bed",
+      "texture": "minecraft:yellow"
+    }
+  }
+}
