@@ -1,0 +1,18 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "misc",
+  "key": {
+    "#": "minecraft:yellow_wool",
+    "$": "futuretasticdecor:starmetal_slab",
+    "%": "futuretasticdecor:starmetal_ingot"
+  },
+  "pattern": [
+    "###",
+    "$$$",
+    "% %"
+  ],
+  "result": {
+    "count": 1,
+    "id": "futuretasticdecor:starmetal_bed"
+  }
+}

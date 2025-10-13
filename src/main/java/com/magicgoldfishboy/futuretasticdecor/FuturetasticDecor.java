@@ -1,7 +1,5 @@
 package com.magicgoldfishboy.futuretasticdecor;
 
-import javax.swing.text.html.parser.Entity;
-
 import org.slf4j.Logger;
 
 import com.magicgoldfishboy.futuretasticdecor.datagen.Datagen;
@@ -25,11 +23,9 @@ import net.minecraft.world.entity.EntityType;
 import net.minecraft.world.inventory.MenuType;
 import net.minecraft.world.item.CreativeModeTab;
 import net.minecraft.world.item.CreativeModeTabs;
-import net.minecraft.world.level.block.Blocks;
 import net.minecraft.world.level.block.entity.BlockEntityType;
 import net.neoforged.bus.api.IEventBus;
 import net.neoforged.bus.api.SubscribeEvent;
-import net.neoforged.fml.common.EventBusSubscriber;
 import net.neoforged.fml.common.Mod;
 import net.neoforged.fml.config.ModConfig;
 import net.neoforged.fml.ModContainer;

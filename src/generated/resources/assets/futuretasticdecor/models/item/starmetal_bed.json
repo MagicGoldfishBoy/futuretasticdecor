@@ -1,6 +1,6 @@
 {
   "parent": "minecraft:item/template_bed",
   "textures": {
-    "particle": "futuretasticdecor:block/starmetal_bed"
+    "particle": "futuretasticdecor:block/starmetal_block"
   }
 }

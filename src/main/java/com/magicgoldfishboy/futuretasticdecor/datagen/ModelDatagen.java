@@ -258,7 +258,7 @@ public class ModelDatagen extends ModelProvider {
         );
 
 
-        blockModels.createBed(MetalRegistry.STARMETAL_BED.get(), MetalRegistry.STARMETAL_BED.get(), DyeColor.YELLOW);
+        blockModels.createBed(MetalRegistry.STARMETAL_BED.get(), MetalRegistry.STARMETAL_BLOCK.get(), DyeColor.YELLOW);
 
     }
 

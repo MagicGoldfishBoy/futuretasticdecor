@@ -1,4 +1,4 @@
-// 1.21.9	2025-10-13T11:29:10.64127763	Model Definitions - futuretasticdecor
+// 1.21.9	2025-10-13T11:50:32.947269828	Model Definitions - futuretasticdecor
 34b19a4e84c115ddba6e366f8fd71c5b16dc8773 assets/futuretasticdecor/blockstates/anti_grav_block.json
 dd707298ebb534ae609c7dd1d0fb8c39485d06d5 assets/futuretasticdecor/blockstates/blue_glow_block.json
 0e9158c3b4dc5198e4dbb12316b22a12a3a70c50 assets/futuretasticdecor/blockstates/blue_glow_panel.json
@@ -364,7 +364,7 @@ bb938da629a8f45e504c3e66c6650f8fa63fbc8d assets/futuretasticdecor/models/item/ra
 27f841812e8474de2380f052bd0a22e28dc392f0 assets/futuretasticdecor/models/item/stardust_powder.json
 58d495d8f75807a66819c5bb8599b02562059c72 assets/futuretasticdecor/models/item/starmetal_alloy.json
 91367233f3a8418b76f479eb05e57188265413d3 assets/futuretasticdecor/models/item/starmetal_bars.json
-2d6772e532f0c97c102e82a317aad30f409a9f27 assets/futuretasticdecor/models/item/starmetal_bed.json
+5ec4e6c3e84dd588b85b8559d81c0dd58b35a8c4 assets/futuretasticdecor/models/item/starmetal_bed.json
 c476da757af53f085d4055f233d72612aaf40374 assets/futuretasticdecor/models/item/starmetal_ingot.json
 3b7ce408c3675617fcb7ef1dc66acc4121a58b03 assets/futuretasticdecor/models/item/starmetal_nugget.json
 6fba406361e02a195609ebd594ec3e1b2fdcc8a9 assets/futuretasticdecor/models/item/steel_alloy.json

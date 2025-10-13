@@ -1,0 +1,54 @@
+{
+  "parent": "minecraft:recipes/root",
+  "criteria": {
+    "has_starmetal_ingot": {
+      "conditions": {
+        "items": [
+          {
+            "items": "futuretasticdecor:starmetal_ingot"
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    },
+    "has_starmetal_slab": {
+      "conditions": {
+        "items": [
+          {
+            "items": "futuretasticdecor:starmetal_slab"
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    },
+    "has_the_recipe": {
+      "conditions": {
+        "recipe": "futuretasticdecor:starmetal_bed"
+      },
+      "trigger": "minecraft:recipe_unlocked"
+    },
+    "has_yellow_wool": {
+      "conditions": {
+        "items": [
+          {
+            "items": "minecraft:yellow_wool"
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    }
+  },
+  "requirements": [
+    [
+      "has_the_recipe",
+      "has_yellow_wool",
+      "has_starmetal_slab",
+      "has_starmetal_ingot"
+    ]
+  ],
+  "rewards": {
+    "recipes": [
+      "futuretasticdecor:starmetal_bed"
+    ]
+  }
+}
