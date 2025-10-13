@@ -59,6 +59,7 @@ public class Holoshelf extends HorizontalDirectionalBlock {
         builder.add(FACING);
     }
 
+    @SuppressWarnings("null")
     @Override
     public VoxelShape getShape(BlockState state, BlockGetter world, BlockPos pos, CollisionContext context) {
         VoxelShape facing = switch (state.getValue(FACING)) {

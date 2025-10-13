@@ -4,6 +4,7 @@ import com.magicgoldfishboy.futuretasticdecor.FuturetasticDecor;
 import com.magicgoldfishboy.futuretasticdecor.block.Chair;
 import com.magicgoldfishboy.futuretasticdecor.block.ConnectableGlowBlock;
 import com.magicgoldfishboy.futuretasticdecor.block.Pillar;
+import com.magicgoldfishboy.futuretasticdecor.block.StarmetalShelf;
 import com.magicgoldfishboy.futuretasticdecor.block.Table;
 
 import net.minecraft.client.gui.components.Button;
@@ -127,6 +128,9 @@ public class MetalRegistry {
 
     public static DeferredBlock<Chair> STARMETAL_CHAIR;
     public static DeferredItem<BlockItem> STARMETAL_CHAIR_ITEM;
+
+    public static DeferredBlock<StarmetalShelf> STARMETAL_SHELF;
+    public static DeferredItem<BlockItem> STARMETAL_SHELF_ITEM;
 
     public static void registerMetals() {
         registerSteel();
@@ -609,6 +613,20 @@ public class MetalRegistry {
         );
         STARMETAL_CHAIR_ITEM = FuturetasticDecor.ITEMS.registerSimpleBlockItem(
             STARMETAL_CHAIR
+        );
+
+        STARMETAL_SHELF = FuturetasticDecor.BLOCKS.register(
+            "starmetal_shelf", 
+            registryName -> new StarmetalShelf(BlockBehaviour.Properties.of()
+                .setId(ResourceKey.create(Registries.BLOCK, registryName))
+                .strength(STARMETAL_DESTROY_TIME / 1.5f, STARMETAL_EXPLOSION_RESISTANCE / 1.5f)
+                .requiresCorrectToolForDrops()
+                .sound(STARMETAL_SOUND)
+                .noOcclusion()
+            )
+        );
+        STARMETAL_SHELF_ITEM = FuturetasticDecor.ITEMS.registerSimpleBlockItem(
+            STARMETAL_SHELF
         );
     }
     

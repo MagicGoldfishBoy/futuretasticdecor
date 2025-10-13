@@ -1,0 +1,19 @@
+{
+  "variants": {
+    "facing=east": {
+      "model": "futuretasticdecor:block/starmetal_shelf",
+      "y": 270
+    },
+    "facing=north": {
+      "model": "futuretasticdecor:block/starmetal_shelf",
+      "y": 180
+    },
+    "facing=south": {
+      "model": "futuretasticdecor:block/starmetal_shelf"
+    },
+    "facing=west": {
+      "model": "futuretasticdecor:block/starmetal_shelf",
+      "y": 90
+    }
+  }
+}

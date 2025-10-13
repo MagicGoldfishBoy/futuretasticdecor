@@ -247,6 +247,15 @@ public class ModelDatagen extends ModelProvider {
             ItemModelUtils.plainModel(modLocation("block/starmetal_chair"))
         );
 
+
+
+        ModelDatagenHelpers.createHorizontalRotationModel(blockModels, itemModels, MetalRegistry.STARMETAL_SHELF.get(), new Variant(modLocation("block/starmetal_shelf")));
+
+        itemModels.itemModelOutput.accept(
+            MetalRegistry.STARMETAL_SHELF_ITEM.get(),
+            ItemModelUtils.plainModel(modLocation("block/starmetal_shelf"))
+        );
+
     }
 
     protected void registerGlowBlockModels(BlockModelGenerators blockModels, ItemModelGenerators itemModels) {

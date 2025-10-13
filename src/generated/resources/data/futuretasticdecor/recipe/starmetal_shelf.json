@@ -1,0 +1,16 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "misc",
+  "key": {
+    "#": "futuretasticdecor:starmetal_ingot",
+    "$": "futuretasticdecor:starmetal_nugget"
+  },
+  "pattern": [
+    "###",
+    "$ $"
+  ],
+  "result": {
+    "count": 4,
+    "id": "futuretasticdecor:starmetal_shelf"
+  }
+}
