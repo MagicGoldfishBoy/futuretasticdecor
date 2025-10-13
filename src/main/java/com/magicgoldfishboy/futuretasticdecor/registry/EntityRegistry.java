@@ -23,6 +23,7 @@ public class EntityRegistry {
 
     public static void init(IEventBus bus) {
         ENTITY_TYPES.register(bus);
+        BLOCK_ENTITIES.register(bus);
     }            
 
     public static final Supplier<EntityType<ChairEntity>> CHAIR_ENTITY =
