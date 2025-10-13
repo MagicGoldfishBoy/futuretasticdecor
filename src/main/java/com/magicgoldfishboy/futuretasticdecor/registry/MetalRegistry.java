@@ -4,14 +4,19 @@ import com.magicgoldfishboy.futuretasticdecor.FuturetasticDecor;
 import com.magicgoldfishboy.futuretasticdecor.block.Chair;
 import com.magicgoldfishboy.futuretasticdecor.block.ConnectableGlowBlock;
 import com.magicgoldfishboy.futuretasticdecor.block.Pillar;
+import com.magicgoldfishboy.futuretasticdecor.block.StarmetalBed;
 import com.magicgoldfishboy.futuretasticdecor.block.StarmetalShelf;
 import com.magicgoldfishboy.futuretasticdecor.block.Table;
+import com.mojang.serialization.MapCodec;
+import com.mojang.serialization.codecs.RecordCodecBuilder;
 
 import net.minecraft.client.gui.components.Button;
 import net.minecraft.core.registries.Registries;
 import net.minecraft.resources.ResourceKey;
 import net.minecraft.world.item.BlockItem;
+import net.minecraft.world.item.DyeColor;
 import net.minecraft.world.item.Item;
+import net.minecraft.world.level.block.BedBlock;
 import net.minecraft.world.level.block.Block;
 import net.minecraft.world.level.block.ButtonBlock;
 import net.minecraft.world.level.block.DoorBlock;
@@ -131,6 +136,9 @@ public class MetalRegistry {
 
     public static DeferredBlock<StarmetalShelf> STARMETAL_SHELF;
     public static DeferredItem<BlockItem> STARMETAL_SHELF_ITEM;
+
+    public static DeferredBlock<StarmetalBed> STARMETAL_BED;
+    public static DeferredItem<BlockItem> STARMETAL_BED_ITEM;
 
     public static void registerMetals() {
         registerSteel();
@@ -600,7 +608,6 @@ public class MetalRegistry {
             STARMETAL_TABLE
         ); 
 
-
         STARMETAL_CHAIR = FuturetasticDecor.BLOCKS.register(
             "starmetal_chair", 
             registryName -> new Chair(BlockBehaviour.Properties.of()
@@ -627,6 +634,20 @@ public class MetalRegistry {
         );
         STARMETAL_SHELF_ITEM = FuturetasticDecor.ITEMS.registerSimpleBlockItem(
             STARMETAL_SHELF
+        );
+
+        STARMETAL_BED = FuturetasticDecor.BLOCKS.register(
+            "starmetal_bed", 
+            registryName -> new StarmetalBed(DyeColor.YELLOW, BlockBehaviour.Properties.of()
+                .setId(ResourceKey.create(Registries.BLOCK, registryName))
+                .strength(STARMETAL_DESTROY_TIME, STARMETAL_EXPLOSION_RESISTANCE)
+                .requiresCorrectToolForDrops()
+                .sound(STARMETAL_SOUND)
+                .noOcclusion()
+            )
+        );
+        STARMETAL_BED_ITEM = FuturetasticDecor.ITEMS.registerSimpleBlockItem(
+            STARMETAL_BED
         );
     }
     

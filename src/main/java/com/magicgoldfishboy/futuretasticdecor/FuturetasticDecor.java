@@ -195,5 +195,6 @@ public class FuturetasticDecor {
 
     public void onRegisterRenderers(EntityRenderersEvent.RegisterRenderers event) {
         event.registerEntityRenderer(EntityRegistry.CHAIR_ENTITY.get(), NoopRenderer::new);
+        //event.registerEntityRenderer(EntityRegistry.BED_ENTITY.get(), NoopRenderer::new);
     }
 }
