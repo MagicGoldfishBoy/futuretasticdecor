@@ -8,7 +8,11 @@ import com.mojang.math.Axis;
 
 import net.minecraft.client.model.Model;
 import net.minecraft.client.model.geom.EntityModelSet;
+import net.minecraft.client.model.geom.ModelLayerLocation;
 import net.minecraft.client.model.geom.ModelLayers;
+import net.minecraft.client.model.geom.builders.LayerDefinition;
+import net.minecraft.client.model.geom.builders.MeshDefinition;
+import net.minecraft.client.model.geom.builders.PartDefinition;
 import net.minecraft.client.renderer.RenderType;
 import net.minecraft.client.renderer.Sheets;
 import net.minecraft.client.renderer.SubmitNodeCollector;
@@ -20,6 +24,7 @@ import net.minecraft.client.renderer.texture.OverlayTexture;
 import net.minecraft.client.resources.model.Material;
 import net.minecraft.client.resources.model.MaterialSet;
 import net.minecraft.core.Direction;
+import net.minecraft.resources.ResourceLocation;
 import net.minecraft.util.Unit;
 import net.minecraft.world.item.DyeColor;
 import net.minecraft.world.level.block.BedBlock;
@@ -34,11 +39,21 @@ public class StarmetalBedRenderer implements BlockEntityRenderer<BedEntity, Star
     private final Model.Simple headModel;
     private final Model.Simple footModel;
 
+    public static final ResourceLocation STARMETAL_TEXTURE = ResourceLocation.fromNamespaceAndPath("futuretasticdecor", "textures/entity/starmetal_block.png");
+
+    public static final ModelLayerLocation STARMETAL_BED_HEAD_LAYER =
+      new ModelLayerLocation(
+          ResourceLocation.fromNamespaceAndPath("futuretasticdecor", "starmetal_bed_head"),
+          "main"
+    );
+
     public StarmetalBedRenderer(BlockEntityRendererProvider.Context context) {
         this.materials = context.materials();
         EntityModelSet modelSet = context.entityModelSet();
         // You can use vanilla bed models or create your own
-        this.headModel = new Model.Simple(modelSet.bakeLayer(ModelLayers.BED_HEAD), RenderType::entitySolid);
+        this.headModel = new Model.Simple(modelSet.bakeLayer(STARMETAL_BED_HEAD_LAYER), RenderType::entitySolid);
+
+        //this.headModel = new Model.Simple(modelSet.bakeLayer(ModelLayers.BED_HEAD), RenderType::entitySolid);
         this.footModel = new Model.Simple(modelSet.bakeLayer(ModelLayers.BED_FOOT), RenderType::entitySolid);
     }
 
@@ -60,7 +75,7 @@ public class StarmetalBedRenderer implements BlockEntityRenderer<BedEntity, Star
     public void submit(StarmetalBedEntityRenderState renderState, PoseStack poseStack, 
                       SubmitNodeCollector submitNodeCollector, CameraRenderState camera) {
         // Get the material for your bed (you can use a custom color or texture)
-        Material material = Sheets.getBedMaterial(DyeColor.PURPLE); // Change to your desired color
+        Material material = Sheets.getBedMaterial(DyeColor.YELLOW);
         
         poseStack.pushPose();
         preparePose(poseStack, renderState.facing);
@@ -83,7 +98,7 @@ public class StarmetalBedRenderer implements BlockEntityRenderer<BedEntity, Star
         
         poseStack.popPose();
     }
-    
+
     private static void preparePose(PoseStack poseStack, Direction direction) {
         poseStack.translate(0.0F, 0.5625F, 0.0F);
         poseStack.mulPose(Axis.XP.rotationDegrees(90.0F));

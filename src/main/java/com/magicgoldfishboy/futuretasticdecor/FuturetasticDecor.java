@@ -88,6 +88,8 @@ public class FuturetasticDecor {
 
         modEventBus.addListener(this::onRegisterRenderers);
 
+        modEventBus.addListener(this::registerLayerDefinitions);
+
 
         BLOCKS.register(modEventBus);
 
@@ -168,10 +170,6 @@ public class FuturetasticDecor {
             }
         }
     }
-    // @SubscribeEvent
-    // public static void registerEntityRenderers(EntityRenderersEvent.RegisterRenderers event) {
-    //     event.registerBlockEntityRenderer(EntityRegistry.BED_BLOCK_ENTITY.get(), StarmetalBedRenderer::new);
-    // }
 
     public void onClientSetup(FMLClientSetupEvent event)
     {
@@ -205,4 +203,13 @@ public class FuturetasticDecor {
             context -> new StarmetalBedRenderer(context)
         );
     }
+
+    public void registerLayerDefinitions(EntityRenderersEvent.RegisterLayerDefinitions event) {
+        event.registerLayerDefinition(StarmetalBedRenderer.STARMETAL_BED_HEAD_LAYER, StarmetalBedEntityRenderState::createHeadLayer);
+    }
+
+    // @SubscribeEvent
+    // public static void registerLayerDefinitions(EntityRenderersEvent.RegisterLayerDefinitions event) {
+    //     event.add(StarmetalBedRenderer.STARMETAL_BED_HEAD_LAYER, StarmetalBedEntityRenderState::createBodyLayer);
+    // }
 }
