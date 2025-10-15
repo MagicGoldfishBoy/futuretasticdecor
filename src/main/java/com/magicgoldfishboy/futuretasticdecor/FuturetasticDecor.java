@@ -168,6 +168,9 @@ public class FuturetasticDecor {
             if (event.getItemStack().getItem() == GlassRegistry.HOLOGLASS_PANE_ITEM.get()) {
                 event.getToolTip().add(Component.translatable("block.futuretasticdecor.hologlass_pane.tooltip"));
             }
+            if (event.getItemStack().getItem() == MetalRegistry.STARMETAL_TRAMPOLINE_ITEM.get()) {
+                event.getToolTip().add(Component.translatable("block.futuretasticdecor.starmetal_trampoline.tooltip"));
+            }
         }
     }
 
@@ -194,6 +197,7 @@ public class FuturetasticDecor {
         ItemBlockRenderTypes.setRenderLayer(MetalRegistry.STARMETAL_TABLE.get(), ChunkSectionLayer.TRANSLUCENT);
         ItemBlockRenderTypes.setRenderLayer(MetalRegistry.STARMETAL_CHAIR.get(), ChunkSectionLayer.TRANSLUCENT);
         ItemBlockRenderTypes.setRenderLayer(MetalRegistry.STARMETAL_SHELF.get(), ChunkSectionLayer.TRANSLUCENT);
+        ItemBlockRenderTypes.setRenderLayer(MetalRegistry.STARMETAL_TRAMPOLINE.get(), ChunkSectionLayer.TRANSLUCENT);
     }
 
     public void onRegisterRenderers(EntityRenderersEvent.RegisterRenderers event) {

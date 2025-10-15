@@ -1,7 +1,7 @@
 {
   "model": {
     "type": "minecraft:special",
-    "base": "futuretasticdecor:item/starmetal_bed",
+    "base": "minecraft:item/air",
     "model": {
       "type": "minecraft:bed",
       "texture": "minecraft:yellow"

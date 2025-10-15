@@ -258,7 +258,22 @@ public class ModelDatagen extends ModelProvider {
         );
 
 
-       // blockModels.createBed(MetalRegistry.STARMETAL_BED.get(), MetalRegistry.STARMETAL_BLOCK.get(), DyeColor.YELLOW);
+        blockModels.createBed(MetalRegistry.STARMETAL_BED.get(), MetalRegistry.STARMETAL_BLOCK.get(), DyeColor.YELLOW);
+
+        ResourceLocation trampoline = modLocation("block/starmetal_trampoline");
+        Variant trampolinevariant = new Variant(trampoline);
+
+        blockModels.blockStateOutput.accept(
+            MultiVariantGenerator.dispatch(
+                MetalRegistry.STARMETAL_TRAMPOLINE.get(),
+                BlockModelGenerators.variant(trampolinevariant)
+            )
+        );
+
+        itemModels.itemModelOutput.accept(
+            MetalRegistry.STARMETAL_TRAMPOLINE_ITEM.get(),
+            ItemModelUtils.plainModel(trampoline)
+        );
 
     }
 

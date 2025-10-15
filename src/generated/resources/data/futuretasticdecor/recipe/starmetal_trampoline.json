@@ -1,0 +1,18 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "misc",
+  "key": {
+    "#": "futuretasticdecor:starmetal_slab",
+    "$": "futuretasticdecor:starmetal_ingot",
+    "%": "minecraft:slime_ball"
+  },
+  "pattern": [
+    "###",
+    "$%$",
+    "$ $"
+  ],
+  "result": {
+    "count": 1,
+    "id": "futuretasticdecor:starmetal_trampoline"
+  }
+}

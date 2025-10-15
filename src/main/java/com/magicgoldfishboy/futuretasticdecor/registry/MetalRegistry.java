@@ -6,6 +6,7 @@ import com.magicgoldfishboy.futuretasticdecor.block.ConnectableGlowBlock;
 import com.magicgoldfishboy.futuretasticdecor.block.Pillar;
 import com.magicgoldfishboy.futuretasticdecor.block.StarmetalBed;
 import com.magicgoldfishboy.futuretasticdecor.block.StarmetalShelf;
+import com.magicgoldfishboy.futuretasticdecor.block.StarmetalTrampoline;
 import com.magicgoldfishboy.futuretasticdecor.block.Table;
 import com.mojang.serialization.MapCodec;
 import com.mojang.serialization.codecs.RecordCodecBuilder;
@@ -139,6 +140,10 @@ public class MetalRegistry {
 
     public static DeferredBlock<StarmetalBed> STARMETAL_BED;
     public static DeferredItem<BlockItem> STARMETAL_BED_ITEM;
+
+
+    public static DeferredBlock<StarmetalTrampoline> STARMETAL_TRAMPOLINE;
+    public static DeferredItem<BlockItem> STARMETAL_TRAMPOLINE_ITEM;
 
     public static void registerMetals() {
         registerSteel();
@@ -649,6 +654,20 @@ public class MetalRegistry {
         // STARMETAL_BED_ITEM = FuturetasticDecor.ITEMS.registerSimpleBlockItem(
         //     STARMETAL_BED
         // );
+
+        STARMETAL_TRAMPOLINE = FuturetasticDecor.BLOCKS.register(
+            "starmetal_trampoline", 
+            registryName -> new StarmetalTrampoline(BlockBehaviour.Properties.of()
+                .setId(ResourceKey.create(Registries.BLOCK, registryName))
+                .strength(STARMETAL_DESTROY_TIME, STARMETAL_EXPLOSION_RESISTANCE)
+                .requiresCorrectToolForDrops()
+                .sound(STARMETAL_SOUND)
+                .noOcclusion()
+            )
+        );
+        STARMETAL_TRAMPOLINE_ITEM = FuturetasticDecor.ITEMS.registerSimpleBlockItem(
+            STARMETAL_TRAMPOLINE
+        );
     }
     
 }
