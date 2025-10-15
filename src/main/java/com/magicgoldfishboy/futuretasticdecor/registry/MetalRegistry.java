@@ -646,9 +646,9 @@ public class MetalRegistry {
                 .noOcclusion()
             )
         );
-        STARMETAL_BED_ITEM = FuturetasticDecor.ITEMS.registerSimpleBlockItem(
-            STARMETAL_BED
-        );
+        // STARMETAL_BED_ITEM = FuturetasticDecor.ITEMS.registerSimpleBlockItem(
+        //     STARMETAL_BED
+        // );
     }
     
 }
