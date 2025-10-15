@@ -22,7 +22,10 @@ import net.minecraft.client.resources.model.MaterialSet;
 import net.minecraft.core.Direction;
 import net.minecraft.util.Unit;
 import net.minecraft.world.item.DyeColor;
+import net.minecraft.world.level.block.BedBlock;
+import net.minecraft.world.level.block.entity.BedBlockEntity;
 import net.minecraft.world.level.block.state.BlockState;
+import net.minecraft.world.level.block.state.properties.BedPart;
 import net.minecraft.world.level.block.state.properties.BlockStateProperties;
 import net.minecraft.world.phys.Vec3;
 
@@ -51,8 +54,8 @@ public class StarmetalBedRenderer implements BlockEntityRenderer<BedEntity, Star
         BlockEntityRenderer.super.extractRenderState(blockEntity, renderState, partialTick, cameraPos, crumblingOverlay);
         BlockState blockState = blockEntity.getBlockState();
         renderState.facing = blockState.getValue(BlockStateProperties.HORIZONTAL_FACING);
+        renderState.isHead = blockState.getValue(BedBlock.PART) == BedPart.HEAD;
     }
-
     @Override
     public void submit(StarmetalBedEntityRenderState renderState, PoseStack poseStack, 
                       SubmitNodeCollector submitNodeCollector, CameraRenderState camera) {
@@ -63,22 +66,24 @@ public class StarmetalBedRenderer implements BlockEntityRenderer<BedEntity, Star
         preparePose(poseStack, renderState.facing);
         
         // Submit the model for rendering
+        Model.Simple model = renderState.isHead ? this.headModel : this.footModel;
+        
         submitNodeCollector.submitModel(
-            this.headModel,  // or footModel depending on which part this is
+            model,
             Unit.INSTANCE,
             poseStack,
             material.renderType(RenderType::entitySolid),
             renderState.lightCoords,
             OverlayTexture.NO_OVERLAY,
-            -1,  // Color multiplier (white = -1)
+            -1,
             this.materials.get(material),
-            0,   // Texture offset
+            0,
             renderState.breakProgress
         );
         
         poseStack.popPose();
     }
-
+    
     private static void preparePose(PoseStack poseStack, Direction direction) {
         poseStack.translate(0.0F, 0.5625F, 0.0F);
         poseStack.mulPose(Axis.XP.rotationDegrees(90.0F));

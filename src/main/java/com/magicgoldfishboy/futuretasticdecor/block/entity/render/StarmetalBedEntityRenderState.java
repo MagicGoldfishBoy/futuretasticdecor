@@ -8,4 +8,5 @@ public class StarmetalBedEntityRenderState extends BlockEntityRenderState {
 
     Direction facing;
     public DyeColor color;
+    public boolean isHead;
 }
