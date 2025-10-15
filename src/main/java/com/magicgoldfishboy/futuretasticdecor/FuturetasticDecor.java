@@ -2,6 +2,9 @@ package com.magicgoldfishboy.futuretasticdecor;
 
 import org.slf4j.Logger;
 
+import com.magicgoldfishboy.futuretasticdecor.block.entity.BedEntity;
+import com.magicgoldfishboy.futuretasticdecor.block.entity.render.StarmetalBedEntityRenderState;
+import com.magicgoldfishboy.futuretasticdecor.block.entity.render.StarmetalBedRenderer;
 import com.magicgoldfishboy.futuretasticdecor.datagen.Datagen;
 import com.magicgoldfishboy.futuretasticdecor.registry.CarbonFiberRegistry;
 import com.magicgoldfishboy.futuretasticdecor.registry.CraftingMaterialRegistry;
@@ -14,6 +17,8 @@ import com.magicgoldfishboy.futuretasticdecor.registry.PlasticRegistry;
 import com.mojang.logging.LogUtils;
 
 import net.minecraft.client.renderer.ItemBlockRenderTypes;
+import net.minecraft.client.renderer.blockentity.BlockEntityRenderer;
+import net.minecraft.client.renderer.blockentity.BlockEntityRendererProvider;
 import net.minecraft.client.renderer.chunk.ChunkSectionLayer;
 import net.minecraft.client.renderer.entity.NoopRenderer;
 import net.minecraft.core.registries.BuiltInRegistries;
@@ -23,6 +28,7 @@ import net.minecraft.world.entity.EntityType;
 import net.minecraft.world.inventory.MenuType;
 import net.minecraft.world.item.CreativeModeTab;
 import net.minecraft.world.item.CreativeModeTabs;
+import net.minecraft.world.level.block.entity.BedBlockEntity;
 import net.minecraft.world.level.block.entity.BlockEntityType;
 import net.neoforged.bus.api.IEventBus;
 import net.neoforged.bus.api.SubscribeEvent;
@@ -162,7 +168,10 @@ public class FuturetasticDecor {
             }
         }
     }
-
+    // @SubscribeEvent
+    // public static void registerEntityRenderers(EntityRenderersEvent.RegisterRenderers event) {
+    //     event.registerBlockEntityRenderer(EntityRegistry.BED_BLOCK_ENTITY.get(), StarmetalBedRenderer::new);
+    // }
 
     public void onClientSetup(FMLClientSetupEvent event)
     {
@@ -191,6 +200,9 @@ public class FuturetasticDecor {
 
     public void onRegisterRenderers(EntityRenderersEvent.RegisterRenderers event) {
         event.registerEntityRenderer(EntityRegistry.CHAIR_ENTITY.get(), NoopRenderer::new);
-        //event.registerEntityRenderer(EntityRegistry.BED_ENTITY.get(), NoopRenderer::new);
+        event.registerBlockEntityRenderer(
+            EntityRegistry.BED_ENTITY.get(),
+            context -> new StarmetalBedRenderer(context)
+        );
     }
 }

@@ -37,11 +37,11 @@ public class EntityRegistry {
                 .updateInterval(10)
     );
 
-    public static final Supplier<BlockEntityType<BedBlockEntity>> BED_BLOCK_ENTITY =
+    public static final Supplier<BlockEntityType<BedEntity>> BED_ENTITY =
         BLOCK_ENTITIES.register(
-            "bed_block_entity",
+            "bed_entity",
             () -> new BlockEntityType<>(
-                BedBlockEntity::new,
+                BedEntity::new,
                 Set.of(MetalRegistry.STARMETAL_BED.get())
             )
         );

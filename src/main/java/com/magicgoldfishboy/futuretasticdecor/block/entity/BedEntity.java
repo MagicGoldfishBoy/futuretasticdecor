@@ -9,6 +9,7 @@ import net.minecraft.world.level.block.BedBlock;
 import net.minecraft.world.level.block.entity.BlockEntity;
 import net.minecraft.world.level.block.entity.BlockEntityType;
 import net.minecraft.world.level.block.state.BlockState;
+import net.minecraft.world.phys.AABB;
 
 public class BedEntity extends BlockEntity {
     private final DyeColor color;
@@ -18,7 +19,7 @@ public class BedEntity extends BlockEntity {
     }
 
     public BedEntity(BlockPos pos, BlockState blockState, DyeColor color) {
-        super(EntityRegistry.BED_BLOCK_ENTITY.get(), pos, blockState);
+        super(EntityRegistry.BED_ENTITY.get(), pos, blockState);
         this.color = color;
     }
 
@@ -28,6 +29,10 @@ public class BedEntity extends BlockEntity {
 
     public DyeColor getColor() {
         return this.color;
+    }
+
+    public AABB getRenderBoundingBox() {
+        return new AABB(worldPosition).inflate(1.0);
     }
 }
 
