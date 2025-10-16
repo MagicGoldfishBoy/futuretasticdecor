@@ -27,15 +27,6 @@ public class HolocookerEntity extends AbstractFurnaceBlockEntity {
     
     private static final java.lang.reflect.Field COOKING_TOTAL_TIME_FIELD;
     
-    static {
-        try {
-            COOKING_TOTAL_TIME_FIELD = AbstractFurnaceBlockEntity.class.getDeclaredField("cookingTotalTime");
-            COOKING_TOTAL_TIME_FIELD.setAccessible(true);
-        } catch (NoSuchFieldException e) {
-            throw new RuntimeException(e);
-        }
-    }
-    
     private int lastScaledTotalTime = -1;
 
     public HolocookerEntity(BlockPos pos, BlockState blockState) {
@@ -49,7 +40,8 @@ public class HolocookerEntity extends AbstractFurnaceBlockEntity {
 
     @Override
     protected int getBurnDuration(FuelValues fuelValues, ItemStack stack) {
-        return (super.getBurnDuration(fuelValues, stack) / 4);
+        scaleDownCookingTime();
+        return (super.getBurnDuration(fuelValues, stack));
     }
 
     @Override
@@ -59,27 +51,47 @@ public class HolocookerEntity extends AbstractFurnaceBlockEntity {
     
     @Override
     public void setItem(int index, ItemStack stack, boolean insideTransaction) {
+        // Only scale if we're putting a NEW item in
+        // if (!stack.isEmpty() && this.getItem(index).isEmpty()) {
+        //     scaleDownCookingTime();
+        // }
         super.setItem(index, stack, insideTransaction);
-        scaleDownCookingTime();
     }
-    
-    private void scaleDownCookingTime() {
-        try {
-            int totalTime = COOKING_TOTAL_TIME_FIELD.getInt(this);
 
-            if (totalTime > 0 && totalTime != lastScaledTotalTime) {
-                int scaledTime = Math.max(1, totalTime / 4);
-                COOKING_TOTAL_TIME_FIELD.setInt(this, scaledTime);
-                lastScaledTotalTime = scaledTime;
-            }
-        } catch (IllegalAccessException e) {
-            e.printStackTrace();
+static {
+    try {
+        COOKING_TOTAL_TIME_FIELD = AbstractFurnaceBlockEntity.class.getDeclaredField("cookingTotalTime");
+        COOKING_TOTAL_TIME_FIELD.setAccessible(true);
+    } catch (NoSuchFieldException e) {
+        throw new RuntimeException(e);
+    }
+}
+
+private int originalTotalTime = -1;
+
+private void scaleDownCookingTime() {
+    try {
+        int totalTime = COOKING_TOTAL_TIME_FIELD.getInt(this);
+        if (totalTime > 0 && totalTime != originalTotalTime) {
+            originalTotalTime = totalTime;
+            int scaledTime = Math.max(1, totalTime / 2);
+            COOKING_TOTAL_TIME_FIELD.setInt(this, scaledTime);
         }
+    } catch (IllegalAccessException e) {
+        e.printStackTrace();
     }
+}
 
-    public static void serverTick(ServerLevel level, BlockPos pos, BlockState state, HolocookerEntity furnace) {
+@Override
+public void onLoad() {
+    super.onLoad();
+    originalTotalTime = -1;
+}
+
+public static void serverTick(ServerLevel level, BlockPos pos, BlockState state, HolocookerEntity furnace) {
+    // Advance cooking twice per tick
+    for (int i = 0; i < 2; i++) {
         AbstractFurnaceBlockEntity.serverTick(level, pos, state, furnace);
-        
-        furnace.scaleDownCookingTime();
     }
+}
 }

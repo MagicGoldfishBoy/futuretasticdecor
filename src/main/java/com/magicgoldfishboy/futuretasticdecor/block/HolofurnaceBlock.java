@@ -2,6 +2,7 @@ package com.magicgoldfishboy.futuretasticdecor.block;
 
 import javax.annotation.Nullable;
 
+import com.magicgoldfishboy.futuretasticdecor.block.entity.HolocookerEntity;
 import com.magicgoldfishboy.futuretasticdecor.block.entity.HolofurnaceBlockEntity;
 import com.magicgoldfishboy.futuretasticdecor.registry.LaboratoryDecorRegistry;
 import com.mojang.serialization.MapCodec;
@@ -10,6 +11,7 @@ import net.minecraft.client.particle.SpellParticle.MobEffectProvider;
 import net.minecraft.core.BlockPos;
 import net.minecraft.core.Direction;
 import net.minecraft.core.particles.ParticleTypes;
+import net.minecraft.server.level.ServerLevel;
 import net.minecraft.sounds.SoundEvents;
 import net.minecraft.sounds.SoundSource;
 import net.minecraft.stats.Stats;
@@ -52,8 +54,16 @@ public class HolofurnaceBlock extends AbstractFurnaceBlock {
     @Nullable
     @Override
     public <T extends BlockEntity> BlockEntityTicker<T> getTicker(Level level, BlockState state, BlockEntityType<T> blockEntityType) {
-        return createFurnaceTicker(level, blockEntityType, LaboratoryDecorRegistry.HOLOFURNACE_BLOCK_ENTITY.get());
+        if (level.isClientSide()) return null;
+        if (blockEntityType != LaboratoryDecorRegistry.HOLOFURNACE_BLOCK_ENTITY.get()) return null;
+        return (BlockEntityTicker<T>) (lvl, pos, st, entity) -> HolofurnaceBlockEntity.serverTick((ServerLevel) lvl, pos, st, (HolofurnaceBlockEntity) entity);
     }
+
+    // @Nullable
+    // @Override
+    // public <T extends BlockEntity> BlockEntityTicker<T> getTicker(Level level, BlockState state, BlockEntityType<T> blockEntityType) {
+    //     return createFurnaceTicker(level, blockEntityType, LaboratoryDecorRegistry.HOLOFURNACE_BLOCK_ENTITY.get());
+    // }
 
     /**
      * Called to open this furnace's container.
