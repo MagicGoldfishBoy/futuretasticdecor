@@ -6,6 +6,7 @@ import com.magicgoldfishboy.futuretasticdecor.block.entity.HolofurnaceBlockEntit
 import com.magicgoldfishboy.futuretasticdecor.registry.LaboratoryDecorRegistry;
 import com.mojang.serialization.MapCodec;
 
+import net.minecraft.client.particle.SpellParticle.MobEffectProvider;
 import net.minecraft.core.BlockPos;
 import net.minecraft.core.Direction;
 import net.minecraft.core.particles.ParticleTypes;
@@ -14,14 +15,22 @@ import net.minecraft.sounds.SoundSource;
 import net.minecraft.stats.Stats;
 import net.minecraft.util.RandomSource;
 import net.minecraft.world.MenuProvider;
+import net.minecraft.world.effect.MobEffect;
+import net.minecraft.world.effect.MobEffectInstance;
+import net.minecraft.world.effect.MobEffects;
+import net.minecraft.world.entity.Entity;
+import net.minecraft.world.entity.LivingEntity;
 import net.minecraft.world.entity.player.Player;
+import net.minecraft.world.item.alchemy.Potions;
 import net.minecraft.world.level.Level;
 import net.minecraft.world.level.block.AbstractFurnaceBlock;
+import net.minecraft.world.level.block.TripWireBlock;
 import net.minecraft.world.level.block.entity.BlockEntity;
 import net.minecraft.world.level.block.entity.BlockEntityTicker;
 import net.minecraft.world.level.block.entity.BlockEntityType;
 import net.minecraft.world.level.block.state.BlockBehaviour;
 import net.minecraft.world.level.block.state.BlockState;
+import net.neoforged.neoforge.event.entity.living.MobEffectEvent;
 
 public class HolofurnaceBlock extends AbstractFurnaceBlock {
     public static final MapCodec<HolofurnaceBlock> CODEC = simpleCodec(HolofurnaceBlock::new);
@@ -83,5 +92,14 @@ public class HolofurnaceBlock extends AbstractFurnaceBlock {
             level.addParticle(ParticleTypes.SMOKE, d0 + d5, d1 + d6, d2 + d7, 0.0, 0.0, 0.0);
             level.addParticle(ParticleTypes.FLAME, d0 + d5, d1 + d6, d2 + d7, 0.0, 0.0, 0.0);
         }
+    }
+
+    @Override
+    public void stepOn(Level level, BlockPos pos, BlockState state, Entity entity) {
+        if (entity instanceof LivingEntity living) {
+            living.clearFreeze();
+            living.addEffect(new MobEffectInstance(MobEffects.REGENERATION, 10, 0));
+        }
+        super.stepOn(level, pos, state, entity);
     }
 }
