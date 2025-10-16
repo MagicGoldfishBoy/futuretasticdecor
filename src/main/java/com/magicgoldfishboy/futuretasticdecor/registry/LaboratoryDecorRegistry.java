@@ -362,7 +362,7 @@ public class LaboratoryDecorRegistry {
                 .strength(4.75f, 5.75f)
                 .sound(SoundType.POLISHED_TUFF)
                 .noOcclusion()
-                .lightLevel(state -> 15)
+                .lightLevel(state -> 5)
             )
         );
         HOLOBEAKER_ITEM = FuturetasticDecor.ITEMS.registerSimpleBlockItem(

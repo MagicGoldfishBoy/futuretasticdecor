@@ -168,6 +168,9 @@ public class FuturetasticDecor {
             if (event.getItemStack().getItem() == GlassRegistry.HOLOGLASS_PANE_ITEM.get()) {
                 event.getToolTip().add(Component.translatable("block.futuretasticdecor.hologlass_pane.tooltip"));
             }
+            if (event.getItemStack().getItem() == LaboratoryDecorRegistry.HOLOBEAKER_ITEM.get()) {
+                event.getToolTip().add(Component.translatable("block.futuretasticdecor.holobeaker.tooltip"));
+            }
             if (event.getItemStack().getItem() == MetalRegistry.STARMETAL_TRAMPOLINE_ITEM.get()) {
                 event.getToolTip().add(Component.translatable("block.futuretasticdecor.starmetal_trampoline.tooltip"));
             }
@@ -188,6 +191,7 @@ public class FuturetasticDecor {
         ItemBlockRenderTypes.setRenderLayer(LaboratoryDecorRegistry.HOLOCRAFTINGTABLE.get(), ChunkSectionLayer.TRANSLUCENT);
         ItemBlockRenderTypes.setRenderLayer(LaboratoryDecorRegistry.HOLOLIGHT.get(), ChunkSectionLayer.TRANSLUCENT);
         ItemBlockRenderTypes.setRenderLayer(LaboratoryDecorRegistry.HOLO_DESK_LAMP.get(), ChunkSectionLayer.TRANSLUCENT);
+        ItemBlockRenderTypes.setRenderLayer(LaboratoryDecorRegistry.HOLOBEAKER.get(), ChunkSectionLayer.TRANSLUCENT);
 
         ItemBlockRenderTypes.setRenderLayer(MetalRegistry.STARMETAL_BLOCK.get(), ChunkSectionLayer.TRANSLUCENT);
         ItemBlockRenderTypes.setRenderLayer(MetalRegistry.STARMETAL_BARS_BLOCK.get(), ChunkSectionLayer.CUTOUT_MIPPED);
