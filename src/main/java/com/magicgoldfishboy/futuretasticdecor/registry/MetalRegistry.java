@@ -8,16 +8,11 @@ import com.magicgoldfishboy.futuretasticdecor.block.StarmetalBed;
 import com.magicgoldfishboy.futuretasticdecor.block.StarmetalShelf;
 import com.magicgoldfishboy.futuretasticdecor.block.StarmetalTrampoline;
 import com.magicgoldfishboy.futuretasticdecor.block.Table;
-import com.mojang.serialization.MapCodec;
-import com.mojang.serialization.codecs.RecordCodecBuilder;
-
-import net.minecraft.client.gui.components.Button;
 import net.minecraft.core.registries.Registries;
 import net.minecraft.resources.ResourceKey;
 import net.minecraft.world.item.BlockItem;
 import net.minecraft.world.item.DyeColor;
 import net.minecraft.world.item.Item;
-import net.minecraft.world.level.block.BedBlock;
 import net.minecraft.world.level.block.Block;
 import net.minecraft.world.level.block.ButtonBlock;
 import net.minecraft.world.level.block.DoorBlock;
@@ -50,6 +45,9 @@ public class MetalRegistry {
 
     public static DeferredBlock<DoorBlock> STEEL_DOOR;
     public static DeferredItem<BlockItem> STEEL_DOOR_ITEM;
+
+    public static DeferredBlock<Table> STEEL_TABLE;
+    public static DeferredItem<BlockItem> STEEL_TABLE_ITEM;
 
 
     public static DeferredBlock<Block> GLOWING_STEEL_BLOCK;
@@ -245,6 +243,21 @@ public class MetalRegistry {
         );
         STEEL_DOOR_ITEM = FuturetasticDecor.ITEMS.registerSimpleBlockItem(
             STEEL_DOOR
+        );
+
+        STEEL_TABLE = FuturetasticDecor.BLOCKS.register(
+            "steel_table", 
+            registryName -> new Table(BlockBehaviour.Properties.of()
+                .setId(ResourceKey.create(Registries.BLOCK, registryName))
+                .strength(STEEL_DESTROY_TIME, STEEL_EXPLOSION_RESISTANCE)
+                .requiresCorrectToolForDrops()
+                .sound(SoundType.METAL)
+                .friction(0.5f)
+                .noOcclusion()
+            )
+        );
+        STEEL_TABLE_ITEM = FuturetasticDecor.ITEMS.registerSimpleBlockItem(
+            STEEL_TABLE
         );
 
         GLOWING_STEEL_BLOCK = FuturetasticDecor.BLOCKS.register(

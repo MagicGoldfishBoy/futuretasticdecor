@@ -164,6 +164,21 @@ public class ModelDatagen extends ModelProvider {
 
         blockModels.createDoor(MetalRegistry.STEEL_DOOR.get());
 
+
+        ModelDatagenHelpers.createTableModel(blockModels, itemModels, MetalRegistry.STEEL_TABLE.get(), new Variant(modLocation("block/steel_table_single")), 
+        new Variant(modLocation("block/steel_table_center")), new Variant(modLocation("block/steel_table_north")), new Variant(modLocation("block/steel_table_east")), 
+        new Variant(modLocation("block/steel_table_south")), new Variant(modLocation("block/steel_table_west")), new Variant(modLocation("block/steel_table_center")), 
+        new Variant(modLocation("block/steel_table_east_and_north")), new Variant(modLocation("block/steel_table_east_and_south")), 
+        new Variant(modLocation("block/steel_table_center")), new Variant(modLocation("block/steel_table_west_and_north")), 
+        new Variant(modLocation("block/steel_table_west_and_south")), new Variant(modLocation("block/steel_table_center")),
+        new Variant(modLocation("block/steel_table_center")), new Variant(modLocation("block/steel_table_center")), 
+        new Variant(modLocation("block/steel_table_center")));
+
+        itemModels.itemModelOutput.accept(
+            MetalRegistry.STEEL_TABLE_ITEM.get(),
+            ItemModelUtils.plainModel(modLocation("block/steel_table_single"))
+        );
+
         blockModels.createTrivialCube(MetalRegistry.GLOWING_STEEL_BLOCK.get());
 
         blockModels.createTrivialCube(MetalRegistry.RED_GLOWING_STEEL_BLOCK.get());

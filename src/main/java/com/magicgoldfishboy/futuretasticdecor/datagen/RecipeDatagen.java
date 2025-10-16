@@ -696,6 +696,11 @@ public class RecipeDatagen extends RecipeProvider {
             .unlockedBy("has_steel_block", has(MetalRegistry.STEEL_BLOCK.get()))
             .save(this.output, "steel_stairs_from_steel_block");
 
+        SingleItemRecipeBuilder.stonecutting(Ingredient.of(MetalRegistry.STEEL_BLOCK_ITEM.get()), RecipeCategory.BUILDING_BLOCKS, MetalRegistry.STEEL_STAIRS.get(), 1)
+            .unlockedBy("has_steel_block", has(MetalRegistry.STEEL_BLOCK.get()))
+            .save(this.output, "steel_stairs_from_steel_block_stonecutter");      
+
+
         ShapelessRecipeBuilder.shapeless(this.registries.lookupOrThrow(Registries.ITEM), RecipeCategory.REDSTONE, MetalRegistry.STEEL_BUTTON_ITEM.get())
             .requires(MetalRegistry.STEEL_BLOCK_ITEM.get())
             .unlockedBy("has_steel_block", has(MetalRegistry.STEEL_BLOCK.get()))
@@ -709,10 +714,13 @@ public class RecipeDatagen extends RecipeProvider {
             .unlockedBy("has_steel_ingot", has(MetalRegistry.STEEL_INGOT.get()))
             .save(this.output);
 
-        SingleItemRecipeBuilder.stonecutting(Ingredient.of(MetalRegistry.STEEL_BLOCK_ITEM.get()), RecipeCategory.BUILDING_BLOCKS, MetalRegistry.STEEL_STAIRS.get(), 1)
-            .unlockedBy("has_steel_block", has(MetalRegistry.STEEL_BLOCK.get()))
-            .save(this.output, "steel_stairs_from_steel_block_stonecutter");
 
+        ShapedRecipeBuilder.shaped(this.registries.lookupOrThrow(Registries.ITEM), RecipeCategory.DECORATIONS, MetalRegistry.STEEL_TABLE_ITEM.get(), 2)
+            .pattern("###")
+            .pattern("# #")
+            .define('#', MetalRegistry.STEEL_INGOT.get())
+            .unlockedBy("has_steel_ingot", has(MetalRegistry.STEEL_INGOT.get()))
+            .save(this.output);
 
 
         ShapedRecipeBuilder.shaped(this.registries.lookupOrThrow(Registries.ITEM), RecipeCategory.BUILDING_BLOCKS, MetalRegistry.GLOWING_STEEL_BLOCK.get())
