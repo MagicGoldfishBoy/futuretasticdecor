@@ -127,6 +127,25 @@ public class Beaker extends HorizontalDirectionalBlock {
             }
             return InteractionResult.CONSUME;
         }
+        if (stack.getItem() == Items.BUCKET) {
+            if (level.isClientSide()) {
+                return InteractionResult.SUCCESS;
+            }
+            
+            int fillLevel = state.getValue(BlockStateProperties.LEVEL_CAULDRON);
+            
+            if (fillLevel > 1) {
+                level.setBlock(pos, state.setValue(BlockStateProperties.LEVEL_CAULDRON, 1), 3);
+                
+                if (!player.isCreative()) {
+                    stack.shrink(1);
+                    player.addItem(new ItemStack(Items.WATER_BUCKET));
+                }
+                level.playSound(player, pos, SoundEvents.BUCKET_FILL, SoundSource.BLOCKS, 1.0F, 1.0F);
+                return InteractionResult.SUCCESS;
+            }
+            return InteractionResult.CONSUME;            
+        }
         return InteractionResult.PASS;
     }
     
