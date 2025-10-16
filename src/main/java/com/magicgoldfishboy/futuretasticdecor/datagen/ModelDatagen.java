@@ -189,6 +189,14 @@ public class ModelDatagen extends ModelProvider {
         );
 
 
+        ModelDatagenHelpers.createHorizontalRotationModel(blockModels, itemModels, MetalRegistry.STEEL_SHELF.get(), new Variant(modLocation("block/steel_shelf")));
+
+        itemModels.itemModelOutput.accept(
+            MetalRegistry.STEEL_SHELF_ITEM.get(),
+            ItemModelUtils.plainModel(modLocation("block/steel_shelf"))
+        );
+
+
         blockModels.createTrivialCube(MetalRegistry.GLOWING_STEEL_BLOCK.get());
 
         blockModels.createTrivialCube(MetalRegistry.RED_GLOWING_STEEL_BLOCK.get());

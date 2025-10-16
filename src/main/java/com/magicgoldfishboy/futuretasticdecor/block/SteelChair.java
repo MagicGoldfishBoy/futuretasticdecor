@@ -38,22 +38,22 @@ public class SteelChair extends HorizontalDirectionalBlock {
 
     public static final Map<Direction, VoxelShape> SHAPES = Shapes.rotateHorizontal(
         Shapes.or(Block.box(12, 0, 12, 15, 6, 15),
-Block.box(12, 0, 1, 15, 6, 4),
-Block.box(1, 0, 12, 4, 6, 15),
-Block.box(1, 0, 1, 4, 6, 4),
-Block.box(0, 6, 0, 16, 9, 15),
-Block.box(1, 6, 15, 15, 9, 16),
-Block.box(0, 9, 0, 2, 26, 3),
-Block.box(1, 26, 0, 2, 27, 3),
-Block.box(2, 9, 0, 14, 11, 3),
-Block.box(2, 13, 0, 14, 15, 3),
-Block.box(2, 17, 0, 14, 19, 3),
-Block.box(2, 21, 0, 14, 23, 3),
-Block.box(2, 25, 0, 14, 28, 3),
-Block.box(4, 28, 0, 12, 29, 3),
-Block.box(14, 9, 0, 16, 26, 3),
-Block.box(14, 26, 0, 15, 27, 3)
-)
+        Block.box(12, 0, 1, 15, 6, 4),
+        Block.box(1, 0, 12, 4, 6, 15),
+        Block.box(1, 0, 1, 4, 6, 4),
+        Block.box(0, 6, 0, 16, 9, 15),
+        Block.box(1, 6, 15, 15, 9, 16),
+        Block.box(0, 9, 0, 2, 26, 3),
+        Block.box(1, 26, 0, 2, 27, 3),
+        Block.box(2, 9, 0, 14, 11, 3),
+        Block.box(2, 13, 0, 14, 15, 3),
+        Block.box(2, 17, 0, 14, 19, 3),
+        Block.box(2, 21, 0, 14, 23, 3),
+        Block.box(2, 25, 0, 14, 28, 3),
+        Block.box(4, 28, 0, 12, 29, 3),
+        Block.box(14, 9, 0, 16, 26, 3),
+        Block.box(14, 26, 0, 15, 27, 3)
+        )
     );
 
     public static final MapCodec<SteelChair> CODEC = simpleCodec(SteelChair::new);
@@ -108,11 +108,6 @@ protected InteractionResult useWithoutItem(BlockState state, Level level, BlockP
     }
     return InteractionResult.SUCCESS;
 }
-    // @Override
-    // public VoxelShape getShape(BlockState state, BlockGetter world, BlockPos pos, CollisionContext context) {
-    //     return SHAPES;
-    // }
-
     @Override
     protected VoxelShape getShape(BlockState state, BlockGetter level, BlockPos pos, CollisionContext context) {
         return SHAPES.get(state.getValue(FACING).getOpposite());
