@@ -1,11 +1,11 @@
 {
   "parent": "minecraft:recipes/root",
   "criteria": {
-    "has_slime_ball": {
+    "has_anti_grav_ingot": {
       "conditions": {
         "items": [
           {
-            "items": "minecraft:slime_ball"
+            "items": "futuretasticdecor:anti_grav_ingot"
           }
         ]
       },
@@ -43,7 +43,7 @@
       "has_the_recipe",
       "has_starmetal_slab",
       "has_starmetal_ingot",
-      "has_slime_ball"
+      "has_anti_grav_ingot"
     ]
   ],
   "rewards": {

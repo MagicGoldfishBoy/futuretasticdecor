@@ -721,6 +721,14 @@ public class ModelDatagen extends ModelProvider {
             ItemModelUtils.plainModel(modLocation("block/holobeaker"))
         );
 
+
+        ModelDatagenHelpers.createHorizontalRotationModel(blockModels, itemModels, LaboratoryDecorRegistry.HOLOCUTTER.get(), new Variant(modLocation("block/holocutter")));
+
+        itemModels.itemModelOutput.accept(
+            LaboratoryDecorRegistry.HOLOCUTTER_ITEM.get(),
+            ItemModelUtils.plainModel(modLocation("block/holocutter"))
+        );
+
     }
     protected void registerPlanterModels(BlockModelGenerators blockModels, ItemModelGenerators itemModels) {
 

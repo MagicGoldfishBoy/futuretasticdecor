@@ -8,6 +8,7 @@ import com.magicgoldfishboy.futuretasticdecor.block.Beaker;
 import com.magicgoldfishboy.futuretasticdecor.block.Chair;
 import com.magicgoldfishboy.futuretasticdecor.block.HoloCraftingTable;
 import com.magicgoldfishboy.futuretasticdecor.block.HoloDeskLamp;
+import com.magicgoldfishboy.futuretasticdecor.block.Holocutter;
 import com.magicgoldfishboy.futuretasticdecor.block.Hololight;
 import com.magicgoldfishboy.futuretasticdecor.block.Holoshelf;
 import com.magicgoldfishboy.futuretasticdecor.block.Holotv;
@@ -97,6 +98,9 @@ public class LaboratoryDecorRegistry {
 
     public static DeferredBlock<Beaker> HOLOBEAKER;
     public static DeferredItem<BlockItem> HOLOBEAKER_ITEM;
+
+    public static DeferredBlock<Holocutter> HOLOCUTTER;
+    public static DeferredItem<BlockItem> HOLOCUTTER_ITEM;
 
 
     public static void registerAll() {
@@ -367,6 +371,20 @@ public class LaboratoryDecorRegistry {
         );
         HOLOBEAKER_ITEM = FuturetasticDecor.ITEMS.registerSimpleBlockItem(
             HOLOBEAKER
+        );
+
+        HOLOCUTTER = FuturetasticDecor.BLOCKS.register(
+            "holocutter", 
+            registryName -> new Holocutter(BlockBehaviour.Properties.of()
+                .setId(ResourceKey.create(Registries.BLOCK, registryName))
+                .strength(4.75f, 5.75f)
+                .sound(SoundType.POLISHED_TUFF)
+                .noOcclusion()
+                .lightLevel(state -> 8)
+            )
+        );
+        HOLOCUTTER_ITEM = FuturetasticDecor.ITEMS.registerSimpleBlockItem(
+            HOLOCUTTER
         );
 
     }

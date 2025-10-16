@@ -10,6 +10,7 @@ import com.magicgoldfishboy.futuretasticdecor.registry.LaboratoryDecorRegistry;
 import com.magicgoldfishboy.futuretasticdecor.registry.MetalRegistry;
 import com.magicgoldfishboy.futuretasticdecor.registry.PlasticRegistry;
 
+import net.minecraft.client.resources.model.Material;
 import net.minecraft.core.HolderLookup;
 import net.minecraft.core.HolderLookup.Provider;
 import net.minecraft.core.registries.Registries;
@@ -1067,10 +1068,10 @@ public class RecipeDatagen extends RecipeProvider {
             .pattern("$ $")
             .define('#', MetalRegistry.STARMETAL_SLAB_ITEM.get())
             .define('$', MetalRegistry.STARMETAL_INGOT.get())
-            .define('%', Items.SLIME_BALL)
+            .define('%', CraftingMaterialRegistry.ANTI_GRAV_INGOT.get())
             .unlockedBy("has_starmetal_slab", has(MetalRegistry.STARMETAL_SLAB_ITEM.get()))
             .unlockedBy("has_starmetal_ingot", has(MetalRegistry.STARMETAL_INGOT.get()))
-            .unlockedBy("has_slime_ball", has(Items.SLIME_BALL))
+            .unlockedBy("has_anti_grav_ingot", has(CraftingMaterialRegistry.ANTI_GRAV_INGOT.get()))
             .save(this.output);
     }
 
@@ -1435,6 +1436,15 @@ public class RecipeDatagen extends RecipeProvider {
 
         SingleItemRecipeBuilder.stonecutting(Ingredient.of(GlassRegistry.HOLOGLASS_BLOCK_ITEM.get()), RecipeCategory.BUILDING_BLOCKS, LaboratoryDecorRegistry.HOLOBEAKER_ITEM.get())
             .unlockedBy("has_holobeaker_item", has(GlassRegistry.HOLOGLASS_BLOCK_ITEM.get()))
+            .save(this.output);
+
+        ShapedRecipeBuilder.shaped(this.registries.lookupOrThrow(Registries.ITEM), RecipeCategory.BUILDING_BLOCKS, LaboratoryDecorRegistry.HOLOCUTTER_ITEM.get())
+            .pattern(" #$")
+            .pattern(" $$")
+            .define('$', MetalRegistry.STEEL_INGOT.get())
+            .define('#', GlassRegistry.HOLOGLASS_BLOCK_ITEM.get())
+            .unlockedBy("has_steel_ingot", has(MetalRegistry.STEEL_INGOT.get()))
+            .unlockedBy("has_hologlass", has(GlassRegistry.HOLOGLASS_BLOCK_ITEM.get()))
             .save(this.output);
     }
     public static class Runner extends RecipeProvider.Runner {

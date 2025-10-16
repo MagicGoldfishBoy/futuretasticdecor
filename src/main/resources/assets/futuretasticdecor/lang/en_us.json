@@ -168,6 +168,7 @@
   "block.futuretasticdecor.holo_desk_lamp": "Holo Desk Lamp",
   "block.futuretasticdecor.holobeaker": "Holobeaker",
   "block.futuretasticdecor.holobeaker.tooltip": "Water can be placed in beaker blocks",
+  "block.futuretasticdecor.holocutter": "Holocutter",
 
   "futuretasticdecor.configuration.title": "FuturetasticDecor Configs",
   "futuretasticdecor.configuration.section.futuretasticdecor.common.toml": "FuturetasticDecor Configs",

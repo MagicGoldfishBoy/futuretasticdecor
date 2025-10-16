@@ -4,7 +4,7 @@
   "key": {
     "#": "futuretasticdecor:starmetal_slab",
     "$": "futuretasticdecor:starmetal_ingot",
-    "%": "minecraft:slime_ball"
+    "%": "futuretasticdecor:anti_grav_ingot"
   },
   "pattern": [
     "###",

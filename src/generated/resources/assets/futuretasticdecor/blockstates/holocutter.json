@@ -1,0 +1,19 @@
+{
+  "variants": {
+    "facing=east": {
+      "model": "futuretasticdecor:block/holocutter",
+      "y": 270
+    },
+    "facing=north": {
+      "model": "futuretasticdecor:block/holocutter",
+      "y": 180
+    },
+    "facing=south": {
+      "model": "futuretasticdecor:block/holocutter"
+    },
+    "facing=west": {
+      "model": "futuretasticdecor:block/holocutter",
+      "y": 90
+    }
+  }
+}

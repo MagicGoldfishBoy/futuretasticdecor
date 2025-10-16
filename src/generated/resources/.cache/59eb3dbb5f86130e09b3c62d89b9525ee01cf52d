@@ -1,4 +1,4 @@
-// 1.21.9	2025-10-16T12:12:26.230377354	Loot Tables
+// 1.21.9	2025-10-16T13:40:26.178788054	Loot Tables
 09a8b1713eaf0424d7db9b60e471b96bbbbe6f8b data/futuretasticdecor/loot_table/blocks/anti_grav_block.json
 7bdf73669a2e2e4b2de14d41ad96a1730de70b69 data/futuretasticdecor/loot_table/blocks/blue_glow_block.json
 4b1610f22f03c06236bdc1f25d4adeb1fce6556f data/futuretasticdecor/loot_table/blocks/blue_glow_panel.json
@@ -28,6 +28,7 @@ cfbe4000b02591b09fa501510c2dafd07a368e6e data/futuretasticdecor/loot_table/block
 6d81117a60ec858ebe8ee7484a685c121ed6c906 data/futuretasticdecor/loot_table/blocks/holobricks_stairs.json
 35748cec06c1e0f5a5290815b3e08163dd7b59f4 data/futuretasticdecor/loot_table/blocks/holoceiling.json
 f4bca0d910fa3bec4b18b2c2aa9fbee2fda84ca3 data/futuretasticdecor/loot_table/blocks/holochair.json
+82d7f4f2fb23ea4cc07f9b32637ce43e4fba3cc1 data/futuretasticdecor/loot_table/blocks/holocutter.json
 f121490c5b89a9f24c713c14583d5296488c63c5 data/futuretasticdecor/loot_table/blocks/hologlass_block.json
 35a021850f72879bac0ab081a2f91c995cf67c4c data/futuretasticdecor/loot_table/blocks/hologlass_pane.json
 2d1e5d033ee2d4a54b2d81e9acbea05f8e64f247 data/futuretasticdecor/loot_table/blocks/hololight.json

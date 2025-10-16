@@ -192,6 +192,7 @@ public class FuturetasticDecor {
         ItemBlockRenderTypes.setRenderLayer(LaboratoryDecorRegistry.HOLOLIGHT.get(), ChunkSectionLayer.TRANSLUCENT);
         ItemBlockRenderTypes.setRenderLayer(LaboratoryDecorRegistry.HOLO_DESK_LAMP.get(), ChunkSectionLayer.TRANSLUCENT);
         ItemBlockRenderTypes.setRenderLayer(LaboratoryDecorRegistry.HOLOBEAKER.get(), ChunkSectionLayer.TRANSLUCENT);
+        ItemBlockRenderTypes.setRenderLayer(LaboratoryDecorRegistry.HOLOCUTTER.get(), ChunkSectionLayer.TRANSLUCENT);
 
         ItemBlockRenderTypes.setRenderLayer(MetalRegistry.STARMETAL_BLOCK.get(), ChunkSectionLayer.TRANSLUCENT);
         ItemBlockRenderTypes.setRenderLayer(MetalRegistry.STARMETAL_BARS_BLOCK.get(), ChunkSectionLayer.CUTOUT_MIPPED);
