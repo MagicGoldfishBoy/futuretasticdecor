@@ -7,6 +7,7 @@ import com.magicgoldfishboy.futuretasticdecor.block.Pillar;
 import com.magicgoldfishboy.futuretasticdecor.block.StarmetalBed;
 import com.magicgoldfishboy.futuretasticdecor.block.StarmetalShelf;
 import com.magicgoldfishboy.futuretasticdecor.block.StarmetalTrampoline;
+import com.magicgoldfishboy.futuretasticdecor.block.SteelChair;
 import com.magicgoldfishboy.futuretasticdecor.block.Table;
 import net.minecraft.core.registries.Registries;
 import net.minecraft.resources.ResourceKey;
@@ -48,6 +49,9 @@ public class MetalRegistry {
 
     public static DeferredBlock<Table> STEEL_TABLE;
     public static DeferredItem<BlockItem> STEEL_TABLE_ITEM;
+
+    public static DeferredBlock<SteelChair> STEEL_CHAIR;
+    public static DeferredItem<BlockItem> STEEL_CHAIR_ITEM;
 
 
     public static DeferredBlock<Block> GLOWING_STEEL_BLOCK;
@@ -258,6 +262,20 @@ public class MetalRegistry {
         );
         STEEL_TABLE_ITEM = FuturetasticDecor.ITEMS.registerSimpleBlockItem(
             STEEL_TABLE
+        );
+
+        STEEL_CHAIR = FuturetasticDecor.BLOCKS.register(
+            "steel_chair", 
+            registryName -> new SteelChair(BlockBehaviour.Properties.of()
+                .setId(ResourceKey.create(Registries.BLOCK, registryName))
+                .strength(STEEL_DESTROY_TIME, STEEL_EXPLOSION_RESISTANCE)
+                .requiresCorrectToolForDrops()
+                .sound(SoundType.METAL)
+                .noOcclusion()
+            )
+        );
+        STEEL_CHAIR_ITEM = FuturetasticDecor.ITEMS.registerSimpleBlockItem(
+            STEEL_CHAIR
         );
 
         GLOWING_STEEL_BLOCK = FuturetasticDecor.BLOCKS.register(

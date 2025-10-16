@@ -1,4 +1,4 @@
-// 1.21.9	2025-10-16T09:30:38.670621234	Model Definitions - futuretasticdecor
+// 1.21.9	2025-10-16T10:36:47.75678561	Model Definitions - futuretasticdecor
 34b19a4e84c115ddba6e366f8fd71c5b16dc8773 assets/futuretasticdecor/blockstates/anti_grav_block.json
 dd707298ebb534ae609c7dd1d0fb8c39485d06d5 assets/futuretasticdecor/blockstates/blue_glow_block.json
 0e9158c3b4dc5198e4dbb12316b22a12a3a70c50 assets/futuretasticdecor/blockstates/blue_glow_panel.json
@@ -80,6 +80,7 @@ ea1b4c5d01e80cb02a5e564ef5c9b86fdbbe0137 assets/futuretasticdecor/blockstates/st
 6a46e2fa2253e23a60c8eb68de16ae09f5541b01 assets/futuretasticdecor/blockstates/starmetal_trampoline.json
 925609b41965f0157105a3206f84f5b7b62182c3 assets/futuretasticdecor/blockstates/steel_block.json
 996072c17116690afb44909a25f97cc35e28f93d assets/futuretasticdecor/blockstates/steel_button.json
+7a8c17bb16782a8e6200f5d77527d4cddb305985 assets/futuretasticdecor/blockstates/steel_chair.json
 cce99201286d092cc2d8524dc60395b30643e32e assets/futuretasticdecor/blockstates/steel_door.json
 f2b1c341633c5f8b35609728d970bcbb88b684eb assets/futuretasticdecor/blockstates/steel_planter.json
 28c609615f15e88fc38519b24dd080da0b25c659 assets/futuretasticdecor/blockstates/steel_slab.json
@@ -216,6 +217,7 @@ e35156139305103e5806430cb6c72393188cb541 assets/futuretasticdecor/items/starmeta
 699c1f26da600f6d643224720aed9e0167b31e68 assets/futuretasticdecor/items/steel_alloy.json
 b935818749949deb058d2d57af3ad8e0e457931e assets/futuretasticdecor/items/steel_block.json
 529de7dad874dd99a5e39b1114f3d22b64302138 assets/futuretasticdecor/items/steel_button.json
+59e93cec2d3c4a6dcaba5657b52bc610115b82c7 assets/futuretasticdecor/items/steel_chair.json
 a8ac68ee77957f9715194a20c1a6d1fb1261d7b7 assets/futuretasticdecor/items/steel_door.json
 af275b383c523756cb3e144e2f70d74a7991aca1 assets/futuretasticdecor/items/steel_ingot.json
 d0de6ab5599326f3d9a534ae2e5cdfb4a75322b9 assets/futuretasticdecor/items/steel_nugget.json

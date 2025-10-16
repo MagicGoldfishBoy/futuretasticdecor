@@ -1,0 +1,19 @@
+{
+  "variants": {
+    "facing=east": {
+      "model": "futuretasticdecor:block/steel_chair",
+      "y": 270
+    },
+    "facing=north": {
+      "model": "futuretasticdecor:block/steel_chair",
+      "y": 180
+    },
+    "facing=south": {
+      "model": "futuretasticdecor:block/steel_chair"
+    },
+    "facing=west": {
+      "model": "futuretasticdecor:block/steel_chair",
+      "y": 90
+    }
+  }
+}

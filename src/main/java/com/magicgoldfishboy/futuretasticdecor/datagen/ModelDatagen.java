@@ -179,6 +179,16 @@ public class ModelDatagen extends ModelProvider {
             ItemModelUtils.plainModel(modLocation("block/steel_table_single"))
         );
 
+
+
+        ModelDatagenHelpers.createHorizontalRotationModel(blockModels, itemModels, MetalRegistry.STEEL_CHAIR.get(), new Variant(modLocation("block/steel_chair")));
+
+        itemModels.itemModelOutput.accept(
+            MetalRegistry.STEEL_CHAIR_ITEM.get(),
+            ItemModelUtils.plainModel(modLocation("block/steel_chair"))
+        );
+
+
         blockModels.createTrivialCube(MetalRegistry.GLOWING_STEEL_BLOCK.get());
 
         blockModels.createTrivialCube(MetalRegistry.RED_GLOWING_STEEL_BLOCK.get());
