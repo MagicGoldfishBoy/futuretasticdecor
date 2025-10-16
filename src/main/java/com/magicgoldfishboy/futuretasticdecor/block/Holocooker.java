@@ -8,6 +8,7 @@ import com.mojang.serialization.MapCodec;
 
 import net.minecraft.core.BlockPos;
 import net.minecraft.core.particles.ParticleTypes;
+import net.minecraft.server.level.ServerLevel;
 import net.minecraft.sounds.SoundEvents;
 import net.minecraft.sounds.SoundSource;
 import net.minecraft.stats.Stats;
@@ -38,12 +39,19 @@ public class Holocooker extends AbstractFurnaceBlock {
     public BlockEntity newBlockEntity(BlockPos pos, BlockState state) {
         return new HolocookerEntity(pos, state);
     }
-
     @Nullable
     @Override
     public <T extends BlockEntity> BlockEntityTicker<T> getTicker(Level level, BlockState state, BlockEntityType<T> blockEntityType) {
-        return createFurnaceTicker(level, blockEntityType, LaboratoryDecorRegistry.HOLOCOOKER_ENTITY.get());
+        if (level.isClientSide()) return null;
+        if (blockEntityType != LaboratoryDecorRegistry.HOLOCOOKER_ENTITY.get()) return null;
+        return (BlockEntityTicker<T>) (lvl, pos, st, entity) -> HolocookerEntity.serverTick((ServerLevel) lvl, pos, st, (HolocookerEntity) entity);
     }
+
+    // @Nullable
+    // @Override
+    // public <T extends BlockEntity> BlockEntityTicker<T> getTicker(Level level, BlockState state, BlockEntityType<T> blockEntityType) {
+    //     return createFurnaceTicker(level, blockEntityType, LaboratoryDecorRegistry.HOLOCOOKER_ENTITY.get());
+    // }
 
     /**
      * Called to open this furnace's container.
