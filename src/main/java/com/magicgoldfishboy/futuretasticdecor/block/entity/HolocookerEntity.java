@@ -35,6 +35,8 @@ public class HolocookerEntity extends AbstractFurnaceBlockEntity {
             throw new RuntimeException(e);
         }
     }
+    
+    private int lastScaledTotalTime = -1;
 
     public HolocookerEntity(BlockPos pos, BlockState blockState) {
         super(LaboratoryDecorRegistry.HOLOCOOKER_ENTITY.get(), pos, blockState, RecipeType.SMOKING);
@@ -58,21 +60,26 @@ public class HolocookerEntity extends AbstractFurnaceBlockEntity {
     @Override
     public void setItem(int index, ItemStack stack, boolean insideTransaction) {
         super.setItem(index, stack, insideTransaction);
-        
-        // Scale down the cooking total time when a new item is set
-        if (index == 0) {
-            try {
-                int totalTime = COOKING_TOTAL_TIME_FIELD.getInt(this);
-                if (totalTime > 0) {
-                    COOKING_TOTAL_TIME_FIELD.setInt(this, Math.max(1, totalTime / 4));
-                }
-            } catch (IllegalAccessException e) {
-                e.printStackTrace();
+        scaleDownCookingTime();
+    }
+    
+    private void scaleDownCookingTime() {
+        try {
+            int totalTime = COOKING_TOTAL_TIME_FIELD.getInt(this);
+
+            if (totalTime > 0 && totalTime != lastScaledTotalTime) {
+                int scaledTime = Math.max(1, totalTime / 4);
+                COOKING_TOTAL_TIME_FIELD.setInt(this, scaledTime);
+                lastScaledTotalTime = scaledTime;
             }
+        } catch (IllegalAccessException e) {
+            e.printStackTrace();
         }
     }
 
     public static void serverTick(ServerLevel level, BlockPos pos, BlockState state, HolocookerEntity furnace) {
         AbstractFurnaceBlockEntity.serverTick(level, pos, state, furnace);
+        
+        furnace.scaleDownCookingTime();
     }
 }
