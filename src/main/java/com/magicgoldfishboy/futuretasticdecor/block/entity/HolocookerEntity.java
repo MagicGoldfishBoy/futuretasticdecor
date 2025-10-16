@@ -23,7 +23,7 @@ import net.minecraft.world.level.block.entity.FuelValues;
 import net.minecraft.world.level.block.state.BlockState;
 
 public class HolocookerEntity extends AbstractFurnaceBlockEntity {
-    private static final Component DEFAULT_NAME = Component.translatable("container.smoker");
+    private static final Component DEFAULT_NAME = Component.translatable("container.holocooker");
     
     private static final java.lang.reflect.Field COOKING_TOTAL_TIME_FIELD;
     

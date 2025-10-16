@@ -171,6 +171,7 @@
   "block.futuretasticdecor.holocutter": "Holocutter",
   "block.futuretasticdecor.holofurnace": "Holofurnace",
   "block.futuretasticdecor.holocooker": "Holocooker",
+  "container.holocooker": "Holocooker",
 
   "futuretasticdecor.configuration.title": "FuturetasticDecor Configs",
   "futuretasticdecor.configuration.section.futuretasticdecor.common.toml": "FuturetasticDecor Configs",
