@@ -46,6 +46,26 @@ public class ModelDatagenHelpers extends ModelProvider {
         );
     }
 
+    public static void createFurnaceModels(BlockModelGenerators blockModels, ItemModelGenerators itemModels, Block block, Variant lamp_off, Variant lamp_on) {
+
+        MultiVariant off_multivariant = new MultiVariant(WeightedList.of(lamp_off));
+        MultiVariant on_multivariant = new MultiVariant(WeightedList.of(lamp_on));
+
+        blockModels.blockStateOutput.accept(
+            MultiVariantGenerator.dispatch(block).with(
+                PropertyDispatch.initial(BlockStateProperties.LIT)
+                    .select(false, off_multivariant)
+                    .select(true, on_multivariant)
+            ).with(
+                PropertyDispatch.modify(BlockStateProperties.HORIZONTAL_FACING)
+                    .select(Direction.SOUTH, BlockModelGenerators.NOP)
+                    .select(Direction.NORTH, BlockModelGenerators.Y_ROT_180)
+                    .select(Direction.WEST, BlockModelGenerators.Y_ROT_90)
+                    .select(Direction.EAST, BlockModelGenerators.Y_ROT_270)
+            )
+        );
+    }
+
     public static void createPanelModel(BlockModelGenerators blockModels, ItemModelGenerators itemModels, Panel panel, Variant panel_variant) {
         blockModels.blockStateOutput.accept(
             MultiVariantGenerator.dispatch(

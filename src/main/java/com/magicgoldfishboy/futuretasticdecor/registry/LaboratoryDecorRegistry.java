@@ -9,6 +9,7 @@ import com.magicgoldfishboy.futuretasticdecor.block.Chair;
 import com.magicgoldfishboy.futuretasticdecor.block.HoloCraftingTable;
 import com.magicgoldfishboy.futuretasticdecor.block.HoloDeskLamp;
 import com.magicgoldfishboy.futuretasticdecor.block.Holocutter;
+import com.magicgoldfishboy.futuretasticdecor.block.HolofurnaceBlock;
 import com.magicgoldfishboy.futuretasticdecor.block.Hololight;
 import com.magicgoldfishboy.futuretasticdecor.block.Holoshelf;
 import com.magicgoldfishboy.futuretasticdecor.block.Holotv;
@@ -16,6 +17,7 @@ import com.magicgoldfishboy.futuretasticdecor.block.MidSizedContainer;
 import com.magicgoldfishboy.futuretasticdecor.block.SlidingDoor;
 import com.magicgoldfishboy.futuretasticdecor.block.Table;
 import com.magicgoldfishboy.futuretasticdecor.block.Wallpaper;
+import com.magicgoldfishboy.futuretasticdecor.block.entity.HolofurnaceBlockEntity;
 import com.magicgoldfishboy.futuretasticdecor.block.entity.MidSizedContainerEntity;
 
 import net.minecraft.core.registries.Registries;
@@ -101,6 +103,10 @@ public class LaboratoryDecorRegistry {
 
     public static DeferredBlock<Holocutter> HOLOCUTTER;
     public static DeferredItem<BlockItem> HOLOCUTTER_ITEM;
+
+    public static DeferredBlock<HolofurnaceBlock> HOLOFURNACE;
+    public static Supplier<BlockEntityType<HolofurnaceBlockEntity>> HOLOFURNACE_BLOCK_ENTITY;
+    public static DeferredItem<BlockItem> HOLOFURNACE_ITEM;
 
 
     public static void registerAll() {
@@ -385,6 +391,26 @@ public class LaboratoryDecorRegistry {
         );
         HOLOCUTTER_ITEM = FuturetasticDecor.ITEMS.registerSimpleBlockItem(
             HOLOCUTTER
+        );
+
+        HOLOFURNACE = FuturetasticDecor.BLOCKS.register(
+            "holofurnace", 
+            registryName -> new HolofurnaceBlock(BlockBehaviour.Properties.of()
+                .setId(ResourceKey.create(Registries.BLOCK, registryName))
+                .strength(5.0f, 5.5f)
+                .requiresCorrectToolForDrops()
+                .sound(SoundType.POLISHED_TUFF)
+            )
+        );
+        HOLOFURNACE_BLOCK_ENTITY = FuturetasticDecor.BLOCK_ENTITIES.register(
+            "holofurnace_entity",
+            () -> new BlockEntityType<>(
+                HolofurnaceBlockEntity::new,
+                false,
+                HOLOFURNACE.get())
+        );
+        HOLOFURNACE_ITEM = FuturetasticDecor.ITEMS.registerSimpleBlockItem(
+            HOLOFURNACE
         );
 
     }
