@@ -8,6 +8,7 @@ import com.magicgoldfishboy.futuretasticdecor.block.Beaker;
 import com.magicgoldfishboy.futuretasticdecor.block.Chair;
 import com.magicgoldfishboy.futuretasticdecor.block.HoloCraftingTable;
 import com.magicgoldfishboy.futuretasticdecor.block.HoloDeskLamp;
+import com.magicgoldfishboy.futuretasticdecor.block.Holocooker;
 import com.magicgoldfishboy.futuretasticdecor.block.Holocutter;
 import com.magicgoldfishboy.futuretasticdecor.block.HolofurnaceBlock;
 import com.magicgoldfishboy.futuretasticdecor.block.Hololight;
@@ -17,6 +18,7 @@ import com.magicgoldfishboy.futuretasticdecor.block.MidSizedContainer;
 import com.magicgoldfishboy.futuretasticdecor.block.SlidingDoor;
 import com.magicgoldfishboy.futuretasticdecor.block.Table;
 import com.magicgoldfishboy.futuretasticdecor.block.Wallpaper;
+import com.magicgoldfishboy.futuretasticdecor.block.entity.HolocookerEntity;
 import com.magicgoldfishboy.futuretasticdecor.block.entity.HolofurnaceBlockEntity;
 import com.magicgoldfishboy.futuretasticdecor.block.entity.MidSizedContainerEntity;
 
@@ -107,6 +109,10 @@ public class LaboratoryDecorRegistry {
     public static DeferredBlock<HolofurnaceBlock> HOLOFURNACE;
     public static Supplier<BlockEntityType<HolofurnaceBlockEntity>> HOLOFURNACE_BLOCK_ENTITY;
     public static DeferredItem<BlockItem> HOLOFURNACE_ITEM;
+
+    public static DeferredBlock<Holocooker> HOLOCOOKER;
+    public static Supplier<BlockEntityType<HolocookerEntity>> HOLOCOOKER_ENTITY;
+    public static DeferredItem<BlockItem> HOLOCOOKER_ITEM;
 
 
     public static void registerAll() {
@@ -411,6 +417,26 @@ public class LaboratoryDecorRegistry {
         );
         HOLOFURNACE_ITEM = FuturetasticDecor.ITEMS.registerSimpleBlockItem(
             HOLOFURNACE
+        );
+
+        HOLOCOOKER = FuturetasticDecor.BLOCKS.register(
+            "holocooker", 
+            registryName -> new Holocooker(BlockBehaviour.Properties.of()
+                .setId(ResourceKey.create(Registries.BLOCK, registryName))
+                .strength(5.0f, 5.5f)
+                .requiresCorrectToolForDrops()
+                .sound(SoundType.POLISHED_TUFF)
+            )
+        );
+        HOLOCOOKER_ENTITY = FuturetasticDecor.BLOCK_ENTITIES.register(
+            "holocooker_entity",
+            () -> new BlockEntityType<>(
+                HolocookerEntity::new,
+                false,
+                HOLOCOOKER.get())
+        );
+        HOLOCOOKER_ITEM = FuturetasticDecor.ITEMS.registerSimpleBlockItem(
+            HOLOCOOKER
         );
 
     }

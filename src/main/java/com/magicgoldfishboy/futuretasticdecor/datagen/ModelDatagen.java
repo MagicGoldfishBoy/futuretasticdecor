@@ -738,6 +738,15 @@ public class ModelDatagen extends ModelProvider {
             ItemModelUtils.plainModel(modLocation("block/holofurnace_unlit"))
         );
 
+
+        ModelDatagenHelpers.createFurnaceModels(blockModels, itemModels, LaboratoryDecorRegistry.HOLOCOOKER.get(), new Variant(modLocation("block/holocooker_unlit")), 
+        new Variant(modLocation("block/holocooker_lit")));
+
+        itemModels.itemModelOutput.accept(
+            LaboratoryDecorRegistry.HOLOCOOKER_ITEM.get(),
+            ItemModelUtils.plainModel(modLocation("block/holocooker_unlit"))
+        );
+
     }
     protected void registerPlanterModels(BlockModelGenerators blockModels, ItemModelGenerators itemModels) {
 

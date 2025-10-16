@@ -38,6 +38,9 @@ public class RecipeDatagen extends RecipeProvider {
     public static final TagKey<Item> COALS_TAG = ItemTags.create(
         ResourceLocation.fromNamespaceAndPath("minecraft", "coals")
     );
+    public static final TagKey<Item> LOGS_TAG = ItemTags.create(
+        ResourceLocation.fromNamespaceAndPath("minecraft", "logs")
+    );
 
     @Override
     protected void buildRecipes() {
@@ -1457,6 +1460,16 @@ public class RecipeDatagen extends RecipeProvider {
             .unlockedBy("has_hologlass_pane_item", has(GlassRegistry.HOLOGLASS_PANE_ITEM.get()))
             .unlockedBy("has_steel_ingot", has(MetalRegistry.STEEL_INGOT.get()))
             .unlockedBy("has_coal_block", has(Items.COAL_BLOCK))
+            .save(this.output);
+
+
+        ShapedRecipeBuilder.shaped(this.registries.lookupOrThrow(Registries.ITEM), RecipeCategory.BUILDING_BLOCKS, LaboratoryDecorRegistry.HOLOCOOKER_ITEM.get())
+            .pattern(" # ")
+            .pattern("#$#")
+            .pattern(" # ")
+            .define('#', this.tag(LOGS_TAG))
+            .define('$', LaboratoryDecorRegistry.HOLOFURNACE_ITEM.get())
+            .unlockedBy("has_holofurnace", has(LaboratoryDecorRegistry.HOLOFURNACE_ITEM.get()))
             .save(this.output);
     }
     public static class Runner extends RecipeProvider.Runner {

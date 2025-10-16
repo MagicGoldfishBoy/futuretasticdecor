@@ -96,7 +96,7 @@ public class HolofurnaceBlock extends AbstractFurnaceBlock {
 
     @Override
     public void stepOn(Level level, BlockPos pos, BlockState state, Entity entity) {
-        if (entity instanceof LivingEntity living) {
+        if (entity instanceof LivingEntity living && state.getValue(LIT)) {
             living.clearFreeze();
             living.addEffect(new MobEffectInstance(MobEffects.REGENERATION, 10, 0));
         }
