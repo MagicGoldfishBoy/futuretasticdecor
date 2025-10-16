@@ -711,6 +711,16 @@ public class ModelDatagen extends ModelProvider {
             LaboratoryDecorRegistry.HOLO_DESK_LAMP_ITEM.get(), ItemModelUtils.plainModel(modLocation("block/holo_desk_light_off"))
         );
 
+
+
+        ModelDatagenHelpers.createHorizontalRotatableFluidContainer(blockModels, itemModels, LaboratoryDecorRegistry.HOLOBEAKER.get(), new Variant(modLocation("block/holobeaker")),
+        new Variant(modLocation("block/holobeaker_full")));
+
+        itemModels.itemModelOutput.accept(
+            LaboratoryDecorRegistry.HOLOBEAKER_ITEM.get(),
+            ItemModelUtils.plainModel(modLocation("block/holobeaker"))
+        );
+
     }
     protected void registerPlanterModels(BlockModelGenerators blockModels, ItemModelGenerators itemModels) {
 

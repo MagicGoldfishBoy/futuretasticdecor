@@ -1,0 +1,49 @@
+{
+  "variants": {
+    "facing=east,level=1": {
+      "model": "futuretasticdecor:block/holobeaker",
+      "y": 270
+    },
+    "facing=east,level=2": {
+      "model": "futuretasticdecor:block/holobeaker_full",
+      "y": 270
+    },
+    "facing=east,level=3": {
+      "model": "futuretasticdecor:block/holobeaker_full",
+      "y": 270
+    },
+    "facing=north,level=1": {
+      "model": "futuretasticdecor:block/holobeaker",
+      "y": 180
+    },
+    "facing=north,level=2": {
+      "model": "futuretasticdecor:block/holobeaker_full",
+      "y": 180
+    },
+    "facing=north,level=3": {
+      "model": "futuretasticdecor:block/holobeaker_full",
+      "y": 180
+    },
+    "facing=south,level=1": {
+      "model": "futuretasticdecor:block/holobeaker"
+    },
+    "facing=south,level=2": {
+      "model": "futuretasticdecor:block/holobeaker_full"
+    },
+    "facing=south,level=3": {
+      "model": "futuretasticdecor:block/holobeaker_full"
+    },
+    "facing=west,level=1": {
+      "model": "futuretasticdecor:block/holobeaker",
+      "y": 90
+    },
+    "facing=west,level=2": {
+      "model": "futuretasticdecor:block/holobeaker_full",
+      "y": 90
+    },
+    "facing=west,level=3": {
+      "model": "futuretasticdecor:block/holobeaker_full",
+      "y": 90
+    }
+  }
+}

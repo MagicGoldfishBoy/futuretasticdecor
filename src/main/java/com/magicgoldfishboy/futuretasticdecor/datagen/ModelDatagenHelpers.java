@@ -195,6 +195,27 @@ public class ModelDatagenHelpers extends ModelProvider {
             )
         );
     }
+    public static void createHorizontalRotatableFluidContainer(BlockModelGenerators blockModels, ItemModelGenerators itemModels, Block block,
+    Variant empty_variant, Variant full_variant) {
+
+        MultiVariant empty_multivariant = new MultiVariant(WeightedList.of(empty_variant));
+        MultiVariant full_multivariant = new MultiVariant(WeightedList.of(full_variant));
+
+        blockModels.blockStateOutput.accept(
+            MultiVariantGenerator.dispatch(block).with(
+                PropertyDispatch.initial(BlockStateProperties.LEVEL_CAULDRON)
+                    .select(1, empty_multivariant)
+                    .select(2, full_multivariant)
+                    .select(3, full_multivariant)
+            ).with(
+                PropertyDispatch.modify(BlockStateProperties.HORIZONTAL_FACING)
+                    .select(Direction.SOUTH, BlockModelGenerators.NOP)
+                    .select(Direction.NORTH, BlockModelGenerators.Y_ROT_180)
+                    .select(Direction.WEST, BlockModelGenerators.Y_ROT_90)
+                    .select(Direction.EAST, BlockModelGenerators.Y_ROT_270)
+            )
+        );
+    }
     public static void createDeviceBlock(BlockModelGenerators blockModels, ItemModelGenerators itemModels, Block block,
     Variant closed_variant, Variant open_variant) {
 
