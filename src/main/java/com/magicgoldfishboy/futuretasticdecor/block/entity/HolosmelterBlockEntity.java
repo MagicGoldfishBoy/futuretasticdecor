@@ -10,17 +10,18 @@ import net.minecraft.network.chat.Component;
 import net.minecraft.server.level.ServerLevel;
 import net.minecraft.world.entity.player.Inventory;
 import net.minecraft.world.inventory.AbstractContainerMenu;
+import net.minecraft.world.inventory.BlastFurnaceMenu;
 import net.minecraft.world.inventory.FurnaceMenu;
 import net.minecraft.world.item.crafting.RecipeType;
 import net.minecraft.world.level.block.entity.AbstractFurnaceBlockEntity;
 import net.minecraft.world.level.block.state.BlockState;
 
-public class HolofurnaceBlockEntity extends AbstractFurnaceBlockEntity {
+public class HolosmelterBlockEntity extends AbstractFurnaceBlockEntity {
     public static final Logger LOGGER = LogUtils.getLogger();
-    private static final Component DEFAULT_NAME = Component.translatable("container.holofurnace");
+    private static final Component DEFAULT_NAME = Component.translatable("container.holosmelter");
     
-    public HolofurnaceBlockEntity(BlockPos pos, BlockState blockState) {
-        super(LaboratoryDecorRegistry.HOLOFURNACE_BLOCK_ENTITY.get(), pos, blockState, RecipeType.SMELTING);
+    public HolosmelterBlockEntity(BlockPos pos, BlockState blockState) {
+        super(LaboratoryDecorRegistry.HOLOSMELTER_BLOCK_ENTITY.get(), pos, blockState, RecipeType.BLASTING);
     }
     
     @Override
@@ -31,10 +32,10 @@ public class HolofurnaceBlockEntity extends AbstractFurnaceBlockEntity {
     @SuppressWarnings("null")
     @Override
     protected AbstractContainerMenu createMenu(int id, Inventory player) {
-        return new FurnaceMenu(id, player, this, this.dataAccess);
+        return new BlastFurnaceMenu(id, player, this, this.dataAccess);
     }
     
-    public static void serverTick(ServerLevel level, BlockPos pos, BlockState state, HolofurnaceBlockEntity furnace) {
+    public static void serverTick(ServerLevel level, BlockPos pos, BlockState state, HolosmelterBlockEntity furnace) {
         for (int i = 0; i < 2; i++) {
             AbstractFurnaceBlockEntity.serverTick(level, pos, state, furnace);
         }

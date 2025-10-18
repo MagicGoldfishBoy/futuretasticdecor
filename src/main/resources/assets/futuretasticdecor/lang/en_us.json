@@ -170,8 +170,11 @@
   "block.futuretasticdecor.holobeaker.tooltip": "Water can be placed in beaker blocks",
   "block.futuretasticdecor.holocutter": "Holocutter",
   "block.futuretasticdecor.holofurnace": "Holofurnace",
+  "container.holofurnace": "Holofurnace",
   "block.futuretasticdecor.holocooker": "Holocooker",
   "container.holocooker": "Holocooker",
+  "block.futuretasticdecor.holosmelter": "Holosmelter",
+  "container.holosmelter": "Holosmelter",
 
   "futuretasticdecor.configuration.title": "FuturetasticDecor Configs",
   "futuretasticdecor.configuration.section.futuretasticdecor.common.toml": "FuturetasticDecor Configs",

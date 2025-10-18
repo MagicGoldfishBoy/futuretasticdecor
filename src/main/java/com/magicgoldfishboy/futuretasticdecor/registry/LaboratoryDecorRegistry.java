@@ -13,6 +13,7 @@ import com.magicgoldfishboy.futuretasticdecor.block.Holocutter;
 import com.magicgoldfishboy.futuretasticdecor.block.HolofurnaceBlock;
 import com.magicgoldfishboy.futuretasticdecor.block.Hololight;
 import com.magicgoldfishboy.futuretasticdecor.block.Holoshelf;
+import com.magicgoldfishboy.futuretasticdecor.block.HolosmelterBlock;
 import com.magicgoldfishboy.futuretasticdecor.block.Holotv;
 import com.magicgoldfishboy.futuretasticdecor.block.MidSizedContainer;
 import com.magicgoldfishboy.futuretasticdecor.block.SlidingDoor;
@@ -20,6 +21,7 @@ import com.magicgoldfishboy.futuretasticdecor.block.Table;
 import com.magicgoldfishboy.futuretasticdecor.block.Wallpaper;
 import com.magicgoldfishboy.futuretasticdecor.block.entity.HolocookerEntity;
 import com.magicgoldfishboy.futuretasticdecor.block.entity.HolofurnaceBlockEntity;
+import com.magicgoldfishboy.futuretasticdecor.block.entity.HolosmelterBlockEntity;
 import com.magicgoldfishboy.futuretasticdecor.block.entity.MidSizedContainerEntity;
 
 import net.minecraft.core.registries.Registries;
@@ -113,6 +115,10 @@ public class LaboratoryDecorRegistry {
     public static DeferredBlock<Holocooker> HOLOCOOKER;
     public static Supplier<BlockEntityType<HolocookerEntity>> HOLOCOOKER_ENTITY;
     public static DeferredItem<BlockItem> HOLOCOOKER_ITEM;
+
+    public static DeferredBlock<HolosmelterBlock> HOLOSMELTER;
+    public static Supplier<BlockEntityType<HolosmelterBlockEntity>> HOLOSMELTER_BLOCK_ENTITY;
+    public static DeferredItem<BlockItem> HOLOSMELTER_ITEM;
 
 
     public static void registerAll() {
@@ -437,6 +443,26 @@ public class LaboratoryDecorRegistry {
         );
         HOLOCOOKER_ITEM = FuturetasticDecor.ITEMS.registerSimpleBlockItem(
             HOLOCOOKER
+        );
+
+        HOLOSMELTER = FuturetasticDecor.BLOCKS.register(
+            "holosmelter", 
+            registryName -> new HolosmelterBlock(BlockBehaviour.Properties.of()
+                .setId(ResourceKey.create(Registries.BLOCK, registryName))
+                .strength(5.0f, 5.5f)
+                .requiresCorrectToolForDrops()
+                .sound(SoundType.POLISHED_TUFF)
+            )
+        );
+        HOLOSMELTER_BLOCK_ENTITY = FuturetasticDecor.BLOCK_ENTITIES.register(
+            "holosmelter_entity",
+            () -> new BlockEntityType<>(
+                HolosmelterBlockEntity::new,
+                false,
+                HOLOSMELTER.get())
+        );
+        HOLOSMELTER_ITEM = FuturetasticDecor.ITEMS.registerSimpleBlockItem(
+            HOLOSMELTER
         );
 
     }

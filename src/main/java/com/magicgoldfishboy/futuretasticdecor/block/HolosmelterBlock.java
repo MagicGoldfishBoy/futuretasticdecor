@@ -2,7 +2,7 @@ package com.magicgoldfishboy.futuretasticdecor.block;
 
 import javax.annotation.Nullable;
 
-import com.magicgoldfishboy.futuretasticdecor.block.entity.HolofurnaceBlockEntity;
+import com.magicgoldfishboy.futuretasticdecor.block.entity.HolosmelterBlockEntity;
 import com.magicgoldfishboy.futuretasticdecor.registry.LaboratoryDecorRegistry;
 import com.mojang.serialization.MapCodec;
 
@@ -15,10 +15,6 @@ import net.minecraft.sounds.SoundSource;
 import net.minecraft.stats.Stats;
 import net.minecraft.util.RandomSource;
 import net.minecraft.world.MenuProvider;
-import net.minecraft.world.effect.MobEffectInstance;
-import net.minecraft.world.effect.MobEffects;
-import net.minecraft.world.entity.Entity;
-import net.minecraft.world.entity.LivingEntity;
 import net.minecraft.world.entity.player.Player;
 import net.minecraft.world.level.Level;
 import net.minecraft.world.level.block.AbstractFurnaceBlock;
@@ -28,22 +24,22 @@ import net.minecraft.world.level.block.entity.BlockEntityType;
 import net.minecraft.world.level.block.state.BlockBehaviour;
 import net.minecraft.world.level.block.state.BlockState;
 
-public class HolofurnaceBlock extends AbstractFurnaceBlock {
-    public static final MapCodec<HolofurnaceBlock> CODEC = simpleCodec(HolofurnaceBlock::new);
+public class HolosmelterBlock extends AbstractFurnaceBlock {
+    public static final MapCodec<HolosmelterBlock> CODEC = simpleCodec(HolosmelterBlock::new);
 
     @Override
-    public MapCodec<HolofurnaceBlock> codec() {
+    public MapCodec<HolosmelterBlock> codec() {
         return CODEC;
     }
 
-    public HolofurnaceBlock(BlockBehaviour.Properties properties) {
+    public HolosmelterBlock(BlockBehaviour.Properties properties) {
         super(properties);
     }
 
     @SuppressWarnings("null")
     @Override
     public BlockEntity newBlockEntity(BlockPos pos, BlockState state) {
-        return new HolofurnaceBlockEntity(pos, state);
+        return new HolosmelterBlockEntity(pos, state);
     }
 
     @SuppressWarnings("null")
@@ -51,16 +47,9 @@ public class HolofurnaceBlock extends AbstractFurnaceBlock {
     @Override
     public <T extends BlockEntity> BlockEntityTicker<T> getTicker(Level level, BlockState state, BlockEntityType<T> blockEntityType) {
         if (level.isClientSide()) return null;
-        if (blockEntityType != LaboratoryDecorRegistry.HOLOFURNACE_BLOCK_ENTITY.get()) return null;
-        return (BlockEntityTicker<T>) (lvl, pos, st, entity) -> HolofurnaceBlockEntity.serverTick((ServerLevel) lvl, pos, st, (HolofurnaceBlockEntity) entity);
+        if (blockEntityType != LaboratoryDecorRegistry.HOLOSMELTER_BLOCK_ENTITY.get()) return null;
+        return (BlockEntityTicker<T>) (lvl, pos, st, entity) -> HolosmelterBlockEntity.serverTick((ServerLevel) lvl, pos, st, (HolosmelterBlockEntity) entity);
     }
-
-    // @Nullable
-    // @Override
-    // public <T extends BlockEntity> BlockEntityTicker<T> getTicker(Level level, BlockState state, BlockEntityType<T> blockEntityType) {
-    //     return createFurnaceTicker(level, blockEntityType, LaboratoryDecorRegistry.HOLOFURNACE_BLOCK_ENTITY.get());
-    // }
-
     /**
      * Called to open this furnace's container.
      *
@@ -70,7 +59,7 @@ public class HolofurnaceBlock extends AbstractFurnaceBlock {
     @Override
     protected void openContainer(Level level, BlockPos pos, Player player) {
         BlockEntity blockentity = level.getBlockEntity(pos);
-        if (blockentity instanceof HolofurnaceBlockEntity) {
+        if (blockentity instanceof HolosmelterBlockEntity) {
             player.openMenu((MenuProvider)blockentity);
             player.awardStat(Stats.INTERACT_WITH_FURNACE);
         }
@@ -100,15 +89,5 @@ public class HolofurnaceBlock extends AbstractFurnaceBlock {
             level.addParticle(ParticleTypes.SMOKE, d0 + d5, d1 + d6, d2 + d7, 0.0, 0.0, 0.0);
             level.addParticle(ParticleTypes.FLAME, d0 + d5, d1 + d6, d2 + d7, 0.0, 0.0, 0.0);
         }
-    }
-
-    @SuppressWarnings("null")
-    @Override
-    public void stepOn(Level level, BlockPos pos, BlockState state, Entity entity) {
-        if (entity instanceof LivingEntity living && state.getValue(LIT)) {
-            living.clearFreeze();
-            living.addEffect(new MobEffectInstance(MobEffects.REGENERATION, 10, 0));
-        }
-        super.stepOn(level, pos, state, entity);
     }
 }

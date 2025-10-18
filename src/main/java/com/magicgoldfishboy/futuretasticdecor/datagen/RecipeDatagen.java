@@ -1471,6 +1471,17 @@ public class RecipeDatagen extends RecipeProvider {
             .define('$', LaboratoryDecorRegistry.HOLOFURNACE_ITEM.get())
             .unlockedBy("has_holofurnace", has(LaboratoryDecorRegistry.HOLOFURNACE_ITEM.get()))
             .save(this.output);
+
+
+        ShapedRecipeBuilder.shaped(this.registries.lookupOrThrow(Registries.ITEM), RecipeCategory.BUILDING_BLOCKS, LaboratoryDecorRegistry.HOLOSMELTER_ITEM.get())
+            .pattern("###")
+            .pattern("#$#")
+            .pattern("%%%")
+            .define('#', Items.IRON_INGOT)
+            .define('$', LaboratoryDecorRegistry.HOLOFURNACE_ITEM.get())
+            .define('%', Items.SMOOTH_STONE)
+            .unlockedBy("has_holofurnace", has(LaboratoryDecorRegistry.HOLOFURNACE_ITEM.get()))
+            .save(this.output);
     }
     public static class Runner extends RecipeProvider.Runner {
 
