@@ -34,7 +34,7 @@ import net.minecraft.world.phys.shapes.VoxelShape;
 
 public class Holocutter extends HorizontalDirectionalBlock {
     public static final MapCodec<Holocutter> CODEC = simpleCodec(Holocutter::new);
-    private static final Component CONTAINER_TITLE = Component.translatable("container.stonecutter");
+    private static final Component CONTAINER_TITLE = Component.translatable("container.holocutter");
     public static final EnumProperty<Direction> FACING = HorizontalDirectionalBlock.FACING;
     
     public static final Map<Direction, VoxelShape> SHAPES = Shapes.rotateHorizontal(
