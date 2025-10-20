@@ -27,7 +27,7 @@ public class FuturetasticDecorClient {
     @SubscribeEvent
     static void onClientSetup(FMLClientSetupEvent event) {
         // Some client setup code
-        FuturetasticDecor.LOGGER.info("HELLO FROM CLIENT SETUP");
+        //FuturetasticDecor.LOGGER.info("HELLO FROM CLIENT SETUP");
         FuturetasticDecor.LOGGER.info("MINECRAFT NAME >> {}", Minecraft.getInstance().getUser().getName());
     }
 
